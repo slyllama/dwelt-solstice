@@ -36,5 +36,9 @@ func _physics_process(_delta: float) -> void:
 	$RobotMesh.rotation.y = lerp_angle($RobotMesh.rotation.y,
 		_target_y_rotation, Utils.crit_plerp(9.0))
 	
+	if Vector3(velocity * Vector3(1, 0, 1)).length() > 1.0:
+		$RobotMesh/Stars.amount_ratio = 1.0
+	else: $RobotMesh/Stars.amount_ratio = 0.25
+	
 	# Send animation parameters to the mesh for animation blending
 	$RobotMesh.forward_blend = %InputHandler.direction.length()
