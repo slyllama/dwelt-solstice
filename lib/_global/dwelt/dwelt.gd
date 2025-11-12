@@ -1,5 +1,7 @@
 extends Node
 
+const GRAVITY = -9.8
+
 func _ready() -> void:
 	if DisplayServer.screen_get_size().x > 2000:
 		# Retina

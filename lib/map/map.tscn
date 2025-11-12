@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cave0dvi8i7rh"]
+[gd_scene load_steps=8 format=3 uid="uid://cave0dvi8i7rh"]
 
 [ext_resource type="PackedScene" uid="uid://istq4exbymwq" path="res://lib/hud/hud.tscn" id="1_c370e"]
 [ext_resource type="Texture2D" uid="uid://l6cie2u2qujs" path="res://generic/materials/textures/tile_diff.jpg" id="2_xunhb"]
@@ -17,14 +17,22 @@ uv1_scale = Vector3(72, 72, 72)
 material = SubResource("StandardMaterial3D_xunhb")
 size = Vector2(40, 40)
 
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_vt6hs"]
+
 [node name="Map" type="Node3D" unique_id=1657342060]
 
 [node name="Sky" type="WorldEnvironment" parent="." unique_id=1307914270]
 
 [node name="HUD" parent="." unique_id=985539152 instance=ExtResource("1_c370e")]
 
-[node name="DebugFloor" type="MeshInstance3D" parent="." unique_id=1732082366]
+[node name="Floor" type="StaticBody3D" parent="." unique_id=416613660]
+
+[node name="DebugFloor" type="MeshInstance3D" parent="Floor" unique_id=1732082366]
 mesh = SubResource("PlaneMesh_vt6hs")
+
+[node name="Collision" type="CollisionShape3D" parent="Floor" unique_id=523486777]
+shape = SubResource("WorldBoundaryShape3D_vt6hs")
+debug_fill = false
 
 [node name="Player" parent="." unique_id=457307059 instance=ExtResource("3_xunhb")]
 unique_name_in_owner = true

@@ -1,8 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://ca4uchglbi37g"]
+[gd_scene load_steps=6 format=3 uid="uid://ca4uchglbi37g"]
 
 [ext_resource type="PackedScene" uid="uid://cave0dvi8i7rh" path="res://lib/map/map.tscn" id="1_fiv0q"]
 [ext_resource type="PackedScene" uid="uid://pconmu7n0aev" path="res://maps/playground/props/bamboo/meshes/bamboo.glb" id="2_m67mg"]
-[ext_resource type="Material" uid="uid://gslpiectqnqm" path="res://lib/player/materials/mat_glow.tres" id="3_wlsna"]
 
 [sub_resource type="Environment" id="Environment_fiv0q"]
 background_mode = 1
@@ -20,12 +19,11 @@ fog_density = 1.0
 fog_depth_begin = 6.0
 fog_depth_end = 15.0
 
-[sub_resource type="BoxMesh" id="BoxMesh_fiv0q"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_m67mg"]
+size = Vector3(3, 1, 1)
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_m67mg"]
-material = ExtResource("3_wlsna")
-size = Vector2(0.3, 0.3)
-orientation = 2
+[sub_resource type="BoxMesh" id="BoxMesh_fiv0q"]
+size = Vector3(3, 1, 1)
 
 [node name="Playground" unique_id=1657342060 instance=ExtResource("1_fiv0q")]
 
@@ -37,19 +35,19 @@ transform = Transform3D(-0.70710677, -0.49999997, 0.49999997, 0, 0.70710677, 0.7
 shadow_enabled = true
 
 [node name="Player" parent="." index="3" unique_id=457307059]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4267342, 0)
 
-[node name="1m" type="MeshInstance3D" parent="." index="4" unique_id=1041887157]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.5, -2)
+[node name="Bamboo" parent="." index="4" unique_id=2114588371 instance=ExtResource("2_m67mg")]
+transform = Transform3D(1.075, 0, 0, 0, 1.0748203, 0.01966178, 0, -0.01966178, 1.0748203, -2.88274, 0, -1.0909146)
+
+[node name="Bamboo2" parent="." index="5" unique_id=1846739151 instance=ExtResource("2_m67mg")]
+transform = Transform3D(0.6983094, -0.0753268, 0.7118215, 0.052751284, 0.9971589, 0.053772006, -0.7138496, 0, 0.700299, -2.1248417, 0, -1.7843417)
+
+[node name="MovementTest" type="StaticBody3D" parent="." index="6" unique_id=1748435043]
+transform = Transform3D(0.9659258, 0.25881904, 0, -0.25881904, 0.9659258, 0, 0, 0, 1, -2, -0.15, 0)
+
+[node name="Collision" type="CollisionShape3D" parent="MovementTest" index="0" unique_id=1862432643]
+shape = SubResource("BoxShape3D_m67mg")
+
+[node name="Mesh" type="MeshInstance3D" parent="MovementTest" index="1" unique_id=1041887157]
 mesh = SubResource("BoxMesh_fiv0q")
-
-[node name="Bamboo" parent="." index="5" unique_id=514909625 instance=ExtResource("2_m67mg")]
-transform = Transform3D(1.075, 0, 0, 0, 1.0748203, 0.01966178, 0, -0.01966178, 1.0748203, -0.2676977, 0, -2.6288424)
-
-[node name="Bamboo2" parent="." index="6" unique_id=1781354445 instance=ExtResource("2_m67mg")]
-transform = Transform3D(0.6983094, -0.0753268, 0.7118215, 0.052751284, 0.9971589, 0.053772006, -0.7138496, 0, 0.700299, 0.8469013, 0, -3.0087252)
-
-[node name="GlowTest" type="MeshInstance3D" parent="." index="7" unique_id=1163286711]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3530972, 0.22975314, 0.09354174)
-cast_shadow = 0
-mesh = SubResource("PlaneMesh_m67mg")

@@ -72,6 +72,9 @@ nodes/blend_forward/position = Vector2(280, 140)
 node_connections = [&"output", 0, &"blend_forward", &"blend_forward", 0, &"idle", &"blend_forward", 1, &"move_forward"]
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_2ocui"]
+dof_blur_far_enabled = true
+dof_blur_far_distance = 9.0
+dof_blur_amount = 0.01
 
 [node name="Player" type="CharacterBody3D" unique_id=457307059]
 script = ExtResource("1_al4t3")
@@ -95,8 +98,6 @@ transform = Transform3D(0.8660253, -0.35355335, 0.35355335, 0, 0.7071067, 0.7071
 
 [node name="RobotMesh" parent="." unique_id=1587635769 node_paths=PackedStringArray("look_target") instance=ExtResource("3_5lbbh")]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
-top_level = true
 script = ExtResource("4_0y160")
 look_target = NodePath("../LookTarget")
 
@@ -117,7 +118,7 @@ top_level = true
 script = ExtResource("5_4ok3w")
 
 [node name="Camera" type="Camera3D" parent="Orbit" unique_id=877110501]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
 attributes = SubResource("CameraAttributesPractical_2ocui")
 v_offset = 0.2
 current = true
@@ -126,3 +127,6 @@ fov = 55.0
 [node name="InputHandler" type="Node" parent="." unique_id=1683545370]
 unique_name_in_owner = true
 script = ExtResource("1_odf55")
+
+[node name="YCast" type="RayCast3D" parent="." unique_id=1042984942]
+target_position = Vector3(0, -1.45, 0)
