@@ -1,0 +1,41 @@
+shader_type spatial;
+render_mode cull_disabled, specular_disabled;
+
+uniform vec3 modulate: source_color = vec3(1.0);
+uniform sampler2D foliage_texture: source_color, filter_linear_mipmap, repeat_enable;
+uniform sampler2D foliage_normal_texture: hint_normal, filter_linear_mipmap;
+
+float get_wind(vec2 vertex, vec2 uv){
+	float min_strength = 0.05;
+	float max_strength = 0.01;
+    float diff = pow(max_strength - min_strength, 2.0);
+    float strength = clamp(min_strength + diff + sin(TIME / 3.5) * diff, min_strength, max_strength) * 0.7;
+    float wind = (sin(TIME) + cos(TIME)) * strength * max(0.0, (1.0 - uv.y));
+    return wind;
+}
+
+void vertex() {
+	UV *= 0.95;
+	vec4 pos = MODEL_MATRIX * vec4(0.0, 0.0, 0.0, 1.0);
+    VERTEX.x += get_wind(VERTEX.xy, UV);
+}
+
+void fragment() {
+	vec4 foliage = texture(foliage_texture, UV);
+	ALBEDO = foliage.rgb;
+	ALBEDO *= modulate;
+	NORMAL_MAP = texture(foliage_normal_texture, UV).rgb;
+	NORMAL_MAP_DEPTH = 1.0;
+	BACKLIGHT = vec3(0.5);
+
+	ALPHA = foliage.a;
+	ALPHA_SCISSOR_THRESHOLD = 0.95;
+	SPECULAR = 0.0;
+
+	float fade_distance = length(VERTEX);
+	const vec3 magic = vec3(0.06711056, 0.00583715, 52.9829189);
+	float fade = clamp(smoothstep(2.0, 2.5, fade_distance), 0.0, 1.0);
+	if (fade < 0.001 || fade < fract(magic.z * fract(dot(FRAGCOORD.xy, magic.xy)))) {
+		discard;
+	}
+}

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c7q6vh0fcgpls"]
+
+[ext_resource type="Script" uid="uid://bobsm6cl6g5fr" path="res://lib/_global/dwelt/dwelt.gd" id="1_16b2d"]
+
+[node name="Dwelt" type="Node" unique_id=168336167]
+script = ExtResource("1_16b2d")

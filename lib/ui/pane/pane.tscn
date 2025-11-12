@@ -1,0 +1,63 @@
+[gd_scene load_steps=7 format=3 uid="uid://b63hobdhwi8kc"]
+
+[ext_resource type="Texture2D" uid="uid://dvshkqnf5k1ae" path="res://lib/ui/pane/textures/bg.jpg" id="1_80kxo"]
+[ext_resource type="Texture2D" uid="uid://bik4432aum0i" path="res://lib/ui/pane/textures/corner.png" id="2_5oagf"]
+[ext_resource type="Script" uid="uid://s3dr0hq73a03" path="res://lib/ui/pane/pane.gd" id="2_6g8ad"]
+[ext_resource type="Texture2D" uid="uid://oleyxvyvl0v1" path="res://lib/ui/pane/textures/close.png" id="2_n6d33"]
+[ext_resource type="Texture2D" uid="uid://vru7jji7q173" path="res://lib/ui/pane/textures/close_hover.png" id="3_6g8ad"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5oagf"]
+texture = ExtResource("1_80kxo")
+
+[node name="Pane" type="Panel" unique_id=2063168740]
+custom_minimum_size = Vector2(200, 200)
+theme_override_styles/panel = SubResource("StyleBoxTexture_5oagf")
+script = ExtResource("2_6g8ad")
+
+[node name="Box" type="VBoxContainer" parent="." unique_id=1603824655]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="Header" type="HBoxContainer" parent="Box" unique_id=812277926]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="Box/Header" unique_id=787152025]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "((Title))"
+
+[node name="CloseButton" type="TextureButton" parent="Box/Header" unique_id=772793465]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+texture_normal = ExtResource("2_n6d33")
+texture_hover = ExtResource("3_6g8ad")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Corner" type="TextureRect" parent="." unique_id=470180332]
+z_index = -1
+custom_minimum_size = Vector2(193, 204)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -159.0
+offset_top = -174.0
+offset_right = 34.0
+offset_bottom = 30.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_filter = 2
+texture = ExtResource("2_5oagf")
+expand_mode = 1

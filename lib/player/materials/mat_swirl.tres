@@ -1,0 +1,13 @@
+[gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://cybs7v8g3k2lt"]
+
+[ext_resource type="Shader" uid="uid://cu57i3rcjwlo3" path="res://lib/player/materials/shaders/swirl.gdshader" id="1_de1sb"]
+[ext_resource type="Texture2D" uid="uid://dp2kbhh803alp" path="res://lib/player/materials/textures/swirl_mask.jpg" id="2_2rhpf"]
+[ext_resource type="Texture2D" uid="uid://uc2uqec8rdrv" path="res://lib/player/materials/textures/wobble_noise.tres" id="3_pqis1"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_de1sb")
+shader_parameter/swirl_texture = ExtResource("2_2rhpf")
+shader_parameter/wobble_texture = ExtResource("3_pqis1")
+shader_parameter/wobble_strength = 0.350000016625
+shader_parameter/wobble_speed = 0.1
