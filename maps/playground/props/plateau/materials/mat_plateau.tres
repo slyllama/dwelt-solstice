@@ -1,0 +1,25 @@
+[gd_resource type="ShaderMaterial" load_steps=8 format=3 uid="uid://c78dvaxleh852"]
+
+[ext_resource type="Shader" uid="uid://jb2qnpxoqx3h" path="res://maps/playground/props/plateau/materials/shaders/rock.gdshader" id="1_aw7c0"]
+[ext_resource type="Texture2D" uid="uid://dxvby8qfq7xve" path="res://maps/playground/props/plateau/materials/textures/grass_diff.jpg" id="2_2vjl7"]
+[ext_resource type="Texture2D" uid="uid://din02mvmgyp41" path="res://maps/playground/props/plateau/materials/textures/grass_norm.jpg" id="2_5hwg3"]
+[ext_resource type="Texture2D" uid="uid://b76hs0cmr586b" path="res://maps/playground/props/plateau/materials/textures/wet_dirt_diff.jpg" id="2_hgiu2"]
+[ext_resource type="Texture2D" uid="uid://c2mcxvek265il" path="res://maps/playground/props/plateau/materials/textures/plateau_mask.jpg" id="4_wklbj"]
+[ext_resource type="Texture2D" uid="uid://clwa8fmryel2h" path="res://maps/playground/props/plateau/materials/textures/rock_norm.jpg" id="5_hgiu2"]
+[ext_resource type="Texture2D" uid="uid://byl12ekvfgin3" path="res://maps/playground/props/plateau/materials/textures/rock_diff.jpg" id="6_67hqj"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_aw7c0")
+shader_parameter/rock_mask_texture = ExtResource("4_wklbj")
+shader_parameter/grass_texture = ExtResource("2_2vjl7")
+shader_parameter/grass_normal_texture = ExtResource("2_5hwg3")
+shader_parameter/grass_albedo = Color(0.8992584, 0.8992584, 0.8992584, 1)
+shader_parameter/grass_uv_scale = 7.0
+shader_parameter/rock_texture = ExtResource("6_67hqj")
+shader_parameter/rock_normal_texture = ExtResource("5_hgiu2")
+shader_parameter/rock_albedo = Color(0.7666196, 0.76661956, 0.76661956, 1)
+shader_parameter/rock_uv_scale = 9.0
+shader_parameter/dirt_texture = ExtResource("2_hgiu2")
+shader_parameter/dirt_albedo = Color(1, 1, 1, 1)
+shader_parameter/dirt_uv_scale = 12.0

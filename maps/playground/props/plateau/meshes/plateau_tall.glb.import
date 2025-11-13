@@ -3,21 +3,21 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dwa8m5haxd2tk"
-path="res://.godot/imported/plateau.glb-1f991f8a56b8e075bdb40a72a9bfe956.scn"
+uid="uid://bfkv2xes22daw"
+path="res://.godot/imported/plateau_tall.glb-df7246ca6304f36afaf54cfabf493532.scn"
 
 [deps]
 
-source_file="res://maps/playground/blocking/plateau.glb"
-dest_files=["res://.godot/imported/plateau.glb-1f991f8a56b8e075bdb40a72a9bfe956.scn"]
+source_file="res://maps/playground/props/plateau/meshes/plateau_tall.glb"
+dest_files=["res://.godot/imported/plateau_tall.glb-df7246ca6304f36afaf54cfabf493532.scn"]
 
 [params]
 
 nodes/root_type=""
-nodes/root_name="Plateau"
+nodes/root_name="PlateauTall"
 nodes/root_script=null
 nodes/apply_root_scale=true
-nodes/root_scale=1.0
+nodes/root_scale=1.25
 nodes/import_as_skeleton_bones=false
 nodes/use_name_suffixes=true
 nodes/use_node_type_suffixes=true

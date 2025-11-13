@@ -6,5 +6,5 @@
 [resource]
 render_priority = 0
 shader = ExtResource("1_cx1w6")
-shader_parameter/modulate = Color(0.7489333, 0.82, 0.738, 1)
+shader_parameter/modulate = Color(0.91793966, 0.94314057, 0.91366166, 1)
 shader_parameter/foliage_texture = ExtResource("2_uvvj8")

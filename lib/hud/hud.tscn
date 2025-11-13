@@ -32,6 +32,7 @@ horizontal_alignment = 2
 script = ExtResource("1_o36f6")
 
 [node name="Pane" parent="." unique_id=2063168740 instance=ExtResource("4_pm6i7")]
+visible = false
 offset_left = 16.0
 offset_top = 16.0
 offset_right = 216.0
