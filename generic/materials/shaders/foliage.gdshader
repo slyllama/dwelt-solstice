@@ -30,6 +30,7 @@ void fragment() {
 
 	ALPHA = foliage.a;
 	ALPHA_SCISSOR_THRESHOLD = 0.95;
+	//ALPHA_ANTIALIASING_EDGE = 0.95;
 	SPECULAR = 0.0;
 
 	float fade_distance = length(VERTEX);

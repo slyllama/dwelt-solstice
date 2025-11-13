@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://cyj7o75ntyn74"]
+
+[ext_resource type="Script" uid="uid://5ignj7q3jxws" path="res://lib/hud/top_menu/top_menu.gd" id="1_3p5i3"]
+
+[node name="TopMenu" type="HBoxContainer" unique_id=1693578610]
+custom_minimum_size = Vector2(0, 64)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+grow_horizontal = 2
+alignment = 1
+script = ExtResource("1_3p5i3")

@@ -34,7 +34,7 @@ func _physics_process(_delta: float) -> void:
 		var _a = atan2(_z, _x) + PI / 2.0 + $Orbit.rotation.y
 		_target_y_rotation = _a
 	$RobotMesh.rotation.y = lerp_angle($RobotMesh.rotation.y,
-		_target_y_rotation, Utils.crit_plerp(9.0))
+		_target_y_rotation, Utils.crit_plerp(7.0))
 	
 	if Vector3(velocity * Vector3(1, 0, 1)).length() > 1.0:
 		$RobotMesh/Stars.amount_ratio = 1.0
