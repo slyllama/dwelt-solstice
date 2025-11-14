@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://crbctqd55n6f6"]
+[gd_scene load_steps=35 format=3 uid="uid://crbctqd55n6f6"]
 
 [ext_resource type="Script" uid="uid://cro16agkt5mwp" path="res://lib/player/player.gd" id="1_al4t3"]
 [ext_resource type="Script" uid="uid://djkynrad87367" path="res://lib/player/scripts/input_handler.gd" id="1_odf55"]
@@ -12,6 +12,7 @@
 [ext_resource type="Animation" uid="uid://b5rkwbh24208k" path="res://lib/player/meshes/anims/eye.res" id="8_up78s"]
 [ext_resource type="AudioStream" uid="uid://bkxx1ti38653a" path="res://lib/player/sounds/engine_idle.ogg" id="9_5x5nn"]
 [ext_resource type="AudioStream" uid="uid://bieahrad33g0x" path="res://lib/player/sounds/engine_moving.ogg" id="10_ram4p"]
+[ext_resource type="PackedScene" uid="uid://bv2sf41x1ndhr" path="res://lib/ui/spatial_text/spatial_text.tscn" id="13_r1bse"]
 
 [sub_resource type="Curve" id="Curve_2ocui"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.16071428, 1), 0.0, 0.0, 0, 0, Vector2(0.48214287, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -119,10 +120,10 @@ node_connections = [&"output", 0, &"blend_forward", &"blend_forward", 0, &"idle_
 dof_blur_far_distance = 9.0
 dof_blur_amount = 0.01
 
-[node name="Player" type="CharacterBody3D" unique_id=457307059]
+[node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_al4t3")
 
-[node name="Motes" type="GPUParticles3D" parent="." unique_id=1017296410]
+[node name="Motes" type="GPUParticles3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0.2, 0)
 cast_shadow = 0
 amount = 96
@@ -132,19 +133,19 @@ randomness = 0.25
 process_material = SubResource("ParticleProcessMaterial_2ocui")
 draw_pass_1 = SubResource("QuadMesh_0y160")
 
-[node name="Collision" type="CollisionShape3D" parent="." unique_id=1686328561]
+[node name="Collision" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.16, 0)
 shape = SubResource("SphereShape3D_iochv")
 
-[node name="LookTarget" type="Marker3D" parent="." unique_id=245760394]
+[node name="LookTarget" type="Marker3D" parent="."]
 transform = Transform3D(0.8660253, -0.35355335, 0.35355335, 0, 0.7071067, 0.7071067, -0.49999997, -0.61237234, 0.61237234, 0.7071067, 1.4142134, 1.2247447)
 
-[node name="RobotMesh" parent="." unique_id=688001448 node_paths=PackedStringArray("look_target") instance=ExtResource("3_5lbbh")]
+[node name="RobotMesh" parent="." node_paths=PackedStringArray("look_target") instance=ExtResource("3_5lbbh")]
 unique_name_in_owner = true
 script = ExtResource("4_0y160")
 look_target = NodePath("../LookTarget")
 
-[node name="Stars" type="GPUParticles3D" parent="RobotMesh" unique_id=459018735]
+[node name="Stars" type="GPUParticles3D" parent="RobotMesh"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.17061618, -0.39669335)
 cast_shadow = 0
 amount = 16
@@ -152,11 +153,11 @@ amount_ratio = 0.25
 process_material = SubResource("ParticleProcessMaterial_ram4p")
 draw_pass_1 = ExtResource("5_jyhpi")
 
-[node name="Light" type="OmniLight3D" parent="RobotMesh" unique_id=1337518997]
+[node name="Light" type="OmniLight3D" parent="RobotMesh"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35, 1)
 omni_range = 1.0
 
-[node name="Anim" type="AnimationTree" parent="RobotMesh" unique_id=510217183]
+[node name="Anim" type="AnimationTree" parent="RobotMesh"]
 libraries = {
 &"player": SubResource("AnimationLibrary_up78s")
 }
@@ -165,32 +166,36 @@ parameters/blend_forward/blend_amount = 0.0
 parameters/idle_mix_eye/add_amount = 1.0
 parameters/move_forward_mix_eye/add_amount = 1.0
 
-[node name="EngineIdle" type="AudioStreamPlayer3D" parent="RobotMesh" unique_id=250915144]
+[node name="EngineIdle" type="AudioStreamPlayer3D" parent="RobotMesh"]
 stream = ExtResource("9_5x5nn")
 unit_size = 4.0
 
-[node name="EngineMoving" type="AudioStreamPlayer3D" parent="RobotMesh" unique_id=791148564]
+[node name="EngineMoving" type="AudioStreamPlayer3D" parent="RobotMesh"]
 stream = ExtResource("10_ram4p")
 unit_size = 4.0
 
-[node name="Orbit" type="Marker3D" parent="." unique_id=577608965]
+[node name="Orbit" type="Marker3D" parent="."]
 transform = Transform3D(0.8660253, -0.35355335, 0.35355335, 0, 0.7071067, 0.7071067, -0.49999997, -0.61237234, 0.61237234, 0, 0, 0)
 top_level = true
 script = ExtResource("5_4ok3w")
 
-[node name="Camera" type="Camera3D" parent="Orbit" unique_id=877110501]
+[node name="Camera" type="Camera3D" parent="Orbit"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
 attributes = SubResource("CameraAttributesPractical_2ocui")
 v_offset = 0.2
 current = true
 fov = 55.0
 
-[node name="Listener" type="AudioListener3D" parent="Orbit/Camera" unique_id=488859102]
+[node name="Listener" type="AudioListener3D" parent="Orbit/Camera"]
 current = true
 
-[node name="InputHandler" type="Node" parent="." unique_id=1683545370]
+[node name="InputHandler" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("1_odf55")
 
-[node name="YCast" type="RayCast3D" parent="." unique_id=1042984942]
+[node name="YCast" type="RayCast3D" parent="."]
 target_position = Vector3(0, -1.5, 0)
+
+[node name="Name" parent="." instance=ExtResource("13_r1bse")]
+top_level = true
+spatial_text = "Slyllama"

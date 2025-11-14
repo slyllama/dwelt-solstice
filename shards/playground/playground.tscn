@@ -89,7 +89,13 @@ transform = Transform3D(0.9262197, 0, -0.37698415, 0, 1, 0, 0.37698415, 0, 0.926
 [node name="Plateau3" parent="Blocking" index="2" instance=ExtResource("3_wlsna")]
 transform = Transform3D(0.60801345, -0.11178295, -0.78601795, 0, 0.9900384, -0.14079757, 0.7939267, 0.08560681, 0.6019566, 3.8926024, -1.7465501, -1.4010363)
 
-[node name="Outcrop" type="Decal" parent="Blocking" index="3"]
+[node name="PlateauTall" parent="Blocking" index="3" instance=ExtResource("4_v3r7f")]
+transform = Transform3D(0.92874485, 0, -0.37071952, 0, 1, 0, 0.37071952, 0, 0.92874485, 4.847338, -0.31965584, -6.739903)
+
+[node name="PlateauTall2" parent="Blocking" index="4" instance=ExtResource("4_v3r7f")]
+transform = Transform3D(-0.6655561, 0, 0.7463478, 0, 1, 0, -0.7463478, 0, -0.6655561, 6.987584, -0.31965536, -2.6341462)
+
+[node name="Outcrop" type="Decal" parent="Blocking" index="5"]
 transform = Transform3D(0.86298144, 0, 0.5052357, 0, 1, 0, -0.5052357, 0, 0.86298144, 3.529684, 0.28497976, -0.3918854)
 layers = 2
 size = Vector3(2.2, 1, 2.2)
@@ -98,7 +104,7 @@ modulate = Color(0.74558026, 0.7455802, 0.7455802, 1)
 upper_fade = 0.1
 lower_fade = 0.1
 
-[node name="FoliageSpawner" parent="Blocking" index="4" instance=ExtResource("5_aut2g")]
+[node name="FoliageSpawner" parent="Blocking" index="6" instance=ExtResource("5_aut2g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.543534, 0, -0.07868242)
 layers = 2
 cast_shadow = 0
@@ -109,12 +115,6 @@ size = 3.0
 min_scale = 1.5
 max_scale = 1.8
 
-[node name="PlateauTall" parent="." index="11" instance=ExtResource("4_v3r7f")]
-transform = Transform3D(0.92874485, 0, -0.37071952, 0, 1, 0, 0.37071952, 0, 0.92874485, 4.847338, -0.31965584, -6.739903)
-
-[node name="PlateauTall2" parent="." index="12" instance=ExtResource("4_v3r7f")]
-transform = Transform3D(-0.6655561, 0, 0.7463478, 0, 1, 0, -0.7463478, 0, -0.6655561, 6.987584, -0.31965536, -2.6341462)
-
-[node name="Ambience" parent="." index="13"]
+[node name="Ambience" parent="." index="11"]
 stream = ExtResource("6_42lni")
 autoplay = true

@@ -7,6 +7,9 @@ extends Marker3D
 
 @onready var target_zoom = $Camera.position.z
 
+func _ready() -> void:
+	Dwelt.r_camera = $Camera
+
 func _input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("zoom_in"):
 		target_zoom -= zoom_increment
