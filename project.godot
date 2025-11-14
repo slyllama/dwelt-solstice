@@ -14,7 +14,7 @@ config/name="Dwelt: Iron Solstice"
 run/main_scene="uid://c5mi2sfwdfxc5"
 config/use_custom_user_dir=true
 config/custom_user_dir_name="dwelt"
-config/features=PackedStringArray("4.6", "Forward Plus")
+config/features=PackedStringArray("4.5", "Forward Plus")
 run/max_fps=60
 config/icon="res://icon.svg"
 

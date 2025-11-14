@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://cave0dvi8i7rh"]
+[gd_scene load_steps=9 format=3 uid="uid://cave0dvi8i7rh"]
 
 [ext_resource type="PackedScene" uid="uid://istq4exbymwq" path="res://lib/hud/hud.tscn" id="1_c370e"]
 [ext_resource type="Texture2D" uid="uid://l6cie2u2qujs" path="res://generic/materials/textures/tile_diff.jpg" id="2_xunhb"]
 [ext_resource type="Texture2D" uid="uid://cx5bkwfxdh0td" path="res://generic/materials/textures/tile_norm.jpg" id="3_vt6hs"]
 [ext_resource type="PackedScene" uid="uid://crbctqd55n6f6" path="res://lib/player/player.tscn" id="3_xunhb"]
+[ext_resource type="PackedScene" uid="uid://dnl3en4v6jy6b" path="res://lib/shard/bounds/bounds.tscn" id="5_5i5j7"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xunhb"]
 albedo_color = Color(0.75, 0.75, 0.75, 1)
@@ -19,23 +20,25 @@ size = Vector2(40, 40)
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_vt6hs"]
 
-[node name="Map" type="Node3D" unique_id=1657342060]
+[node name="Map" type="Node3D"]
 
-[node name="Sky" type="WorldEnvironment" parent="." unique_id=1307914270]
+[node name="Sky" type="WorldEnvironment" parent="."]
 
-[node name="HUD" parent="." unique_id=985539152 instance=ExtResource("1_c370e")]
+[node name="HUD" parent="." instance=ExtResource("1_c370e")]
 
-[node name="Floor" type="StaticBody3D" parent="." unique_id=416613660]
+[node name="Floor" type="StaticBody3D" parent="."]
 
-[node name="DebugFloor" type="MeshInstance3D" parent="Floor" unique_id=1732082366]
+[node name="DebugFloor" type="MeshInstance3D" parent="Floor"]
 mesh = SubResource("PlaneMesh_vt6hs")
 
-[node name="Collision" type="CollisionShape3D" parent="Floor" unique_id=523486777]
+[node name="Collision" type="CollisionShape3D" parent="Floor"]
 shape = SubResource("WorldBoundaryShape3D_vt6hs")
 debug_fill = false
 
-[node name="Player" parent="." unique_id=457307059 instance=ExtResource("3_xunhb")]
+[node name="Player" parent="." instance=ExtResource("3_xunhb")]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
-[node name="Ambience" type="AudioStreamPlayer" parent="." unique_id=1911344205]
+[node name="Ambience" type="AudioStreamPlayer" parent="."]
+
+[node name="Bounds" parent="." instance=ExtResource("5_5i5j7")]
