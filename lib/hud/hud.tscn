@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cyj7o75ntyn74" path="res://lib/hud/top_menu/top_menu.tscn" id="5_4etgo"]
 [ext_resource type="Texture2D" uid="uid://dvbtkk5o37vbg" path="res://lib/hud/textures/blur_top.png" id="5_tpybq"]
 [ext_resource type="PackedScene" uid="uid://dobg7k2r74npq" path="res://lib/hud/top_menu/button/button.tscn" id="6_3pj68"]
-[ext_resource type="Texture2D" uid="uid://bonk5ihl6j6cb" path="res://lib/hud/textures/currency_bg.png" id="8_r2k48"]
+[ext_resource type="PackedScene" uid="uid://cs858q7wbo2np" path="res://lib/hud/currency_counter/currency_counter.tscn" id="8_r2k48"]
 
 [node name="HUD" type="CanvasLayer" unique_id=985539152]
 metadata/_edit_horizontal_guides_ = [4.0, 68.0]
@@ -71,11 +71,4 @@ layout_mode = 2
 [node name="Button3" parent="TopMenu" unique_id=659472631 instance=ExtResource("6_3pj68")]
 layout_mode = 2
 
-[node name="CurrencyPlaceholder" type="TextureRect" parent="." unique_id=547112935]
-custom_minimum_size = Vector2(128, 64)
-offset_left = 4.0
-offset_top = 4.0
-offset_right = 132.0
-offset_bottom = 68.0
-texture = ExtResource("8_r2k48")
-expand_mode = 1
+[node name="CurrencyCounter" parent="." unique_id=1493798058 instance=ExtResource("8_r2k48")]
