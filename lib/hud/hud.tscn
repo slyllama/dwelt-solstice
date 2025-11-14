@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://istq4exbymwq"]
+[gd_scene load_steps=8 format=3 uid="uid://istq4exbymwq"]
 
 [ext_resource type="FontFile" uid="uid://c7qpj4jbth6pg" path="res://generic/fonts/ibm_plex_mono.otf" id="1_dcyf8"]
 [ext_resource type="Script" uid="uid://davrehdjbld01" path="res://lib/hud/scripts/render_monitor.gd" id="1_o36f6"]
 [ext_resource type="PackedScene" uid="uid://dvwqtf0altti1" path="res://lib/hud/screen_fx/screen_fx.tscn" id="1_u1rn0"]
 [ext_resource type="PackedScene" uid="uid://b63hobdhwi8kc" path="res://lib/ui/pane/pane.tscn" id="4_pm6i7"]
 [ext_resource type="PackedScene" uid="uid://cyj7o75ntyn74" path="res://lib/hud/top_menu/top_menu.tscn" id="5_4etgo"]
+[ext_resource type="Texture2D" uid="uid://dvbtkk5o37vbg" path="res://lib/hud/textures/blur_top.png" id="5_tpybq"]
 [ext_resource type="PackedScene" uid="uid://dobg7k2r74npq" path="res://lib/hud/top_menu/button/button.tscn" id="6_3pj68"]
 
 [node name="HUD" type="CanvasLayer" unique_id=985539152]
@@ -39,11 +40,24 @@ offset_right = 216.0
 offset_bottom = 216.0
 title_text = "Interesting"
 
+[node name="BlurTop" type="TextureRect" parent="." unique_id=901539428]
+custom_minimum_size = Vector2(603, 185)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -301.5
+offset_right = 301.5
+offset_bottom = 185.0
+grow_horizontal = 2
+mouse_filter = 2
+texture = ExtResource("5_tpybq")
+expand_mode = 1
+
 [node name="TopMenu" parent="." unique_id=1693578610 instance=ExtResource("5_4etgo")]
-offset_left = -66.0
-offset_top = 10.0
-offset_right = 66.0
-offset_bottom = 74.0
+offset_left = -96.0
+offset_top = 4.0
+offset_right = 96.0
+offset_bottom = 68.0
 theme_override_constants/separation = 0
 
 [node name="Button" parent="TopMenu" unique_id=1458492969 instance=ExtResource("6_3pj68")]

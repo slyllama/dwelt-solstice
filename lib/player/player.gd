@@ -6,6 +6,19 @@ extends CharacterBody3D
 var _target_velocity := Vector3.ZERO
 var _target_y_rotation := 0.0
 
+var _moving := false
+signal move_started
+signal move_stopped
+
+func _ready() -> void:
+	$RobotMesh/EngineIdle.play()
+	move_started.connect(func():
+		$RobotMesh/EngineIdle.stop()
+		$RobotMesh/EngineMoving.play())
+	move_stopped.connect(func():
+		$RobotMesh/EngineMoving.stop()
+		$RobotMesh/EngineIdle.play())
+
 func _physics_process(_delta: float) -> void:
 	_target_velocity = Vector3.ZERO
 	var _camera_basis = $Orbit.global_transform.basis
@@ -38,7 +51,14 @@ func _physics_process(_delta: float) -> void:
 	
 	if Vector3(velocity * Vector3(1, 0, 1)).length() > 1.0:
 		$RobotMesh/Stars.amount_ratio = 1.0
-	else: $RobotMesh/Stars.amount_ratio = 0.25
+		if !_moving:
+			_moving = true
+			move_started.emit()
+	else:
+		$RobotMesh/Stars.amount_ratio = 0.25
+		if _moving:
+			_moving = false
+			move_stopped.emit()
 	
 	# Send animation parameters to the mesh for animation blending
 	$RobotMesh.forward_blend = %InputHandler.direction.length()

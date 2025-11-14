@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://crbctqd55n6f6"]
+[gd_scene load_steps=34 format=3 uid="uid://crbctqd55n6f6"]
 
 [ext_resource type="Script" uid="uid://cro16agkt5mwp" path="res://lib/player/player.gd" id="1_al4t3"]
 [ext_resource type="Script" uid="uid://djkynrad87367" path="res://lib/player/scripts/input_handler.gd" id="1_odf55"]
@@ -10,6 +10,8 @@
 [ext_resource type="ArrayMesh" uid="uid://bbnipptkru66r" path="res://lib/player/meshes/star.res" id="5_jyhpi"]
 [ext_resource type="Animation" uid="uid://dft5l21562sq" path="res://lib/player/meshes/anims/move_forward.res" id="6_jyhpi"]
 [ext_resource type="Animation" uid="uid://bhttpj01eluru" path="res://lib/player/meshes/anims/eye.res" id="8_up78s"]
+[ext_resource type="AudioStream" uid="uid://bkxx1ti38653a" path="res://lib/player/sounds/engine_idle.ogg" id="9_5x5nn"]
+[ext_resource type="AudioStream" uid="uid://bieahrad33g0x" path="res://lib/player/sounds/engine_moving.ogg" id="10_ram4p"]
 
 [sub_resource type="Curve" id="Curve_2ocui"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.16071428, 1), 0.0, 0.0, 0, 0, Vector2(0.48214287, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -163,6 +165,14 @@ parameters/blend_forward/blend_amount = 0.0
 parameters/idle_mix_eye/add_amount = 1.0
 parameters/move_forward_mix_eye/add_amount = 1.0
 
+[node name="EngineIdle" type="AudioStreamPlayer3D" parent="RobotMesh" unique_id=250915144]
+stream = ExtResource("9_5x5nn")
+unit_size = 4.0
+
+[node name="EngineMoving" type="AudioStreamPlayer3D" parent="RobotMesh" unique_id=791148564]
+stream = ExtResource("10_ram4p")
+unit_size = 4.0
+
 [node name="Orbit" type="Marker3D" parent="." unique_id=577608965]
 transform = Transform3D(0.8660253, -0.35355335, 0.35355335, 0, 0.7071067, 0.7071067, -0.49999997, -0.61237234, 0.61237234, 0, 0, 0)
 top_level = true
@@ -174,6 +184,9 @@ attributes = SubResource("CameraAttributesPractical_2ocui")
 v_offset = 0.2
 current = true
 fov = 55.0
+
+[node name="Listener" type="AudioListener3D" parent="Orbit/Camera" unique_id=488859102]
+current = true
 
 [node name="InputHandler" type="Node" parent="." unique_id=1683545370]
 unique_name_in_owner = true

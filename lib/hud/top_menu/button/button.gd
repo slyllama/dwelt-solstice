@@ -1,13 +1,14 @@
 class_name TopMenuButton extends TextureButton
 
-var _target_alpha := 0.5
+const BASE_ALPHA := 0.75
+var _target_alpha := BASE_ALPHA
 
 func show_hovered() -> void:
 	_target_alpha = 1.0
 	$Anim.play("hover")
 
 func clear_hovered() -> void:
-	_target_alpha = 0.5
+	_target_alpha = BASE_ALPHA
 	$Anim.play_backwards("hover")
 
 func _ready() -> void:

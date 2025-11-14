@@ -4,7 +4,7 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_visue"]
 shader = ExtResource("1_h2nih")
-shader_parameter/position = 0.5
+shader_parameter/position = 0.450000021375
 shader_parameter/feather = 0.30000001425
 
 [node name="ScreenFX" type="CanvasLayer" unique_id=685564067]

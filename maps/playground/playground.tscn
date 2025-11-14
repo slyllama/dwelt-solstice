@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://ca4uchglbi37g"]
+[gd_scene load_steps=10 format=3 uid="uid://ca4uchglbi37g"]
 
 [ext_resource type="PackedScene" uid="uid://cave0dvi8i7rh" path="res://lib/map/map.tscn" id="1_fiv0q"]
 [ext_resource type="PackedScene" uid="uid://pconmu7n0aev" path="res://maps/playground/props/bamboo/meshes/bamboo.glb" id="2_m67mg"]
 [ext_resource type="PackedScene" uid="uid://dwa8m5haxd2tk" path="res://maps/playground/props/plateau/meshes/plateau.glb" id="3_wlsna"]
 [ext_resource type="Texture2D" uid="uid://behcmksu83doj" path="res://maps/playground/props/plateau/materials/textures/outcrop_decal.png" id="4_neblt"]
 [ext_resource type="PackedScene" uid="uid://bfkv2xes22daw" path="res://maps/playground/props/plateau/meshes/plateau_tall.glb" id="4_v3r7f"]
+[ext_resource type="AudioStream" uid="uid://cih0evhjc054h" path="res://maps/playground/sounds/ambience.ogg" id="6_42lni"]
 
 [sub_resource type="Environment" id="Environment_fiv0q"]
 background_mode = 1
@@ -89,3 +90,7 @@ transform = Transform3D(0.92874485, 0, -0.37071952, 0, 1, 0, 0.37071952, 0, 0.92
 
 [node name="PlateauTall2" parent="." index="11" unique_id=3658450 instance=ExtResource("4_v3r7f")]
 transform = Transform3D(-0.6655561, 0, 0.7463478, 0, 1, 0, -0.7463478, 0, -0.6655561, 6.987584, -0.31965536, -2.6341462)
+
+[node name="Ambience" parent="." index="12" unique_id=1911344205]
+stream = ExtResource("6_42lni")
+autoplay = true
