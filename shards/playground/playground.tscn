@@ -1,0 +1,96 @@
+[gd_scene load_steps=10 format=3 uid="uid://ca4uchglbi37g"]
+
+[ext_resource type="PackedScene" uid="uid://cave0dvi8i7rh" path="res://lib/shard/shard.tscn" id="1_fiv0q"]
+[ext_resource type="PackedScene" uid="uid://pconmu7n0aev" path="res://shards/playground/props/bamboo/meshes/bamboo.glb" id="2_m67mg"]
+[ext_resource type="PackedScene" uid="uid://dwa8m5haxd2tk" path="res://shards/playground/props/plateau/meshes/plateau.glb" id="3_wlsna"]
+[ext_resource type="Texture2D" uid="uid://behcmksu83doj" path="res://shards/playground/props/plateau/materials/textures/outcrop_decal.png" id="4_neblt"]
+[ext_resource type="PackedScene" uid="uid://bfkv2xes22daw" path="res://shards/playground/props/plateau/meshes/plateau_tall.glb" id="4_v3r7f"]
+[ext_resource type="AudioStream" uid="uid://cih0evhjc054h" path="res://shards/playground/sounds/ambience.ogg" id="6_42lni"]
+
+[sub_resource type="Environment" id="Environment_fiv0q"]
+background_mode = 1
+background_color = Color(0, 0, 0.08, 1)
+ambient_light_source = 2
+ambient_light_color = Color(0.5, 0.5, 0.5, 1)
+ambient_light_energy = 0.5
+tonemap_mode = 2
+tonemap_exposure = 1.25
+glow_enabled = true
+glow_normalized = true
+fog_enabled = true
+fog_mode = 1
+fog_light_color = Color(0.4292, 0.4669, 0.58, 1)
+fog_density = 1.0
+fog_depth_begin = 8.0
+fog_depth_end = 15.0
+adjustment_enabled = true
+adjustment_saturation = 1.12
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_m67mg"]
+size = Vector3(4, 2, 2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_fiv0q"]
+size = Vector3(4, 2, 2)
+
+[node name="Playground" unique_id=1657342060 instance=ExtResource("1_fiv0q")]
+
+[node name="Sky" parent="." index="0" unique_id=1307914270]
+environment = SubResource("Environment_fiv0q")
+
+[node name="Sun" type="DirectionalLight3D" parent="Sky" index="0" unique_id=418144333]
+transform = Transform3D(-0.3105935, 0.67213523, -0.67213523, 0, 0.70710677, 0.70710677, 0.9505428, 0.21962275, -0.21962275, 0, 3, 0)
+shadow_enabled = true
+
+[node name="Player" parent="." index="3" unique_id=457307059]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4267342, 0)
+
+[node name="Bamboo" parent="." index="4" unique_id=1667099607 instance=ExtResource("2_m67mg")]
+transform = Transform3D(1.075, 0, 0, 0, 1.0748203, 0.01966178, 0, -0.01966178, 1.0748203, -2.88274, 0, -1.0909146)
+
+[node name="Bamboo2" parent="." index="5" unique_id=1251981770 instance=ExtResource("2_m67mg")]
+transform = Transform3D(0.6983094, -0.0753268, 0.7118215, 0.052751284, 0.9971589, 0.053772006, -0.7138496, 0, 0.700299, 0.94134235, 1.2196087, -1.9836988)
+
+[node name="Bamboo3" parent="." index="6" unique_id=286668562 instance=ExtResource("2_m67mg")]
+transform = Transform3D(-0.99501663, 0.047922865, 0.08743742, 0.052751277, 0.9971588, 0.053772, -0.08461213, 0.058116477, -0.9947177, 2.4802847, 1.759866, -2.8169491)
+
+[node name="Bamboo4" parent="." index="7" unique_id=1649201934 instance=ExtResource("2_m67mg")]
+transform = Transform3D(-0.5015737, -0.22406344, 0.8355952, 0.052751258, 0.956159, 0.28805697, -0.8635051, 0.18856047, -0.4677647, 4.41336, 0.45474583, -1.7171338)
+
+[node name="MovementTest" type="StaticBody3D" parent="." index="8" unique_id=1748435043]
+transform = Transform3D(0.9659258, 0.25881904, 0, -0.25881904, 0.9659258, 0, 0, 0, 1, -2, -0.49425927, 0)
+
+[node name="Collision" type="CollisionShape3D" parent="MovementTest" index="0" unique_id=1862432643]
+shape = SubResource("BoxShape3D_m67mg")
+
+[node name="Mesh" type="MeshInstance3D" parent="MovementTest" index="1" unique_id=1041887157]
+mesh = SubResource("BoxMesh_fiv0q")
+
+[node name="Blocking" type="Node3D" parent="." index="9" unique_id=572562654]
+
+[node name="Plateau" parent="Blocking" index="0" unique_id=1769254415 instance=ExtResource("3_wlsna")]
+transform = Transform3D(1, 0, 0, 0, 1.125, 0, 0, 0, 1, 0.35895622, -0.15626937, -5.1213856)
+
+[node name="Plateau2" parent="Blocking" index="1" unique_id=1135908376 instance=ExtResource("3_wlsna")]
+transform = Transform3D(0.9262197, 0, -0.37698415, 0, 1, 0, 0.37698415, 0, 0.9262197, 1.6193643, -0.7980664, -3.707004)
+
+[node name="Plateau3" parent="Blocking" index="2" unique_id=2052085739 instance=ExtResource("3_wlsna")]
+transform = Transform3D(0.60801345, -0.11178295, -0.78601795, 0, 0.9900384, -0.14079757, 0.7939267, 0.08560681, 0.6019566, 3.8926024, -1.7465501, -1.4010363)
+
+[node name="Outcrop" type="Decal" parent="Blocking" index="3" unique_id=1180417637]
+transform = Transform3D(0.86298144, 0, 0.5052357, 0, 1, 0, -0.5052357, 0, 0.86298144, 3.529684, 0.28497976, -0.3918854)
+layers = 2
+size = Vector3(2.2, 1, 2.2)
+texture_albedo = ExtResource("4_neblt")
+modulate = Color(0.74558026, 0.7455802, 0.7455802, 1)
+upper_fade = 0.1
+lower_fade = 0.1
+
+[node name="PlateauTall" parent="." index="10" unique_id=2023368744 instance=ExtResource("4_v3r7f")]
+transform = Transform3D(0.92874485, 0, -0.37071952, 0, 1, 0, 0.37071952, 0, 0.92874485, 4.847338, -0.31965584, -6.739903)
+
+[node name="PlateauTall2" parent="." index="11" unique_id=3658450 instance=ExtResource("4_v3r7f")]
+transform = Transform3D(-0.6655561, 0, 0.7463478, 0, 1, 0, -0.7463478, 0, -0.6655561, 6.987584, -0.31965536, -2.6341462)
+
+[node name="Ambience" parent="." index="12" unique_id=1911344205]
+stream = ExtResource("6_42lni")
+autoplay = true
