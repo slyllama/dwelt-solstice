@@ -1,4 +1,0 @@
-[gd_scene format=3 uid="uid://d13s8syaaumli"]
-
-[node name="Toolbar" type="HBoxContainer"]
-custom_minimum_size = Vector2(0, 64)

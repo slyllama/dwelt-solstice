@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bosxqp3gnj6p0"
-path="res://.godot/imported/end_piece.png-a32b3973d3ff27bd209a668ac1678d5a.ctex"
+uid="uid://dsc6xau0vagxg"
+path="res://.godot/imported/btn_unknown.png-93890d8de5fac55bb42398fdb225fec8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://lib/hud/toolbar/button/textures/end_piece.png"
-dest_files=["res://.godot/imported/end_piece.png-a32b3973d3ff27bd209a668ac1678d5a.ctex"]
+source_file="res://lib/hud/skill_bar/skill_button/textures/btn_unknown.png"
+dest_files=["res://.godot/imported/btn_unknown.png-93890d8de5fac55bb42398fdb225fec8.ctex"]
 
 [params]
 

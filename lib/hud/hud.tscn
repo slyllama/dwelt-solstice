@@ -1,16 +1,14 @@
-[gd_scene load_steps=12 format=3 uid="uid://istq4exbymwq"]
+[gd_scene load_steps=10 format=3 uid="uid://istq4exbymwq"]
 
 [ext_resource type="FontFile" uid="uid://c7qpj4jbth6pg" path="res://generic/fonts/ibm_plex_mono.otf" id="1_dcyf8"]
 [ext_resource type="Script" uid="uid://davrehdjbld01" path="res://lib/hud/scripts/render_monitor.gd" id="1_o36f6"]
 [ext_resource type="PackedScene" uid="uid://dvwqtf0altti1" path="res://lib/hud/screen_fx/screen_fx.tscn" id="1_u1rn0"]
 [ext_resource type="PackedScene" uid="uid://b63hobdhwi8kc" path="res://lib/ui/pane/pane.tscn" id="4_pm6i7"]
-[ext_resource type="PackedScene" uid="uid://cyj7o75ntyn74" path="res://lib/hud/top_menu/top_menu.tscn" id="5_4etgo"]
+[ext_resource type="PackedScene" uid="uid://cyj7o75ntyn74" path="res://lib/hud/tool_bar/tool_bar.tscn" id="5_4etgo"]
 [ext_resource type="Texture2D" uid="uid://dvbtkk5o37vbg" path="res://lib/hud/textures/blur_top.png" id="5_tpybq"]
-[ext_resource type="PackedScene" uid="uid://dobg7k2r74npq" path="res://lib/hud/top_menu/button/button.tscn" id="6_3pj68"]
-[ext_resource type="PackedScene" uid="uid://d13s8syaaumli" path="res://lib/hud/toolbar/toolbar.tscn" id="8_d84xd"]
+[ext_resource type="PackedScene" uid="uid://dobg7k2r74npq" path="res://lib/hud/tool_bar/tool_button/tool_button.tscn" id="6_3pj68"]
+[ext_resource type="PackedScene" uid="uid://d13s8syaaumli" path="res://lib/hud/skill_bar/skill_bar.tscn" id="8_d84xd"]
 [ext_resource type="PackedScene" uid="uid://cs858q7wbo2np" path="res://lib/hud/currency_counter/currency_counter.tscn" id="8_r2k48"]
-[ext_resource type="Texture2D" uid="uid://bosxqp3gnj6p0" path="res://lib/hud/toolbar/button/textures/end_piece.png" id="9_coisy"]
-[ext_resource type="PackedScene" uid="uid://d1f1tqtmndgdf" path="res://lib/hud/toolbar/button/button.tscn" id="9_ixdrw"]
 
 [node name="HUD" type="CanvasLayer"]
 metadata/_edit_horizontal_guides_ = [4.0, 68.0]
@@ -58,68 +56,32 @@ mouse_filter = 2
 texture = ExtResource("5_tpybq")
 expand_mode = 1
 
-[node name="TopMenu" parent="." instance=ExtResource("5_4etgo")]
+[node name="ToolBar" parent="." instance=ExtResource("5_4etgo")]
 offset_left = -96.0
 offset_top = 4.0
 offset_right = 96.0
 offset_bottom = 68.0
 theme_override_constants/separation = -2
 
-[node name="Button" parent="TopMenu" instance=ExtResource("6_3pj68")]
+[node name="ToolButton" parent="ToolBar" instance=ExtResource("6_3pj68")]
 layout_mode = 2
 
-[node name="Button2" parent="TopMenu" instance=ExtResource("6_3pj68")]
+[node name="ToolButton2" parent="ToolBar" instance=ExtResource("6_3pj68")]
 layout_mode = 2
 
-[node name="Button3" parent="TopMenu" instance=ExtResource("6_3pj68")]
+[node name="ToolButton3" parent="ToolBar" instance=ExtResource("6_3pj68")]
 layout_mode = 2
 
-[node name="Toolbar" parent="." instance=ExtResource("8_d84xd")]
+[node name="SkillBar" parent="." instance=ExtResource("8_d84xd")]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -320.0
-offset_top = 65.0
+offset_top = 70.0
 offset_right = 320.0
-offset_bottom = 129.0
+offset_bottom = 134.0
 grow_horizontal = 2
 theme_override_constants/separation = 0
-
-[node name="EndPieceL" type="TextureRect" parent="Toolbar"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-texture = ExtResource("9_coisy")
-expand_mode = 1
-
-[node name="Button" parent="Toolbar" instance=ExtResource("9_ixdrw")]
-layout_mode = 2
-
-[node name="Button2" parent="Toolbar" instance=ExtResource("9_ixdrw")]
-layout_mode = 2
-
-[node name="Button3" parent="Toolbar" instance=ExtResource("9_ixdrw")]
-layout_mode = 2
-
-[node name="Button4" parent="Toolbar" instance=ExtResource("9_ixdrw")]
-layout_mode = 2
-
-[node name="Button5" parent="Toolbar" instance=ExtResource("9_ixdrw")]
-layout_mode = 2
-
-[node name="Button6" parent="Toolbar" instance=ExtResource("9_ixdrw")]
-layout_mode = 2
-
-[node name="Button7" parent="Toolbar" instance=ExtResource("9_ixdrw")]
-layout_mode = 2
-
-[node name="Button8" parent="Toolbar" instance=ExtResource("9_ixdrw")]
-layout_mode = 2
-
-[node name="EndPieceR" type="TextureRect" parent="Toolbar"]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-texture = ExtResource("9_coisy")
-expand_mode = 1
-flip_h = true
+alignment = 1
 
 [node name="CurrencyCounter" parent="." instance=ExtResource("8_r2k48")]

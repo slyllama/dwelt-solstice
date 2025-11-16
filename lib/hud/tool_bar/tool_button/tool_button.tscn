@@ -1,33 +1,34 @@
-[gd_scene load_steps=6 format=3 uid="uid://d1f1tqtmndgdf"]
+[gd_scene load_steps=7 format=3 uid="uid://dobg7k2r74npq"]
 
-[ext_resource type="Texture2D" uid="uid://dsc6xau0vagxg" path="res://lib/hud/toolbar/button/textures/btn_unknown.png" id="1_8cego"]
-[ext_resource type="Texture2D" uid="uid://cayt81hk00hn2" path="res://lib/hud/top_menu/button/textures/nodule.png" id="3_46gmk"]
+[ext_resource type="Texture2D" uid="uid://bc0iutekf51n6" path="res://lib/hud/tool_bar/tool_button/textures/btn_unknown.png" id="1_wk2vi"]
+[ext_resource type="Script" uid="uid://diyl2uf8jt1rb" path="res://lib/hud/tool_bar/tool_button/tool_button.gd" id="2_776np"]
+[ext_resource type="Texture2D" uid="uid://cayt81hk00hn2" path="res://lib/hud/tool_bar/tool_button/textures/nodule.png" id="3_534ea"]
 
 [sub_resource type="Animation" id="Animation_xl2p3"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("NoduleAnchor/Nodule:position")
+tracks/0/path = NodePath("NoduleAnchor/Nodule:self_modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, 5)]
+"values": [Color(1, 1, 1, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("NoduleAnchor/Nodule:self_modulate")
+tracks/1/path = NodePath("NoduleAnchor/Nodule:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 0)]
+"values": [Vector2(0, 5)]
 }
 
 [sub_resource type="Animation" id="Animation_q2bcb"]
@@ -37,26 +38,26 @@ step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("NoduleAnchor/Nodule:position")
+tracks/0/path = NodePath("NoduleAnchor/Nodule:self_modulate")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0, 5), Vector2(0, 0)]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("NoduleAnchor/Nodule:self_modulate")
+tracks/1/path = NodePath("NoduleAnchor/Nodule:position")
 tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+"values": [Vector2(0, 5), Vector2(0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xl2p3"]
@@ -65,14 +66,13 @@ _data = {
 &"hover": SubResource("Animation_q2bcb")
 }
 
-[node name="Button" type="TextureButton"]
+[node name="ToolButton" type="TextureButton"]
 custom_minimum_size = Vector2(64, 64)
-offset_right = 64.0
-offset_bottom = 64.0
 size_flags_horizontal = 4
-texture_normal = ExtResource("1_8cego")
+texture_normal = ExtResource("1_wk2vi")
 ignore_texture_size = true
 stretch_mode = 5
+script = ExtResource("2_776np")
 
 [node name="NoduleAnchor" type="Control" parent="."]
 layout_mode = 1
@@ -88,9 +88,10 @@ grow_vertical = 0
 
 [node name="Nodule" type="Sprite2D" parent="NoduleAnchor"]
 self_modulate = Color(1, 1, 1, 0)
+z_index = 1
 position = Vector2(0, 5)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("3_46gmk")
+texture = ExtResource("3_534ea")
 
 [node name="Anim" type="AnimationPlayer" parent="."]
 libraries = {

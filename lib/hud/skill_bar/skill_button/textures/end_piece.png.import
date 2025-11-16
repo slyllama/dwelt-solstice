@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cayt81hk00hn2"
-path="res://.godot/imported/nodule.png-cc114aba01275778b3a6e598ae91bacd.ctex"
+uid="uid://bosxqp3gnj6p0"
+path="res://.godot/imported/end_piece.png-6f602b320b2e2772c2b539398f0397c7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://lib/hud/top_menu/button/textures/nodule.png"
-dest_files=["res://.godot/imported/nodule.png-cc114aba01275778b3a6e598ae91bacd.ctex"]
+source_file="res://lib/hud/skill_bar/skill_button/textures/end_piece.png"
+dest_files=["res://.godot/imported/end_piece.png-6f602b320b2e2772c2b539398f0397c7.ctex"]
 
 [params]
 
