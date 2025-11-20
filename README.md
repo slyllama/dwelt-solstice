@@ -3,9 +3,9 @@
 
 **Cleanse and rebuild at the end of the world in _Dwelt: Iron Solstice_, a cleaning and decorating game set amongst a band of robots preparing an overgrown earth for the eventual return of humanity.**
  
-##Premise and Precedents
+## Premise and Precedents
 
-Dwelt is largely built on the foundations of _Jade Spring_, but aims to provide more polished and diverse gameplay, as well as being an original piece of art which builds on previous game attempts like Scruffy, Dwelt (the old version), and Soul-Scrap. As a player you are put into a world which has been torn apart by some calamity – perhaps a vicious, short-lived, magically-driven world war – and which now rests as innumerable fractured islands.
+Dwelt is largely built on the foundations of _Jade Spring_, but aims to provide more polished and diverse gameplay, as well as being an original piece of art which builds on previous game attempts like Scruffy, Dwelt (the old version), and Soul-Scrap. As a player you are put into a world which has been torn apart by some calamity - perhaps a vicious, short-lived, magically-driven world war - and which now rests as innumerable fractured islands.
 
 You are a small brass robot ("Armature"), one of many who were left behind by humanity when they fled the broken planet. You (and those around you) woke from an EMP-induced stasis to find the scars of devastation overgrown with greenery and flora, stretching over molten crevasses and crushed steel girders like scabs patching and healing the land. The Armatures, advanced as they all are, can keenly feel their own grief at the flight of their human overseers and kin both. Yet there is more: the pain and anguish of the earth itself, radiating from its counterparts, as it seeks to comprehend and remedy its loss.
 
