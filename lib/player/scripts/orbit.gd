@@ -6,6 +6,8 @@ extends Marker3D
 @export var max_zoom = 6.0
 
 @onready var target_zoom = $Camera.position.z
+@onready var target_x_rotation = rotation.x
+@onready var target_y_rotation = rotation.y
 
 func _ready() -> void:
 	Dwelt.camera = $Camera
@@ -15,6 +17,14 @@ func _input(_event: InputEvent) -> void:
 		target_zoom -= zoom_increment
 	if Input.is_action_just_pressed("zoom_out"):
 		target_zoom += zoom_increment
+
+func _process(_delta: float) -> void:
+	target_x_rotation -= $PanHandler.event_relative.y * 0.01
+	target_y_rotation -= $PanHandler.event_relative.x * 0.01
+	rotation.x = lerp_angle(rotation.x,
+		target_x_rotation, Utils.crit_lerp(20.0))
+	rotation.y = lerp_angle(rotation.y,
+		target_y_rotation, Utils.crit_lerp(20.0))
 
 func _physics_process(_delta: float) -> void:
 	# Smooth camera movement

@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://crbctqd55n6f6"]
+[gd_scene load_steps=35 format=3 uid="uid://crbctqd55n6f6"]
 
 [ext_resource type="Script" uid="uid://cro16agkt5mwp" path="res://lib/player/player.gd" id="1_al4t3"]
 [ext_resource type="Script" uid="uid://djkynrad87367" path="res://lib/player/scripts/input_handler.gd" id="1_odf55"]
@@ -12,6 +12,7 @@
 [ext_resource type="Animation" uid="uid://b5rkwbh24208k" path="res://lib/player/meshes/anims/eye.res" id="8_up78s"]
 [ext_resource type="AudioStream" uid="uid://bkxx1ti38653a" path="res://lib/player/sounds/engine_idle.ogg" id="9_5x5nn"]
 [ext_resource type="AudioStream" uid="uid://bieahrad33g0x" path="res://lib/player/sounds/engine_moving.ogg" id="10_ram4p"]
+[ext_resource type="Script" uid="uid://dawjsepg8xsu4" path="res://lib/player/scripts/pan_handler.gd" id="12_r1bse"]
 
 [sub_resource type="Curve" id="Curve_2ocui"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.16071428, 1), 0.0, 0.0, 0, 0, Vector2(0.48214287, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -187,6 +188,9 @@ fov = 78.0
 
 [node name="Listener" type="AudioListener3D" parent="Orbit/Camera"]
 current = true
+
+[node name="PanHandler" type="Node" parent="Orbit"]
+script = ExtResource("12_r1bse")
 
 [node name="InputHandler" type="Node" parent="."]
 unique_name_in_owner = true

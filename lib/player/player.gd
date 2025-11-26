@@ -44,10 +44,12 @@ func _physics_process(_delta: float) -> void:
 	
 	# Get rotation from input direction and apply it to player mesh
 	if %InputHandler.direction.length() > 0:
-		var _x = %InputHandler.direction.x
-		var _z = %InputHandler.direction.z
-		var _a = atan2(_z, _x) + PI / 2.0 + $Orbit.rotation.y
-		_target_y_rotation = _a
+		_target_y_rotation = $Orbit.rotation.y + PI
+		
+		#var _x = %InputHandler.direction.x
+		#var _z = %InputHandler.direction.z
+		#var _a = atan2(_z, _x) + PI / 2.0 + $Orbit.rotation.y
+		#_target_y_rotation = _a
 	$RobotMesh.rotation.y = lerp_angle($RobotMesh.rotation.y,
 		_target_y_rotation, Utils.crit_plerp(7.0))
 	
