@@ -7,7 +7,7 @@ extends VisibleOnScreenNotifier3D
 		$BG/Root/Label.text = _val
 
 func _process(_delta: float) -> void:
-	var _pos:Vector2 = Dwelt.r_camera.unproject_position(global_position)
+	var _pos:Vector2 = Dwelt.camera.unproject_position(global_position)
 	$BG/Root.position = _pos
 
 func _on_screen_entered() -> void: if !visible: visible = true

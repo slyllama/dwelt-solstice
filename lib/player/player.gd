@@ -11,7 +11,7 @@ signal move_started
 signal move_stopped
 
 func _ready() -> void:
-	Dwelt.r_player = self
+	Dwelt.player = self
 	
 	$RobotMesh/EngineIdle.play()
 	move_started.connect(func():
@@ -22,9 +22,6 @@ func _ready() -> void:
 		$RobotMesh/EngineIdle.play())
 
 func _physics_process(_delta: float) -> void:
-	# Couple player name to the mesh root bone
-	$Name.global_position = $RobotMesh/Armature/Skeleton3D/Body_2/Body.global_position + Vector3(0, 0.35, 0)
-	
 	_target_velocity = Vector3.ZERO
 	var _camera_basis = $Orbit.global_transform.basis
 	
