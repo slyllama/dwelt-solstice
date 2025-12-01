@@ -5,6 +5,7 @@ uniform vec3 modulate: source_color = vec3(1.0);
 uniform sampler2D foliage_texture: source_color, filter_linear_mipmap, repeat_enable;
 uniform sampler2D foliage_normal_texture: hint_normal, filter_linear_mipmap;
 uniform float alpha_scissor_threshold: hint_range(0.0, 1.0) = 0.95;
+uniform float normal_map_depth: hint_range(0.0, 1.0) = 1.0;
 
 float get_wind(vec2 vertex, vec2 uv){
 	float min_strength = 0.05;

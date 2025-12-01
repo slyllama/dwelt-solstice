@@ -14,35 +14,6 @@
 [ext_resource type="AudioStream" uid="uid://bieahrad33g0x" path="res://lib/player/sounds/engine_moving.ogg" id="10_ram4p"]
 [ext_resource type="Script" uid="uid://dawjsepg8xsu4" path="res://lib/player/scripts/pan_handler.gd" id="12_r1bse"]
 
-[sub_resource type="Curve" id="Curve_2ocui"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.16071428, 1), 0.0, 0.0, 0, 0, Vector2(0.48214287, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
-point_count = 4
-
-[sub_resource type="CurveTexture" id="CurveTexture_5lbbh"]
-curve = SubResource("Curve_2ocui")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_2ocui"]
-emission_shape = 3
-emission_box_extents = Vector3(4, 0.1, 4)
-gravity = Vector3(0, 1, 0)
-scale_min = 0.5
-alpha_curve = SubResource("CurveTexture_5lbbh")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5lbbh"]
-transparency = 1
-shading_mode = 0
-vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("2_2ocui")
-billboard_mode = 3
-billboard_keep_scale = true
-particles_anim_h_frames = 1
-particles_anim_v_frames = 1
-particles_anim_loop = false
-
-[sub_resource type="QuadMesh" id="QuadMesh_0y160"]
-material = SubResource("StandardMaterial3D_5lbbh")
-size = Vector2(0.04, 0.04)
-
 [sub_resource type="SphereShape3D" id="SphereShape3D_iochv"]
 radius = 0.2
 
@@ -120,18 +91,37 @@ node_connections = [&"output", 0, &"blend_forward", &"blend_forward", 0, &"idle_
 dof_blur_far_distance = 9.0
 dof_blur_amount = 0.01
 
+[sub_resource type="Curve" id="Curve_2ocui"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.16071428, 1), 0.0, 0.0, 0, 0, Vector2(0.48214287, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_5lbbh"]
+curve = SubResource("Curve_2ocui")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_2ocui"]
+emission_shape = 3
+emission_box_extents = Vector3(4, 2.5, 4)
+gravity = Vector3(0, 1, 0)
+scale_min = 0.5
+alpha_curve = SubResource("CurveTexture_5lbbh")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5lbbh"]
+transparency = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("2_2ocui")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_0y160"]
+material = SubResource("StandardMaterial3D_5lbbh")
+size = Vector2(0.04, 0.04)
+
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_al4t3")
-
-[node name="Motes" type="GPUParticles3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0.2, 0)
-cast_shadow = 0
-amount = 96
-preprocess = 5.0
-speed_scale = 0.18
-randomness = 0.25
-process_material = SubResource("ParticleProcessMaterial_2ocui")
-draw_pass_1 = SubResource("QuadMesh_0y160")
 
 [node name="Collision" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.16, 0)
@@ -186,6 +176,16 @@ v_offset = 0.5
 current = true
 fov = 78.0
 
+[node name="Motes" type="GPUParticles3D" parent="Orbit/Camera"]
+transform = Transform3D(0.8660255, 7.45058e-09, -0.49999997, -0.12940954, 0.96592575, -0.22414388, 0.48296294, 0.258819, 0.83651626, -2.3692846e-07, 0.1931852, -2.5482357)
+cast_shadow = 0
+amount = 96
+preprocess = 5.0
+speed_scale = 0.18
+randomness = 0.25
+process_material = SubResource("ParticleProcessMaterial_2ocui")
+draw_pass_1 = SubResource("QuadMesh_0y160")
+
 [node name="Listener" type="AudioListener3D" parent="Orbit/Camera"]
 current = true
 
@@ -197,4 +197,4 @@ unique_name_in_owner = true
 script = ExtResource("1_odf55")
 
 [node name="YCast" type="RayCast3D" parent="."]
-target_position = Vector3(0, -1.5, 0)
+target_position = Vector3(0, -1.75, 0)

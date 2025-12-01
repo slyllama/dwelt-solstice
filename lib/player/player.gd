@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-@export var speed := 4.0
+@export var speed := 3.0
 @export var friction := 15.0
 @export var gravity_damping := 10.0
 var _target_velocity := Vector3.ZERO
@@ -36,6 +36,7 @@ func _physics_process(_delta: float) -> void:
 	var _y_diff = $YCast.global_position.y - $YCast.get_collision_point().y
 	var _y_target = abs($YCast.target_position.y)
 	if !$YCast.is_colliding(): # apply gravity even if beyond raycast height
+		print("colliding")
 		_y_diff = _y_target
 	velocity.y += Dwelt.GRAVITY / gravity_damping
 	if _y_diff < _y_target: velocity.y += _y_target - _y_diff

@@ -1,0 +1,33 @@
+[gd_resource type="ShaderMaterial" load_steps=8 format=3 uid="uid://d1t5silr305ox"]
+
+[ext_resource type="Shader" uid="uid://jb2qnpxoqx3h" path="res://shards/playground/props/plateau/materials/shaders/rock.gdshader" id="1_4ao2d"]
+[ext_resource type="Texture2D" uid="uid://p72vyyhn4orp" path="res://shards/playground/materials/grass_base_diff.jpg" id="2_ylpi3"]
+[ext_resource type="Texture2D" uid="uid://din02mvmgyp41" path="res://shards/playground/props/plateau/materials/textures/grass_norm.jpg" id="3_xlj8n"]
+[ext_resource type="Texture2D" uid="uid://dxvby8qfq7xve" path="res://shards/playground/props/plateau/materials/textures/grass_diff.jpg" id="4_vkvgd"]
+
+[sub_resource type="Gradient" id="Gradient_l2d24"]
+colors = PackedColorArray(0, 0.6484474, 1.540184e-06, 1, 0, 1, 0, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_6sth8"]
+noise_type = 2
+frequency = 0.03
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_i2g74"]
+noise = SubResource("FastNoiseLite_6sth8")
+color_ramp = SubResource("Gradient_l2d24")
+seamless = true
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_4ao2d")
+shader_parameter/rock_mask_texture = SubResource("NoiseTexture2D_i2g74")
+shader_parameter/grass_texture = ExtResource("4_vkvgd")
+shader_parameter/grass_normal_texture = ExtResource("3_xlj8n")
+shader_parameter/grass_albedo = Color(1, 1, 1, 1)
+shader_parameter/grass_uv_scale = 12.0
+shader_parameter/grass_normal_map_depth = 0.250000011875
+shader_parameter/rock_albedo = Color(1, 1, 1, 1)
+shader_parameter/rock_uv_scale = 32.0
+shader_parameter/dirt_texture = ExtResource("2_ylpi3")
+shader_parameter/dirt_albedo = Color(0.6706898, 0.6706893, 0.67068964, 1)
+shader_parameter/dirt_uv_scale = 24.0

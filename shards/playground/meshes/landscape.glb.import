@@ -3,21 +3,21 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dwa8m5haxd2tk"
-path="res://.godot/imported/plateau.glb-a717c61bb49304127bbaf30d8047979e.scn"
+uid="uid://bo2fvhofeg0bs"
+path="res://.godot/imported/landscape.glb-8a53df52a4cc6428a1e00723cc51fd42.scn"
 
 [deps]
 
-source_file="res://shards/playground/props/plateau/meshes/plateau.glb"
-dest_files=["res://.godot/imported/plateau.glb-a717c61bb49304127bbaf30d8047979e.scn"]
+source_file="res://shards/playground/meshes/landscape.glb"
+dest_files=["res://.godot/imported/landscape.glb-8a53df52a4cc6428a1e00723cc51fd42.scn"]
 
 [params]
 
 nodes/root_type=""
-nodes/root_name="Plateau"
+nodes/root_name=""
 nodes/root_script=null
 nodes/apply_root_scale=true
-nodes/root_scale=1.25
+nodes/root_scale=1.0
 nodes/import_as_skeleton_bones=false
 nodes/use_name_suffixes=true
 nodes/use_node_type_suffixes=true
@@ -39,15 +39,15 @@ materials/extract_format=0
 materials/extract_path=""
 _subresources={
 "materials": {
-"plateau": {
+"terrain": {
 "use_external/enabled": true,
-"use_external/fallback_path": "res://shards/playground/props/plateau/materials/mat_plateau.tres",
-"use_external/path": "uid://c78dvaxleh852"
+"use_external/fallback_path": "res://shards/playground/materials/landscape.tres",
+"use_external/path": "uid://d1t5silr305ox"
 }
 },
 "nodes": {
-"PATH:Plateau": {
-"mesh_instance/layers": 3
+"PATH:Terrain": {
+"mesh_instance/cast_shadow": 0
 }
 }
 }

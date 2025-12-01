@@ -6,6 +6,7 @@ uniform sampler2D grass_texture: source_color, filter_linear_mipmap, repeat_enab
 uniform sampler2D grass_normal_texture: hint_normal, filter_linear_mipmap, repeat_enable;
 uniform vec3 grass_albedo: source_color = vec3(1.0);
 uniform float grass_uv_scale = 7.0;
+uniform float grass_normal_map_depth: hint_range(0.0, 1.0) = 1.0;
 
 uniform sampler2D rock_texture: source_color, filter_linear_mipmap, repeat_enable;
 uniform sampler2D rock_normal_texture: hint_normal, filter_linear_mipmap, repeat_enable;
@@ -28,6 +29,6 @@ void fragment() {
 	ALBEDO = mix(ALBEDO, _d * dirt_albedo, _m.g);
 	
 	NORMAL_MAP = mix(_gn, _rn, _m.r);
-	NORMAL_MAP_DEPTH = 1.0;
-	SPECULAR = 0.25;
+	NORMAL_MAP_DEPTH = grass_normal_map_depth;
+	SPECULAR = 0.0;
 }
