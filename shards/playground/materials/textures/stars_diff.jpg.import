@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://din02mvmgyp41"
-path.s3tc="res://.godot/imported/grass_norm.jpg-fbe8a183ce054ae8d8ce5a8895b0e6ad.s3tc.ctex"
+uid="uid://cly2gywk3s8kg"
+path.s3tc="res://.godot/imported/stars_diff.jpg-dadc746bc644a26423e3d04e98e84661.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://shards/playground/props/plateau/materials/textures/grass_norm.jpg"
-dest_files=["res://.godot/imported/grass_norm.jpg-fbe8a183ce054ae8d8ce5a8895b0e6ad.s3tc.ctex"]
+source_file="res://shards/playground/materials/textures/stars_diff.jpg"
+dest_files=["res://.godot/imported/stars_diff.jpg-dadc746bc644a26423e3d04e98e84661.s3tc.ctex"]
 
 [params]
 
@@ -22,12 +22,12 @@ compress/lossy_quality=0.7
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
-compress/normal_map=1
+compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
-roughness/mode=1
-roughness/src_normal="res://maps/playground/blocking/grass_norm.jpg"
+roughness/mode=0
+roughness/src_normal=""
 process/channel_remap/red=0
 process/channel_remap/green=1
 process/channel_remap/blue=2

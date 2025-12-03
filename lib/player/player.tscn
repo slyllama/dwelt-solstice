@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://crbctqd55n6f6"]
+[gd_scene load_steps=36 format=3 uid="uid://crbctqd55n6f6"]
 
 [ext_resource type="Script" uid="uid://cro16agkt5mwp" path="res://lib/player/player.gd" id="1_al4t3"]
 [ext_resource type="Script" uid="uid://djkynrad87367" path="res://lib/player/scripts/input_handler.gd" id="1_odf55"]
@@ -9,6 +9,7 @@
 [ext_resource type="Animation" uid="uid://cqpsbwgy2uxcd" path="res://lib/player/meshes/anims/idle.res" id="5_dyt5v"]
 [ext_resource type="ArrayMesh" uid="uid://bbnipptkru66r" path="res://lib/player/meshes/star.res" id="5_jyhpi"]
 [ext_resource type="Animation" uid="uid://dft5l21562sq" path="res://lib/player/meshes/anims/move_forward.res" id="6_jyhpi"]
+[ext_resource type="Animation" uid="uid://8jfr2ngt6hw" path="res://lib/player/meshes/anims/strafe.res" id="8_g61qk"]
 [ext_resource type="Animation" uid="uid://b5rkwbh24208k" path="res://lib/player/meshes/anims/eye.res" id="8_up78s"]
 [ext_resource type="AudioStream" uid="uid://bkxx1ti38653a" path="res://lib/player/sounds/engine_idle.ogg" id="9_5x5nn"]
 [ext_resource type="AudioStream" uid="uid://bieahrad33g0x" path="res://lib/player/sounds/engine_moving.ogg" id="10_ram4p"]
@@ -34,7 +35,8 @@ gradient = SubResource("Gradient_jyhpi")
 emission_shape = 2
 emission_sphere_radius = 0.16
 gravity = Vector3(0, 0.2, 0)
-scale_min = 0.5
+scale_min = 0.19999999
+scale_max = 0.59999996
 color_initial_ramp = SubResource("GradientTexture1D_up78s")
 alpha_curve = SubResource("CurveTexture_5x5nn")
 
@@ -42,16 +44,21 @@ alpha_curve = SubResource("CurveTexture_5x5nn")
 _data = {
 &"eye": ExtResource("8_up78s"),
 &"idle": ExtResource("5_dyt5v"),
-&"move_forward": ExtResource("6_jyhpi")
+&"move_forward": ExtResource("6_jyhpi"),
+&"strafe": ExtResource("8_g61qk")
 }
 
-[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_dyt5v"]
+[sub_resource type="AnimationNodeAdd2" id="AnimationNodeAdd2_r1bse"]
+
+[sub_resource type="AnimationNodeAdd2" id="AnimationNodeAdd2_jlw2j"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ram4p"]
 animation = &"player/eye"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_up78s"]
-animation = &"player/eye"
+use_custom_timeline = true
+timeline_length = 2.0
+stretch_time_scale = true
+start_offset = 0.0
+loop_mode = 1
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_5x5nn"]
 animation = &"player/idle"
@@ -65,27 +72,33 @@ loop_mode = 1
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_jyhpi"]
 animation = &"player/move_forward"
+use_custom_timeline = true
+timeline_length = 1.0
+stretch_time_scale = true
+start_offset = 0.0
+loop_mode = 1
 
-[sub_resource type="AnimationNodeAdd2" id="AnimationNodeAdd2_ram4p"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ego0t"]
+animation = &"player/strafe"
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_ram4p"]
-graph_offset = Vector2(-612.3404, 15.217041)
-nodes/output/position = Vector2(520, 140)
+graph_offset = Vector2(-623.1362, -23.159943)
+nodes/output/position = Vector2(660, 140)
 nodes/idle/node = SubResource("AnimationNodeAnimation_5x5nn")
 nodes/idle/position = Vector2(-180, 140)
 nodes/move_forward/node = SubResource("AnimationNodeAnimation_jyhpi")
 nodes/move_forward/position = Vector2(-180, 300)
-nodes/blend_forward/node = SubResource("AnimationNodeBlend2_dyt5v")
-nodes/blend_forward/position = Vector2(280, 140)
+nodes/add_forward/node = SubResource("AnimationNodeAdd2_r1bse")
+nodes/add_forward/position = Vector2(240, 140)
 nodes/eye/node = SubResource("AnimationNodeAnimation_ram4p")
 nodes/eye/position = Vector2(-180, -20)
 nodes/idle_mix_eye/node = SubResource("AnimationNodeAdd2_5x5nn")
 nodes/idle_mix_eye/position = Vector2(0, -20)
-nodes/move_forward_mix_eye/node = SubResource("AnimationNodeAdd2_ram4p")
-nodes/move_forward_mix_eye/position = Vector2(20, 300)
-nodes/eye_2/node = SubResource("AnimationNodeAnimation_up78s")
-nodes/eye_2/position = Vector2(-180, 460)
-node_connections = [&"output", 0, &"blend_forward", &"blend_forward", 0, &"idle_mix_eye", &"blend_forward", 1, &"move_forward_mix_eye", &"idle_mix_eye", 0, &"eye", &"idle_mix_eye", 1, &"idle", &"move_forward_mix_eye", 0, &"move_forward", &"move_forward_mix_eye", 1, &"eye_2"]
+nodes/add_strafe/node = SubResource("AnimationNodeAdd2_jlw2j")
+nodes/add_strafe/position = Vector2(400, 140)
+nodes/strafe/node = SubResource("AnimationNodeAnimation_ego0t")
+nodes/strafe/position = Vector2(240, -40)
+node_connections = [&"output", 0, &"add_strafe", &"add_forward", 0, &"idle_mix_eye", &"add_forward", 1, &"move_forward", &"idle_mix_eye", 0, &"eye", &"idle_mix_eye", 1, &"idle", &"add_strafe", 0, &"add_forward", &"add_strafe", 1, &"strafe"]
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_2ocui"]
 dof_blur_far_distance = 9.0
@@ -138,7 +151,7 @@ look_target = NodePath("../LookTarget")
 [node name="Stars" type="GPUParticles3D" parent="RobotMesh"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.17061618, -0.39669335)
 cast_shadow = 0
-amount = 16
+amount = 32
 amount_ratio = 0.25
 process_material = SubResource("ParticleProcessMaterial_ram4p")
 draw_pass_1 = ExtResource("5_jyhpi")
@@ -152,9 +165,9 @@ libraries = {
 &"player": SubResource("AnimationLibrary_up78s")
 }
 tree_root = SubResource("AnimationNodeBlendTree_ram4p")
-parameters/blend_forward/blend_amount = 0.0
+parameters/add_forward/add_amount = 0.0
 parameters/idle_mix_eye/add_amount = 1.0
-parameters/move_forward_mix_eye/add_amount = 1.0
+parameters/add_strafe/add_amount = 0.0
 
 [node name="EngineIdle" type="AudioStreamPlayer3D" parent="RobotMesh"]
 stream = ExtResource("9_5x5nn")
@@ -165,8 +178,7 @@ stream = ExtResource("10_ram4p")
 unit_size = 4.0
 
 [node name="Orbit" type="Marker3D" parent="."]
-transform = Transform3D(0.8660253, -0.1294095, 0.48296285, 0, 0.9659257, 0.258819, -0.49999997, -0.22414383, 0.83651614, 0, 0, 0)
-top_level = true
+transform = Transform3D(-0.99999994, 2.2626676e-08, -8.4443904e-08, 0, 0.96592563, 0.25881898, 8.742277e-08, 0.25881898, -0.96592563, 0, 0, 0)
 script = ExtResource("5_4ok3w")
 
 [node name="Camera" type="Camera3D" parent="Orbit"]
@@ -197,4 +209,4 @@ unique_name_in_owner = true
 script = ExtResource("1_odf55")
 
 [node name="YCast" type="RayCast3D" parent="."]
-target_position = Vector3(0, -1.75, 0)
+target_position = Vector3(0, -1.45, 0)
