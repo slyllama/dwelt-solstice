@@ -29,6 +29,7 @@ size = Vector2(40, 40)
 [node name="Floor" type="StaticBody3D" parent="."]
 
 [node name="DebugFloor" type="MeshInstance3D" parent="Floor"]
+layers = 5
 mesh = SubResource("PlaneMesh_vt6hs")
 
 [node name="Collision" type="CollisionShape3D" parent="Floor"]

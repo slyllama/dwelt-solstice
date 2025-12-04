@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://istq4exbymwq"]
+[gd_scene load_steps=6 format=3 uid="uid://istq4exbymwq"]
 
 [ext_resource type="FontFile" uid="uid://c7qpj4jbth6pg" path="res://generic/fonts/ibm_plex_mono.otf" id="1_dcyf8"]
 [ext_resource type="Script" uid="uid://davrehdjbld01" path="res://lib/hud/scripts/render_monitor.gd" id="1_o36f6"]
 [ext_resource type="PackedScene" uid="uid://dvwqtf0altti1" path="res://lib/hud/screen_fx/screen_fx.tscn" id="1_u1rn0"]
 [ext_resource type="PackedScene" uid="uid://b63hobdhwi8kc" path="res://lib/ui/pane/pane.tscn" id="4_pm6i7"]
+[ext_resource type="PackedScene" uid="uid://dd7rl0r1enohp" path="res://lib/ui/inventory/inventory.tscn" id="5_4etgo"]
 
 [node name="HUD" type="CanvasLayer"]
 metadata/_edit_horizontal_guides_ = [4.0, 68.0]
@@ -39,3 +40,5 @@ offset_top = 16.0
 offset_right = 216.0
 offset_bottom = 216.0
 title_text = "Interesting"
+
+[node name="Inventory" parent="." instance=ExtResource("5_4etgo")]

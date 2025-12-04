@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://dd7rl0r1enohp"]
+
+[ext_resource type="Script" uid="uid://c87yk5q154wrg" path="res://lib/ui/inventory/inventory.gd" id="1_aodfm"]
+[ext_resource type="Script" uid="uid://db8hibthbxwdi" path="res://lib/ui/inventory/tile/tile.gd" id="2_u5e3f"]
+
+[node name="Inventory" type="PanelContainer"]
+script = ExtResource("1_aodfm")
+
+[node name="VBox" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="CursorTile" type="TextureRect" parent="."]
+unique_name_in_owner = true
+visible = false
+top_level = true
+layout_mode = 2
+mouse_filter = 2
+mouse_behavior_recursive = 1
+script = ExtResource("2_u5e3f")
+metadata/_custom_type_script = "uid://db8hibthbxwdi"
