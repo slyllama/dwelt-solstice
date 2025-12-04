@@ -3,7 +3,7 @@ extends Marker3D
 @export var zoom_increment = 0.35
 @export var zoom_smoothness = 6.0
 @export var min_zoom = 1.2
-@export var max_zoom = 3.0
+@export var max_zoom = 4.0
 
 @onready var target_zoom = $Camera.position.z
 @onready var target_x_rotation = rotation.x

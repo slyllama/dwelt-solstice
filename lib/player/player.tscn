@@ -186,7 +186,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.6)
 attributes = SubResource("CameraAttributesPractical_2ocui")
 v_offset = 0.5
 current = true
-fov = 78.0
+fov = 85.0
 
 [node name="Motes" type="GPUParticles3D" parent="Orbit/Camera"]
 transform = Transform3D(0.8660255, 7.45058e-09, -0.49999997, -0.12940954, 0.96592575, -0.22414388, 0.48296294, 0.258819, 0.83651626, -2.3692846e-07, 0.1931852, -2.5482357)

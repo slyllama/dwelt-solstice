@@ -5,4 +5,5 @@
 [node name="FoliageSpawner" type="MultiMeshInstance3D"]
 layers = 2
 cast_shadow = 0
+visibility_range_end = 15.0
 script = ExtResource("1_k6dj7")
