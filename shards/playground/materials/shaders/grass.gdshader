@@ -43,7 +43,7 @@ void fragment() {
 	// Flowers
 	vec3 _f = texture(flowers_texture, UV * flowers_uv_scale).rgb;
 	_f *= flowers_albedo;
-	ALBEDO = mix(ALBEDO, _f, _lm.g * 0.25);
+	ALBEDO = mix(ALBEDO, _f, _lm.g * 0.3);
 
 	// Post-processing
 	ALBEDO *= (1.0 + _lm.b);

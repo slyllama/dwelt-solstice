@@ -12,6 +12,8 @@ extends Marker3D
 func _ready() -> void:
 	Dwelt.camera = $Camera
 	top_level = true
+	
+	$Camera.top_level = true
 
 func _input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("zoom_in"):
@@ -35,5 +37,10 @@ func _physics_process(_delta: float) -> void:
 	
 	# Handle camera zoom
 	target_zoom = clamp(target_zoom, min_zoom, max_zoom)
-	$Camera.position.z = lerp($Camera.position.z,
+	#$Camera.position.z = lerp($Camera.position.z,
+		#target_zoom, Utils.crit_plerp(zoom_smoothness))
+	$SpringArm.spring_length = lerp($SpringArm.spring_length,
 		target_zoom, Utils.crit_plerp(zoom_smoothness))
+	
+	$Camera.global_position = $SpringArm/CameraAnchor.global_position
+	$Camera.global_rotation = $SpringArm/CameraAnchor.global_rotation
