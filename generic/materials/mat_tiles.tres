@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://bxv8vnq41mocc"]
+
+[ext_resource type="Texture2D" uid="uid://l6cie2u2qujs" path="res://generic/materials/textures/tile_diff.jpg" id="1_50o1v"]
+[ext_resource type="Texture2D" uid="uid://cx5bkwfxdh0td" path="res://generic/materials/textures/tile_norm.jpg" id="2_xp8a8"]
+
+[resource]
+albedo_color = Color(0.75, 0.75, 0.75, 1)
+albedo_texture = ExtResource("1_50o1v")
+metallic_specular = 0.0
+normal_enabled = true
+normal_texture = ExtResource("2_xp8a8")
+uv1_scale = Vector3(96, 96, 96)

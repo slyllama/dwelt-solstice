@@ -6,6 +6,7 @@ uniform sampler2D foliage_texture: source_color, filter_linear_mipmap, repeat_en
 uniform sampler2D foliage_normal_texture: hint_normal, filter_linear_mipmap;
 uniform float alpha_scissor_threshold: hint_range(0.0, 1.0) = 0.95;
 uniform float normal_map_depth: hint_range(0.0, 1.0) = 1.0;
+uniform float fade_length: hint_range(1.0, 100.0) = 10.0;
 
 float get_wind(vec2 vertex, vec2 uv){
 	float min_strength = 0.05;
@@ -39,6 +40,10 @@ void fragment() {
 	const vec3 magic = vec3(0.06711056, 0.00583715, 52.9829189);
 	float fade = clamp(smoothstep(1.0, 1.5, fade_distance), 0.0, 1.0);
 	if (fade < 0.001 || fade < fract(magic.z * fract(dot(FRAGCOORD.xy, magic.xy)))) {
+		discard;
+	}
+	float dist_fade = clamp(smoothstep(fade_length, fade_length - 1.0, fade_distance), 0.0, 1.0);
+	if (dist_fade < 0.001 || dist_fade < fract(magic.z * fract(dot(FRAGCOORD.xy, magic.xy)))) {
 		discard;
 	}
 }

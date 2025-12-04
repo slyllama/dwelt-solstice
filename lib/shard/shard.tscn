@@ -1,21 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://cave0dvi8i7rh"]
+[gd_scene load_steps=7 format=3 uid="uid://cave0dvi8i7rh"]
 
 [ext_resource type="PackedScene" uid="uid://istq4exbymwq" path="res://lib/hud/hud.tscn" id="1_c370e"]
-[ext_resource type="Texture2D" uid="uid://l6cie2u2qujs" path="res://generic/materials/textures/tile_diff.jpg" id="2_xunhb"]
-[ext_resource type="Texture2D" uid="uid://cx5bkwfxdh0td" path="res://generic/materials/textures/tile_norm.jpg" id="3_vt6hs"]
+[ext_resource type="Material" uid="uid://bxv8vnq41mocc" path="res://generic/materials/mat_tiles.tres" id="2_3xe27"]
 [ext_resource type="PackedScene" uid="uid://crbctqd55n6f6" path="res://lib/player/player.tscn" id="3_xunhb"]
 [ext_resource type="PackedScene" uid="uid://dnl3en4v6jy6b" path="res://lib/shard/bounds/bounds.tscn" id="5_5i5j7"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xunhb"]
-albedo_color = Color(0.75, 0.75, 0.75, 1)
-albedo_texture = ExtResource("2_xunhb")
-metallic_specular = 0.0
-normal_enabled = true
-normal_texture = ExtResource("3_vt6hs")
-uv1_scale = Vector3(72, 72, 72)
-
 [sub_resource type="PlaneMesh" id="PlaneMesh_vt6hs"]
-material = SubResource("StandardMaterial3D_xunhb")
+material = ExtResource("2_3xe27")
 size = Vector2(40, 40)
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_vt6hs"]

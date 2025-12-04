@@ -47,7 +47,7 @@ func _gui_input(_event: InputEvent) -> void:
 		_drag_threshold_passed = false
 	if Input.is_action_pressed("left_click"):
 		var _d = get_window().get_mouse_position() - _last_click_position # mouse delta
-		if !_drag_threshold_passed:
+		if !_drag_threshold_passed and id != "blank": # a blank tile cannot be moved
 			if _d.length() > DRAG_THRESHOLD:
 				_drag_threshold_passed = true
 				drag_initiated.emit()

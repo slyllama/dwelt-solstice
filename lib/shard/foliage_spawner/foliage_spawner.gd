@@ -12,6 +12,7 @@ var foliage_count = 0
 @export var scatter := 0.2
 @export var min_scale := 3.0
 @export var max_scale := 5.0
+@export var z_scale := 1.0
 @export var smooth := true
 
 @export_category("Shading")
@@ -36,7 +37,7 @@ func render() -> void:
 			var base_pos = Vector3(x * separation, 0, y * separation) - midpoint
 			var grass_scatter = Vector3(randf() * scatter, 0, randf() * scatter)
 			var _ps = min_scale + randf() * (max_scale - min_scale)
-			var grass_scale = Vector3(_ps, _ps, _ps)
+			var grass_scale = Vector3(_ps, _ps * z_scale, _ps)
 			var grass_rotation = randf() * deg_to_rad(360.0)
 			
 			var dist: float = 1
