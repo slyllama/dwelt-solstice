@@ -18,6 +18,10 @@ config/features=PackedStringArray("4.5", "Forward Plus")
 run/max_fps=60
 config/icon="uid://dvswqaghjmks6"
 
+[audio]
+
+buses/default_bus_layout="res://abus.tres"
+
 [autoload]
 
 Utils="*res://lib/_global/utils.gd"

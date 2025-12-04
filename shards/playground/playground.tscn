@@ -15,7 +15,8 @@ sky_material = ExtResource("2_tahua")
 [sub_resource type="Environment" id="Environment_fiv0q"]
 background_mode = 2
 sky = SubResource("Sky_rfd7c")
-ambient_light_source = 3
+ambient_light_source = 2
+ambient_light_color = Color(0.20041844, 0.27167064, 0.34174857, 1)
 tonemap_mode = 2
 tonemap_exposure = 1.25
 glow_enabled = true
