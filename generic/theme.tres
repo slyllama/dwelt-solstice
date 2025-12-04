@@ -1,6 +1,44 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://bi1monawihtf2"]
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://bi1monawihtf2"]
 
 [ext_resource type="FontFile" uid="uid://knusa64ltvaf" path="res://generic/fonts/crimson_text.ttf" id="1_37o18"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_37o18"]
+content_margin_left = 12.0
+content_margin_top = 2.0
+content_margin_right = 12.0
+content_margin_bottom = 2.0
+bg_color = Color(0.1, 0.1, 0.1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1c0d7"]
+content_margin_left = 12.0
+content_margin_top = 2.0
+content_margin_right = 12.0
+content_margin_bottom = 2.0
+bg_color = Color(0.3, 0.3, 0.3, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.5, 0.5, 0.5, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fp0go"]
+content_margin_left = 12.0
+content_margin_top = 2.0
+content_margin_right = 12.0
+content_margin_bottom = 2.0
+bg_color = Color(0.1, 0.1, 0.1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.5, 0.5, 0.5, 1)
+
 [resource]
+Button/styles/focus = SubResource("StyleBoxFlat_37o18")
+Button/styles/hover = SubResource("StyleBoxFlat_1c0d7")
+Button/styles/normal = SubResource("StyleBoxFlat_fp0go")
 Label/fonts/font = ExtResource("1_37o18")
