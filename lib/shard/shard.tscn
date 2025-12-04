@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://cave0dvi8i7rh"]
+[gd_scene load_steps=8 format=3 uid="uid://cave0dvi8i7rh"]
 
+[ext_resource type="Script" uid="uid://bp3rck4ew5qnc" path="res://lib/shard/shard.gd" id="1_5i5j7"]
 [ext_resource type="PackedScene" uid="uid://istq4exbymwq" path="res://lib/hud/hud.tscn" id="1_c370e"]
 [ext_resource type="Material" uid="uid://bxv8vnq41mocc" path="res://generic/materials/mat_tiles.tres" id="2_3xe27"]
 [ext_resource type="PackedScene" uid="uid://crbctqd55n6f6" path="res://lib/player/player.tscn" id="3_xunhb"]
@@ -12,6 +13,7 @@ size = Vector2(40, 40)
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_vt6hs"]
 
 [node name="Map" type="Node3D"]
+script = ExtResource("1_5i5j7")
 
 [node name="Sky" type="WorldEnvironment" parent="."]
 

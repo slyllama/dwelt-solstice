@@ -26,6 +26,7 @@ buses/default_bus_layout="res://abus.tres"
 
 Utils="*res://lib/_global/utils.gd"
 Dwelt="*res://lib/_global/dwelt/dwelt.tscn"
+Save="*res://lib/_global/save_handler.gd"
 
 [display]
 

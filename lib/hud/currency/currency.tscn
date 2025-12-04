@@ -32,24 +32,28 @@ color = Color(0, 0, 0, 0)
 
 [node name="Kinetic" parent="Container" instance=ExtResource("2_i1w2x")]
 layout_mode = 2
+id = "kinetic"
 icon = ExtResource("3_37bnb")
 value = 4
 tint = Color(0.92, 0.59661996, 0.5796, 1)
 
 [node name="Elemental" parent="Container" instance=ExtResource("2_i1w2x")]
 layout_mode = 2
+id = "elemental"
 icon = ExtResource("3_v376e")
 value = 1
 tint = Color(1, 0.8426667, 0.41000003, 1)
 
 [node name="Verdant" parent="Container" instance=ExtResource("2_i1w2x")]
 layout_mode = 2
+id = "verdant"
 icon = ExtResource("4_n8g7h")
 value = 20
 tint = Color(0.67407995, 0.88, 0.5632, 1)
 
 [node name="Arcane" parent="Container" instance=ExtResource("2_i1w2x")]
 layout_mode = 2
+id = "arcane"
 icon = ExtResource("5_m35sh")
 value = 5
 tint = Color(0.7023334, 0.53, 1, 1)
