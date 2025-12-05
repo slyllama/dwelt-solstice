@@ -3,18 +3,18 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dfqc760v1ljpr"
-path="res://.godot/imported/landscape.glb-8a53df52a4cc6428a1e00723cc51fd42.scn"
+uid="uid://657k3p1186vw"
+path="res://.godot/imported/scaffolding.glb-c5b935e80e80d918c98e2abd9bf3f84a.scn"
 
 [deps]
 
-source_file="res://shards/playground/meshes/landscape.glb"
-dest_files=["res://.godot/imported/landscape.glb-8a53df52a4cc6428a1e00723cc51fd42.scn"]
+source_file="res://shards/playground/meshes/scaffolding.glb"
+dest_files=["res://.godot/imported/scaffolding.glb-c5b935e80e80d918c98e2abd9bf3f84a.scn"]
 
 [params]
 
 nodes/root_type=""
-nodes/root_name=""
+nodes/root_name="Scaffolding"
 nodes/root_script=null
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
@@ -37,24 +37,6 @@ import_script/path=""
 materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
-_subresources={
-"materials": {
-"floor": {
-"use_external/enabled": true,
-"use_external/fallback_path": "res://shards/playground/materials/mat_grass.tres",
-"use_external/path": "uid://d3qjlfqasb1kc"
-},
-"hills": {
-"use_external/enabled": true,
-"use_external/fallback_path": "res://shards/playground/materials/mat_hills.tres",
-"use_external/path": "uid://dk0eo70riwjty"
-}
-},
-"nodes": {
-"PATH:Terrain": {
-"mesh_instance/cast_shadow": 0
-}
-}
-}
+_subresources={}
 gltf/naming_version=2
 gltf/embedded_image_handling=1

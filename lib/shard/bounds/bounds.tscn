@@ -1,9 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://dnl3en4v6jy6b"]
+[gd_scene load_steps=5 format=3 uid="uid://dnl3en4v6jy6b"]
 
 [ext_resource type="Script" uid="uid://duv43a3hqfw02" path="res://lib/shard/bounds/bounds.gd" id="1_uwiis"]
+[ext_resource type="Material" uid="uid://bogdhph00sfej" path="res://lib/shard/bounds/visual_bounds/materials/mat_visual_bounds.tres" id="2_y4sc5"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_nvp6p"]
 plane = Plane(1, 0, 0, 0)
+
+[sub_resource type="QuadMesh" id="QuadMesh_t5h5j"]
+material = ExtResource("2_y4sc5")
+size = Vector2(8, 8)
+orientation = 0
 
 [node name="Bounds" type="Node3D"]
 script = ExtResource("1_uwiis")
@@ -16,6 +22,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0)
 [node name="Shape" type="CollisionShape3D" parent="B/Boundary"]
 shape = SubResource("WorldBoundaryShape3D_nvp6p")
 
+[node name="VisualBounds" type="MeshInstance3D" parent="B/Boundary"]
+cast_shadow = 0
+mesh = SubResource("QuadMesh_t5h5j")
+
 [node name="B2" type="Marker3D" parent="."]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
 
@@ -24,6 +34,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0)
 
 [node name="Shape" type="CollisionShape3D" parent="B2/Boundary"]
 shape = SubResource("WorldBoundaryShape3D_nvp6p")
+
+[node name="VisualBounds" type="MeshInstance3D" parent="B2/Boundary"]
+cast_shadow = 0
+mesh = SubResource("QuadMesh_t5h5j")
 
 [node name="B3" type="Marker3D" parent="."]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
@@ -34,6 +48,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0)
 [node name="Shape" type="CollisionShape3D" parent="B3/Boundary"]
 shape = SubResource("WorldBoundaryShape3D_nvp6p")
 
+[node name="VisualBounds" type="MeshInstance3D" parent="B3/Boundary"]
+cast_shadow = 0
+mesh = SubResource("QuadMesh_t5h5j")
+
 [node name="B4" type="Marker3D" parent="."]
 transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, 0, 0, 0)
 
@@ -42,3 +60,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0)
 
 [node name="Shape" type="CollisionShape3D" parent="B4/Boundary"]
 shape = SubResource("WorldBoundaryShape3D_nvp6p")
+
+[node name="VisualBounds" type="MeshInstance3D" parent="B4/Boundary"]
+cast_shadow = 0
+mesh = SubResource("QuadMesh_t5h5j")

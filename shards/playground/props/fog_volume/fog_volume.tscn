@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://ryyhp7qf3geq"]
+
+[sub_resource type="Gradient" id="Gradient_vc05c"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_h2j1h"]
+frequency = 0.02
+
+[sub_resource type="NoiseTexture3D" id="NoiseTexture3D_rfd7c"]
+noise = SubResource("FastNoiseLite_h2j1h")
+color_ramp = SubResource("Gradient_vc05c")
+
+[sub_resource type="FogMaterial" id="FogMaterial_n2l7s"]
+density = 0.5
+height_falloff = 0.25
+edge_fade = 0.25
+density_texture = SubResource("NoiseTexture3D_rfd7c")
+
+[node name="FogVolume" type="FogVolume"]
+layers = 2
+size = Vector3(10, 2, 5)
+material = SubResource("FogMaterial_n2l7s")
