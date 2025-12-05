@@ -17,7 +17,7 @@ nodes/root_type=""
 nodes/root_name="TreeTest"
 nodes/root_script=null
 nodes/apply_root_scale=true
-nodes/root_scale=1.0
+nodes/root_scale=0.75
 nodes/import_as_skeleton_bones=false
 nodes/use_name_suffixes=true
 nodes/use_node_type_suffixes=true
@@ -39,6 +39,11 @@ materials/extract_format=0
 materials/extract_path=""
 _subresources={
 "materials": {
+"leaf": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://shards/playground/props/tree_test/materials/mat_leaf.tres",
+"use_external/path": "uid://dfe1hwt8aokw6"
+},
 "mat_trunk": {
 "use_external/enabled": true,
 "use_external/fallback_path": "res://shards/playground/props/tree_test/materials/mat_trunk.tres",

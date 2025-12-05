@@ -8,6 +8,9 @@ const default_data := { # default save data
 		"elemental": "0",
 		"kinetic": "0",
 		"verdant": "0"
+	},
+	"inventory": {
+		"1": { "id": "test_red" }
 	}
 }
 
@@ -20,6 +23,12 @@ func _save_file_exists() -> bool:
 		return(true)
 	else: return(false)
 
+func save_to_file() -> void:
+	var _f = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
+	_f.store_line(JSON.stringify(data, "\t"))
+	_f.close()
+	loaded.emit()
+
 func load_save_file() -> void:
 	if !_save_file_exists(): # create new save
 		Utils.pdebug("No save file exists; creating one.", "Save")
@@ -30,6 +39,9 @@ func load_save_file() -> void:
 	else: # load existing save
 		Utils.pdebug("Save file exists; loading it.", "Save")
 		var _f = FileAccess.open(SAVE_PATH, FileAccess.READ)
-		data = JSON.parse_string(_f.get_as_text())
+		var _j = JSON.parse_string(_f.get_as_text())
+		for _d in data:
+			if _d in _j:
+				data[_d] = _j[_d] # copy the value, but only if its key is in the save file
 		_f.close()
 		loaded.emit()

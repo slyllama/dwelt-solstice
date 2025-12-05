@@ -55,13 +55,20 @@ offset_top = 8.0
 offset_right = 336.0
 offset_bottom = 43.0
 
-[node name="ToggleInventory" type="Button" parent="."]
-custom_minimum_size = Vector2(160, 0)
-offset_left = 9.0
-offset_top = 48.0
-offset_right = 125.0
-offset_bottom = 78.0
+[node name="Debug" type="VBoxContainer" parent="."]
+offset_left = 8.0
+offset_top = 45.0
+offset_right = 168.0
+offset_bottom = 85.0
+
+[node name="ToggleInventory" type="Button" parent="Debug"]
+layout_mode = 2
 focus_mode = 0
 text = "Toggle Inventory"
 
-[connection signal="pressed" from="ToggleInventory" to="." method="_on_toggle_inventory_pressed"]
+[node name="Save" type="Button" parent="Debug"]
+layout_mode = 2
+text = "Save to File"
+
+[connection signal="pressed" from="Debug/ToggleInventory" to="." method="_on_toggle_inventory_pressed"]
+[connection signal="pressed" from="Debug/Save" to="." method="_on_save_pressed"]
