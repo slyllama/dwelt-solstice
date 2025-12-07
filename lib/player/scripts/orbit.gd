@@ -16,7 +16,10 @@ func _ready() -> void:
 	
 	$Camera.top_level = true
 
-func _input(_event: InputEvent) -> void:
+func _input(event: InputEvent) -> void:
+	if event is InputEventPanGesture:
+		target_zoom += event.delta.y
+	
 	if Input.is_action_just_pressed("zoom_in"):
 		target_zoom -= zoom_increment
 	if Input.is_action_just_pressed("zoom_out"):

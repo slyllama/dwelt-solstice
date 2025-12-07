@@ -3,6 +3,13 @@ extends Node
 var _last_click_position := Vector2.ZERO
 var event_relative := Vector2.ZERO
 
+var pan_speed_scaling := 1.0
+
+func _ready() -> void:
+	Dwelt.window_adjusted.connect(func():
+		pan_speed_scaling = (1.0
+			/ get_window().content_scale_factor))
+
 func _input(event: InputEvent) -> void:
 	if Input.mouse_mode == Input.MOUSE_MODE_VISIBLE:
 		if Input.is_action_just_pressed("left_click"):

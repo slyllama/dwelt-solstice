@@ -12,6 +12,7 @@ func _is_retina() -> bool:
 func _ready() -> void:
 	if _is_retina():
 		get_window().content_scale_factor = 2.0
+		Dwelt.window_adjusted.emit()
 	
 	if Engine.is_embedded_in_editor(): return
 	
