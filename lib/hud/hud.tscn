@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://istq4exbymwq"]
+[gd_scene load_steps=10 format=3 uid="uid://istq4exbymwq"]
 
 [ext_resource type="FontFile" uid="uid://c7qpj4jbth6pg" path="res://generic/fonts/ibm_plex_mono.otf" id="1_dcyf8"]
 [ext_resource type="Script" uid="uid://davrehdjbld01" path="res://lib/hud/scripts/render_monitor.gd" id="1_o36f6"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://b63hobdhwi8kc" path="res://lib/ui/pane/pane.tscn" id="4_pm6i7"]
 [ext_resource type="PackedScene" uid="uid://dd7rl0r1enohp" path="res://lib/ui/inventory/inventory.tscn" id="5_4etgo"]
 [ext_resource type="PackedScene" uid="uid://c8oj1ia1ewi5q" path="res://lib/hud/currency/currency.tscn" id="6_3pj68"]
+[ext_resource type="Texture2D" uid="uid://ren8he6qiotw" path="res://lib/hud/textures/inventory.png" id="8_r2k48"]
+[ext_resource type="Texture2D" uid="uid://cetc1nb4j4x8h" path="res://lib/hud/textures/inventory_hover.png" id="9_d84xd"]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_tpybq")
@@ -44,31 +46,38 @@ offset_bottom = 216.0
 title_text = "Interesting"
 
 [node name="Inventory" parent="." instance=ExtResource("5_4etgo")]
-offset_left = 9.0
-offset_top = 84.0
-offset_right = 17.0
-offset_bottom = 92.0
+visible = false
+offset_left = 24.0
+offset_top = 63.0
+offset_right = 32.0
+offset_bottom = 71.0
 
 [node name="Currency" parent="." instance=ExtResource("6_3pj68")]
-offset_left = 8.0
-offset_top = 8.0
-offset_right = 336.0
-offset_bottom = 43.0
+offset_left = 65.0
+offset_top = 6.0
+offset_right = 393.0
+offset_bottom = 41.0
 
 [node name="Debug" type="VBoxContainer" parent="."]
+visible = false
 offset_left = 8.0
 offset_top = 45.0
 offset_right = 168.0
 offset_bottom = 85.0
 
-[node name="ToggleInventory" type="Button" parent="Debug"]
-layout_mode = 2
-focus_mode = 0
-text = "Toggle Inventory"
-
 [node name="Save" type="Button" parent="Debug"]
 layout_mode = 2
 text = "Save to File"
 
-[connection signal="pressed" from="Debug/ToggleInventory" to="." method="_on_toggle_inventory_pressed"]
+[node name="ToggleInventory" type="TextureButton" parent="."]
+custom_minimum_size = Vector2(64, 64)
+offset_left = 2.0
+offset_right = 66.0
+offset_bottom = 64.0
+texture_normal = ExtResource("8_r2k48")
+texture_hover = ExtResource("9_d84xd")
+ignore_texture_size = true
+stretch_mode = 5
+
 [connection signal="pressed" from="Debug/Save" to="." method="_on_save_pressed"]
+[connection signal="pressed" from="ToggleInventory" to="." method="_on_toggle_inventory_pressed"]
