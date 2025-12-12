@@ -12,6 +12,8 @@ func _is_retina() -> bool:
 func _ready() -> void:
 	if _is_retina():
 		get_window().content_scale_factor = 2.0
+		# TODO: don't do this on macOS (it automatically handles cursor scaling)
+		DisplayServer.cursor_set_custom_image(load("res://generic/textures/cursor_2x.png"))
 		Dwelt.window_adjusted.emit()
 	
 	if Engine.is_embedded_in_editor(): return

@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://dd7rl0r1enohp"]
+[gd_scene load_steps=9 format=3 uid="uid://dd7rl0r1enohp"]
 
 [ext_resource type="Script" uid="uid://c87yk5q154wrg" path="res://lib/ui/inventory/inventory.gd" id="1_aodfm"]
 [ext_resource type="Shader" uid="uid://dxxqogqtywt44" path="res://generic/materials/shaders/dissolve.gdshader" id="1_nrkv4"]
 [ext_resource type="Script" uid="uid://db8hibthbxwdi" path="res://lib/ui/inventory/tile/tile.gd" id="2_u5e3f"]
 [ext_resource type="Texture2D" uid="uid://2q8chjn3pu55" path="res://generic/materials/textures/dissolve_diff.jpg" id="2_w16ul"]
-[ext_resource type="Texture2D" uid="uid://dvswqaghjmks6" path="res://icon.png" id="4_07rx8"]
+[ext_resource type="AudioStream" uid="uid://dv6indjo485lp" path="res://lib/ui/inventory/sounds/inventory_open.ogg" id="6_sbscb"]
+[ext_resource type="AudioStream" uid="uid://cc1ebrgavcii8" path="res://lib/ui/inventory/sounds/drag_complete.ogg" id="7_ceqs5"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_w16ul"]
 shader = ExtResource("1_nrkv4")
@@ -29,11 +30,6 @@ use_parent_material = true
 layout_mode = 2
 theme_override_constants/separation = 2
 
-[node name="TextureRect" type="TextureRect" parent="VBox"]
-use_parent_material = true
-layout_mode = 2
-texture = ExtResource("4_07rx8")
-
 [node name="CursorTile" type="TextureRect" parent="."]
 unique_name_in_owner = true
 visible = false
@@ -44,3 +40,9 @@ mouse_behavior_recursive = 1
 script = ExtResource("2_u5e3f")
 lock_hover = true
 metadata/_custom_type_script = "uid://db8hibthbxwdi"
+
+[node name="Open" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_sbscb")
+
+[node name="DragComplete" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_ceqs5")

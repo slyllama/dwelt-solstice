@@ -25,18 +25,24 @@ func _clear_drag_cursor() -> void:
 	%CursorTile.visible = false
 
 func appear() -> void:
+	$Open.play()
+	
 	_set_dissolve(0.0)
 	visible = true
 	var _d = create_tween()
 	_d.tween_method(_set_dissolve, 0.0, 1.0, 0.25)
 
 func disappear() -> void:
+	$Open.play()
+	
 	_set_dissolve(1.0)
 	var _d = create_tween()
 	_d.tween_method(_set_dissolve, 1.0, 0.0, 0.25)
 	_d.tween_callback(func(): visible = false)
 
 func begin_drag(id: String, idx: int) -> void:
+	Dwelt.ui_click.emit()
+	
 	%CursorTile.reset()
 	dragged_tile_id = id
 	dragged_tile_idx = idx
@@ -45,6 +51,8 @@ func begin_drag(id: String, idx: int) -> void:
 	render() # render a tempory inventory with the dragged element removed
 
 func complete_drag(dest_idx: int) -> void:
+	$DragComplete.play()
+	
 	inventory_data[dragged_tile_idx] = {} # allocate entry for source
 	if dest_idx in test_inventory_data: # copy the destination to the source, if there is one...
 		inventory_data[dragged_tile_idx].id = test_inventory_data[dest_idx].id

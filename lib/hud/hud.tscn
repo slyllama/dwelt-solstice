@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://istq4exbymwq"]
+[gd_scene load_steps=11 format=3 uid="uid://istq4exbymwq"]
 
 [ext_resource type="FontFile" uid="uid://c7qpj4jbth6pg" path="res://generic/fonts/ibm_plex_mono.otf" id="1_dcyf8"]
 [ext_resource type="Script" uid="uid://davrehdjbld01" path="res://lib/hud/scripts/render_monitor.gd" id="1_o36f6"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://c8oj1ia1ewi5q" path="res://lib/hud/currency/currency.tscn" id="6_3pj68"]
 [ext_resource type="Texture2D" uid="uid://ren8he6qiotw" path="res://lib/hud/textures/inventory.png" id="8_r2k48"]
 [ext_resource type="Texture2D" uid="uid://cetc1nb4j4x8h" path="res://lib/hud/textures/inventory_hover.png" id="9_d84xd"]
+[ext_resource type="PackedScene" uid="uid://u2i05ele7n62" path="res://lib/hud/screen_fx/eye_anim/eye_anim.tscn" id="10_ixdrw"]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_tpybq")
@@ -59,7 +60,6 @@ offset_right = 393.0
 offset_bottom = 41.0
 
 [node name="Debug" type="VBoxContainer" parent="."]
-visible = false
 offset_left = 8.0
 offset_top = 45.0
 offset_right = 168.0
@@ -67,6 +67,7 @@ offset_bottom = 85.0
 
 [node name="Save" type="Button" parent="Debug"]
 layout_mode = 2
+focus_mode = 0
 text = "Save to File"
 
 [node name="ToggleInventory" type="TextureButton" parent="."]
@@ -78,6 +79,12 @@ texture_normal = ExtResource("8_r2k48")
 texture_hover = ExtResource("9_d84xd")
 ignore_texture_size = true
 stretch_mode = 5
+
+[node name="EyeAnim" parent="." instance=ExtResource("10_ixdrw")]
+unique_name_in_owner = true
+visible = false
+free_after_finish = true
+start_visible = true
 
 [connection signal="pressed" from="Debug/Save" to="." method="_on_save_pressed"]
 [connection signal="pressed" from="ToggleInventory" to="." method="_on_toggle_inventory_pressed"]

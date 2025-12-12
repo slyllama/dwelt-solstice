@@ -1,10 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://c7q6vh0fcgpls"]
+[gd_scene load_steps=4 format=3 uid="uid://c7q6vh0fcgpls"]
 
 [ext_resource type="Script" uid="uid://bobsm6cl6g5fr" path="res://lib/_global/dwelt/dwelt.gd" id="1_16b2d"]
 [ext_resource type="Script" uid="uid://bb8v87dib742j" path="res://lib/_global/dwelt/scripts/window_handler.gd" id="2_10tc7"]
+[ext_resource type="AudioStream" uid="uid://cj62t5pv5aa70" path="res://generic/sounds/click.ogg" id="3_e4wmt"]
 
 [node name="Dwelt" type="Node"]
 script = ExtResource("1_16b2d")
 
 [node name="WindowHandler" type="Node" parent="."]
 script = ExtResource("2_10tc7")
+
+[node name="UIClick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_e4wmt")
