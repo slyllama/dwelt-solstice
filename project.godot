@@ -28,6 +28,10 @@ Utils="*res://lib/_global/utils.gd"
 Dwelt="*res://lib/_global/dwelt/dwelt.tscn"
 Save="*res://lib/_global/save_handler.gd"
 
+[debug]
+
+gdscript/warnings/unused_signal=0
+
 [display]
 
 window/size/viewport_width=1280

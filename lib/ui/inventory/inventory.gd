@@ -14,12 +14,27 @@ var dragged_tile_idx
 # showing temporary states during dragging
 @onready var inventory_data := test_inventory_data.duplicate()
 
+func _set_dissolve(value: float) -> void:
+	material.set_shader_parameter("value", value)
+
 # Reset the drag cursor
 func _clear_drag_cursor() -> void:
 	dragged_tile_id = null
 	dragged_tile_idx = null
 	%CursorTile.id = "blank"
 	%CursorTile.visible = false
+
+func appear() -> void:
+	_set_dissolve(0.0)
+	visible = true
+	var _d = create_tween()
+	_d.tween_method(_set_dissolve, 0.0, 1.0, 0.25)
+
+func disappear() -> void:
+	_set_dissolve(1.0)
+	var _d = create_tween()
+	_d.tween_method(_set_dissolve, 1.0, 0.0, 0.25)
+	_d.tween_callback(func(): visible = false)
 
 func begin_drag(id: String, idx: int) -> void:
 	%CursorTile.reset()
@@ -62,6 +77,7 @@ func render() -> void:
 	for _r in row_count:
 		# Render individual rows
 		var row = HBoxContainer.new()
+		row.use_parent_material = true
 		row.add_theme_constant_override("separation", 2)
 		$VBox.add_child(row)
 		
