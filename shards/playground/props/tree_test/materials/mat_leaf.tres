@@ -10,4 +10,4 @@ shader_parameter/modulate = Color(0.6, 0.6, 0.6, 1)
 shader_parameter/foliage_texture = ExtResource("2_ue13s")
 shader_parameter/alpha_scissor_threshold = 0.990000047025
 shader_parameter/normal_map_depth = 1.0
-shader_parameter/fade_length = 20.0000009025
+shader_parameter/fade_length = 35.000001615

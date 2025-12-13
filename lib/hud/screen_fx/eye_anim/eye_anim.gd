@@ -32,8 +32,8 @@ func animate() -> void:
 	visible = true
 	
 	for _f in FRAMES:
-		texture = _f
 		await get_tree().create_timer(frame_duration).timeout
+		texture = _f
 	
 	if free_after_finish:
 		queue_free()
