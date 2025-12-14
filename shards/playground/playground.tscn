@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://ca4uchglbi37g"]
+[gd_scene load_steps=23 format=3 uid="uid://ca4uchglbi37g"]
 
 [ext_resource type="PackedScene" uid="uid://cave0dvi8i7rh" path="res://lib/shard/shard.tscn" id="1_fiv0q"]
 [ext_resource type="PackedScene" uid="uid://pconmu7n0aev" path="res://shards/playground/props/bamboo/meshes/bamboo.glb" id="2_m67mg"]
@@ -7,11 +7,12 @@
 [ext_resource type="PackedScene" uid="uid://dfqc760v1ljpr" path="res://shards/playground/meshes/landscape.glb" id="3_aut2g"]
 [ext_resource type="PackedScene" uid="uid://dn4mx27dqt7yo" path="res://lib/shard/foliage_spawner/foliage_spawner.tscn" id="5_u67vg"]
 [ext_resource type="AudioStream" uid="uid://cih0evhjc054h" path="res://shards/playground/sounds/ambience.ogg" id="6_42lni"]
+[ext_resource type="AudioStream" uid="uid://siskovfr0t43" path="res://shards/playground/music/glass_darkly.ogg" id="6_kte83"]
 [ext_resource type="ArrayMesh" uid="uid://7dxgm1hl7c0r" path="res://shards/playground/props/grass/meshes/grass.res" id="6_rgmr2"]
 [ext_resource type="PackedScene" uid="uid://bpy6tnc050xy6" path="res://shards/playground/props/daisies/meshes/daisies.glb" id="7_rgmr2"]
 [ext_resource type="PackedScene" uid="uid://657k3p1186vw" path="res://shards/playground/meshes/scaffolding.glb" id="10_rfd7c"]
 [ext_resource type="PackedScene" uid="uid://ryyhp7qf3geq" path="res://shards/playground/props/fog_volume/fog_volume.tscn" id="11_r4xcf"]
-[ext_resource type="PackedScene" uid="uid://c87qysmwmmkk4" path="res://shards/playground/props/tree_test/meshes/tree_test.glb" id="12_fq4iu"]
+[ext_resource type="PackedScene" uid="uid://c87qysmwmmkk4" path="res://shards/playground/props/tree/meshes/tree.glb" id="12_fq4iu"]
 [ext_resource type="Texture2D" uid="uid://cplitpdhow6ar" path="res://shards/playground/materials/textures/moon_diff.png" id="13_58tgt"]
 
 [sub_resource type="Sky" id="Sky_rfd7c"]
@@ -108,12 +109,15 @@ collision_mask = 0
 [node name="Player" parent="." index="4"]
 transform = Transform3D(-0.7071068, 0, -0.7071067, 0, 1, 0, 0.7071067, 0, -0.7071068, 2, 0.5, 0)
 
-[node name="Ambience" parent="." index="5"]
-stream = ExtResource("6_42lni")
-autoplay = true
-
-[node name="Bounds" parent="." index="6"]
+[node name="Bounds" parent="." index="5"]
 size = 13.65
+
+[node name="Ambience" parent="Sound" index="0"]
+stream = ExtResource("6_42lni")
+
+[node name="Music" type="AudioStreamPlayer" parent="Sound" index="1"]
+stream = ExtResource("6_kte83")
+volume_db = -5.0
 
 [node name="Natural" type="Node3D" parent="." index="7"]
 
@@ -215,20 +219,26 @@ transform = Transform3D(-0.8398673, 0, 0.2790123, 0, 0.885, 0, -0.2790123, 0, -0
 [node name="Daisies2" parent="Natural" index="15" instance=ExtResource("7_rgmr2")]
 transform = Transform3D(0.034393635, 0, 0.99940836, 0, 1, 0, -0.99940836, 0, 0.034393635, -1.4504449, 0.15195048, 0.8228009)
 
-[node name="TreeTest" parent="Natural" index="16" instance=ExtResource("12_fq4iu")]
+[node name="Tree" parent="Natural" index="16" instance=ExtResource("12_fq4iu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.0173678, -0.044023573, -2.8087926)
 
-[node name="TreeTest3" parent="Natural" index="17" instance=ExtResource("12_fq4iu")]
+[node name="Tree2" parent="Natural" index="17" instance=ExtResource("12_fq4iu")]
 transform = Transform3D(-1.274224, 0, -0.23103726, 0, 1.295, 0, 0.23103726, 0, -1.274224, -11.611231, -0.10877603, 2.088256)
 
-[node name="TreeTest5" parent="Natural" index="18" instance=ExtResource("12_fq4iu")]
+[node name="Tree3" parent="Natural" index="18" instance=ExtResource("12_fq4iu")]
 transform = Transform3D(-0.91847694, 0, 1.3101146, 0, 1.6, 0, -1.3101146, 0, -0.91847694, -17.476847, 2.2105615, 16.879269)
 
-[node name="TreeTest2" parent="Natural" index="19" instance=ExtResource("12_fq4iu")]
+[node name="Tree4" parent="Natural" index="19" instance=ExtResource("12_fq4iu")]
 transform = Transform3D(-0.6146604, 0.14689991, 0.9246692, 7.450581e-09, 1.1061282, -0.17572787, -0.9362653, -0.096440144, -0.60704756, 5.1255007, -0.04402381, -4.7289853)
 
-[node name="TreeTest4" parent="Natural" index="20" instance=ExtResource("12_fq4iu")]
+[node name="Tree5" parent="Natural" index="20" instance=ExtResource("12_fq4iu")]
 transform = Transform3D(0.6953198, 0.14689991, 0.8656506, -0.16748917, 1.1061281, -0.05317572, -0.86190355, -0.09644014, 0.70867586, 13.307761, 0.7887516, -1.4040985)
+
+[node name="FogVolume" parent="Natural" index="21" instance=ExtResource("11_r4xcf")]
+transform = Transform3D(0.9454163, 0, 0.32586518, 0, 1, 0, -0.32586518, 0, 0.9454163, 1.6253188, 1.0739536, -2.0030365)
+
+[node name="FogVolume2" parent="Natural" index="22" instance=ExtResource("11_r4xcf")]
+transform = Transform3D(0.9975065, 0, -0.07057479, 0, 1, 0, 0.07057479, 0, 0.9975065, 9.441809, 0.5486474, -4.0631857)
 
 [node name="Architecture" type="Node3D" parent="." index="8"]
 
@@ -244,13 +254,7 @@ transform = Transform3D(0.48296136, 0, 0.87564164, 0, 1, 0, -0.87564164, 0, 0.48
 [node name="Scaffolding4" parent="Architecture" index="3" instance=ExtResource("10_rfd7c")]
 transform = Transform3D(0.2008557, -0.16603312, 0.965448, 0, 0.9855324, 0.16948712, -0.9796209, -0.034042455, 0.19794981, -16.287457, 0.052336276, 0.8458235)
 
-[node name="FogVolume" parent="." index="9" instance=ExtResource("11_r4xcf")]
-transform = Transform3D(0.9454163, 0, 0.32586518, 0, 1, 0, -0.32586518, 0, 0.9454163, 1.6253188, 1.0739536, -2.0030365)
-
-[node name="FogVolume2" parent="." index="10" instance=ExtResource("11_r4xcf")]
-transform = Transform3D(0.9975065, 0, -0.07057479, 0, 1, 0, 0.07057479, 0, 0.9975065, 9.441809, 0.5486474, -4.0631857)
-
-[node name="MoonPivot" type="Marker3D" parent="." index="11"]
+[node name="MoonPivot" type="Marker3D" parent="." index="9"]
 transform = Transform3D(0.7071067, -0.15906441, 0.6889837, 0, 0.97437006, 0.22495104, -0.7071067, -0.15906441, 0.6889837, 0, 0, 0)
 
 [node name="Moon" type="MeshInstance3D" parent="MoonPivot" index="0"]

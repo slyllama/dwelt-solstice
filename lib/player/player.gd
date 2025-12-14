@@ -7,6 +7,9 @@ var _target_velocity := Vector3.ZERO
 var _target_y_rotation := 0.0
 var _target_y_position := 0.0
 
+var _target_move_sound_volume := 0.0
+var _actual_move_sound_volume := 0.0
+
 var _moving := false
 signal move_started
 signal move_stopped
@@ -15,14 +18,10 @@ signal move_stopped
 
 func _ready() -> void:
 	Dwelt.player = self
-	
 	$RobotMesh/EngineIdle.play()
-	move_started.connect(func():
-		$RobotMesh/EngineIdle.stop()
-		$RobotMesh/EngineMoving.play())
-	move_stopped.connect(func():
-		$RobotMesh/EngineMoving.stop()
-		$RobotMesh/EngineIdle.play())
+	$RobotMesh/EngineMoving.play()
+	move_started.connect(func(): _target_move_sound_volume = 0.37)
+	move_stopped.connect(func(): _target_move_sound_volume = 0.0)
 
 func _physics_process(_delta: float) -> void:
 	_target_velocity = Vector3.ZERO
@@ -70,3 +69,11 @@ func _physics_process(_delta: float) -> void:
 	# Send animation parameters to the mesh for animation blending
 	$RobotMesh.forward_blend = %InputHandler.direction.z
 	$RobotMesh.strafe_blend = %InputHandler.direction.x
+
+func _process(_delta: float) -> void:
+	# Apply movement sound
+	# TODO: sound functions should be in their own node
+	_actual_move_sound_volume = lerp(
+		_actual_move_sound_volume,
+		_target_move_sound_volume, Utils.crit_lerp(8.0))
+	$RobotMesh/EngineMoving.volume_linear = _actual_move_sound_volume

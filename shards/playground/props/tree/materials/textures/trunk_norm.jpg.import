@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b5r5xdnyx3jlb"
-path.s3tc="res://.godot/imported/trunk_diff.jpg-3e88c43e136290edc8c550175e09e578.s3tc.ctex"
+uid="uid://cxwghtuvo3wcx"
+path.s3tc="res://.godot/imported/trunk_norm.jpg-9706772c244d1bb17649d48e594bc810.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://shards/playground/props/tree_test/materials/textures/trunk_diff.jpg"
-dest_files=["res://.godot/imported/trunk_diff.jpg-3e88c43e136290edc8c550175e09e578.s3tc.ctex"]
+source_file="res://shards/playground/props/tree/materials/textures/trunk_norm.jpg"
+dest_files=["res://.godot/imported/trunk_norm.jpg-9706772c244d1bb17649d48e594bc810.s3tc.ctex"]
 
 [params]
 
@@ -22,7 +22,7 @@ compress/lossy_quality=0.7
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
-compress/normal_map=0
+compress/normal_map=1
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1

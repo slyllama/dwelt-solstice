@@ -4,17 +4,17 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://c87qysmwmmkk4"
-path="res://.godot/imported/tree_test.glb-ac32bbe4b0cd4838eb514679f00a1f94.scn"
+path="res://.godot/imported/tree.glb-b9554e2eddd3f552f6c84c4d702fcbff.scn"
 
 [deps]
 
-source_file="res://shards/playground/props/tree_test/meshes/tree_test.glb"
-dest_files=["res://.godot/imported/tree_test.glb-ac32bbe4b0cd4838eb514679f00a1f94.scn"]
+source_file="res://shards/playground/props/tree/meshes/tree.glb"
+dest_files=["res://.godot/imported/tree.glb-b9554e2eddd3f552f6c84c4d702fcbff.scn"]
 
 [params]
 
 nodes/root_type=""
-nodes/root_name="TreeTest"
+nodes/root_name="Tree"
 nodes/root_script=null
 nodes/apply_root_scale=true
 nodes/root_scale=0.85
@@ -41,12 +41,12 @@ _subresources={
 "materials": {
 "leaf": {
 "use_external/enabled": true,
-"use_external/fallback_path": "res://shards/playground/props/tree_test/materials/mat_leaf.tres",
+"use_external/fallback_path": "res://shards/playground/props/tree/materials/mat_leaf.tres",
 "use_external/path": "uid://dfe1hwt8aokw6"
 },
 "mat_trunk": {
 "use_external/enabled": true,
-"use_external/fallback_path": "res://shards/playground/props/tree_test/materials/mat_trunk.tres",
+"use_external/fallback_path": "res://shards/playground/props/tree/materials/mat_trunk.tres",
 "use_external/path": "uid://c8xirc23wn2h5"
 }
 }
