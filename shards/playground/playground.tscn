@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://ca4uchglbi37g"]
+[gd_scene load_steps=26 format=3 uid="uid://ca4uchglbi37g"]
 
 [ext_resource type="PackedScene" uid="uid://cave0dvi8i7rh" path="res://lib/shard/shard.tscn" id="1_fiv0q"]
 [ext_resource type="PackedScene" uid="uid://pconmu7n0aev" path="res://shards/playground/props/bamboo/meshes/bamboo.glb" id="2_m67mg"]
@@ -14,6 +14,9 @@
 [ext_resource type="PackedScene" uid="uid://ryyhp7qf3geq" path="res://shards/playground/props/fog_volume/fog_volume.tscn" id="11_r4xcf"]
 [ext_resource type="PackedScene" uid="uid://c87qysmwmmkk4" path="res://shards/playground/props/tree/meshes/tree.glb" id="12_fq4iu"]
 [ext_resource type="Texture2D" uid="uid://cplitpdhow6ar" path="res://shards/playground/materials/textures/moon_diff.png" id="13_58tgt"]
+[ext_resource type="PackedScene" uid="uid://cdm24pjj0huol" path="res://shards/playground/props/tree/billboard/meshes/tree_b_b.tscn" id="16_iqvk5"]
+[ext_resource type="PackedScene" uid="uid://cm1i00vv1oloh" path="res://shards/playground/props/tree/billboard/meshes/tree_b_c.tscn" id="17_8gts6"]
+[ext_resource type="PackedScene" uid="uid://bwis8vf1ikmc5" path="res://shards/playground/props/bamboo/billboard/meshes/bamboo_b_a.tscn" id="17_judrx"]
 
 [sub_resource type="Sky" id="Sky_rfd7c"]
 sky_material = ExtResource("2_tahua")
@@ -107,7 +110,7 @@ collision_layer = 0
 collision_mask = 0
 
 [node name="Player" parent="." index="4"]
-transform = Transform3D(-0.7071068, 0, -0.7071067, 0, 1, 0, 0.7071067, 0, -0.7071068, 2, 0.5, 0)
+transform = Transform3D(-0.32946014, 0, -0.9441696, 0, 1, 0, 0.9441696, 0, -0.32946014, 2.9527235, 0.64434695, 0.7611282)
 
 [node name="Bounds" parent="." index="5"]
 size = 13.65
@@ -125,7 +128,7 @@ volume_db = -5.0
 transform = Transform3D(0.79316914, 0, 0.81883013, 0, 1.14, 0, -0.81883013, 0, 0.79316914, -7.4472456, -0.005048037, -1.1792412)
 
 [node name="Bamboo2" parent="Natural" index="1" instance=ExtResource("2_m67mg")]
-transform = Transform3D(0.12968808, -0.14184925, -1.1287535, -0.23242256, 1.1087981, -0.16604565, 1.1136363, 0.24793185, 0.09679383, -3.425914, 0.76329786, -1.6298834)
+transform = Transform3D(0.15573898, -0.17034303, -1.3554902, -0.27911004, 1.3315263, -0.19939983, 1.3373361, 0.29773474, 0.116237156, -2.570418, 0.84545386, -1.5078431)
 
 [node name="Bamboo3" parent="Natural" index="2" instance=ExtResource("2_m67mg")]
 transform = Transform3D(1.1781335, 0.34914112, -0.34018582, -0.38767242, 1.2104908, -0.10023248, 0.29552677, 0.19605327, 1.2246842, -1.8940411, 0.62270224, -1.5328078)
@@ -240,6 +243,12 @@ transform = Transform3D(0.9454163, 0, 0.32586518, 0, 1, 0, -0.32586518, 0, 0.945
 [node name="FogVolume2" parent="Natural" index="22" instance=ExtResource("11_r4xcf")]
 transform = Transform3D(0.9975065, 0, -0.07057479, 0, 1, 0, 0.07057479, 0, 0.9975065, 9.441809, 0.5486474, -4.0631857)
 
+[node name="Bamboo8" parent="Natural" index="23" instance=ExtResource("2_m67mg")]
+transform = Transform3D(1.345, 0, 0, 0, 1.345, 0, 0, 0, 1.345, -18.798813, 2.0458958, 6.3862658)
+
+[node name="Bamboo9" parent="Natural" index="24" instance=ExtResource("2_m67mg")]
+transform = Transform3D(-1.0876033, 0, -0.79129267, 0, 1.345, 0, 0.79129267, 0, -1.0876033, -20.431456, 2.2171319, 8.844189)
+
 [node name="Architecture" type="Node3D" parent="." index="8"]
 
 [node name="Scaffolding" parent="Architecture" index="0" instance=ExtResource("10_rfd7c")]
@@ -261,3 +270,23 @@ transform = Transform3D(0.7071067, -0.15906441, 0.6889837, 0, 0.97437006, 0.2249
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 160)
 cast_shadow = 0
 mesh = SubResource("QuadMesh_5x773")
+
+[node name="Billboards" type="Node3D" parent="." index="10"]
+
+[node name="TreeB_B" parent="Billboards" index="0" instance=ExtResource("16_iqvk5")]
+transform = Transform3D(1.1450506, 0, -2.7728791, 0, 3, 0, 2.7728791, 0, 1.1450506, -24.76035, 11.24815, 4.747126)
+
+[node name="TreeB_C" parent="Billboards" index="1" instance=ExtResource("17_8gts6")]
+transform = Transform3D(0.87981844, 0, 2.8680863, 0, 2.9999998, 0, -2.8680863, 0, 0.87981844, -25.70005, 16.283503, -4.934619)
+
+[node name="TreeB_C2" parent="Billboards" index="2" instance=ExtResource("17_8gts6")]
+transform = Transform3D(-0.9053628, 0, 2.8601255, 0, 3, 0, -2.8601255, 0, -0.9053628, -27.581322, 5.448487, 16.522753)
+
+[node name="TreeB_C3" parent="Billboards" index="3" instance=ExtResource("17_8gts6")]
+transform = Transform3D(2.0429187, -0.9915034, 1.9604602, 1.3098872, 2.698925, 0, -1.7637116, 0.8559939, 2.270814, -15.626822, 11.149727, -12.865395)
+
+[node name="BambooB_A" parent="Billboards" index="4" instance=ExtResource("17_judrx")]
+transform = Transform3D(0.0073653613, 0, -1.9999864, 0, 2, 0, 1.9999864, 0, 0.0073653613, -23.205238, 5.672289, 11.321641)
+
+[node name="BambooB_A2" parent="Billboards" index="5" instance=ExtResource("17_judrx")]
+transform = Transform3D(-1.1724634, 0, 2.1170096, 0, 2.42, 0, -2.1170096, 0, -1.1724634, -24.300455, 6.888706, 14.807833)

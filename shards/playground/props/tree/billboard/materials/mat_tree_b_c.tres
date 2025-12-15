@@ -1,0 +1,14 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://c4itf3dbfbq4e"]
+
+[ext_resource type="Shader" uid="uid://ce2rwndxqyn1h" path="res://generic/materials/shaders/foliage.gdshader" id="1_qkiv6"]
+[ext_resource type="Texture2D" uid="uid://dqkcxoi2jfrl6" path="res://shards/playground/props/tree/billboard/materials/textures/tree_b_c.png" id="2_qkiv6"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_qkiv6")
+shader_parameter/modulate = Color(0.5, 0.5, 0.5, 1)
+shader_parameter/foliage_texture = ExtResource("2_qkiv6")
+shader_parameter/alpha_scissor_threshold = 0.450000021375
+shader_parameter/normal_map_depth = 1.0
+shader_parameter/fade_length = 100.0
+shader_parameter/uses_wind = false

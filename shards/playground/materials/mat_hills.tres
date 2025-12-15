@@ -1,7 +1,7 @@
 [gd_resource type="ShaderMaterial" load_steps=10 format=3 uid="uid://dk0eo70riwjty"]
 
 [ext_resource type="Shader" uid="uid://b8fj8qok5t8sh" path="res://shards/playground/materials/shaders/grass.gdshader" id="1_j4e4i"]
-[ext_resource type="Texture2D" uid="uid://mn0oqam0orrm" path="res://shards/playground/materials/textures/flowers_diff.jpg" id="2_17gp2"]
+[ext_resource type="Texture2D" uid="uid://cdo0lbht8tsdo" path="res://shards/playground/materials/textures/rock_diff.jpg" id="2_j4e4i"]
 [ext_resource type="Texture2D" uid="uid://46utb4d6jkvs" path="res://shards/playground/materials/textures/grass_alt_diff.jpg" id="3_v57jr"]
 [ext_resource type="Texture2D" uid="uid://m2ivfxhy7dxf" path="res://shards/playground/materials/textures/grass_diff.jpg" id="4_5liky"]
 [ext_resource type="Texture2D" uid="uid://dlpruad40eju6" path="res://shards/playground/materials/masks/hills_mask.jpg" id="5_j4e4i"]
@@ -32,7 +32,7 @@ shader_parameter/grass_alt_uv_scale = 5.0
 shader_parameter/rock_texture = ExtResource("6_j4e4i")
 shader_parameter/rock_albedo = Color(0.87, 0.87, 0.87, 1)
 shader_parameter/rock_uv_scale = 9.0
-shader_parameter/flowers_texture = ExtResource("2_17gp2")
+shader_parameter/flowers_texture = ExtResource("2_j4e4i")
 shader_parameter/flowers_albedo = Color(1, 1, 1, 1)
 shader_parameter/flowers_uv_scale = 8.0
 shader_parameter/grass_mask_texture = SubResource("NoiseTexture2D_xowig")

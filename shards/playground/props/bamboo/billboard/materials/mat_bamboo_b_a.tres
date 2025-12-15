@@ -1,0 +1,13 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://b8jn1jb3mxgv4"]
+
+[ext_resource type="Shader" uid="uid://ce2rwndxqyn1h" path="res://generic/materials/shaders/foliage.gdshader" id="1_d5v57"]
+[ext_resource type="Texture2D" uid="uid://ds32f5k6tn73k" path="res://shards/playground/props/bamboo/billboard/materials/textures/bamboo_b_a.png" id="2_i4egv"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_d5v57")
+shader_parameter/modulate = Color(0.9, 0.9, 0.9, 1)
+shader_parameter/foliage_texture = ExtResource("2_i4egv")
+shader_parameter/alpha_scissor_threshold = 0.50000002375
+shader_parameter/normal_map_depth = 1.0
+shader_parameter/fade_length = 100.0

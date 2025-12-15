@@ -7,6 +7,7 @@ uniform sampler2D foliage_normal_texture: hint_normal, filter_linear_mipmap;
 uniform float alpha_scissor_threshold: hint_range(0.0, 1.0) = 0.95;
 uniform float normal_map_depth: hint_range(0.0, 1.0) = 1.0;
 uniform float fade_length: hint_range(1.0, 100.0) = 10.0;
+uniform bool uses_wind = true;
 
 float get_wind(vec2 vertex, vec2 uv){
 	float min_strength = 0.05;
@@ -18,9 +19,11 @@ float get_wind(vec2 vertex, vec2 uv){
 }
 
 void vertex() {
-	UV *= 0.95;
-	vec4 pos = MODEL_MATRIX * vec4(0.0, 0.0, 0.0, 1.0);
-    VERTEX.x += get_wind(VERTEX.xy, UV);
+	if (uses_wind == true) {
+		UV *= 0.95;
+		vec4 pos = MODEL_MATRIX * vec4(0.0, 0.0, 0.0, 1.0);
+    	VERTEX.x += get_wind(VERTEX.xy, UV);
+	}
 }
 
 void fragment() {
