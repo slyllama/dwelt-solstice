@@ -15,6 +15,7 @@ signal move_stopped
 
 func _ready() -> void:
 	Dwelt.player = self
+	$Orbit/Camera/Motes.visible = true
 	move_started.connect(func(): $RobotMesh/Sound.move_vol = 0.37)
 	move_stopped.connect(func(): $RobotMesh/Sound.move_vol = 0.0)
 

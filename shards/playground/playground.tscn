@@ -120,7 +120,7 @@ transform = Transform3D(0.34202012, -0.46984625, 0.81379753, 0, 0.86602527, 0.49
 shadow_enabled = true
 directional_shadow_blend_splits = true
 directional_shadow_max_distance = 50.0
-directional_shadow_pancake_size = 1.0
+directional_shadow_pancake_size = 0.0
 
 [node name="Landscape" parent="." index="2" instance=ExtResource("3_aut2g")]
 

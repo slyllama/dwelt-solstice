@@ -163,6 +163,12 @@ autoplay = true
 stream = ExtResource("10_ram4p")
 unit_size = 4.0
 autoplay = true
+max_polyphony = 2
+
+[node name="Voice" type="AudioStreamPlayer3D" parent="RobotMesh/Sound"]
+volume_db = -2.0
+unit_size = 4.0
+autoplay = true
 
 [node name="Stars" type="GPUParticles3D" parent="RobotMesh"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.17061618, -0.39669335)
@@ -200,6 +206,7 @@ fov = 90.0
 
 [node name="Motes" type="GPUParticles3D" parent="Orbit/Camera"]
 transform = Transform3D(0.8660255, 7.45058e-09, -0.49999997, -0.12940954, 0.96592575, -0.22414388, 0.48296294, 0.258819, 0.83651626, -2.3692846e-07, 0.1931852, -2.5482357)
+visible = false
 cast_shadow = 0
 amount = 96
 preprocess = 5.0
