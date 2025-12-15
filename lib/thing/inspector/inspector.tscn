@@ -1,10 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://d02blbpmlrt6s"]
+[gd_scene load_steps=8 format=3 uid="uid://d02blbpmlrt6s"]
 
 [ext_resource type="Texture2D" uid="uid://d67e3nvpcgwn" path="res://lib/thing/inspector/textures/base.png" id="1_j7cdr"]
+[ext_resource type="Shader" uid="uid://dxxqogqtywt44" path="res://generic/materials/shaders/dissolve.gdshader" id="1_wwwy2"]
+[ext_resource type="Texture2D" uid="uid://2q8chjn3pu55" path="res://generic/materials/textures/dissolve_diff.jpg" id="2_1tk8g"]
+[ext_resource type="Script" uid="uid://cw27akqlvsr2g" path="res://lib/thing/inspector/inspector.gd" id="2_ivxcn"]
 [ext_resource type="Texture2D" uid="uid://c1n4xy4hrp1w2" path="res://lib/thing/inspector/textures/mask.png" id="2_vocsh"]
+[ext_resource type="Texture2D" uid="uid://btetb3be5oukm" path="res://lib/thing/inspector/textures/player_controlled.png" id="6_1tk8g"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_m4xmc"]
+shader = ExtResource("1_wwwy2")
+shader_parameter/dissolve_texture = ExtResource("2_1tk8g")
+shader_parameter/value = 1.0
 
 [node name="Base" type="TextureRect"]
 z_index = -1
+material = SubResource("ShaderMaterial_m4xmc")
 custom_minimum_size = Vector2(371, 109)
 offset_right = 371.0
 offset_bottom = 109.0
@@ -13,8 +23,10 @@ mouse_filter = 2
 texture = ExtResource("1_j7cdr")
 expand_mode = 1
 stretch_mode = 5
+script = ExtResource("2_ivxcn")
 
 [node name="Title" type="Label" parent="."]
+use_parent_material = true
 layout_mode = 0
 offset_left = 119.0
 offset_top = 21.0
@@ -24,8 +36,9 @@ theme_override_colors/font_color = Color(0.92498046, 0.86496264, 0.7320616, 1)
 theme_override_font_sizes/font_size = 20
 text = "((Thing))"
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Mask" type="TextureRect" parent="."]
 z_index = -1
+use_parent_material = true
 custom_minimum_size = Vector2(89, 89)
 layout_mode = 0
 offset_left = 17.0
@@ -35,3 +48,14 @@ offset_bottom = 93.0
 texture = ExtResource("2_vocsh")
 expand_mode = 1
 stretch_mode = 6
+
+[node name="Owner" type="TextureRect" parent="."]
+use_parent_material = true
+custom_minimum_size = Vector2(41, 41)
+layout_mode = 0
+offset_left = 73.0
+offset_top = 62.0
+offset_right = 114.0
+offset_bottom = 103.0
+texture = ExtResource("6_1tk8g")
+expand_mode = 1
