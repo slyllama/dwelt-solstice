@@ -18,6 +18,7 @@ script = ExtResource("1_uwiis")
 
 [node name="Boundary" type="StaticBody3D" parent="B"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0)
+input_ray_pickable = false
 
 [node name="Shape" type="CollisionShape3D" parent="B/Boundary"]
 shape = SubResource("WorldBoundaryShape3D_nvp6p")
@@ -31,6 +32,7 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0
 
 [node name="Boundary" type="StaticBody3D" parent="B2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0)
+input_ray_pickable = false
 
 [node name="Shape" type="CollisionShape3D" parent="B2/Boundary"]
 shape = SubResource("WorldBoundaryShape3D_nvp6p")
@@ -44,6 +46,7 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0
 
 [node name="Boundary" type="StaticBody3D" parent="B3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0)
+input_ray_pickable = false
 
 [node name="Shape" type="CollisionShape3D" parent="B3/Boundary"]
 shape = SubResource("WorldBoundaryShape3D_nvp6p")
@@ -57,6 +60,7 @@ transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, 0, 0
 
 [node name="Boundary" type="StaticBody3D" parent="B4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0)
+input_ray_pickable = false
 
 [node name="Shape" type="CollisionShape3D" parent="B4/Boundary"]
 shape = SubResource("WorldBoundaryShape3D_nvp6p")

@@ -11,6 +11,7 @@ colors = PackedColorArray(0, 0, 0, 1, 0.96035105, 0.96035105, 0.96035093, 1)
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_sxcu2"]
 noise_type = 2
+frequency = 0.005
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_euj1i"]
 noise = SubResource("FastNoiseLite_sxcu2")
@@ -24,8 +25,8 @@ shader_parameter/albedo_texture = ExtResource("2_mg304")
 shader_parameter/normal_texture = ExtResource("4_sxcu2")
 shader_parameter/uv_scale = 4.0
 shader_parameter/normal_strength = 0.5
-shader_parameter/albedo_color = Color(1, 1, 1, 1)
+shader_parameter/albedo_color = Color(0.8, 0.6, 0.6, 1)
 shader_parameter/moss_overlay_texture = ExtResource("3_stogk")
 shader_parameter/moss_mask = SubResource("NoiseTexture2D_euj1i")
-shader_parameter/moss_uv_scale = 6.0
+shader_parameter/moss_uv_scale = 2.0
 shader_parameter/fade_length = 30.0000013775
