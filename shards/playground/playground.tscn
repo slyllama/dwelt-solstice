@@ -120,7 +120,7 @@ stream = ExtResource("6_42lni")
 
 [node name="Music" type="AudioStreamPlayer" parent="Sound" index="1"]
 stream = ExtResource("6_kte83")
-volume_db = -5.0
+volume_db = -8.0
 
 [node name="Natural" type="Node3D" parent="." index="7"]
 
