@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dvswqaghjmks6"
-path.s3tc="res://.godot/imported/icon.png-487276ed1e3a0c39cad0279d744ee560.s3tc.ctex"
+uid="uid://5y8y6bqkdtx6"
+path.s3tc="res://.godot/imported/rust_diff.jpg-a2077a559f905000fdbe1e9e5a3da88d.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://icon.png"
-dest_files=["res://.godot/imported/icon.png-487276ed1e3a0c39cad0279d744ee560.s3tc.ctex"]
+source_file="res://shards/playground/props/scaffolding/meshes/materials/textures/rust_diff.jpg"
+dest_files=["res://.godot/imported/rust_diff.jpg-a2077a559f905000fdbe1e9e5a3da88d.s3tc.ctex"]
 
 [params]
 

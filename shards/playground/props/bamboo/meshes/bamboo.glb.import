@@ -44,6 +44,14 @@ _subresources={
 "use_external/fallback_path": "res://shards/playground/props/bamboo/materials/mat_bamboo.tres",
 "use_external/path": "uid://c20usjd45b5b"
 }
+},
+"nodes": {
+"PATH:LeafCluster": {
+"mesh_instance/visibility_range_end": 23.0
+},
+"PATH:Stem": {
+"mesh_instance/visibility_range_end": 23.0
+}
 }
 }
 gltf/naming_version=2

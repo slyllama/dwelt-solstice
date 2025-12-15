@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://657k3p1186vw"
-path="res://.godot/imported/scaffolding.glb-c5b935e80e80d918c98e2abd9bf3f84a.scn"
+path="res://.godot/imported/scaffolding.glb-46b09751af86a4c188d79a0f28965db8.scn"
 
 [deps]
 
-source_file="res://shards/playground/meshes/scaffolding.glb"
-dest_files=["res://.godot/imported/scaffolding.glb-c5b935e80e80d918c98e2abd9bf3f84a.scn"]
+source_file="res://shards/playground/props/scaffolding/meshes/scaffolding.glb"
+dest_files=["res://.godot/imported/scaffolding.glb-46b09751af86a4c188d79a0f28965db8.scn"]
 
 [params]
 
@@ -37,6 +37,19 @@ import_script/path=""
 materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
-_subresources={}
+_subresources={
+"materials": {
+"grey": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://shards/playground/props/scaffolding/meshes/materials/mat_scaffold.tres",
+"use_external/path": "uid://mjic66crrj4l"
+}
+},
+"nodes": {
+"PATH:Cube_001": {
+"mesh_instance/visibility_range_end": 31.0
+}
+}
+}
 gltf/naming_version=2
 gltf/embedded_image_handling=1

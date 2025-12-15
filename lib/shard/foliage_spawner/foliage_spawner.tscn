@@ -1,9 +1,27 @@
-[gd_scene load_steps=2 format=3 uid="uid://dn4mx27dqt7yo"]
+[gd_scene load_steps=4 format=3 uid="uid://dn4mx27dqt7yo"]
 
 [ext_resource type="Script" uid="uid://5aj0ygh7le30" path="res://lib/shard/foliage_spawner/foliage_spawner.gd" id="1_k6dj7"]
+[ext_resource type="Texture2D" uid="uid://dvswqaghjmks6" path="res://icon.png" id="2_emfqa"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_emfqa"]
+radius = 0.45
 
 [node name="FoliageSpawner" type="MultiMeshInstance3D"]
 layers = 2
 cast_shadow = 0
 visibility_range_end = 15.0
 script = ExtResource("1_k6dj7")
+
+[node name="Selector" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+pixel_size = 0.002
+billboard = 1
+no_depth_test = true
+render_priority = 2
+texture = ExtResource("2_emfqa")
+
+[node name="Area" type="Area3D" parent="Selector"]
+collision_priority = 2.0
+
+[node name="Collision" type="CollisionShape3D" parent="Selector/Area"]
+shape = SubResource("SphereShape3D_emfqa")

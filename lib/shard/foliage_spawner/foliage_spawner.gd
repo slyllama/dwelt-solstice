@@ -71,3 +71,6 @@ func _ready() -> void:
 	cast_shadow = SHADOW_CASTING_SETTING_OFF
 	set_layer_mask_value(1, 0)
 	set_layer_mask_value(2, 1)
+	
+	if !Engine.is_editor_hint():
+		$Selector.queue_free()
