@@ -10,11 +10,10 @@
 [node name="Currency" type="TextureRect"]
 self_modulate = Color(1, 1, 1, 0.8627451)
 custom_minimum_size = Vector2(328, 35)
-offset_right = 328.0
+offset_right = 458.0
 offset_bottom = 35.0
 texture = ExtResource("1_x76lb")
 expand_mode = 1
-stretch_mode = 4
 
 [node name="Container" type="HBoxContainer" parent="."]
 layout_mode = 1

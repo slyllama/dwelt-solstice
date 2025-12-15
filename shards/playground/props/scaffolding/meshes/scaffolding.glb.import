@@ -46,8 +46,8 @@ _subresources={
 }
 },
 "nodes": {
-"PATH:Cube_001": {
-"mesh_instance/visibility_range_end": 31.0
+"PATH:Scaffold": {
+"mesh_instance/layers": 3
 }
 }
 }

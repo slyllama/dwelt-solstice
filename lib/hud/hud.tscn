@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://istq4exbymwq"]
+[gd_scene load_steps=12 format=3 uid="uid://istq4exbymwq"]
 
 [ext_resource type="FontFile" uid="uid://c7qpj4jbth6pg" path="res://generic/fonts/ibm_plex_mono.otf" id="1_dcyf8"]
 [ext_resource type="Script" uid="uid://davrehdjbld01" path="res://lib/hud/scripts/render_monitor.gd" id="1_o36f6"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://ren8he6qiotw" path="res://lib/hud/textures/inventory.png" id="8_r2k48"]
 [ext_resource type="Texture2D" uid="uid://cetc1nb4j4x8h" path="res://lib/hud/textures/inventory_hover.png" id="9_d84xd"]
 [ext_resource type="PackedScene" uid="uid://u2i05ele7n62" path="res://lib/hud/screen_fx/eye_anim/eye_anim.tscn" id="10_ixdrw"]
+[ext_resource type="PackedScene" uid="uid://d02blbpmlrt6s" path="res://lib/thing/inspector/inspector.tscn" id="11_coisy"]
 
 [node name="HUD" type="CanvasLayer"]
 process_mode = 3
@@ -54,10 +55,16 @@ offset_top = 63.0
 offset_right = 32.0
 offset_bottom = 71.0
 
+[node name="Inspector" parent="." instance=ExtResource("11_coisy")]
+offset_left = 18.0
+offset_top = 39.0
+offset_right = 389.0
+offset_bottom = 148.0
+
 [node name="Currency" parent="." instance=ExtResource("6_3pj68")]
-offset_left = 65.0
+offset_left = 6.0
 offset_top = 6.0
-offset_right = 393.0
+offset_right = 334.0
 offset_bottom = 41.0
 
 [node name="Debug" type="VBoxContainer" parent="."]
@@ -77,6 +84,7 @@ focus_mode = 0
 text = "Save to File"
 
 [node name="ToggleInventory" type="TextureButton" parent="."]
+visible = false
 custom_minimum_size = Vector2(64, 64)
 offset_left = 2.0
 offset_right = 66.0

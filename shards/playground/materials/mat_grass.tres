@@ -35,5 +35,6 @@ shader_parameter/rock_uv_scale = 18.0
 shader_parameter/flowers_texture = ExtResource("2_8toxo")
 shader_parameter/flowers_albedo = Color(1, 1, 1, 1)
 shader_parameter/flowers_uv_scale = 16.0
+shader_parameter/flowers_strength = 0.5
 shader_parameter/grass_mask_texture = SubResource("NoiseTexture2D_xowig")
 shader_parameter/landscape_mask_texture = ExtResource("4_xowig")

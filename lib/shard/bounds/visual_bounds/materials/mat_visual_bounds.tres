@@ -3,8 +3,8 @@
 [ext_resource type="Shader" uid="uid://txko4c17vwyn" path="res://lib/shard/bounds/visual_bounds/materials/shaders/visual_bounds.gdshader" id="1_4slid"]
 
 [sub_resource type="Gradient" id="Gradient_ew6cn"]
-offsets = PackedFloat32Array(0.0076923077, 0.6164383)
-colors = PackedColorArray(0.38, 0.59699994, 1, 0.38431373, 1, 0.53999996, 0.54766655, 0)
+offsets = PackedFloat32Array(0.0076923077, 0.30739298)
+colors = PackedColorArray(0.38, 0.59699994, 1, 0.27450982, 0.38, 0.59699994, 1, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_dqvfd"]
 gradient = SubResource("Gradient_ew6cn")

@@ -10,7 +10,7 @@ void fragment() {
 	vec2 _uv = rotate(UV, vec2(0.5), PI / 4.0) * bands_uv_scale;
 	vec4 _b = texture(bands_texture, _uv);
 	ALBEDO = _b.rgb;
-	ALPHA = _b.a;
+	ALPHA = _b.a * (0.2 + abs(sin(TIME))* 0.3);
 
 	float fade_distance = length(VERTEX);
 	const vec3 magic = vec3(0.06711056, 0.00583715, 52.9829189);
