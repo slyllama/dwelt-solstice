@@ -83,7 +83,6 @@ loop_mode = 1
 animation = &"player/strafe"
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_ram4p"]
-graph_offset = Vector2(-623.1362, -23.159943)
 nodes/output/position = Vector2(660, 140)
 nodes/idle/node = SubResource("AnimationNodeAnimation_5x5nn")
 nodes/idle/position = Vector2(-180, 140)
@@ -198,7 +197,7 @@ v_offset = 0.7
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.6)
 attributes = SubResource("CameraAttributesPractical_2ocui")
 current = true
-fov = 85.0
+fov = 90.0
 
 [node name="Motes" type="GPUParticles3D" parent="Orbit/Camera"]
 transform = Transform3D(0.8660255, 7.45058e-09, -0.49999997, -0.12940954, 0.96592575, -0.22414388, 0.48296294, 0.258819, 0.83651626, -2.3692846e-07, 0.1931852, -2.5482357)

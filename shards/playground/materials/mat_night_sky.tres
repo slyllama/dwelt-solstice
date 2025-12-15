@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cly2gywk3s8kg" path="res://shards/playground/materials/textures/stars_diff.jpg" id="2_yf6jp"]
 
 [sub_resource type="Gradient" id="Gradient_yf6jp"]
-offsets = PackedFloat32Array(0.1, 0.35, 0.48)
+offsets = PackedFloat32Array(0, 0.3, 0.4)
 colors = PackedColorArray(0, 0, 0, 1, 0.0216, 0.028159996, 0.12, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_45rpi"]

@@ -18,6 +18,7 @@ uniform float rock_uv_scale = 16.0;
 uniform sampler2D flowers_texture: filter_linear_mipmap, repeat_enable, source_color;
 uniform vec3 flowers_albedo: source_color = vec3(0.5);
 uniform float flowers_uv_scale = 16.0;
+uniform float flowers_strength: hint_range(0.0, 1.0) = 0.5;
 
 // Masks
 uniform sampler2D grass_mask_texture: filter_linear_mipmap, hint_default_black;
@@ -43,7 +44,7 @@ void fragment() {
 	// Flowers
 	vec3 _f = texture(flowers_texture, UV * flowers_uv_scale).rgb;
 	_f *= flowers_albedo;
-	ALBEDO = mix(ALBEDO, _f, _lm.g * 0.3);
+	ALBEDO = mix(ALBEDO, _f, _lm.g * flowers_strength);
 
 	// Post-processing
 	ALBEDO *= (1.0 + _lm.b);
