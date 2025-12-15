@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://2q8chjn3pu55" path="res://generic/materials/textures/dissolve_diff.jpg" id="2_1tk8g"]
 [ext_resource type="Script" uid="uid://cw27akqlvsr2g" path="res://lib/thing/inspector/inspector.gd" id="2_ivxcn"]
 [ext_resource type="Texture2D" uid="uid://c1n4xy4hrp1w2" path="res://lib/thing/inspector/textures/mask.png" id="2_vocsh"]
-[ext_resource type="Texture2D" uid="uid://btetb3be5oukm" path="res://lib/thing/inspector/textures/player_controlled.png" id="6_1tk8g"]
+[ext_resource type="Texture2D" uid="uid://btetb3be5oukm" path="res://lib/thing/inspector/textures/owner_player.png" id="6_1tk8g"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_m4xmc"]
 shader = ExtResource("1_wwwy2")

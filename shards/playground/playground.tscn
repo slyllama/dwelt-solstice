@@ -334,3 +334,7 @@ transform = Transform3D(2.6260412, 0, -0.21709979, 0, 2.635, 0, 0.21709979, 0, 2
 
 [node name="Doodad" parent="." index="11" instance=ExtResource("18_judrx")]
 transform = Transform3D(0.8584859, 0, 0.5128372, 0, 1, 0, -0.5128372, 0, 0.8584859, -5.1431775, -0.3396117, 1.634846)
+
+[node name="Doodad2" parent="." index="12" instance=ExtResource("18_judrx")]
+transform = Transform3D(0.032597005, 0, 0.9994685, 0, 1, 0, -0.9994685, 0, 0.032597005, -4.655936, -1.8469374, 5.3790407)
+owned_by_player = false
