@@ -1,4 +1,5 @@
-extends PanelContainer
+@tool
+extends Control
 
 @export var capacity := 15 # total space
 @export var tile_width := 5 # should be a multiple of capacity
@@ -25,13 +26,16 @@ func _clear_drag_cursor() -> void:
 	%CursorTile.id = "blank"
 	%CursorTile.visible = false
 
-func appear() -> void:
-	$Open.play()
+func appear(muted := false) -> void:
+	print("appearing")
+	if !muted: # conserve insanity during debugging
+		$Open.play()
 	visible = true
 	var _d = create_tween()
 	_d.tween_method(_set_dissolve, _get_dissolve(), 1.0, 0.25)
 
 func disappear() -> void:
+	print("disappearing")
 	$Open.play()
 	_set_dissolve(1.0)
 	var _d = create_tween()
@@ -70,7 +74,7 @@ func cancel_drag() -> void:
 	render() 
 
 func render() -> void:
-	for _n in $VBox.get_children():
+	for _n in $Box/VBox.get_children():
 		_n.queue_free() # reset
 	
 	# Calculate the number of rows to render
@@ -85,7 +89,7 @@ func render() -> void:
 		var row = HBoxContainer.new()
 		row.use_parent_material = true
 		row.add_theme_constant_override("separation", 2)
-		$VBox.add_child(row)
+		$Box/VBox.add_child(row)
 		
 		for _t in tile_width:
 			# Render individual tiles
@@ -103,8 +107,14 @@ func render() -> void:
 func _ready() -> void:
 	_set_dissolve(0.0)
 	render()
+	
+	if Engine.is_editor_hint():
+		appear(true) # debugging
+	else:
+		visible = false
 
 func _input(_event: InputEvent) -> void:
+	if Engine.is_editor_hint(): return
 	if Input.is_action_just_released("left_click"):
 		if dragged_tile_id:
 			if get_window().gui_get_hovered_control():
@@ -112,8 +122,9 @@ func _input(_event: InputEvent) -> void:
 				if _p is InventoryTile:
 					var _idx = _p.index
 					complete_drag(_idx)
-			else: cancel_drag()
-		else: cancel_drag()
+				else: cancel_drag() # didn't land on a tile
+			else: cancel_drag() # landed outside of the UI
+		else: cancel_drag() # nothing to drag
 
 func _physics_process(_delta: float) -> void:
 	%CursorTile.position = (get_window().get_mouse_position()

@@ -18,4 +18,9 @@ void fragment() {
 	if (fade < 0.001 || fade < fract(magic.z * fract(dot(FRAGCOORD.xy, magic.xy)))) {
 		discard;
 	}
+	// Also fade as the camera approaches
+	float fade_close = clamp(smoothstep(1.0, 1.5, fade_distance), 0.0, 1.0);
+	if (fade_close < 0.001 || fade_close < fract(magic.z * fract(dot(FRAGCOORD.xy, magic.xy)))) {
+		discard;
+	}
 }

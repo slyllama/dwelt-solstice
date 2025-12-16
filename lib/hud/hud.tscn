@@ -50,30 +50,24 @@ offset_right = 216.0
 offset_bottom = 216.0
 title_text = "Interesting"
 
-[node name="Inventory" parent="." instance=ExtResource("5_4etgo")]
-visible = false
-offset_left = 24.0
-offset_top = 63.0
-offset_right = 32.0
-offset_bottom = 71.0
-
 [node name="Inspector" parent="." instance=ExtResource("11_coisy")]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -185.5
 offset_top = 2.0
-offset_right = 185.5
 offset_bottom = 111.0
-grow_horizontal = 2
 
 [node name="Currency" parent="." instance=ExtResource("6_3pj68")]
-offset_left = 120.0
-offset_top = 6.0
-offset_right = 448.0
-offset_bottom = 41.0
+offset_left = 56.0
+offset_top = 12.0
+offset_right = 384.0
+offset_bottom = 47.0
+
+[node name="Inventory" parent="." instance=ExtResource("5_4etgo")]
+offset_left = 49.0
+offset_top = 87.0
+offset_right = 381.0
+offset_bottom = 287.0
 
 [node name="Debug" type="VBoxContainer" parent="."]
+visible = false
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
@@ -91,9 +85,10 @@ text = "Save to File"
 
 [node name="Settings" type="TextureButton" parent="."]
 custom_minimum_size = Vector2(64, 64)
-offset_left = 2.0
-offset_right = 66.0
-offset_bottom = 64.0
+offset_left = 6.0
+offset_top = 3.0
+offset_right = 70.0
+offset_bottom = 67.0
 texture_normal = ExtResource("9_45tie")
 texture_hover = ExtResource("10_62h71")
 ignore_texture_size = true
@@ -101,9 +96,10 @@ stretch_mode = 5
 
 [node name="ToggleInventory" type="TextureButton" parent="."]
 custom_minimum_size = Vector2(64, 64)
-offset_left = 64.0
-offset_right = 128.0
-offset_bottom = 64.0
+offset_left = 6.0
+offset_top = 56.0
+offset_right = 70.0
+offset_bottom = 120.0
 texture_normal = ExtResource("8_r2k48")
 texture_hover = ExtResource("9_d84xd")
 ignore_texture_size = true
