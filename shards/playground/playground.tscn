@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://ca4uchglbi37g"]
+[gd_scene load_steps=28 format=3 uid="uid://ca4uchglbi37g"]
 
 [ext_resource type="PackedScene" uid="uid://cave0dvi8i7rh" path="res://lib/shard/shard.tscn" id="1_fiv0q"]
 [ext_resource type="PackedScene" uid="uid://pconmu7n0aev" path="res://shards/playground/props/bamboo/meshes/bamboo.glb" id="2_m67mg"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://dfqc760v1ljpr" path="res://shards/playground/meshes/landscape.glb" id="3_aut2g"]
 [ext_resource type="PackedScene" uid="uid://dn4mx27dqt7yo" path="res://lib/shard/foliage_spawner/foliage_spawner.tscn" id="5_u67vg"]
 [ext_resource type="AudioStream" uid="uid://cih0evhjc054h" path="res://shards/playground/sounds/ambience.ogg" id="6_42lni"]
-[ext_resource type="AudioStream" uid="uid://siskovfr0t43" path="res://shards/playground/music/glass_darkly.ogg" id="6_kte83"]
 [ext_resource type="ArrayMesh" uid="uid://7dxgm1hl7c0r" path="res://shards/playground/props/grass/meshes/grass.res" id="6_rgmr2"]
 [ext_resource type="PackedScene" uid="uid://bpy6tnc050xy6" path="res://shards/playground/props/daisies/meshes/daisies.glb" id="7_rgmr2"]
 [ext_resource type="PackedScene" uid="uid://657k3p1186vw" path="res://shards/playground/props/scaffolding/meshes/scaffolding.glb" id="10_rfd7c"]
@@ -137,10 +136,6 @@ size = 13.65
 
 [node name="Ambience" parent="Sound" index="0"]
 stream = ExtResource("6_42lni")
-
-[node name="Music" type="AudioStreamPlayer" parent="Sound" index="1"]
-stream = ExtResource("6_kte83")
-volume_db = -8.0
 
 [node name="Natural" type="Node3D" parent="." index="7"]
 
@@ -331,6 +326,9 @@ transform = Transform3D(1.4210556, 0, 2.2189696, 0, 2.635, 0, -2.2189696, 0, 1.4
 
 [node name="TreeB_B3" parent="Billboards" index="6" instance=ExtResource("16_iqvk5")]
 transform = Transform3D(2.6260412, 0, -0.21709979, 0, 2.635, 0, 0.21709979, 0, 2.6260412, 8.670503, 5.660459, -12.941602)
+
+[node name="TreeB_B4" parent="Billboards" index="7" instance=ExtResource("16_iqvk5")]
+transform = Transform3D(1.8696018, 0, -0.71034443, 0, 2, 0, 0.71034443, 0, 1.8696018, -8.359807, 2.5360322, 25.782415)
 
 [node name="Doodad" parent="." index="11" instance=ExtResource("18_judrx")]
 transform = Transform3D(0.8584859, 0, 0.5128372, 0, 1, 0, -0.5128372, 0, 0.8584859, -5.1431775, -0.3396117, 1.634846)

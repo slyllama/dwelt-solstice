@@ -1,8 +1,8 @@
 extends Node
 
 var _last_click_position := Vector2.ZERO
+var _last_click_in_gui := false
 var event_relative := Vector2.ZERO
-
 var pan_speed_scaling := 1.0
 
 func _ready() -> void:
@@ -11,8 +11,13 @@ func _ready() -> void:
 			/ get_window().content_scale_factor))
 
 func _input(event: InputEvent) -> void:
+	if Input.is_action_just_released("left_click"):
+		_last_click_in_gui = false
+	
 	if Input.mouse_mode == Input.MOUSE_MODE_VISIBLE:
 		if Input.is_action_just_pressed("left_click"):
+			if get_window().gui_get_hovered_control():
+				_last_click_in_gui = true
 			_last_click_position = get_window().get_mouse_position()
 	elif Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 		if Input.is_action_just_released("left_click"):
@@ -25,8 +30,7 @@ func _input(event: InputEvent) -> void:
 				event_relative = event.relative
 
 func _process(_delta: float) -> void:
-	if (Input.is_action_pressed("left_click") and 
-		!get_window().gui_get_hovered_control()):
+	if Input.is_action_pressed("left_click") and !_last_click_in_gui:
 			var _m := get_window().get_mouse_position()
 			var _mouse_delta := _last_click_position - _m
 			if _mouse_delta.length() > 10.0:

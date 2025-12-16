@@ -14,8 +14,9 @@ var dragged_tile_idx
 # showing temporary states during dragging
 @onready var inventory_data := test_inventory_data.duplicate()
 
-func _set_dissolve(value: float) -> void:
-	material.set_shader_parameter("value", value)
+# Functions to help control dissolve shader
+func _set_dissolve(value: float) -> void: material.set_shader_parameter("value", value)
+func _get_dissolve() -> float: return(material.get_shader_parameter("value"))
 
 # Reset the drag cursor
 func _clear_drag_cursor() -> void:
@@ -26,18 +27,15 @@ func _clear_drag_cursor() -> void:
 
 func appear() -> void:
 	$Open.play()
-	
-	_set_dissolve(0.0)
 	visible = true
 	var _d = create_tween()
-	_d.tween_method(_set_dissolve, 0.0, 1.0, 0.25)
+	_d.tween_method(_set_dissolve, _get_dissolve(), 1.0, 0.25)
 
 func disappear() -> void:
 	$Open.play()
-	
 	_set_dissolve(1.0)
 	var _d = create_tween()
-	_d.tween_method(_set_dissolve, 1.0, 0.0, 0.25)
+	_d.tween_method(_set_dissolve, _get_dissolve(), 0.0, 0.25)
 	_d.tween_callback(func(): visible = false)
 
 func begin_drag(id: String, idx: int) -> void:
@@ -56,7 +54,7 @@ func complete_drag(dest_idx: int) -> void:
 	inventory_data[dragged_tile_idx] = {} # allocate entry for source
 	if dest_idx in test_inventory_data: # copy the destination to the source, if there is one...
 		inventory_data[dragged_tile_idx].id = test_inventory_data[dest_idx].id
-	else: #... or clear the source if the destination was blank
+	else: #...or clear the source if the destination was blank
 		inventory_data[dragged_tile_idx].id = "blank"
 	inventory_data[dest_idx] = {} # allocate entry for destination
 	inventory_data[dest_idx].id = dragged_tile_id # assign the already-known source to the destination
@@ -103,6 +101,7 @@ func render() -> void:
 				begin_drag(tile.id, tile.index))
 
 func _ready() -> void:
+	_set_dissolve(0.0)
 	render()
 
 func _input(_event: InputEvent) -> void:

@@ -56,15 +56,19 @@ offset_right = 32.0
 offset_bottom = 71.0
 
 [node name="Inspector" parent="." instance=ExtResource("11_coisy")]
-offset_left = 18.0
-offset_top = 39.0
-offset_right = 389.0
-offset_bottom = 148.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -185.5
+offset_top = 2.0
+offset_right = 185.5
+offset_bottom = 111.0
+grow_horizontal = 2
 
 [node name="Currency" parent="." instance=ExtResource("6_3pj68")]
-offset_left = 6.0
+offset_left = 55.0
 offset_top = 6.0
-offset_right = 334.0
+offset_right = 383.0
 offset_bottom = 41.0
 
 [node name="Debug" type="VBoxContainer" parent="."]
@@ -84,7 +88,6 @@ focus_mode = 0
 text = "Save to File"
 
 [node name="ToggleInventory" type="TextureButton" parent="."]
-visible = false
 custom_minimum_size = Vector2(64, 64)
 offset_left = 2.0
 offset_right = 66.0

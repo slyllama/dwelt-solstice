@@ -4,16 +4,12 @@ const TEX_PATH = "res://lib/thing/inspector/textures/"
 const OWNER_PLAYER_TEX = preload(TEX_PATH + "owner_player.png")
 const OWNER_ENEMY_TEX = preload(TEX_PATH + "owner_enemy.png")
 
-func _set_dissolve(value: float) -> void:
-	material.set_shader_parameter("value", value)
-
-func _get_dissolve() -> float:
-	return(material.get_shader_parameter("value"))
+# Functions to help control dissolve shader
+func _set_dissolve(value: float) -> void: material.set_shader_parameter("value", value)
+func _get_dissolve() -> float: return(material.get_shader_parameter("value"))
 
 func appear() -> void:
 	update() # render data
-	
-	# Visually appear
 	visible = true
 	var _d := create_tween()
 	_d.tween_method(_set_dissolve,
@@ -43,7 +39,11 @@ func _init() -> void:
 	visible = false
 	Dwelt.thing_targeted.connect(appear)
 
+func _ready() -> void:
+	_set_dissolve(0.0)
+
 func _input(_event: InputEvent) -> void:
 	if Input.is_action_just_released("left_click"):
-		if Input.mouse_mode == Input.MOUSE_MODE_VISIBLE:
+		if (Input.mouse_mode == Input.MOUSE_MODE_VISIBLE
+			and !get_window().gui_get_hovered_control()):
 			release_target()

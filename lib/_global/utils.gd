@@ -16,7 +16,7 @@ func get_all_children(node: Node, arr := []) -> Array:
 	return(arr)
 
 func pdebug(text: String, source := "") -> void:
-	var line = text
+	var line := text
 	if source != "":
 		line = "[" + source + "] " + line
 	print(line)
