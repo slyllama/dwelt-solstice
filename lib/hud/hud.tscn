@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://istq4exbymwq"]
+[gd_scene load_steps=14 format=3 uid="uid://istq4exbymwq"]
 
 [ext_resource type="FontFile" uid="uid://c7qpj4jbth6pg" path="res://generic/fonts/ibm_plex_mono.otf" id="1_dcyf8"]
 [ext_resource type="Script" uid="uid://davrehdjbld01" path="res://lib/hud/scripts/render_monitor.gd" id="1_o36f6"]
@@ -8,7 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://dd7rl0r1enohp" path="res://lib/ui/inventory/inventory.tscn" id="5_4etgo"]
 [ext_resource type="PackedScene" uid="uid://c8oj1ia1ewi5q" path="res://lib/hud/currency/currency.tscn" id="6_3pj68"]
 [ext_resource type="Texture2D" uid="uid://ren8he6qiotw" path="res://lib/hud/textures/inventory.png" id="8_r2k48"]
+[ext_resource type="Texture2D" uid="uid://qvxav4j1iaar" path="res://lib/hud/textures/settings.png" id="9_45tie"]
 [ext_resource type="Texture2D" uid="uid://cetc1nb4j4x8h" path="res://lib/hud/textures/inventory_hover.png" id="9_d84xd"]
+[ext_resource type="Texture2D" uid="uid://bsu8ohjo36dal" path="res://lib/hud/textures/settings_hover.png" id="10_62h71"]
 [ext_resource type="PackedScene" uid="uid://u2i05ele7n62" path="res://lib/hud/screen_fx/eye_anim/eye_anim.tscn" id="10_ixdrw"]
 [ext_resource type="PackedScene" uid="uid://d02blbpmlrt6s" path="res://lib/thing/inspector/inspector.tscn" id="11_coisy"]
 
@@ -66,9 +68,9 @@ offset_bottom = 111.0
 grow_horizontal = 2
 
 [node name="Currency" parent="." instance=ExtResource("6_3pj68")]
-offset_left = 55.0
+offset_left = 120.0
 offset_top = 6.0
-offset_right = 383.0
+offset_right = 448.0
 offset_bottom = 41.0
 
 [node name="Debug" type="VBoxContainer" parent="."]
@@ -87,10 +89,20 @@ layout_mode = 2
 focus_mode = 0
 text = "Save to File"
 
-[node name="ToggleInventory" type="TextureButton" parent="."]
+[node name="Settings" type="TextureButton" parent="."]
 custom_minimum_size = Vector2(64, 64)
 offset_left = 2.0
 offset_right = 66.0
+offset_bottom = 64.0
+texture_normal = ExtResource("9_45tie")
+texture_hover = ExtResource("10_62h71")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="ToggleInventory" type="TextureButton" parent="."]
+custom_minimum_size = Vector2(64, 64)
+offset_left = 64.0
+offset_right = 128.0
 offset_bottom = 64.0
 texture_normal = ExtResource("8_r2k48")
 texture_hover = ExtResource("9_d84xd")
