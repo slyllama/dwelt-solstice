@@ -15,7 +15,7 @@ void fragment() {
 	
 	// Highlighting
 	if (highlighted == true) {
-		ALBEDO *= 1.5;
+		ALBEDO *= 2.0;
 		ALBEDO = clamp(ALBEDO, vec3(0.0), vec3(1.0));
 	}
 	

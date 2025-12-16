@@ -1,0 +1,12 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://0nsk0poosrng"]
+
+[ext_resource type="Shader" uid="uid://bifl8761s02x6" path="res://lib/thing/materials/shaders/thing.gdshader" id="1_0ajv3"]
+[ext_resource type="Texture2D" uid="uid://c5ebrddddjdd0" path="res://generic/materials/textures/toger_diff.jpg" id="2_fxcui"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_0ajv3")
+shader_parameter/albedo_texture = ExtResource("2_fxcui")
+shader_parameter/uv_scale = 1.0
+shader_parameter/normal_strength = 1.0
+shader_parameter/albedo_color = Color(0.8, 0.8, 0.8, 1)

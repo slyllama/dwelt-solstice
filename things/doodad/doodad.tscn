@@ -1,27 +1,16 @@
-[gd_scene load_steps=9 format=3 uid="uid://b3eweb51qkttk"]
+[gd_scene load_steps=6 format=3 uid="uid://b3eweb51qkttk"]
 
 [ext_resource type="Script" uid="uid://v3c7x4mae7v1" path="res://lib/thing/thing.gd" id="1_tq7qu"]
 [ext_resource type="Script" uid="uid://fg7mxayvxsgv" path="res://lib/thing/scripts/thing_data.gd" id="2_paodx"]
-[ext_resource type="Shader" uid="uid://bifl8761s02x6" path="res://lib/thing/materials/shaders/thing.gdshader" id="3_llqg5"]
-[ext_resource type="Texture2D" uid="uid://c5ebrddddjdd0" path="res://generic/materials/textures/toger_diff.jpg" id="4_b8ctk"]
+[ext_resource type="PackedScene" uid="uid://ddfxlp08qcwnh" path="res://things/doodad/meshes/doodad.glb" id="3_llqg5"]
 
 [sub_resource type="Resource" id="Resource_llqg5"]
 script = ExtResource("2_paodx")
 thing_name = "Doodad"
 metadata/_custom_type_script = "uid://fg7mxayvxsgv"
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_b8ctk"]
-render_priority = 0
-shader = ExtResource("3_llqg5")
-shader_parameter/albedo_texture = ExtResource("4_b8ctk")
-shader_parameter/uv_scale = 4.0
-shader_parameter/normal_strength = 1.0
-shader_parameter/albedo_color = Color(0.5, 0.5, 0.5, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_tq7qu"]
-material = SubResource("ShaderMaterial_b8ctk")
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_tq7qu"]
+size = Vector3(2, 2, 2)
 
 [node name="Doodad" type="Node3D" node_paths=PackedStringArray("body", "mesh")]
 script = ExtResource("1_tq7qu")
@@ -30,12 +19,10 @@ mesh = NodePath("Mesh")
 data = SubResource("Resource_llqg5")
 metadata/_custom_type_script = "uid://v3c7x4mae7v1"
 
-[node name="Mesh" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
-mesh = SubResource("BoxMesh_tq7qu")
-
 [node name="Body" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
 [node name="Collision" type="CollisionShape3D" parent="Body"]
 shape = SubResource("BoxShape3D_tq7qu")
+
+[node name="Mesh" parent="." instance=ExtResource("3_llqg5")]

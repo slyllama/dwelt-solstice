@@ -129,7 +129,7 @@ collision_layer = 0
 collision_mask = 0
 
 [node name="Player" parent="." index="4"]
-transform = Transform3D(-0.66835225, 0, -0.7438451, 0, 1, 0, 0.7438451, 0, -0.66835225, 2.9527235, 0.64434695, 1.0152698)
+transform = Transform3D(-0.76141405, 0, -0.6482661, 0, 1, 0, 0.6482661, 0, -0.76141405, 2.1556785, 0.64434695, 1.6671798)
 
 [node name="Bounds" parent="." index="5"]
 size = 13.65
@@ -334,7 +334,7 @@ transform = Transform3D(2.6260412, 0, -0.21709979, 0, 2.635, 0, 0.21709979, 0, 2
 transform = Transform3D(1.8696018, 0, -0.71034443, 0, 2, 0, 0.71034443, 0, 1.8696018, -8.359807, 2.5360322, 25.782415)
 
 [node name="Doodad" parent="." index="11" instance=ExtResource("18_judrx")]
-transform = Transform3D(0.8584859, 0, 0.5128372, 0, 1, 0, -0.5128372, 0, 0.8584859, -5.1431775, -0.3396117, 1.634846)
+transform = Transform3D(0.8584859, 0, 0.5128372, 0, 1, 0, -0.5128372, 0, 0.8584859, -5.1431775, -0.79194766, 1.634846)
 
 [node name="Doodad2" parent="." index="12" instance=ExtResource("18_judrx")]
 transform = Transform3D(0.032597005, 0, 0.9994685, 0, 1, 0, -0.9994685, 0, 0.032597005, -4.655936, -1.8469374, 5.3790407)

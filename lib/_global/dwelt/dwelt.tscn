@@ -12,3 +12,4 @@ script = ExtResource("2_10tc7")
 
 [node name="UIClick" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_e4wmt")
+volume_db = -5.0

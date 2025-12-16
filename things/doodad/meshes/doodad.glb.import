@@ -3,21 +3,21 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://c87qysmwmmkk4"
-path="res://.godot/imported/tree.glb-b9554e2eddd3f552f6c84c4d702fcbff.scn"
+uid="uid://ddfxlp08qcwnh"
+path="res://.godot/imported/doodad.glb-3363bdf39f7e163a669f2a4752b3e15d.scn"
 
 [deps]
 
-source_file="res://shards/playground/props/tree/meshes/tree.glb"
-dest_files=["res://.godot/imported/tree.glb-b9554e2eddd3f552f6c84c4d702fcbff.scn"]
+source_file="res://things/doodad/meshes/doodad.glb"
+dest_files=["res://.godot/imported/doodad.glb-3363bdf39f7e163a669f2a4752b3e15d.scn"]
 
 [params]
 
 nodes/root_type=""
-nodes/root_name="Tree"
+nodes/root_name="Doodad"
 nodes/root_script=null
 nodes/apply_root_scale=true
-nodes/root_scale=0.85
+nodes/root_scale=1.0
 nodes/import_as_skeleton_bones=false
 nodes/use_name_suffixes=true
 nodes/use_node_type_suffixes=true
@@ -39,15 +39,10 @@ materials/extract_format=0
 materials/extract_path=""
 _subresources={
 "materials": {
-"leaf": {
+"mat_doodad": {
 "use_external/enabled": true,
-"use_external/fallback_path": "res://shards/playground/props/tree/materials/mat_leaf.tres",
-"use_external/path": "uid://dfe1hwt8aokw6"
-},
-"trunk": {
-"use_external/enabled": true,
-"use_external/fallback_path": "res://shards/playground/props/tree/materials/mat_trunk.tres",
-"use_external/path": "uid://c8xirc23wn2h5"
+"use_external/fallback_path": "res://things/doodad/materials/mat_doodad.tres",
+"use_external/path": "uid://0nsk0poosrng"
 }
 }
 }

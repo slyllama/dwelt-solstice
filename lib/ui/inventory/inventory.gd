@@ -27,7 +27,6 @@ func _clear_drag_cursor() -> void:
 	%CursorTile.visible = false
 
 func appear(muted := false) -> void:
-	print("appearing")
 	if !muted: # conserve insanity during debugging
 		$Open.play()
 	visible = true
@@ -35,7 +34,6 @@ func appear(muted := false) -> void:
 	_d.tween_method(_set_dissolve, _get_dissolve(), 1.0, 0.25)
 
 func disappear() -> void:
-	print("disappearing")
 	$Open.play()
 	_set_dissolve(1.0)
 	var _d = create_tween()
