@@ -6,15 +6,7 @@ extends Node
 @onready var camera: Camera3D = get_parent()
 
 func handle_mouse_raycast() -> void:
-	# The mouse position retrieved from the viewport seems offset when in
-	# fullscreen modes, so when in fullscreen we get the mouse's actual
-	# position from the DisplayServer
-	var mouse_pos: Vector2
-	if (get_window().mode == Window.MODE_FULLSCREEN
-		or get_window().mode == Window.MODE_EXCLUSIVE_FULLSCREEN):
-		mouse_pos = DisplayServer.mouse_get_position()
-	else: mouse_pos = get_viewport().get_mouse_position()
-	
+	var mouse_pos = Utils.get_mouse_position()
 	var _from = camera.project_ray_origin(mouse_pos)
 	var _to = _from + camera.project_ray_normal(mouse_pos) * 200.0
 	var space_state = camera.get_world_3d().direct_space_state

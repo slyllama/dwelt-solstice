@@ -125,5 +125,7 @@ func _input(_event: InputEvent) -> void:
 		else: cancel_drag() # nothing to drag
 
 func _process(_delta: float) -> void:
-	%CursorTile.position = (get_window().get_mouse_position()
-		- %CursorTile.size / 2.0)
+	if Engine.is_editor_hint(): return
+	if Input.is_action_pressed("left_click"):
+		%CursorTile.position = (Utils.get_mouse_position()
+			- %CursorTile.size / 2.0)
