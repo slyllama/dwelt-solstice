@@ -28,6 +28,8 @@ func save_to_file() -> void:
 	_f.store_line(JSON.stringify(data, "\t"))
 	_f.close()
 	loaded.emit()
+	
+	print_rich("[color=#777][Save] Saving...[/color]")
 
 func load_save_file() -> void:
 	if !_save_file_exists(): # create new save

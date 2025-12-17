@@ -1,7 +1,7 @@
 [gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://dfe1hwt8aokw6"]
 
 [ext_resource type="Shader" uid="uid://ce2rwndxqyn1h" path="res://generic/materials/shaders/foliage.gdshader" id="1_j0cwb"]
-[ext_resource type="Texture2D" uid="uid://b1o7y0pabl0fo" path="res://shards/playground/props/tree/materials/textures/leaf_diff.png" id="2_ue13s"]
+[ext_resource type="Texture2D" uid="uid://dfurpgj0af1ou" path="res://shards/playground/props/tree/materials/textures/leaf_diff.png" id="2_ue13s"]
 
 [resource]
 render_priority = 0

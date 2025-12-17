@@ -5,15 +5,15 @@ extends Control
 @export var tile_width := 5 # should be a multiple of capacity
 
 # TODO: testing data only - treat this as the player's inventory
-var test_inventory_data := {
-	0: { "id": "test_green" },
-	1: { "id": "test_red" } }
+#var test_inventory_data := {
+	#0: { "id": "test_green" },
+	#1: { "id": "test_red" } }
 var dragged_tile_id
 var dragged_tile_idx
 
 # We copy the player's inventory data so we can perform operations on it like
 # showing temporary states during dragging
-@onready var inventory_data := test_inventory_data.duplicate()
+@onready var inventory_data: Dictionary = Save.data.inventory.duplicate()
 
 # Functions to help control dissolve shader
 func _set_dissolve(value: float) -> void: material.set_shader_parameter("value", value)
@@ -53,22 +53,27 @@ func begin_drag(id: String, idx: int) -> void:
 func complete_drag(dest_idx: int) -> void:
 	$DragComplete.play()
 	
-	inventory_data[dragged_tile_idx] = {} # allocate entry for source
-	if dest_idx in test_inventory_data: # copy the destination to the source, if there is one...
-		inventory_data[dragged_tile_idx].id = test_inventory_data[dest_idx].id
+	var _drag_sidx = str(dragged_tile_idx)
+	var _dest_sidx = str(dest_idx)
+	
+	inventory_data[_drag_sidx] = {} # allocate entry for source
+	if _dest_sidx in Save.data.inventory: # copy the destination to the source, if there is one...
+		inventory_data[_drag_sidx].id = Save.data.inventory[_dest_sidx].id
 	else: #...or clear the source if the destination was blank
-		inventory_data[dragged_tile_idx].id = "blank"
-	inventory_data[dest_idx] = {} # allocate entry for destination
-	inventory_data[dest_idx].id = dragged_tile_id # assign the already-known source to the destination
+		inventory_data[_drag_sidx].id = "blank"
+	inventory_data[_dest_sidx] = {} # allocate entry for destination
+	inventory_data[_dest_sidx].id = dragged_tile_id # assign the already-known source to the destination
 	
 	_clear_drag_cursor()
-	test_inventory_data = inventory_data.duplicate()
+	Save.data.inventory = inventory_data.duplicate()
 	render()
+	
+	Save.save_to_file()
 
 # Revert to original layout
 func cancel_drag() -> void:
 	_clear_drag_cursor()
-	inventory_data = test_inventory_data.duplicate()
+	inventory_data = Save.data.inventory.duplicate()
 	render() 
 
 func render() -> void:
@@ -94,8 +99,8 @@ func render() -> void:
 			var tile = InventoryTile.new()
 			var _idx = _r * tile_width + _t
 			tile.index = _idx # assign index
-			if _idx in inventory_data: # assign item if the player has one saved
-				tile.id = inventory_data[_idx].id
+			if str(_idx) in inventory_data: # assign item if the player has one saved
+				tile.id = inventory_data[str(_idx)].id
 			row.add_child(tile)
 			
 			tile.drag_initiated.connect(func(): # begin dragging
