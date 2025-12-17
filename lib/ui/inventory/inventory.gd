@@ -26,6 +26,12 @@ func _clear_drag_cursor() -> void:
 	%CursorTile.id = "blank"
 	%CursorTile.visible = false
 
+# Remove blank slots from the inventory array - helps keep the save file clean
+func _trim_inventory() -> void:
+	for _item in inventory_data:
+		if inventory_data[_item].id == "blank":
+			inventory_data.erase(_item)
+
 func appear(muted := false) -> void:
 	if !muted: # conserve insanity during debugging
 		$Open.play()
@@ -65,6 +71,7 @@ func complete_drag(dest_idx: int) -> void:
 	inventory_data[_dest_sidx].id = dragged_tile_id # assign the already-known source to the destination
 	
 	_clear_drag_cursor()
+	_trim_inventory()
 	Save.data.inventory = inventory_data.duplicate()
 	render()
 	

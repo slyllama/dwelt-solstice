@@ -66,22 +66,6 @@ offset_top = 87.0
 offset_right = 381.0
 offset_bottom = 287.0
 
-[node name="Debug" type="VBoxContainer" parent="."]
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 8.0
-offset_top = -48.0
-offset_right = 168.0
-offset_bottom = -8.0
-grow_vertical = 0
-alignment = 2
-
-[node name="Save" type="Button" parent="Debug"]
-layout_mode = 2
-focus_mode = 0
-text = "Save to File"
-
 [node name="Settings" type="TextureButton" parent="."]
 custom_minimum_size = Vector2(64, 64)
 offset_left = 6.0
@@ -110,5 +94,4 @@ visible = false
 free_after_finish = true
 start_visible = true
 
-[connection signal="pressed" from="Debug/Save" to="." method="_on_save_pressed"]
 [connection signal="pressed" from="ToggleInventory" to="." method="_on_toggle_inventory_pressed"]
