@@ -13,7 +13,7 @@ var dragged_tile_idx
 
 # We copy the player's inventory data so we can perform operations on it like
 # showing temporary states during dragging
-@onready var inventory_data: Dictionary = Save.data.inventory.duplicate()
+@onready var inventory_data := {}
 
 # Functions to help control dissolve shader
 func _set_dissolve(value: float) -> void: material.set_shader_parameter("value", value)
@@ -125,6 +125,7 @@ func _ready() -> void:
 
 func _input(_event: InputEvent) -> void:
 	if Engine.is_editor_hint(): return
+	inventory_data = Save.data.inventory.duplicate()
 	if Input.is_action_just_released("left_click"):
 		if dragged_tile_id:
 			if get_window().gui_get_hovered_control():

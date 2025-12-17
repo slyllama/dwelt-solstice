@@ -38,5 +38,5 @@ shader_parameter/patina_size = 1.0
 shader_parameter/patina_strength = 2.0
 shader_parameter/stars = ExtResource("2_yf6jp")
 shader_parameter/stars_gradient_mask = SubResource("GradientTexture2D_mfhad")
-shader_parameter/stars_size = 7.8
+shader_parameter/stars_size = 8.5
 shader_parameter/stars_strength = 0.25

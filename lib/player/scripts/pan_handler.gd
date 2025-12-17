@@ -28,7 +28,7 @@ func _input(event: InputEvent) -> void:
 			if event is InputEventMouseMotion:
 				event_relative = event.relative
 
-func _process(_delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if Input.is_action_pressed("left_click") and !_last_click_in_gui:
 			var _m := Utils.get_mouse_position()
 			var _mouse_delta := _last_click_position - _m
