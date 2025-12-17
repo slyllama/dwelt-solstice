@@ -22,7 +22,8 @@ func disappear() -> void:
 	_d.tween_callback(func(): visible = false)
 
 func release_target() -> void:
-	Dwelt.targeted_thing = null
+	if Dwelt.targeted_thing == null: return # no need to release the target again
+	Dwelt.target_thing(null)
 	await get_tree().process_frame
 	if !Dwelt.targeted_thing and visible:
 		Utils.pdebug("Releasing target.", "Inspector")
@@ -30,6 +31,7 @@ func release_target() -> void:
 
 # Render the correct Thing data for the targeted Thing
 func update() -> void:
+	if Dwelt.targeted_thing == null: return # nothing to target
 	var _t := Dwelt.targeted_thing
 	$Title.text = _t.data.thing_name
 	if _t.owned_by_player: $Owner.texture = OWNER_PLAYER_TEX

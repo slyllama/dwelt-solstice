@@ -10,7 +10,7 @@ thing_name = "Doodad"
 metadata/_custom_type_script = "uid://fg7mxayvxsgv"
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_tq7qu"]
-size = Vector3(2, 2, 2)
+size = Vector3(2.1, 2.1, 2.1)
 
 [node name="Doodad" type="Node3D" node_paths=PackedStringArray("body", "mesh")]
 script = ExtResource("1_tq7qu")
@@ -21,6 +21,8 @@ metadata/_custom_type_script = "uid://v3c7x4mae7v1"
 
 [node name="Body" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+collision_layer = 32769
+collision_mask = 32769
 
 [node name="Collision" type="CollisionShape3D" parent="Body"]
 shape = SubResource("BoxShape3D_tq7qu")

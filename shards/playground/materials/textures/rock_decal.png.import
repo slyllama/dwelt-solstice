@@ -2,19 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b1o7y0pabl0fo"
-path="res://.godot/imported/tree_leaf_diff.png-03dc0bcee67ce3fbd1eb5000501fcfde.ctex"
+uid="uid://210v4in36vha"
+path="res://.godot/imported/rock_decal.png-0db3e8cf65f2ecf721717a43434c4a8e.ctex"
 metadata={
 "vram_texture": false
-}
-generator_parameters={
-"md5": "f5a0aef8ed9f8dde80e6e9eeadbc5504"
 }
 
 [deps]
 
-source_file="res://shards/playground/props/tree/meshes/tree_leaf_diff.png"
-dest_files=["res://.godot/imported/tree_leaf_diff.png-03dc0bcee67ce3fbd1eb5000501fcfde.ctex"]
+source_file="res://shards/playground/materials/textures/rock_decal.png"
+dest_files=["res://.godot/imported/rock_decal.png-0db3e8cf65f2ecf721717a43434c4a8e.ctex"]
 
 [params]
 
@@ -26,7 +23,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""

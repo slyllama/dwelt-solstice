@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://crbctqd55n6f6"]
+[gd_scene load_steps=39 format=3 uid="uid://crbctqd55n6f6"]
 
 [ext_resource type="Script" uid="uid://cro16agkt5mwp" path="res://lib/player/player.gd" id="1_al4t3"]
 [ext_resource type="Script" uid="uid://djkynrad87367" path="res://lib/player/scripts/input_handler.gd" id="1_odf55"]
@@ -15,6 +15,7 @@
 [ext_resource type="AudioStream" uid="uid://bkxx1ti38653a" path="res://lib/player/sounds/engine_idle.ogg" id="9_5x5nn"]
 [ext_resource type="AudioStream" uid="uid://bieahrad33g0x" path="res://lib/player/sounds/engine_moving.ogg" id="10_ram4p"]
 [ext_resource type="Script" uid="uid://dawjsepg8xsu4" path="res://lib/player/scripts/pan_handler.gd" id="12_r1bse"]
+[ext_resource type="Script" uid="uid://dxhxw1e4niy37" path="res://lib/player/scripts/cursor_cast.gd" id="14_ego0t"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_iochv"]
 radius = 0.2
@@ -196,7 +197,7 @@ parameters/add_strafe/add_amount = 0.0
 transform = Transform3D(-0.99999994, 2.990034e-08, -8.2150514e-08, 0, 0.9396924, 0.34202003, 8.742277e-08, 0.34202003, -0.9396924, 0, 0, 0)
 script = ExtResource("5_4ok3w")
 min_zoom = 1.0
-max_zoom = 2.5
+max_zoom = 3.0
 v_offset = 0.7
 
 [node name="Camera" type="Camera3D" parent="Orbit"]
@@ -218,6 +219,9 @@ draw_pass_1 = SubResource("QuadMesh_0y160")
 
 [node name="Listener" type="AudioListener3D" parent="Orbit/Camera"]
 current = true
+
+[node name="CursorCast" type="Node" parent="Orbit/Camera"]
+script = ExtResource("14_ego0t")
 
 [node name="PanHandler" type="Node" parent="Orbit"]
 script = ExtResource("12_r1bse")

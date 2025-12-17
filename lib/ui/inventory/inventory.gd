@@ -124,6 +124,6 @@ func _input(_event: InputEvent) -> void:
 			else: cancel_drag() # landed outside of the UI
 		else: cancel_drag() # nothing to drag
 
-func _physics_process(_delta: float) -> void:
-	%CursorTile.position = (get_window().get_mouse_position()
+func _process(_delta: float) -> void:
+	%CursorTile.position = (Vector2(DisplayServer.mouse_get_position())
 		- %CursorTile.size / 2.0)

@@ -52,7 +52,8 @@ _subresources={
 },
 "nodes": {
 "PATH:Terrain": {
-"mesh_instance/cast_shadow": 0
+"mesh_instance/cast_shadow": 0,
+"mesh_instance/layers": 5
 }
 }
 }
