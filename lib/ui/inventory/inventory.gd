@@ -116,7 +116,7 @@ func _input(_event: InputEvent) -> void:
 	if Input.is_action_just_released("left_click"):
 		if dragged_tile_id:
 			if get_window().gui_get_hovered_control():
-				var _p = get_window().gui_get_hovered_control().get_parent()
+				var _p = get_window().gui_get_hovered_control()
 				if _p is InventoryTile:
 					var _idx = _p.index
 					complete_drag(_idx)
@@ -125,5 +125,5 @@ func _input(_event: InputEvent) -> void:
 		else: cancel_drag() # nothing to drag
 
 func _process(_delta: float) -> void:
-	%CursorTile.position = (Vector2(DisplayServer.mouse_get_position())
+	%CursorTile.position = (get_window().get_mouse_position()
 		- %CursorTile.size / 2.0)

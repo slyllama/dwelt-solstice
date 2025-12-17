@@ -51,6 +51,21 @@ _subresources={
 }
 },
 "nodes": {
+"PATH:Grass": {
+"mesh_instance/layers": 5
+},
+"PATH:Grass_001": {
+"mesh_instance/layers": 5
+},
+"PATH:Grass_002": {
+"mesh_instance/layers": 5
+},
+"PATH:Grass_003": {
+"mesh_instance/layers": 5
+},
+"PATH:Grass_004": {
+"mesh_instance/layers": 5
+},
 "PATH:Terrain": {
 "mesh_instance/cast_shadow": 0,
 "mesh_instance/layers": 5
