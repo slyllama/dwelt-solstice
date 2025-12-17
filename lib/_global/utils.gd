@@ -10,7 +10,9 @@ func get_mouse_position() -> Vector2:
 	var mouse_pos: Vector2
 	if (get_window().mode == Window.MODE_FULLSCREEN
 		or get_window().mode == Window.MODE_EXCLUSIVE_FULLSCREEN):
-		mouse_pos = DisplayServer.mouse_get_position()
+		mouse_pos = (Vector2(DisplayServer.screen_get_position())
+			+ Vector2(DisplayServer.mouse_get_position())
+			* 1.0 / get_window().content_scale_factor)
 	else: mouse_pos = get_viewport().get_mouse_position()
 	return(mouse_pos)
 
