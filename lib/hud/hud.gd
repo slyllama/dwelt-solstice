@@ -8,3 +8,6 @@ func _on_toggle_inventory_pressed() -> void:
 	if !$Inventory.visible:
 		$Inventory.appear()
 	else: $Inventory.disappear()
+
+func _process(_delta: float) -> void:
+	$Debug.text = str(get_window().get_mouse_position())

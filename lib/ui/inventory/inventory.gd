@@ -4,10 +4,6 @@ extends Control
 @export var capacity := 15 # total space
 @export var tile_width := 5 # should be a multiple of capacity
 
-# TODO: testing data only - treat this as the player's inventory
-#var test_inventory_data := {
-	#0: { "id": "test_green" },
-	#1: { "id": "test_red" } }
 var dragged_tile_id
 var dragged_tile_idx
 
@@ -140,5 +136,5 @@ func _input(_event: InputEvent) -> void:
 func _process(_delta: float) -> void:
 	if Engine.is_editor_hint(): return
 	if Input.is_action_pressed("left_click"):
-		%CursorTile.position = (Utils.get_mouse_position()
+		%CursorTile.position = (get_viewport().get_mouse_position()
 			- %CursorTile.size / 2.0)

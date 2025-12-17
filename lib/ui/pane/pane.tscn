@@ -9,12 +9,12 @@
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5oagf"]
 texture = ExtResource("1_80kxo")
 
-[node name="Pane" type="Panel" unique_id=2063168740]
+[node name="Pane" type="Panel"]
 custom_minimum_size = Vector2(200, 200)
 theme_override_styles/panel = SubResource("StyleBoxTexture_5oagf")
 script = ExtResource("2_6g8ad")
 
-[node name="Box" type="VBoxContainer" parent="." unique_id=1603824655]
+[node name="Box" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -27,15 +27,15 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 0
 
-[node name="Header" type="HBoxContainer" parent="Box" unique_id=812277926]
+[node name="Header" type="HBoxContainer" parent="Box"]
 layout_mode = 2
 
-[node name="Title" type="Label" parent="Box/Header" unique_id=787152025]
+[node name="Title" type="Label" parent="Box/Header"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "((Title))"
 
-[node name="CloseButton" type="TextureButton" parent="Box/Header" unique_id=772793465]
+[node name="CloseButton" type="TextureButton" parent="Box/Header"]
 custom_minimum_size = Vector2(24, 24)
 layout_mode = 2
 texture_normal = ExtResource("2_n6d33")
@@ -43,7 +43,7 @@ texture_hover = ExtResource("3_6g8ad")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="Corner" type="TextureRect" parent="." unique_id=470180332]
+[node name="Corner" type="TextureRect" parent="."]
 z_index = -1
 custom_minimum_size = Vector2(193, 204)
 layout_mode = 1

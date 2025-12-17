@@ -18,8 +18,8 @@ func _ready() -> void:
 	
 	if Engine.is_embedded_in_editor(): return
 	
-	if _is_retina():
-		if (get_window().mode != Window.MODE_FULLSCREEN
-			and get_window().mode != Window.MODE_EXCLUSIVE_FULLSCREEN):
+	if (get_window().mode != Window.MODE_FULLSCREEN
+		and get_window().mode != Window.MODE_EXCLUSIVE_FULLSCREEN):
+		if _is_retina():
 			get_window().size *= 2
-	get_window().position = screen_origin + SCREEN_POS_OFFSET
+		get_window().position = screen_origin + SCREEN_POS_OFFSET

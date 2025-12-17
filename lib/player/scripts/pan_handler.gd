@@ -18,7 +18,7 @@ func _input(event: InputEvent) -> void:
 		if Input.is_action_just_pressed("left_click"):
 			if get_window().gui_get_hovered_control():
 				_last_click_in_gui = true
-			_last_click_position = Utils.get_mouse_position()
+			_last_click_position = get_viewport().get_mouse_position()
 	elif Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 		if Input.is_action_just_released("left_click"):
 			await get_tree().process_frame
@@ -30,7 +30,7 @@ func _input(event: InputEvent) -> void:
 
 func _physics_process(_delta: float) -> void:
 	if Input.is_action_pressed("left_click") and !_last_click_in_gui:
-			var _m := Utils.get_mouse_position()
+			var _m := get_viewport().get_mouse_position()
 			var _mouse_delta := _last_click_position - _m
 			if _mouse_delta.length() > 10.0:
 				Input.mouse_mode = Input.MOUSE_MODE_CAPTURED

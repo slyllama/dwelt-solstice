@@ -44,7 +44,6 @@ _data = {
 [node name="Node3D" type="Node3D"]
 
 [node name="SelIndicator" type="Sprite3D" parent="."]
-pixel_size = 0.014
 billboard = 1
 no_depth_test = true
 texture = ExtResource("1_egrst")

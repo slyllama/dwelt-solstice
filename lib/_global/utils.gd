@@ -3,10 +3,6 @@ extends Node
 var _delta := 0.0
 var _pdelta := 0.0
 
-
-func get_mouse_position() -> Vector2:
-	return(get_viewport().get_mouse_position() + Vector2(0, 30.0))
-
 func crit_lerp(speed: float) -> float:
 	return(clamp(1.0 - exp(-speed * _delta), 0.0, 1.0))
 

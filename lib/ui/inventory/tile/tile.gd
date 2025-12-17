@@ -70,10 +70,10 @@ func _ready() -> void:
 
 func _gui_input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("left_click"):
-		_last_click_position = Utils.get_mouse_position()
+		_last_click_position = get_viewport().get_mouse_position()
 		_drag_threshold_passed = false
 	if Input.is_action_pressed("left_click"):
-		var _d = Utils.get_mouse_position() - _last_click_position # mouse delta
+		var _d = get_viewport().get_mouse_position() - _last_click_position # mouse delta
 		if !_drag_threshold_passed and id != "blank": # a blank tile cannot be moved
 			if _d.length() > DRAG_THRESHOLD:
 				_drag_threshold_passed = true

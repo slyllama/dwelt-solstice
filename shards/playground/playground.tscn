@@ -125,10 +125,13 @@ transform = Transform3D(-1.0876033, 0, -0.79129267, 0, 1.345, 0, 0.79129267, 0, 
 [node name="Bamboo2" parent="Natural" index="2" instance=ExtResource("2_m67mg")]
 transform = Transform3D(0.82130855, 0, -0.5704842, 0, 1, 0, 0.5704842, 0, 0.82130855, 1.4603248, -0.20155185, -1.9089997)
 
-[node name="Bamboo10" parent="Natural" index="3" instance=ExtResource("2_m67mg")]
+[node name="Bamboo3" parent="Natural" index="3" instance=ExtResource("2_m67mg")]
+transform = Transform3D(-0.52939045, -0.0678934, -0.8456573, -0.03602524, 0.9976926, -0.057547335, 0.8476131, 0, -0.5306148, -3.676724, 1.3820144, -2.5471292)
+
+[node name="Bamboo10" parent="Natural" index="4" instance=ExtResource("2_m67mg")]
 transform = Transform3D(0.59547496, 0.12499535, -0.79359037, -0.30405685, 0.9494047, -0.07861369, 0.7436121, 0.28810906, 0.6033524, 0.9379494, -1.6619234, 12.727282)
 
-[node name="Grass" parent="Natural" index="4" instance=ExtResource("5_u67vg")]
+[node name="Grass" parent="Natural" index="5" instance=ExtResource("5_u67vg")]
 transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, -7.337174, -0.21662414, -0.45273793)
 multimesh = SubResource("MultiMesh_judrx")
 foliage_mesh = ExtResource("6_rgmr2")
@@ -141,7 +144,7 @@ z_scale = 2.0
 colour_1 = Color(0, 0.15, 0.01750002, 1)
 colour_2 = Color(0.48666665, 0.73, 0, 1)
 
-[node name="Grass2" parent="Natural" index="5" instance=ExtResource("5_u67vg")]
+[node name="Grass2" parent="Natural" index="6" instance=ExtResource("5_u67vg")]
 transform = Transform3D(0.96660364, 0.0051871743, 0.25622347, 0.026604686, 0.9923619, -0.12045631, -0.25489125, 0.12325022, 0.95908266, 4.1321955, -1.2935092, -2.0621529)
 multimesh = SubResource("MultiMesh_8gts6")
 foliage_mesh = ExtResource("6_rgmr2")
@@ -155,7 +158,21 @@ smooth = false
 colour_1 = Color(0, 0.15, 0.01750002, 1)
 colour_2 = Color(0.48666665, 0.73, 0, 1)
 
-[node name="Grass3" parent="Natural" index="6" instance=ExtResource("5_u67vg")]
+[node name="Grass4" parent="Natural" index="7" instance=ExtResource("5_u67vg")]
+transform = Transform3D(1.0000001, 0, 0, 0, 0.9999998, 0, 0, 0, 0.99999994, -1.9910562, -1.279644, -0.50127316)
+multimesh = SubResource("MultiMesh_8gts6")
+foliage_mesh = ExtResource("6_rgmr2")
+count = 6
+size = 6.0
+scatter = 0.4
+min_scale = 1.5
+max_scale = 2.0
+z_scale = 2.5
+smooth = false
+colour_1 = Color(0, 0.15, 0.01750002, 1)
+colour_2 = Color(0.48666665, 0.73, 0, 1)
+
+[node name="Grass3" parent="Natural" index="8" instance=ExtResource("5_u67vg")]
 transform = Transform3D(0.9659259, 0, 0.25881907, -0.018405775, 0.997468, 0.068691276, -0.25816375, -0.07111444, 0.96348023, 10.378684, -1.1096656, -4.278849)
 multimesh = SubResource("MultiMesh_cev1e")
 foliage_mesh = ExtResource("6_rgmr2")
@@ -169,52 +186,57 @@ smooth = false
 colour_1 = Color(0, 0.15, 0.01750002, 1)
 colour_2 = Color(0.48666665, 0.73, 0, 1)
 
-[node name="Tree2" parent="Natural" index="7" instance=ExtResource("12_fq4iu")]
+[node name="Tree2" parent="Natural" index="9" instance=ExtResource("12_fq4iu")]
 transform = Transform3D(-0.9588693, 0, -0.28384796, 0, 1, 0, 0.28384796, 0, -0.9588693, -11.4731655, -0.09296268, 2.3586357)
 
-[node name="Tree6" parent="Natural" index="8" instance=ExtResource("12_fq4iu")]
+[node name="Tree6" parent="Natural" index="10" instance=ExtResource("12_fq4iu")]
 transform = Transform3D(-0.67130506, -0.17894675, 0.7192549, -0.2575714, 0.9662593, -2.016719e-08, -0.69498676, -0.1852595, -0.69474626, -8.591396, -2.223877, 12.33293)
 
-[node name="Tree3" parent="Natural" index="9" instance=ExtResource("12_fq4iu")]
+[node name="Tree3" parent="Natural" index="11" instance=ExtResource("12_fq4iu")]
 transform = Transform3D(-0.9184769, 0, 1.3101146, 0, 1.6, 0, -1.3101146, 0, -0.9184769, -17.476847, 2.2105615, 16.879269)
 
-[node name="Tree4" parent="Natural" index="10" instance=ExtResource("12_fq4iu")]
+[node name="Tree4" parent="Natural" index="12" instance=ExtResource("12_fq4iu")]
 transform = Transform3D(0.8010592, -0.2645363, 0.5369587, 0.28896728, 0.9564975, 0.04013045, -0.5242156, 0.123016626, 0.84265345, 7.810972, -0.04402381, -4.2168484)
 
-[node name="Tree5" parent="Natural" index="11" instance=ExtResource("12_fq4iu")]
+[node name="Tree5" parent="Natural" index="13" instance=ExtResource("12_fq4iu")]
 transform = Transform3D(0.35999686, 0, -0.93295354, 0, 1, 0, 0.93295354, 0, 0.35999686, 14.944819, 0.80393016, -0.1434691)
 
-[node name="FogVolume" parent="Natural" index="12" instance=ExtResource("11_r4xcf")]
+[node name="FogVolume" parent="Natural" index="14" instance=ExtResource("11_r4xcf")]
 transform = Transform3D(0.9995879, 0, 0.02870673, 0, 1, 0, -0.02870673, 0, 0.9995879, -4.8024764, 0.87474775, 0.44770527)
 
-[node name="FogVolume2" parent="Natural" index="13" instance=ExtResource("11_r4xcf")]
+[node name="FogVolume2" parent="Natural" index="15" instance=ExtResource("11_r4xcf")]
 transform = Transform3D(0.98705524, 0, -0.16038081, 0, 1, 0, 0.16038081, 0, 0.98705524, 8.921758, 1.3126891, -3.1059918)
 
-[node name="FogVolume3" parent="Natural" index="14" instance=ExtResource("11_r4xcf")]
+[node name="FogVolume3" parent="Natural" index="16" instance=ExtResource("11_r4xcf")]
 transform = Transform3D(0.4395002, 0, 0.8982425, 0, 1, 0, -0.8982425, 0, 0.4395002, -16.874113, 3.332859, 0.6187277)
 size = Vector3(10, 4.313965, 5)
 
-[node name="Daisies" parent="Natural" index="15" instance=ExtResource("7_rgmr2")]
+[node name="Daisies" parent="Natural" index="17" instance=ExtResource("7_rgmr2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3309698, -0.08248001, -0.75820565)
 
-[node name="Daisies4" parent="Natural" index="16" instance=ExtResource("7_rgmr2")]
+[node name="Daisies4" parent="Natural" index="18" instance=ExtResource("7_rgmr2")]
 transform = Transform3D(-0.94502735, 0.03928469, 0.32462272, 0.1313967, 0.9547019, 0.26698163, -0.29942966, 0.2949593, -0.9073813, 4.540712, -0.04089892, -0.47417045)
 
-[node name="Daisies2" parent="Natural" index="17" instance=ExtResource("7_rgmr2")]
+[node name="Daisies2" parent="Natural" index="19" instance=ExtResource("7_rgmr2")]
 transform = Transform3D(0.5770496, -0.12626818, 0.80688924, 0.33755606, 0.9365145, -0.094851464, -0.7436866, 0.32710433, 0.5830378, -4.7585874, 0.43638128, -1.0423813)
 
-[node name="Daisies5" parent="Natural" index="18" instance=ExtResource("7_rgmr2")]
+[node name="Daisies3" parent="Natural" index="20" instance=ExtResource("7_rgmr2")]
+transform = Transform3D(-0.0900566, 0.13243395, 0.98709226, 0.33755606, 0.9365145, -0.09485145, -0.93698764, 0.32465696, -0.12904325, -2.0599225, 0.50963086, -0.89224386)
+
+[node name="Daisies8" parent="Natural" index="21" instance=ExtResource("7_rgmr2")]
+transform = Transform3D(-0.87814695, 0.36350164, -0.31100595, 0.33755606, 0.931487, 0.1356025, 0.33898962, 0.01409696, -0.9406845, -1.0415003, 0.69871753, -0.9499171)
+
+[node name="Daisies5" parent="Natural" index="22" instance=ExtResource("7_rgmr2")]
 transform = Transform3D(1, 0, 0, 0, 0.9189496, -0.39437503, 0, 0.39437503, 0.9189496, -2.0617511, -1.4219651, 5.5990376)
 
-[node name="Daisies6" parent="Natural" index="19" instance=ExtResource("7_rgmr2")]
+[node name="Daisies6" parent="Natural" index="23" instance=ExtResource("7_rgmr2")]
 transform = Transform3D(-0.53548336, -0.1274027, -0.8348809, -0.42880017, 0.89267194, 0.13880609, 0.7275905, 0.43232542, -0.5326413, -3.5537817, -1.243164, 4.87862)
 
-[node name="Daisies7" parent="Natural" index="20" instance=ExtResource("7_rgmr2")]
+[node name="Daisies7" parent="Natural" index="24" instance=ExtResource("7_rgmr2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.495945, -1.6629683, 5.8459907)
 
-[node name="RockDecal" type="Decal" parent="Natural" index="21"]
+[node name="RockDecal" type="Decal" parent="Natural" index="25"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -10.582555, 0.35652763, 5.836824)
-visible = false
 size = Vector3(5, 3, 5)
 texture_albedo = ExtResource("12_judrx")
 albedo_mix = 0.9
@@ -223,9 +245,8 @@ distance_fade_begin = 20.0
 distance_fade_length = 2.0
 cull_mask = 1047556
 
-[node name="RockDecal6" type="Decal" parent="Natural" index="22"]
+[node name="RockDecal6" type="Decal" parent="Natural" index="26"]
 transform = Transform3D(0.39057052, -0.6475035, -0.65436536, -3.7252903e-08, 0.7108239, -0.7033697, 0.920573, 0.27471542, 0.27762675, 15.063191, 2.627101, -4.836332)
-visible = false
 size = Vector3(7, 5, 7)
 texture_albedo = ExtResource("12_judrx")
 albedo_mix = 0.9
@@ -234,9 +255,8 @@ distance_fade_begin = 20.0
 distance_fade_length = 2.0
 cull_mask = 1047556
 
-[node name="RockDecal3" type="Decal" parent="Natural" index="23"]
+[node name="RockDecal3" type="Decal" parent="Natural" index="27"]
 transform = Transform3D(0.99789226, -0.04118342, 0.05014916, 0.06392696, 0.49107724, -0.868767, 0.011151696, 0.870142, 0.4926753, -1.6265597, 2.3887727, -4.421972)
-visible = false
 size = Vector3(6, 2, 6)
 texture_albedo = ExtResource("12_judrx")
 albedo_mix = 0.9
@@ -245,9 +265,8 @@ distance_fade_begin = 20.0
 distance_fade_length = 2.0
 cull_mask = 1047556
 
-[node name="RockDecal2" type="Decal" parent="Natural" index="24"]
+[node name="RockDecal2" type="Decal" parent="Natural" index="28"]
 transform = Transform3D(1, 0, 0, 0, 0.95343316, 0.3016045, 0, -0.3016045, 0.95343316, -2.3867238, -0.9443433, 11.993877)
-visible = false
 size = Vector3(5, 3, 5)
 texture_albedo = ExtResource("12_judrx")
 distance_fade_enabled = true
