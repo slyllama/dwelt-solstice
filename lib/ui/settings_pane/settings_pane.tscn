@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://orydvar6kty5"]
+[gd_scene load_steps=4 format=3 uid="uid://orydvar6kty5"]
 
 [ext_resource type="PackedScene" uid="uid://b63hobdhwi8kc" path="res://lib/ui/pane/pane.tscn" id="1_2ggh0"]
 [ext_resource type="PackedScene" uid="uid://bc8re648e3g51" path="res://lib/ui/settings_pane/s_menu/s_menu.tscn" id="2_qd6od"]
+[ext_resource type="PackedScene" uid="uid://bbbakx44bexas" path="res://lib/ui/settings_pane/s_checkbox/s_checkbox.tscn" id="3_cagy3"]
 
 [node name="SettingsPane" instance=ExtResource("1_2ggh0")]
 offset_right = 350.0
@@ -29,3 +30,8 @@ layout_mode = 2
 id = "window_mode"
 title = "Window Mode"
 options = Array[String](["windowed", "full_screen"])
+
+[node name="Bloom" parent="Box/Scroll/Box" index="1" instance=ExtResource("3_cagy3")]
+layout_mode = 2
+id = "bloom"
+title = "Bloom"

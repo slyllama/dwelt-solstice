@@ -22,6 +22,7 @@ func fmt_option(option: String) -> String:
 	return(_s)
 
 func _ready() -> void:
+	if Engine.is_editor_hint(): return
 	Settings.file_loaded.connect(func():
 		if id in Settings.data:
 			$Value.selected = options.find(Settings.data[id]))

@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://bbbakx44bexas"]
+
+[ext_resource type="Script" uid="uid://d3h7mhg15gfmd" path="res://lib/ui/settings_pane/s_checkbox/s_checkbox.gd" id="1_ox375"]
+[ext_resource type="FontFile" uid="uid://bi4a4vc7qpom8" path="res://generic/fonts/trebuchet.ttf" id="2_a58rw"]
+[ext_resource type="Texture2D" uid="uid://l6cie2u2qujs" path="res://generic/materials/textures/tile_diff.jpg" id="3_elb5n"]
+
+[node name="SCheckbox" type="HBoxContainer"]
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+script = ExtResource("1_ox375")
+state = null
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("2_a58rw")
+theme_override_font_sizes/font_size = 14
+text = "((Setting))"
+
+[node name="Padding" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(4, 0)
+layout_mode = 2
+mouse_filter = 1
+color = Color(1, 1, 1, 0)
+
+[node name="CheckBox" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(24, 0)
+layout_mode = 2
+texture = ExtResource("3_elb5n")
+expand_mode = 1
+stretch_mode = 5

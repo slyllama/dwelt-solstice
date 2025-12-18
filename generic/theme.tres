@@ -118,6 +118,7 @@ vertical = true
 Button/styles/focus = SubResource("StyleBoxFlat_37o18")
 Button/styles/hover = SubResource("StyleBoxFlat_1c0d7")
 Button/styles/normal = SubResource("StyleBoxFlat_fp0go")
+CheckBox/constants/h_separation = 0
 Label/fonts/font = ExtResource("1_37o18")
 OptionButton/font_sizes/font_size = 14
 OptionButton/fonts/font = ExtResource("2_1c0d7")
