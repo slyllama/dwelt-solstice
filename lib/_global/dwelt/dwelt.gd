@@ -2,6 +2,20 @@ extends Node
 
 const GRAVITY := -9.8
 
+enum Aspects { ARCANE, MALEFICENT, ELEMENTAL, CATACLYSMIC,
+	KINETIC, TORPEFYING, VERDANT, NOXIOUS, UNASSIGNED }
+
+const aspect_properties = {
+	Aspects.ARCANE: { "name": "Arcane" },
+	Aspects.MALEFICENT: { "name": "Maleficent" },
+	Aspects.ELEMENTAL: { "name": "Elemental" },
+	Aspects.CATACLYSMIC: { "name": "Cataclysmic" },
+	Aspects.KINETIC: { "name": "Kinetic" },
+	Aspects.TORPEFYING: { "name": "Torpefying" },
+	Aspects.VERDANT: { "name": "Verdant" },
+	Aspects.NOXIOUS: { "name": "Noxious" },
+	Aspects.UNASSIGNED: { "name": "((Unassigned))" } }
+
 signal play_voice(emotion: String)
 signal thing_targeted
 signal ui_click

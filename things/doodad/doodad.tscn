@@ -7,6 +7,7 @@
 [sub_resource type="Resource" id="Resource_llqg5"]
 script = ExtResource("2_paodx")
 thing_name = "Doodad"
+aspect = 4
 metadata/_custom_type_script = "uid://fg7mxayvxsgv"
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_tq7qu"]

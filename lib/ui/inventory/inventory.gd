@@ -116,8 +116,7 @@ func _ready() -> void:
 	
 	if Engine.is_editor_hint():
 		appear(true) # debugging
-	else:
-		visible = false
+	else: visible = false
 
 func _input(_event: InputEvent) -> void:
 	if Engine.is_editor_hint(): return
