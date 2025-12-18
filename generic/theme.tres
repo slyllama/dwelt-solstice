@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=13 format=3 uid="uid://bi1monawihtf2"]
+[gd_resource type="Theme" load_steps=17 format=3 uid="uid://bi1monawihtf2"]
 
 [ext_resource type="FontFile" uid="uid://knusa64ltvaf" path="res://generic/fonts/crimson_text.ttf" id="1_37o18"]
 [ext_resource type="FontFile" uid="uid://bi4a4vc7qpom8" path="res://generic/fonts/trebuchet.ttf" id="2_1c0d7"]
@@ -94,6 +94,26 @@ shadow_size = 8
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_1c0d7"]
 color = Color(0.3, 0.3, 0.3, 1)
 
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_fp0go"]
+color = Color(0.4, 0.4, 0.4, 1)
+thickness = 4
+vertical = true
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_l2rom"]
+color = Color(0.45, 0.45, 0.45, 1)
+thickness = 4
+vertical = true
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_hgjgm"]
+color = Color(0.9, 0.9, 0.9, 1)
+thickness = 4
+vertical = true
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_56vwn"]
+color = Color(0, 0, 0, 0)
+thickness = 6
+vertical = true
+
 [resource]
 Button/styles/focus = SubResource("StyleBoxFlat_37o18")
 Button/styles/hover = SubResource("StyleBoxFlat_1c0d7")
@@ -122,3 +142,7 @@ PopupMenu/icons/radio_unchecked_disabled = null
 PopupMenu/styles/hover = SubResource("StyleBoxEmpty_fp0go")
 PopupMenu/styles/panel = SubResource("StyleBoxFlat_hgjgm")
 PopupMenu/styles/separator = SubResource("StyleBoxLine_1c0d7")
+VScrollBar/styles/grabber = SubResource("StyleBoxLine_fp0go")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxLine_l2rom")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxLine_hgjgm")
+VScrollBar/styles/scroll = SubResource("StyleBoxLine_56vwn")

@@ -10,6 +10,13 @@ func _is_retina() -> bool:
 	else: return(false)
 
 func _ready() -> void:
+	Settings.changed.connect(func(_s: String):
+		if _s == "window_mode":
+			match Settings.data[_s]:
+				"full_screen": get_window().mode = Window.MODE_FULLSCREEN
+				_: get_window().mode = Window.MODE_WINDOWED
+			)
+	
 	if _is_retina():
 		get_window().content_scale_factor = 2.0
 		# TODO: don't do this on macOS (it automatically handles cursor scaling)

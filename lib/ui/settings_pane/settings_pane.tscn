@@ -9,13 +9,23 @@ offset_bottom = 400.0
 title_text = "Settings"
 
 [node name="Box" parent="." index="0"]
+offset_bottom = -19.0
 theme_override_constants/separation = 2
 
-[node name="SMenu" parent="Box" index="1" instance=ExtResource("2_qd6od")]
-layout_mode = 2
+[node name="Title" parent="Box/Header" index="0"]
+text = "Settings"
 
-[node name="SMenu2" parent="Box" index="2" instance=ExtResource("2_qd6od")]
+[node name="Scroll" type="ScrollContainer" parent="Box" index="1"]
 layout_mode = 2
+size_flags_vertical = 3
 
-[node name="SMenu3" parent="Box" index="3" instance=ExtResource("2_qd6od")]
+[node name="Box" type="VBoxContainer" parent="Box/Scroll" index="0"]
 layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 2
+
+[node name="WindowMode" parent="Box/Scroll/Box" index="0" instance=ExtResource("2_qd6od")]
+layout_mode = 2
+id = "window_mode"
+title = "Window Mode"
+options = Array[String](["windowed", "full_screen"])

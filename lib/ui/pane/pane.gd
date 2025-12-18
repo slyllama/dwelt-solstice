@@ -1,3 +1,4 @@
+@tool
 extends Panel
 
 @export var title_text := "((Title))":

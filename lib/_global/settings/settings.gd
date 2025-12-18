@@ -16,6 +16,12 @@ func _settings_file_exists() -> bool:
 		return(true)
 	else: return(false)
 
+func change(setting: String, value: String) -> void:
+	if setting in data:
+		data[setting] = value
+		changed.emit(setting)
+		save_to_file()
+
 func save_to_file() -> void:
 	var _f = FileAccess.open(SETTINGS_PATH, FileAccess.WRITE)
 	_f.store_line(JSON.stringify(data, "\t"))

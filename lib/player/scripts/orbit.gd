@@ -17,6 +17,8 @@ func _ready() -> void:
 	$Camera.top_level = true
 
 func _input(event: InputEvent) -> void:
+	# Don't zoom when hovering over UI
+	if get_window().gui_get_hovered_control(): return
 	if event is InputEventPanGesture:
 		target_zoom += event.delta.y
 	

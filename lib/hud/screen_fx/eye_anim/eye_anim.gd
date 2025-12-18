@@ -41,5 +41,9 @@ func animate() -> void:
 		running = false
 		visible = false
 
+func _init() -> void:
+	# Make it play on top of everything else
+	z_index = 100
+
 func _ready() -> void:
 	visible = start_visible
