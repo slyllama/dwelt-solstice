@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://bc8re648e3g51"]
+
+[ext_resource type="Script" uid="uid://do14xu30natdk" path="res://lib/ui/settings_pane/s_menu/s_menu.gd" id="1_qukmt"]
+[ext_resource type="FontFile" uid="uid://bi4a4vc7qpom8" path="res://generic/fonts/trebuchet.ttf" id="1_vqxp7"]
+
+[node name="SMenu" type="HBoxContainer"]
+theme_override_constants/separation = 0
+script = ExtResource("1_qukmt")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_vqxp7")
+theme_override_font_sizes/font_size = 14
+text = "((Setting))"
+
+[node name="Value" type="OptionButton" parent="."]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+selected = 0
+fit_to_longest_item = false
+item_count = 2
+popup/item_0/text = "Windowed"
+popup/item_0/id = 0
+popup/item_1/text = "Full Screen"
+popup/item_1/id = 1

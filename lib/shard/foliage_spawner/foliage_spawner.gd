@@ -49,7 +49,6 @@ func render() -> void:
 			grass_transform = grass_transform.scaled_local(grass_scale * Vector3(1.0, dist, 1.0))
 			grass_transform = grass_transform.translated_local(grass_scatter)
 			grass_transform = grass_transform.rotated_local(Vector3.UP, grass_rotation)
-			print(grass_transform)
 			_transforms.append(grass_transform)
 	
 	_transforms.shuffle()
