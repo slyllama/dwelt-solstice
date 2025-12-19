@@ -11,10 +11,6 @@ var dragged_tile_idx
 # showing temporary states during dragging
 @onready var inventory_data := {}
 
-# Functions to help control dissolve shader
-func _set_dissolve(value: float) -> void: material.set_shader_parameter("value", value)
-func _get_dissolve() -> float: return(material.get_shader_parameter("value"))
-
 # Reset the drag cursor
 func _clear_drag_cursor() -> void:
 	dragged_tile_id = null
@@ -31,16 +27,11 @@ func _trim_inventory() -> void:
 func appear(muted := false) -> void:
 	if !muted: # conserve insanity during debugging
 		$Open.play()
-	visible = true
-	var _d = create_tween()
-	_d.tween_method(_set_dissolve, _get_dissolve(), 1.0, 0.25)
+		$DissolveHelper.appear()
 
 func disappear() -> void:
 	$Open.play()
-	_set_dissolve(1.0)
-	var _d = create_tween()
-	_d.tween_method(_set_dissolve, _get_dissolve(), 0.0, 0.25)
-	_d.tween_callback(func(): visible = false)
+	$DissolveHelper.disappear()
 
 func begin_drag(id: String, idx: int) -> void:
 	Dwelt.ui_click.emit()
@@ -111,7 +102,6 @@ func render() -> void:
 				begin_drag(tile.id, tile.index))
 
 func _ready() -> void:
-	_set_dissolve(0.0)
 	render()
 	
 	if Engine.is_editor_hint():

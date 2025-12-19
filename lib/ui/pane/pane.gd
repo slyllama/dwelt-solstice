@@ -6,3 +6,20 @@ extends Panel
 	set(_val):
 		title_text = _val
 		$Box/Header/Title.text = title_text
+
+@export var start_hidden := false
+
+func appear() -> void:
+	$DissolveHelper.appear()
+
+func disappear() -> void:
+	$DissolveHelper.disappear()
+
+func _ready() -> void:
+	if Engine.is_editor_hint(): return
+	if start_hidden:
+		visible = false
+		$DissolveHelper.disappear()
+
+func _on_close_pressed() -> void:
+	$DissolveHelper.disappear()

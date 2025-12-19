@@ -5,12 +5,13 @@
 [ext_resource type="Texture2D" uid="uid://l6cie2u2qujs" path="res://generic/materials/textures/tile_diff.jpg" id="3_elb5n"]
 
 [node name="SCheckbox" type="HBoxContainer"]
+use_parent_material = true
 size_flags_horizontal = 3
 theme_override_constants/separation = 0
 script = ExtResource("1_ox375")
-state = null
 
 [node name="Label" type="Label" parent="."]
+use_parent_material = true
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_fonts/font = ExtResource("2_a58rw")
@@ -18,12 +19,14 @@ theme_override_font_sizes/font_size = 14
 text = "((Setting))"
 
 [node name="Padding" type="ColorRect" parent="."]
+use_parent_material = true
 custom_minimum_size = Vector2(4, 0)
 layout_mode = 2
 mouse_filter = 1
 color = Color(1, 1, 1, 0)
 
 [node name="CheckBox" type="TextureRect" parent="."]
+use_parent_material = true
 custom_minimum_size = Vector2(24, 0)
 layout_mode = 2
 texture = ExtResource("3_elb5n")

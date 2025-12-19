@@ -1,20 +1,30 @@
-[gd_scene load_steps=7 format=3 uid="uid://b63hobdhwi8kc"]
+[gd_scene load_steps=11 format=3 uid="uid://b63hobdhwi8kc"]
 
+[ext_resource type="Shader" uid="uid://dxxqogqtywt44" path="res://generic/materials/shaders/dissolve.gdshader" id="1_4e7ry"]
 [ext_resource type="Texture2D" uid="uid://dvshkqnf5k1ae" path="res://lib/ui/pane/textures/bg.jpg" id="1_80kxo"]
 [ext_resource type="Texture2D" uid="uid://bik4432aum0i" path="res://lib/ui/pane/textures/corner.png" id="2_5oagf"]
 [ext_resource type="Script" uid="uid://s3dr0hq73a03" path="res://lib/ui/pane/pane.gd" id="2_6g8ad"]
+[ext_resource type="Texture2D" uid="uid://2q8chjn3pu55" path="res://generic/materials/textures/dissolve_diff.jpg" id="2_g4tii"]
 [ext_resource type="Texture2D" uid="uid://oleyxvyvl0v1" path="res://lib/ui/pane/textures/close.png" id="2_n6d33"]
 [ext_resource type="Texture2D" uid="uid://vru7jji7q173" path="res://lib/ui/pane/textures/close_hover.png" id="3_6g8ad"]
+[ext_resource type="Script" uid="uid://cab0wr23336si" path="res://lib/ui/dissolve/dissolve.gd" id="6_26m6i"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5lsyn"]
+shader = ExtResource("1_4e7ry")
+shader_parameter/dissolve_texture = ExtResource("2_g4tii")
+shader_parameter/value = 1.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5oagf"]
 texture = ExtResource("1_80kxo")
 
 [node name="Pane" type="Panel"]
+material = SubResource("ShaderMaterial_5lsyn")
 custom_minimum_size = Vector2(200, 200)
 theme_override_styles/panel = SubResource("StyleBoxTexture_5oagf")
 script = ExtResource("2_6g8ad")
 
 [node name="Box" type="VBoxContainer" parent="."]
+use_parent_material = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -28,15 +38,18 @@ grow_vertical = 2
 theme_override_constants/separation = 0
 
 [node name="Header" type="HBoxContainer" parent="Box"]
+use_parent_material = true
 layout_mode = 2
 
 [node name="Title" type="Label" parent="Box/Header"]
+use_parent_material = true
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 24
 text = "((Title))"
 
-[node name="CloseButton" type="TextureButton" parent="Box/Header"]
+[node name="Close" type="TextureButton" parent="Box/Header"]
+use_parent_material = true
 custom_minimum_size = Vector2(24, 24)
 layout_mode = 2
 texture_normal = ExtResource("2_n6d33")
@@ -46,6 +59,7 @@ stretch_mode = 5
 
 [node name="Corner" type="TextureRect" parent="."]
 z_index = -1
+use_parent_material = true
 custom_minimum_size = Vector2(193, 204)
 layout_mode = 1
 anchors_preset = 3
@@ -62,3 +76,10 @@ grow_vertical = 0
 mouse_filter = 2
 texture = ExtResource("2_5oagf")
 expand_mode = 1
+
+[node name="DissolveHelper" type="Node" parent="." node_paths=PackedStringArray("dissolve_control")]
+script = ExtResource("6_26m6i")
+dissolve_control = NodePath("..")
+metadata/_custom_type_script = "uid://cab0wr23336si"
+
+[connection signal="pressed" from="Box/Header/Close" to="." method="_on_close_pressed"]

@@ -131,4 +131,5 @@ offset_bottom = 200.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[connection signal="pressed" from="Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="ToggleInventory" to="." method="_on_toggle_inventory_pressed"]

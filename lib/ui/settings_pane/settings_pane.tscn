@@ -8,6 +8,7 @@
 offset_right = 350.0
 offset_bottom = 400.0
 title_text = "Settings"
+start_hidden = true
 
 [node name="Box" parent="." index="0"]
 offset_bottom = -19.0
@@ -17,10 +18,12 @@ theme_override_constants/separation = 2
 text = "Settings"
 
 [node name="Scroll" type="ScrollContainer" parent="Box" index="1"]
+use_parent_material = true
 layout_mode = 2
 size_flags_vertical = 3
 
 [node name="Box" type="VBoxContainer" parent="Box/Scroll" index="0"]
+use_parent_material = true
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 2

@@ -4,14 +4,13 @@
 [ext_resource type="FontFile" uid="uid://bi4a4vc7qpom8" path="res://generic/fonts/trebuchet.ttf" id="1_vqxp7"]
 
 [node name="SMenu" type="HBoxContainer"]
+use_parent_material = true
 size_flags_horizontal = 3
 theme_override_constants/separation = 0
 script = ExtResource("1_qukmt")
-id = null
-title = null
-options = null
 
 [node name="Label" type="Label" parent="."]
+use_parent_material = true
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_fonts/font = ExtResource("1_vqxp7")
@@ -19,6 +18,7 @@ theme_override_font_sizes/font_size = 14
 text = "((Setting))"
 
 [node name="Value" type="OptionButton" parent="."]
+use_parent_material = true
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 selected = 0
@@ -27,6 +27,7 @@ item_count = 1
 popup/item_0/id = 0
 
 [node name="Padding" type="ColorRect" parent="."]
+use_parent_material = true
 custom_minimum_size = Vector2(4, 0)
 layout_mode = 2
 mouse_filter = 1
