@@ -6,7 +6,7 @@
 shader = ExtResource("1_h2nih")
 shader_parameter/position = 0.400000019
 shader_parameter/feather = 0.30000001425
-shader_parameter/alpha = 0.70000003325
+shader_parameter/alpha = 1.0
 
 [node name="ScreenFX" type="CanvasLayer"]
 layer = -1

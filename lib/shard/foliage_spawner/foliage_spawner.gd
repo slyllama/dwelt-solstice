@@ -53,10 +53,7 @@ func render() -> void:
 				dist = 0.5 + (1 - dist) / 2.0
 			
 			var grass_transform = Transform3D(Basis(), base_pos)
-			grass_transform = grass_transform.scaled_local(grass_scale * Vector3(1.0, dist, 1.0))
 			grass_transform = grass_transform.translated_local(grass_scatter)
-			grass_transform = grass_transform.rotated_local(Vector3.UP, grass_rotation)
-			
 			if follow_floor:
 				var _position: Vector3 = global_position + base_pos + grass_scatter
 				var _from = _position + Vector3(0, 10.0, 0)
@@ -68,6 +65,8 @@ func render() -> void:
 				if intersection:
 					var _cpos: Vector3 = intersection.position
 					grass_transform = grass_transform.translated_local(Vector3(0, _cpos.y, 0))
+			grass_transform = grass_transform.rotated_local(Vector3.UP, grass_rotation)
+			grass_transform = grass_transform.scaled_local(grass_scale * Vector3(1.0, dist, 1.0))
 			_transforms.append(grass_transform)
 	_transforms.shuffle()
 	

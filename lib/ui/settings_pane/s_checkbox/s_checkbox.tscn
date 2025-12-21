@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d3h7mhg15gfmd" path="res://lib/ui/settings_pane/s_checkbox/s_checkbox.gd" id="1_ox375"]
 [ext_resource type="FontFile" uid="uid://bi4a4vc7qpom8" path="res://generic/fonts/trebuchet.ttf" id="2_a58rw"]
-[ext_resource type="Texture2D" uid="uid://l6cie2u2qujs" path="res://generic/materials/textures/tile_diff.jpg" id="3_elb5n"]
+[ext_resource type="Texture2D" uid="uid://7de3mh0hd63h" path="res://generic/textures/checked.jpg" id="3_elb5n"]
 
 [node name="SCheckbox" type="HBoxContainer"]
 use_parent_material = true
