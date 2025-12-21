@@ -3,17 +3,21 @@ extends MultiMeshInstance3D
 
 var foliage_count = 0
 
-@export_tool_button("Render", "Callable") var render_button = render
-
-@export var foliage_mesh: ArrayMesh
 @export var count := 5
 @export var density := 1.0
-@export var size := 2.0
-@export var scatter := 0.2
-@export var min_scale := 3.0
-@export var max_scale := 5.0
-@export var z_scale := 1.0
+@export_tool_button("Render", "MultiMesh") var render_button = render
+
+@export_category("Placement")
+@export var size := 5.0
+@export var scatter := 0.5
 @export var smooth := true
+@export var follow_floor := false
+
+@export_category("Instances")
+@export var foliage_mesh: ArrayMesh
+@export var min_scale := 1.0
+@export var max_scale := 1.0
+@export var z_scale := 1.0
 
 @export_category("Shading")
 @export var vary_colours := true
@@ -21,6 +25,9 @@ var foliage_count = 0
 @export var colour_2 := Color(0.639, 0.729, 0)
 
 func render() -> void:
+	multimesh = null
+	if !foliage_mesh: return
+	
 	var build_multimesh: Resource = MultiMesh.new()
 	if vary_colours: build_multimesh.use_colors = true
 	build_multimesh.mesh = foliage_mesh
@@ -49,8 +56,19 @@ func render() -> void:
 			grass_transform = grass_transform.scaled_local(grass_scale * Vector3(1.0, dist, 1.0))
 			grass_transform = grass_transform.translated_local(grass_scatter)
 			grass_transform = grass_transform.rotated_local(Vector3.UP, grass_rotation)
+			
+			if follow_floor:
+				var _position: Vector3 = global_position + base_pos + grass_scatter
+				var _from = _position + Vector3(0, 10.0, 0)
+				var _to = _from + Vector3(0, -20.0, 0)
+				var space_state = self.get_world_3d().direct_space_state
+				var query = PhysicsRayQueryParameters3D.create(_from, _to)
+				query.collision_mask = 0b00000000_00000000_00000000_00000010
+				var intersection = space_state.intersect_ray(query)
+				if intersection:
+					var _cpos: Vector3 = intersection.position
+					grass_transform = grass_transform.translated_local(Vector3(0, _cpos.y, 0))
 			_transforms.append(grass_transform)
-	
 	_transforms.shuffle()
 	
 	for y in count:
@@ -61,11 +79,10 @@ func render() -> void:
 			build_multimesh.set_instance_transform(i, _transforms[i])
 	multimesh = build_multimesh
 
-#func set_density(get_density) -> void:
-	#if ignore_density_check: density = 1.0
-	#else: density = get_density
-	#foliage_count = floor(count * count * density)
-	#multimesh.visible_instance_count = floor(count * count * density)
+func set_density(get_density: float) -> void:
+	density = get_density
+	foliage_count = floor(count * count * density)
+	multimesh.visible_instance_count = floor(count * count * density)
 
 func _ready() -> void:
 	cast_shadow = SHADOW_CASTING_SETTING_OFF
@@ -73,4 +90,5 @@ func _ready() -> void:
 	set_layer_mask_value(2, 1)
 	
 	if !Engine.is_editor_hint():
-		$Selector.queue_free()
+		if get_node_or_null("Selector"): # don't clear this twice
+			$Selector.queue_free()
