@@ -32,4 +32,3 @@ func _ready() -> void:
 	if !dissolve_control:
 		Utils.pdebug("Warning: DissolveHelper with parent '"
 			+ str(get_parent().name) + "' is not linked to a Control.", "DissolveHeler")
-	else: print(get_parent().name)
