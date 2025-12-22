@@ -13,7 +13,7 @@ size = Vector2(40, 40)
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_vt6hs"]
 
-[node name="Map" type="Node3D"]
+[node name="Shard" type="Node3D"]
 script = ExtResource("1_5i5j7")
 
 [node name="Sky" type="WorldEnvironment" parent="."]

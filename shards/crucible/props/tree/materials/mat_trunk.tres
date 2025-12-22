@@ -1,0 +1,14 @@
+[gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://c8xirc23wn2h5"]
+
+[ext_resource type="Shader" uid="uid://dyqnxrddxp2qh" path="res://generic/materials/shaders/nospec.gdshader" id="1_68d41"]
+[ext_resource type="Texture2D" uid="uid://b5r5xdnyx3jlb" path="res://shards/crucible/props/tree/materials/textures/trunk_diff.jpg" id="2_a0lnk"]
+[ext_resource type="Texture2D" uid="uid://cxwghtuvo3wcx" path="res://shards/crucible/props/tree/materials/textures/trunk_norm.jpg" id="3_312i3"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_68d41")
+shader_parameter/albedo_texture = ExtResource("2_a0lnk")
+shader_parameter/normal_texture = ExtResource("3_312i3")
+shader_parameter/uv_scale = 1.0
+shader_parameter/normal_strength = 1.0
+shader_parameter/albedo_color = Color(1, 1, 1, 1)

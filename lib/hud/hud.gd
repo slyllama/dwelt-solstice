@@ -1,5 +1,9 @@
 extends CanvasLayer
 
+func play_title_card(shard_name: String) -> void:
+	%TitleCard.shard_name = shard_name
+	%TitleCard.play()
+
 func _ready() -> void:
 	await get_tree().process_frame
 	%EyeAnim.animate()

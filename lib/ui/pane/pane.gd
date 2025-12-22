@@ -10,6 +10,7 @@ extends Panel
 @export var start_hidden := false
 
 func appear() -> void:
+	$Open.play()
 	$DissolveHelper.appear()
 
 func disappear() -> void:

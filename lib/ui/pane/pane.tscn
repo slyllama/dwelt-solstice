@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b63hobdhwi8kc"]
+[gd_scene load_steps=12 format=3 uid="uid://b63hobdhwi8kc"]
 
 [ext_resource type="Shader" uid="uid://dxxqogqtywt44" path="res://generic/materials/shaders/dissolve.gdshader" id="1_4e7ry"]
 [ext_resource type="Texture2D" uid="uid://dvshkqnf5k1ae" path="res://lib/ui/pane/textures/bg.jpg" id="1_80kxo"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://oleyxvyvl0v1" path="res://lib/ui/pane/textures/close.png" id="2_n6d33"]
 [ext_resource type="Texture2D" uid="uid://vru7jji7q173" path="res://lib/ui/pane/textures/close_hover.png" id="3_6g8ad"]
 [ext_resource type="Script" uid="uid://cab0wr23336si" path="res://lib/ui/dissolve/dissolve.gd" id="6_26m6i"]
+[ext_resource type="AudioStream" uid="uid://dv6indjo485lp" path="res://lib/ui/inventory/sounds/inventory_open.ogg" id="9_g4tii"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5lsyn"]
 shader = ExtResource("1_4e7ry")
@@ -81,5 +82,8 @@ expand_mode = 1
 script = ExtResource("6_26m6i")
 dissolve_control = NodePath("..")
 metadata/_custom_type_script = "uid://cab0wr23336si"
+
+[node name="Open" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_g4tii")
 
 [connection signal="pressed" from="Box/Header/Close" to="." method="_on_close_pressed"]

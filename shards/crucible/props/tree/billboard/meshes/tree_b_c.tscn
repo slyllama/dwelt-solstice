@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cm1i00vv1oloh"]
+
+[ext_resource type="Material" uid="uid://c4itf3dbfbq4e" path="res://shards/crucible/props/tree/billboard/materials/mat_tree_b_c.tres" id="1_idnxf"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_glwpp"]
+material = ExtResource("1_idnxf")
+size = Vector2(6, 6)
+
+[node name="TreeB_C" type="Node3D"]
+
+[node name="Tree" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+cast_shadow = 0
+mesh = SubResource("QuadMesh_glwpp")
