@@ -25,7 +25,11 @@ func _ready() -> void:
 	if Engine.is_editor_hint(): return
 	Settings.file_loaded.connect(func():
 		if id in Settings.data:
-			$Value.selected = options.find(Settings.data[id]))
+			$Value.selected = options.find(Settings.data[id])
+		else:
+			Utils.pdebug("Missing setting '" + id
+				+ "', hiding it.", "SettingsPane/SMenu")
+			visible = false)
 
 func _on_value_item_selected(index: int) -> void:
 	Settings.change(id, options[index])

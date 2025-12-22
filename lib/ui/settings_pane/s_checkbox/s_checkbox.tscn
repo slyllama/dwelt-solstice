@@ -25,10 +25,13 @@ layout_mode = 2
 mouse_filter = 1
 color = Color(1, 1, 1, 0)
 
-[node name="CheckBox" type="TextureRect" parent="."]
+[node name="Checkbox" type="TextureRect" parent="."]
 use_parent_material = true
-custom_minimum_size = Vector2(24, 0)
+custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
+size_flags_horizontal = 10
 texture = ExtResource("3_elb5n")
 expand_mode = 1
 stretch_mode = 5
+
+[connection signal="gui_input" from="Checkbox" to="." method="_on_check_box_gui_input"]

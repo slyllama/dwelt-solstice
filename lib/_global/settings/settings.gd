@@ -3,7 +3,8 @@ extends Node
 const SETTINGS_PATH := "user://settings.json"
 
 const default_data := { # default settings data
-	"window_mode": "full_screen"
+	"window_mode": "full_screen",
+	"bloom": "false"
 }
 
 @onready var data := default_data.duplicate()

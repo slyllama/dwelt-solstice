@@ -1,7 +1,8 @@
-[gd_resource type="Theme" load_steps=17 format=3 uid="uid://bi1monawihtf2"]
+[gd_resource type="Theme" load_steps=18 format=3 uid="uid://bi1monawihtf2"]
 
 [ext_resource type="FontFile" uid="uid://knusa64ltvaf" path="res://generic/fonts/crimson_text.ttf" id="1_37o18"]
 [ext_resource type="FontFile" uid="uid://bi4a4vc7qpom8" path="res://generic/fonts/trebuchet.ttf" id="2_1c0d7"]
+[ext_resource type="Texture2D" uid="uid://dk8q1rhxwsmsn" path="res://generic/textures/1px.png" id="3_fp0go"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_37o18"]
 content_margin_left = 12.0
@@ -120,8 +121,9 @@ Button/styles/hover = SubResource("StyleBoxFlat_1c0d7")
 Button/styles/normal = SubResource("StyleBoxFlat_fp0go")
 CheckBox/constants/h_separation = 0
 Label/fonts/font = ExtResource("1_37o18")
-OptionButton/font_sizes/font_size = 14
+OptionButton/font_sizes/font_size = 13
 OptionButton/fonts/font = ExtResource("2_1c0d7")
+OptionButton/icons/arrow = ExtResource("3_fp0go")
 OptionButton/styles/hover = SubResource("StyleBoxFlat_56vwn")
 OptionButton/styles/normal = SubResource("StyleBoxFlat_iag48")
 OptionButton/styles/pressed = SubResource("StyleBoxFlat_l2rom")
@@ -132,9 +134,9 @@ PopupMenu/constants/icon_max_width = 1
 PopupMenu/constants/item_end_padding = 0
 PopupMenu/constants/item_start_padding = 0
 PopupMenu/constants/v_separation = -2
-PopupMenu/font_sizes/font_separator_size = 14
-PopupMenu/font_sizes/font_size = 14
-PopupMenu/font_sizes/title_font_size = 14
+PopupMenu/font_sizes/font_separator_size = 13
+PopupMenu/font_sizes/font_size = 13
+PopupMenu/font_sizes/title_font_size = 13
 PopupMenu/fonts/font = ExtResource("2_1c0d7")
 PopupMenu/icons/radio_checked = SubResource("PlaceholderTexture2D_1c0d7")
 PopupMenu/icons/radio_checked_disabled = null

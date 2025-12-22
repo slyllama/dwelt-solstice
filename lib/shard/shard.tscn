@@ -17,6 +17,7 @@ size = Vector2(40, 40)
 script = ExtResource("1_5i5j7")
 
 [node name="Sky" type="WorldEnvironment" parent="."]
+unique_name_in_owner = true
 
 [node name="HUD" parent="." instance=ExtResource("1_c370e")]
 
