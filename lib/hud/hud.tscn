@@ -30,9 +30,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -319.5
-offset_top = -72.5
+offset_top = -122.0
 offset_right = 319.5
-offset_bottom = 72.5
+offset_bottom = 23.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -94,9 +94,9 @@ offset_top = 2.0
 offset_bottom = 111.0
 
 [node name="Currency" parent="." instance=ExtResource("6_3pj68")]
-offset_left = 56.0
+offset_left = 61.0
 offset_top = 12.0
-offset_right = 384.0
+offset_right = 389.0
 offset_bottom = 47.0
 
 [node name="Inventory" parent="." instance=ExtResource("5_4etgo")]

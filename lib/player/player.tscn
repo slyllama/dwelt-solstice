@@ -214,7 +214,7 @@ autoplay = true
 [node name="Stars" type="GPUParticles3D" parent="RobotMesh"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.17061618, -0.39669335)
 cast_shadow = 0
-amount = 32
+amount = 64
 amount_ratio = 0.25
 process_material = SubResource("ParticleProcessMaterial_ram4p")
 draw_pass_1 = ExtResource("5_jyhpi")
