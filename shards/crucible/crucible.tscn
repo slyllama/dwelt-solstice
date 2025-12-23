@@ -427,9 +427,11 @@ transform = Transform3D(1.8696018, 0, -0.71034443, 0, 2, 0, 0.71034443, 0, 1.869
 
 [node name="Doodad" parent="." index="10" instance=ExtResource("18_judrx")]
 transform = Transform3D(0.8584859, 0, 0.5128372, 0, 1, 0, -0.5128372, 0, 0.8584859, -6.0476594, -0.3972426, 0.71359944)
+visible = false
 
 [node name="Doodad2" parent="." index="11" instance=ExtResource("18_judrx")]
 transform = Transform3D(0.032597005, 0, 0.9994685, 0, 1, 0, -0.9994685, 0, 0.032597005, -4.958689, -1.9280795, 7.82456)
+visible = false
 owned_by_player = false
 
 [node name="TreeB_A" parent="." index="12" instance=ExtResource("18_cev1e")]
