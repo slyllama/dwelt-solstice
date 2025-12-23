@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://v3c7x4mae7v1" path="res://lib/thing/thing.gd" id="1_tq7qu"]
 [ext_resource type="Script" uid="uid://fg7mxayvxsgv" path="res://lib/thing/scripts/thing_data.gd" id="2_paodx"]
-[ext_resource type="PackedScene" uid="uid://ddfxlp08qcwnh" path="res://things/doodad/meshes/doodad.glb" id="3_llqg5"]
+[ext_resource type="PackedScene" uid="uid://ddfxlp08qcwnh" path="res://shards/crucible/things/doodad/meshes/doodad.glb" id="3_llqg5"]
 
 [sub_resource type="Resource" id="Resource_llqg5"]
 script = ExtResource("2_paodx")

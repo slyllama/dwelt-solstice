@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://ddfxlp08qcwnh"
-path="res://.godot/imported/doodad.glb-3363bdf39f7e163a669f2a4752b3e15d.scn"
+path="res://.godot/imported/doodad.glb-96c042c900a17ffde61f98016f2c3e6a.scn"
 
 [deps]
 
-source_file="res://things/doodad/meshes/doodad.glb"
-dest_files=["res://.godot/imported/doodad.glb-3363bdf39f7e163a669f2a4752b3e15d.scn"]
+source_file="res://shards/crucible/things/doodad/meshes/doodad.glb"
+dest_files=["res://.godot/imported/doodad.glb-96c042c900a17ffde61f98016f2c3e6a.scn"]
 
 [params]
 
@@ -41,7 +41,7 @@ _subresources={
 "materials": {
 "mat_doodad": {
 "use_external/enabled": true,
-"use_external/fallback_path": "res://things/doodad/materials/mat_doodad.tres",
+"use_external/fallback_path": "res://shards/crucible/things/doodad/materials/mat_doodad.tres",
 "use_external/path": "uid://0nsk0poosrng"
 }
 }

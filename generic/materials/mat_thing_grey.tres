@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://c8vh04olhjew0"]
+
+[ext_resource type="Shader" uid="uid://bifl8761s02x6" path="res://lib/thing/materials/shaders/thing.gdshader" id="1_jm23b"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_jm23b")
+shader_parameter/uv_scale = 1.0
+shader_parameter/normal_strength = 0.705
+shader_parameter/albedo_color = Color(0.25, 0.25, 0.25, 1)

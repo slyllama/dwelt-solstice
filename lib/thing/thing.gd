@@ -4,6 +4,7 @@ const SelIndicator = preload("res://lib/thing/sel_indicator/sel_indicator.tscn")
 
 @export var body: StaticBody3D
 @export var mesh: Node3D
+@export var selector_point: Marker3D
 @export_category("Data and Properties")
 @export var data: ThingData = ThingData.new()
 @export var owned_by_player := true
@@ -28,7 +29,9 @@ func _ready() -> void:
 	# Setup helper children
 	mat_handler.mesh = mesh
 	sel_indicator.visible = false
-	sel_indicator.position.y = 2.0
+	if selector_point:
+		sel_indicator.position = selector_point.position
+	else: sel_indicator.position.y = 2.0
 	
 	# Add helper children
 	add_child(mat_handler)
