@@ -34,7 +34,13 @@ id = "window_mode"
 title = "Window Mode"
 options = Array[String](["windowed", "full_screen"])
 
-[node name="Bloom" parent="Box/Scroll/Box" index="1" instance=ExtResource("3_cagy3")]
+[node name="FPSLimit" parent="Box/Scroll/Box" index="1" instance=ExtResource("2_qd6od")]
+layout_mode = 2
+id = "fps_limit"
+title = "FPS Limit"
+options = Array[String](["30fps", "60fps", "144fps", "unlimited"])
+
+[node name="Bloom" parent="Box/Scroll/Box" index="2" instance=ExtResource("3_cagy3")]
 layout_mode = 2
 id = "bloom"
 title = "Bloom"

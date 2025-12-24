@@ -23,3 +23,12 @@ func target_thing(thing: Thing) -> void:
 func _ready() -> void:
 	# Signal connections
 	ui_click.connect($UIClick.play)
+	Settings.changed.connect(func(_s: String):
+		if _s == "fps_limit":
+			var _fps_limit: String = Settings.data["fps_limit"]
+			match _fps_limit:
+				"30fps": Engine.max_fps = 30
+				"60fps": Engine.max_fps = 60
+				"144fps": Engine.max_fps = 144
+				_: Engine.max_fps = 0
+			)

@@ -59,28 +59,6 @@ autowrap_mode = 0
 horizontal_alignment = 2
 script = ExtResource("1_o36f6")
 
-[node name="Debug" type="RichTextLabel" parent="."]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -16.0
-offset_top = 44.0
-offset_right = -16.0
-offset_bottom = 44.0
-grow_horizontal = 0
-mouse_filter = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/line_separation = -2
-theme_override_constants/paragraph_separation = -2
-theme_override_fonts/normal_font = ExtResource("1_dcyf8")
-theme_override_font_sizes/normal_font_size = 12
-bbcode_enabled = true
-text = "((Debug))"
-fit_content = true
-scroll_active = false
-autowrap_mode = 0
-horizontal_alignment = 2
-
 [node name="Pane" parent="." instance=ExtResource("4_pm6i7")]
 visible = false
 offset_left = 16.0

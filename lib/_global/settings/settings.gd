@@ -4,7 +4,8 @@ const SETTINGS_PATH := "user://settings.json"
 
 const default_data := { # default settings data
 	"window_mode": "full_screen",
-	"bloom": "false"
+	"bloom": "false",
+	"fps_limit": "60fps"
 }
 
 @onready var data := default_data.duplicate()

@@ -19,6 +19,7 @@ func fmt_option(option: String) -> String:
 	var _s = option
 	_s = _s.replace("_", " ")
 	_s = _s.capitalize()
+	_s = _s.replace(" Fps", "fps")
 	return(_s)
 
 func _ready() -> void:

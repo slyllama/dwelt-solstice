@@ -10,8 +10,8 @@ func _process(_delta: float) -> void:
 	# FPS
 	var _fps := Engine.get_frames_per_second()
 	var _color := "green"
-	if _fps < 60: _color = "white"
-	elif _fps < 30: _color =  "yellow"
+	if _fps < Engine.max_fps: _color = "white"
+	elif _fps < Engine.max_fps / 2.0: _color =  "yellow"
 	elif _fps < 10: _color = "red"
 	text = ("[color=" + _color + "]FPS: "
 		+ str(snapped(_fps, 1)) + "[/color]")

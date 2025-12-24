@@ -13,9 +13,6 @@ func _on_toggle_inventory_pressed() -> void:
 		$Inventory.appear()
 	else: $Inventory.disappear()
 
-func _process(_delta: float) -> void:
-	$Debug.text = str(get_window().get_mouse_position())
-
 func _on_settings_pressed() -> void:
 	if !$SettingsPane.visible:
 		$SettingsPane.appear()
