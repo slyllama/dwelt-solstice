@@ -6,6 +6,14 @@ func play_title_card(shard_name: String) -> void:
 
 func _ready() -> void:
 	await get_tree().process_frame
+	# Need to wait a frame for the Dwelt.player reference to be applied
+	# TODO: debug for viewing player effects
+	Dwelt.player.effect_handler.updated.connect(func():
+		var _text := ""
+		for _e: Effect in Dwelt.player.effect_handler.get_children():
+			_text += str(_e.effect_data.effect_id)
+			_text += "\n"
+		$PlayerEffects.text = _text)
 	%EyeAnim.animate()
 
 func _on_toggle_inventory_pressed() -> void:

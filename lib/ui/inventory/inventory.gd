@@ -37,6 +37,7 @@ func begin_drag(id: String, idx: int) -> void:
 	Dwelt.ui_click.emit()
 	
 	%CursorTile.reset()
+	inventory_data[str(idx)].id = "blank"
 	dragged_tile_id = id
 	dragged_tile_idx = idx
 	%CursorTile.id = id

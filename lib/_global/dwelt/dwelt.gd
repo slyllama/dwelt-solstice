@@ -9,7 +9,7 @@ signal window_adjusted # called when retina is detected
 
 # References
 var camera: Camera3D
-var player: CharacterBody3D
+var player: DweltPlayer
 
 var hovered_thing: Thing
 var targeted_thing: Thing

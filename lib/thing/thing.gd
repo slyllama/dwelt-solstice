@@ -22,8 +22,7 @@ func hover() -> void:
 
 func unhover() -> void:
 	# Can only be unhovered if not targeted
-	if Dwelt.targeted_thing != self:
-		mat_handler.set_highlight(false)
+	mat_handler.set_highlight(false)
 
 func _ready() -> void:
 	# Setup helper children
@@ -39,8 +38,7 @@ func _ready() -> void:
 	
 	Dwelt.thing_targeted.connect(func():
 		if Dwelt.targeted_thing != self:
-			sel_indicator.visible = false
-			mat_handler.set_highlight(false))
+			sel_indicator.visible = false)
 	
 	# Handle input events
 	if !body: return

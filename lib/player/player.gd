@@ -1,5 +1,7 @@
-extends CharacterBody3D
+class_name DweltPlayer extends CharacterBody3D
 
+@export var effect_handler: EffectHandler
+@export_category("Physics")
 @export var speed := 3.0
 @export var friction := 15.0
 @export var gravity_damping := 10.0
