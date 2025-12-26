@@ -21,7 +21,7 @@ func _ready() -> void:
 		if OS.get_name() == "macOS":
 			get_window().content_scale_factor = 2.25
 		else:
-			get_window().content_scale_factor = 2.0
+			get_window().content_scale_factor = 1.75
 			DisplayServer.cursor_set_custom_image(
 				load("res://generic/textures/cursor_2x.png"))
 		Dwelt.window_adjusted.emit()

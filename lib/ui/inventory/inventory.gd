@@ -103,12 +103,13 @@ func render() -> void:
 				begin_drag(tile.id, tile.index))
 
 func _ready() -> void:
-	$DissolveHelper._set_dissolve(0.0)
 	render()
 	
 	if Engine.is_editor_hint():
 		appear(true) # debugging
-	else: visible = false
+	else:
+		visible = false
+		$DissolveHelper._set_dissolve(0.0)
 
 func _input(_event: InputEvent) -> void:
 	if Engine.is_editor_hint(): return

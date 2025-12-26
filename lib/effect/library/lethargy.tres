@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="EffectParameter" load_steps=2 format=3 uid="uid://c0prj7lsadt4u"]
+
+[ext_resource type="Script" uid="uid://eo3gmm8fyhrh" path="res://lib/effect/scripts/effect_parameter.gd" id="1_86cex"]
+
+[resource]
+script = ExtResource("1_86cex")
+effect_name = "Lethargy"
+indefinite = false
+stacks_duration = true
+metadata/_custom_type_script = "uid://eo3gmm8fyhrh"

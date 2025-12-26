@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://istq4exbymwq"]
+[gd_scene load_steps=17 format=3 uid="uid://istq4exbymwq"]
 
 [ext_resource type="FontFile" uid="uid://c7qpj4jbth6pg" path="res://generic/fonts/ibm_plex_mono.otf" id="1_dcyf8"]
 [ext_resource type="Script" uid="uid://davrehdjbld01" path="res://lib/hud/scripts/render_monitor.gd" id="1_o36f6"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://ren8he6qiotw" path="res://lib/hud/textures/inventory.png" id="8_r2k48"]
 [ext_resource type="Texture2D" uid="uid://qvxav4j1iaar" path="res://lib/hud/textures/settings.png" id="9_45tie"]
 [ext_resource type="Texture2D" uid="uid://cetc1nb4j4x8h" path="res://lib/hud/textures/inventory_hover.png" id="9_d84xd"]
+[ext_resource type="PackedScene" uid="uid://cb7wjr83pbn7d" path="res://lib/effect/effect_bar/effect_bar.tscn" id="9_v7nqf"]
 [ext_resource type="Texture2D" uid="uid://bsu8ohjo36dal" path="res://lib/hud/textures/settings_hover.png" id="10_62h71"]
 [ext_resource type="PackedScene" uid="uid://u2i05ele7n62" path="res://lib/hud/screen_fx/eye_anim/eye_anim.tscn" id="10_ixdrw"]
 [ext_resource type="PackedScene" uid="uid://d02blbpmlrt6s" path="res://lib/thing/inspector/inspector.tscn" id="11_coisy"]
@@ -98,6 +99,20 @@ offset_left = 61.0
 offset_top = 12.0
 offset_right = 389.0
 offset_bottom = 47.0
+
+[node name="EffectBar" parent="." instance=ExtResource("9_v7nqf")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 32)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_top = -128.0
+offset_bottom = -96.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
 
 [node name="Inventory" parent="." instance=ExtResource("5_4etgo")]
 offset_left = 62.0

@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://7qdpo5fymh3n"]
+
+[ext_resource type="Script" uid="uid://dqpfv0l112m28" path="res://lib/effect/effect_icon/effect_icon.gd" id="1_kop78"]
+[ext_resource type="Texture2D" uid="uid://l6cie2u2qujs" path="res://generic/materials/textures/tile_diff.jpg" id="1_sjddd"]
+
+[node name="EffectIcon" type="TextureRect"]
+custom_minimum_size = Vector2(32, 32)
+texture = ExtResource("1_sjddd")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("1_kop78")
+
+[node name="RemainingTime" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 1
+vertical_alignment = 1

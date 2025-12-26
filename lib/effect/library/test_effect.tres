@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="EffectParameter" load_steps=2 format=3 uid="uid://bl7d8121u3jv0"]
+
+[ext_resource type="Script" uid="uid://eo3gmm8fyhrh" path="res://lib/effect/scripts/effect_parameter.gd" id="1_7l3b2"]
+
+[resource]
+script = ExtResource("1_7l3b2")
+effect_name = "Test Effect"
+duration_replenishes = false
+metadata/_custom_type_script = "uid://eo3gmm8fyhrh"

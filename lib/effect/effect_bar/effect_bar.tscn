@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cb7wjr83pbn7d"]
+
+[ext_resource type="Script" uid="uid://dgde5hfpdyyh0" path="res://lib/effect/effect_bar/effect_bar.gd" id="1_4pys1"]
+
+[node name="EffectBar" type="HBoxContainer"]
+custom_minimum_size = Vector2(0, 24)
+script = ExtResource("1_4pys1")

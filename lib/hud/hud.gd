@@ -8,12 +8,14 @@ func _ready() -> void:
 	await get_tree().process_frame
 	# Need to wait a frame for the Dwelt.player reference to be applied
 	# TODO: debug for viewing player effects
+	%EffectBar.effect_handler = Dwelt.player.effect_handler
 	Dwelt.player.effect_handler.updated.connect(func():
 		var _text := ""
 		for _e: Effect in Dwelt.player.effect_handler.get_children():
 			if _e.data:
+				var _params: EffectParameter = EffectLibrary.effects[_e.data.id]
 				_text += str(_e.data.id)
-				if !_e.data.indefinite:
+				if !_params.indefinite:
 					_text += " (" + str(_e.data.duration) + "s)"
 				_text += "\n"
 		$PlayerEffects.text = _text)

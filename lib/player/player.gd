@@ -69,10 +69,12 @@ func _physics_process(_delta: float) -> void:
 	$RobotMesh.forward_blend = %InputHandler.direction.z
 	$RobotMesh.strafe_blend = %InputHandler.direction.x
 
-func _on_effect_expired(id: String) -> void:
+func _on_effect_expired(data: EffectData) -> void:
+	var id = data.id
 	match id:
 		"lethargy": speed_multiplier = 1.0
 
-func _on_effect_added(id: String) -> void:
+func _on_effect_added(data: EffectData) -> void:
+	var id = data.id
 	match id:
 		"lethargy": speed_multiplier = 0.5
