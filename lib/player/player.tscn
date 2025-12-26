@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://crbctqd55n6f6"]
+[gd_scene load_steps=47 format=3 uid="uid://crbctqd55n6f6"]
 
 [ext_resource type="Script" uid="uid://cro16agkt5mwp" path="res://lib/player/player.gd" id="1_al4t3"]
 [ext_resource type="Script" uid="uid://djkynrad87367" path="res://lib/player/scripts/input_handler.gd" id="1_odf55"]
@@ -179,9 +179,15 @@ size = Vector2(0.04, 0.04)
 [sub_resource type="SphereShape3D" id="SphereShape3D_g61qk"]
 radius = 0.25
 
+[sub_resource type="Resource" id="Resource_7f82q"]
+script = ExtResource("19_7f82q")
+id = "timed_effect"
+indefinite = false
+metadata/_custom_type_script = "uid://dsf0cxqijjlwy"
+
 [sub_resource type="Resource" id="Resource_hlh1u"]
 script = ExtResource("19_7f82q")
-effect_id = "fun_effect"
+id = "permanent_effect"
 metadata/_custom_type_script = "uid://dsf0cxqijjlwy"
 
 [node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("effect_handler")]
@@ -296,7 +302,12 @@ metadata/_custom_type_script = "uid://1atitynmrtes"
 
 [node name="TestEffect" type="Node" parent="EffectHandler"]
 script = ExtResource("18_v5dhk")
-effect_data = SubResource("Resource_hlh1u")
+data = SubResource("Resource_7f82q")
+metadata/_custom_type_script = "uid://ocqnbav2e5mm"
+
+[node name="PermanentEffect" type="Node" parent="EffectHandler"]
+script = ExtResource("18_v5dhk")
+data = SubResource("Resource_hlh1u")
 metadata/_custom_type_script = "uid://ocqnbav2e5mm"
 
 [node name="YCast" type="RayCast3D" parent="."]

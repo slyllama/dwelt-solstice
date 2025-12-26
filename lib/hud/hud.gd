@@ -11,8 +11,8 @@ func _ready() -> void:
 	Dwelt.player.effect_handler.updated.connect(func():
 		var _text := ""
 		for _e: Effect in Dwelt.player.effect_handler.get_children():
-			_text += str(_e.effect_data.effect_id)
-			_text += "\n"
+			if _e.data:
+				_text += str(_e.data.id) + "\n"
 		$PlayerEffects.text = _text)
 	%EyeAnim.animate()
 

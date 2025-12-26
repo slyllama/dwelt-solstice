@@ -100,10 +100,10 @@ offset_right = 389.0
 offset_bottom = 47.0
 
 [node name="Inventory" parent="." instance=ExtResource("5_4etgo")]
-offset_left = 36.0
-offset_top = 126.0
-offset_right = 368.0
-offset_bottom = 326.0
+offset_left = 62.0
+offset_top = 125.0
+offset_right = 394.0
+offset_bottom = 325.0
 
 [node name="Settings" type="TextureButton" parent="."]
 custom_minimum_size = Vector2(64, 64)
