@@ -3,6 +3,7 @@ class_name DweltPlayer extends CharacterBody3D
 @export var effect_handler: EffectHandler
 @export_category("Physics")
 @export var speed := 3.0
+@export var speed_multiplier := 1.0 # used for lethargy etc
 @export var friction := 15.0
 @export var gravity_damping := 10.0
 var _target_velocity := Vector3.ZERO
@@ -28,8 +29,8 @@ func _physics_process(_delta: float) -> void:
 	# Calculate basis and move player based on player input
 	var _basis_x: Vector3 = Vector3.RIGHT * _camera_basis * Vector3(1, 0, -1)
 	var _basis_z: Vector3 = Vector3.FORWARD * _camera_basis * Vector3(-1, 0, 1)
-	_target_velocity += _basis_z * %InputHandler.direction.z * speed
-	_target_velocity += _basis_x * %InputHandler.direction.x * speed
+	_target_velocity += _basis_z * %InputHandler.direction.z * speed * speed_multiplier
+	_target_velocity += _basis_x * %InputHandler.direction.x * speed * speed_multiplier
 	velocity = lerp(velocity, _target_velocity, Utils.crit_plerp(friction))
 	
 	# Apply gravity and hover
@@ -67,3 +68,11 @@ func _physics_process(_delta: float) -> void:
 	# Send animation parameters to the mesh for animation blending
 	$RobotMesh.forward_blend = %InputHandler.direction.z
 	$RobotMesh.strafe_blend = %InputHandler.direction.x
+
+func _on_effect_expired(id: String) -> void:
+	match id:
+		"lethargy": speed_multiplier = 1.0
+
+func _on_effect_added(id: String) -> void:
+	match id:
+		"lethargy": speed_multiplier = 0.5

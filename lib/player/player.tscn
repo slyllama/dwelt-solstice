@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://crbctqd55n6f6"]
+[gd_scene load_steps=43 format=3 uid="uid://crbctqd55n6f6"]
 
 [ext_resource type="Script" uid="uid://cro16agkt5mwp" path="res://lib/player/player.gd" id="1_al4t3"]
 [ext_resource type="Script" uid="uid://djkynrad87367" path="res://lib/player/scripts/input_handler.gd" id="1_odf55"]
@@ -17,8 +17,6 @@
 [ext_resource type="Script" uid="uid://dawjsepg8xsu4" path="res://lib/player/scripts/pan_handler.gd" id="12_r1bse"]
 [ext_resource type="Script" uid="uid://dxhxw1e4niy37" path="res://lib/player/scripts/cursor_cast.gd" id="14_ego0t"]
 [ext_resource type="Script" uid="uid://1atitynmrtes" path="res://lib/effect/effect_handler.gd" id="17_1x433"]
-[ext_resource type="Script" uid="uid://ocqnbav2e5mm" path="res://lib/effect/effect.gd" id="18_v5dhk"]
-[ext_resource type="Script" uid="uid://dsf0cxqijjlwy" path="res://lib/effect/effect_data.gd" id="19_7f82q"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_iochv"]
 radius = 0.2
@@ -179,17 +177,6 @@ size = Vector2(0.04, 0.04)
 [sub_resource type="SphereShape3D" id="SphereShape3D_g61qk"]
 radius = 0.25
 
-[sub_resource type="Resource" id="Resource_7f82q"]
-script = ExtResource("19_7f82q")
-id = "timed_effect"
-indefinite = false
-metadata/_custom_type_script = "uid://dsf0cxqijjlwy"
-
-[sub_resource type="Resource" id="Resource_hlh1u"]
-script = ExtResource("19_7f82q")
-id = "permanent_effect"
-metadata/_custom_type_script = "uid://dsf0cxqijjlwy"
-
 [node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("effect_handler")]
 script = ExtResource("1_al4t3")
 effect_handler = NodePath("EffectHandler")
@@ -300,15 +287,8 @@ unique_name_in_owner = true
 script = ExtResource("17_1x433")
 metadata/_custom_type_script = "uid://1atitynmrtes"
 
-[node name="TestEffect" type="Node" parent="EffectHandler"]
-script = ExtResource("18_v5dhk")
-data = SubResource("Resource_7f82q")
-metadata/_custom_type_script = "uid://ocqnbav2e5mm"
-
-[node name="PermanentEffect" type="Node" parent="EffectHandler"]
-script = ExtResource("18_v5dhk")
-data = SubResource("Resource_hlh1u")
-metadata/_custom_type_script = "uid://ocqnbav2e5mm"
-
 [node name="YCast" type="RayCast3D" parent="."]
 target_position = Vector3(0, -1.45, 0)
+
+[connection signal="effect_added" from="EffectHandler" to="." method="_on_effect_added"]
+[connection signal="effect_expired" from="EffectHandler" to="." method="_on_effect_expired"]

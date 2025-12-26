@@ -12,7 +12,10 @@ func _ready() -> void:
 		var _text := ""
 		for _e: Effect in Dwelt.player.effect_handler.get_children():
 			if _e.data:
-				_text += str(_e.data.id) + "\n"
+				_text += str(_e.data.id)
+				if !_e.data.indefinite:
+					_text += " (" + str(_e.data.duration) + "s)"
+				_text += "\n"
 		$PlayerEffects.text = _text)
 	%EyeAnim.animate()
 
