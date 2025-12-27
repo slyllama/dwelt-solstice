@@ -37,3 +37,6 @@ func _process(_delta: float) -> void:
 					blink_state = BlinkState.BLINK_FAST
 					%Blink.play("blink_fast")
 					return
+
+func _on_mouse_entered() -> void:
+	Dwelt.effect_icon_hovered.emit(data)

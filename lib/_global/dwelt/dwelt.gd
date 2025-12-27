@@ -2,6 +2,7 @@ extends Node
 
 const GRAVITY := -9.8
 
+signal effect_icon_hovered(data: EffectData)
 signal play_voice(emotion: String)
 signal thing_targeted
 signal ui_click

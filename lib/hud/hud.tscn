@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://istq4exbymwq"]
+[gd_scene load_steps=19 format=3 uid="uid://istq4exbymwq"]
 
 [ext_resource type="FontFile" uid="uid://c7qpj4jbth6pg" path="res://generic/fonts/ibm_plex_mono.otf" id="1_dcyf8"]
 [ext_resource type="Script" uid="uid://davrehdjbld01" path="res://lib/hud/scripts/render_monitor.gd" id="1_o36f6"]
@@ -16,6 +16,8 @@
 [ext_resource type="PackedScene" uid="uid://d02blbpmlrt6s" path="res://lib/thing/inspector/inspector.tscn" id="11_coisy"]
 [ext_resource type="PackedScene" uid="uid://orydvar6kty5" path="res://lib/ui/settings_pane/settings_pane.tscn" id="14_62h71"]
 [ext_resource type="PackedScene" uid="uid://du46qjtkv0jol" path="res://lib/hud/title_card/title_card.tscn" id="15_c0040"]
+[ext_resource type="Script" uid="uid://c7l3vi6s8w6h0" path="res://lib/hud/scripts/tooltip_surface.gd" id="17_qgm11"]
+[ext_resource type="PackedScene" uid="uid://dccolyl08umwm" path="res://lib/hud/tooltip/tooltip.tscn" id="18_nglf3"]
 
 [node name="HUD" type="CanvasLayer"]
 process_mode = 3
@@ -59,28 +61,6 @@ scroll_active = false
 autowrap_mode = 0
 horizontal_alignment = 2
 script = ExtResource("1_o36f6")
-
-[node name="PlayerEffects" type="RichTextLabel" parent="."]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -146.0
-offset_top = 54.0
-offset_right = -16.0
-offset_bottom = 71.0
-grow_horizontal = 0
-mouse_filter = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/line_separation = -2
-theme_override_constants/paragraph_separation = -2
-theme_override_fonts/normal_font = ExtResource("1_dcyf8")
-theme_override_font_sizes/normal_font_size = 12
-bbcode_enabled = true
-text = "((Player effects))"
-fit_content = true
-scroll_active = false
-autowrap_mode = 0
-horizontal_alignment = 2
 
 [node name="Pane" parent="." instance=ExtResource("4_pm6i7")]
 visible = false
@@ -160,6 +140,20 @@ offset_right = 175.0
 offset_bottom = 200.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="TooltipSurface" type="Control" parent="." node_paths=PackedStringArray("tooltip")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("17_qgm11")
+tooltip = NodePath("Tooltip")
+
+[node name="Tooltip" parent="TooltipSurface" instance=ExtResource("18_nglf3")]
+layout_mode = 0
 
 [connection signal="pressed" from="Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="ToggleInventory" to="." method="_on_toggle_inventory_pressed"]

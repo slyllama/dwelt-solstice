@@ -300,7 +300,7 @@ data = SubResource("Resource_5cb0d")
 metadata/_custom_type_script = "uid://ocqnbav2e5mm"
 
 [node name="YCast" type="RayCast3D" parent="."]
-target_position = Vector3(0, -1.45, 0)
+target_position = Vector3(0, -1.85, 0)
 
 [connection signal="effect_added" from="EffectHandler" to="." method="_on_effect_added"]
 [connection signal="effect_expired" from="EffectHandler" to="." method="_on_effect_expired"]
