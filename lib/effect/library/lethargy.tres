@@ -1,10 +1,11 @@
 [gd_resource type="Resource" script_class="EffectParameter" load_steps=3 format=3 uid="uid://c0prj7lsadt4u"]
 
 [ext_resource type="Script" uid="uid://eo3gmm8fyhrh" path="res://lib/effect/scripts/effect_parameter.gd" id="1_86cex"]
-[ext_resource type="Texture2D" uid="uid://br1i6xmquuqrl" path="res://lib/effect/library/textures/placeholder.png" id="1_qnpom"]
+[ext_resource type="Texture2D" uid="uid://bn47l8h2p0nim" path="res://lib/effect/library/textures/lethargy.png" id="1_qnpom"]
 
 [resource]
 script = ExtResource("1_86cex")
 effect_name = "Lethargy"
+effect_icon = ExtResource("1_qnpom")
 indefinite = false
 metadata/_custom_type_script = "uid://eo3gmm8fyhrh"

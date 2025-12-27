@@ -40,10 +40,3 @@ func _ready() -> void:
 	for _e: Effect in get_children():
 		register(_e)
 	updated.emit()
-
-func _input(_event: InputEvent) -> void:
-	if Input.is_action_just_pressed("debug_key"):
-		var _d = EffectData.new()
-		_d.id = "lethargy"
-		_d.duration = 5.0
-		add(_d)

@@ -62,6 +62,7 @@ _data = {
 }
 
 [node name="EffectIcon" type="TextureRect"]
+use_parent_material = true
 custom_minimum_size = Vector2(32, 32)
 texture = ExtResource("1_sjddd")
 expand_mode = 1

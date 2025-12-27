@@ -33,9 +33,11 @@ func release_target() -> void:
 func update() -> void:
 	if Dwelt.targeted_thing == null: return # nothing to target
 	var _t := Dwelt.targeted_thing
+	
 	$Title.text = _t.data.thing_name
 	if _t.owned_by_player: $Owner.texture = OWNER_PLAYER_TEX
 	else: $Owner.texture = OWNER_ENEMY_TEX
+	%EffectBar.effect_handler = _t.effect_handler
 
 func _init() -> void:
 	visible = false

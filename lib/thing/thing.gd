@@ -42,10 +42,23 @@ func _ready() -> void:
 		if Dwelt.targeted_thing != self:
 			sel_indicator.visible = false)
 	
+	# TODO: test permanent effects
+	var _t = EffectData.new()
+	_t.id = "test_effect"
+	effect_handler.add(_t)
+	
 	# Handle input events
 	if !body: return
-	
 	body.input_event.connect(func(_c, _e, _p, _n, _i):
 		if Input.is_action_just_released("left_click"):
 			sel_indicator.visible = true
 			Dwelt.target_thing(self))
+
+func _input(_event: InputEvent) -> void:
+	if !Dwelt.targeted_thing == self: return
+	# TODO: test temporary effects
+	if Input.is_action_just_pressed("debug_key"):
+		var _d = EffectData.new()
+		_d.id = "lethargy"
+		_d.duration = 5.0
+		effect_handler.add(_d)
