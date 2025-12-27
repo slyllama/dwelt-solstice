@@ -11,6 +11,7 @@ const SelIndicator = preload("res://lib/thing/sel_indicator/sel_indicator.tscn")
 
 @onready var mat_handler := ThingMatHandler.new()
 @onready var sel_indicator: Node3D = SelIndicator.instantiate()
+@onready var effect_handler := EffectHandler.new()
 
 func _get_dist_to_player() -> float:
 	var _d := global_position.distance_to(Dwelt.player.global_position)
@@ -35,6 +36,7 @@ func _ready() -> void:
 	# Add helper children
 	add_child(mat_handler)
 	add_child(sel_indicator)
+	add_child(effect_handler)
 	
 	Dwelt.thing_targeted.connect(func():
 		if Dwelt.targeted_thing != self:

@@ -13,7 +13,7 @@ func _ready() -> void:
 		var _text := ""
 		for _e: Effect in Dwelt.player.effect_handler.get_children():
 			if _e.data:
-				var _params: EffectParameter = EffectLibrary.effects[_e.data.id]
+				var _params: EffectParameter = EffectLibrary.get_param(_e.data.id)
 				_text += str(_e.data.id)
 				if !_params.indefinite:
 					_text += " (" + str(_e.data.duration) + "s)"
