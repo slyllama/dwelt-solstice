@@ -4,7 +4,6 @@ extends Control
 
 func _ready() -> void:
 	Dwelt.effect_icon_hovered.connect(func(data: EffectData):
-		print(data)
 		visible = true)
 
 func _input(event: InputEvent) -> void:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://ca4uchglbi37g"]
+[gd_scene load_steps=43 format=3 uid="uid://ca4uchglbi37g"]
 
 [ext_resource type="PackedScene" uid="uid://cave0dvi8i7rh" path="res://lib/shard/shard.tscn" id="1_fiv0q"]
 [ext_resource type="PackedScene" uid="uid://pconmu7n0aev" path="res://shards/crucible/props/bamboo/meshes/bamboo.glb" id="2_m67mg"]
@@ -20,6 +20,7 @@
 [ext_resource type="Shader" uid="uid://e2ka8nsd2n14" path="res://shards/crucible/materials/shaders/clouds.gdshader" id="19_0s3ef"]
 [ext_resource type="Texture2D" uid="uid://c6hnxkao1eo86" path="res://shards/crucible/materials/textures/clouds.tres" id="19_84orq"]
 [ext_resource type="PackedScene" uid="uid://bud17d18qow2" path="res://shards/crucible/things/xydryde_regulator/xydryde_regulator.tscn" id="19_moxbr"]
+[ext_resource type="PackedScene" uid="uid://ckfblwluotr02" path="res://shards/crucible/things/xydryde_excess/xydryde_excess.tscn" id="21_0s3ef"]
 
 [sub_resource type="Sky" id="Sky_rfd7c"]
 sky_material = ExtResource("2_tahua")
@@ -214,7 +215,7 @@ collision_layer = 0
 collision_mask = 0
 
 [node name="Player" parent="." index="4"]
-transform = Transform3D(-0.8028072, 0, -0.59623885, 0, 1, 0, 0.59623885, 0, -0.8028072, 3.829465, 0.64434695, 1.7750566)
+transform = Transform3D(-0.8028072, 0, -0.59623885, 0, 1, 0, 0.59623885, 0, -0.8028072, 6.354273, 0.64434695, 4.2639647)
 
 [node name="Bounds" parent="." index="5"]
 size = 13.65
@@ -230,13 +231,10 @@ transform = Transform3D(0.6896069, 0, -0.7241839, 0, 1, 0, 0.7241839, 0, 0.68960
 [node name="Bamboo2" parent="Natural" index="1" instance=ExtResource("2_m67mg")]
 transform = Transform3D(0.82130855, 0, -0.5704842, 0, 1, 0, 0.5704842, 0, 0.82130855, 2.1369822, -0.25027812, -1.9875975)
 
-[node name="Bamboo3" parent="Natural" index="2" instance=ExtResource("2_m67mg")]
-transform = Transform3D(-0.52939045, -0.0678934, -0.8456573, -0.03602524, 0.9976926, -0.057547335, 0.8476131, 0, -0.5306148, -3.676724, 1.3820144, -2.5471292)
+[node name="Bamboo4" parent="Natural" index="2" instance=ExtResource("2_m67mg")]
+transform = Transform3D(-1.0532634, 0, 0.11931513, 0, 1.06, 0, -0.11931513, 0, -1.0532634, 1.1976147, -0.2032469, -0.89163435)
 
-[node name="Bamboo10" parent="Natural" index="3" instance=ExtResource("2_m67mg")]
-transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0.95681727, -1.3311276, 13.355116)
-
-[node name="Grass" parent="Natural" index="4" instance=ExtResource("5_u67vg")]
+[node name="Grass" parent="Natural" index="3" instance=ExtResource("5_u67vg")]
 transform = Transform3D(0.9999999, 0, 0, 0, 0.99999976, 0, 0, 0, 0.9999999, 7.2596154, 0.03986889, -1.9992299)
 multimesh = SubResource("MultiMesh_moxbr")
 size = 2.0
@@ -248,7 +246,7 @@ z_scale = 1.5
 colour_1 = Color(0.048333336, 0.1, 0, 1)
 colour_2 = Color(0.44166666, 0.5, 0, 1)
 
-[node name="Grass2" parent="Natural" index="5" instance=ExtResource("5_u67vg")]
+[node name="Grass2" parent="Natural" index="4" instance=ExtResource("5_u67vg")]
 transform = Transform3D(0.9999999, 0, 0, 0, 0.99999976, 0, 0, 0, 0.9999999, 1.8267138, -0.06966007, 0.79359484)
 multimesh = SubResource("MultiMesh_0s3ef")
 size = 2.0
@@ -260,7 +258,7 @@ z_scale = 1.5
 colour_1 = Color(0.048333336, 0.1, 0, 1)
 colour_2 = Color(0.44166666, 0.5, 0, 1)
 
-[node name="Grass6" parent="Natural" index="6" instance=ExtResource("5_u67vg")]
+[node name="Grass6" parent="Natural" index="5" instance=ExtResource("5_u67vg")]
 transform = Transform3D(0.9999999, 0, 0, 0, 0.99999976, 0, 0, 0, 0.9999999, -4.4812117, -0.12273848, 8.019544)
 multimesh = SubResource("MultiMesh_6b2b1")
 count = 7
@@ -273,7 +271,7 @@ z_scale = 1.5
 colour_1 = Color(0.048333336, 0.1, 0, 1)
 colour_2 = Color(0.44166666, 0.5, 0, 1)
 
-[node name="Grass7" parent="Natural" index="7" instance=ExtResource("5_u67vg")]
+[node name="Grass7" parent="Natural" index="6" instance=ExtResource("5_u67vg")]
 transform = Transform3D(0.9999999, 0, 0, 0, 0.99999976, 0, 0, 0, 0.9999999, 1.7718458, -0.16790819, 9.254368)
 multimesh = SubResource("MultiMesh_v5mt5")
 count = 7
@@ -286,7 +284,7 @@ z_scale = 1.5
 colour_1 = Color(0.048333336, 0.1, 0, 1)
 colour_2 = Color(0.44166666, 0.5, 0, 1)
 
-[node name="Grass5" parent="Natural" index="8" instance=ExtResource("5_u67vg")]
+[node name="Grass5" parent="Natural" index="7" instance=ExtResource("5_u67vg")]
 transform = Transform3D(0.9999999, 0, 0, 0, 0.99999976, 0, 0, 0, 0.9999999, -9.575824, -0.036515832, 0.6656406)
 multimesh = SubResource("MultiMesh_hnbbp")
 size = 2.0
@@ -298,7 +296,7 @@ z_scale = 1.5
 colour_1 = Color(0.048333336, 0.1, 0, 1)
 colour_2 = Color(0.44166666, 0.5, 0, 1)
 
-[node name="Grass3" parent="Natural" index="9" instance=ExtResource("5_u67vg")]
+[node name="Grass3" parent="Natural" index="8" instance=ExtResource("5_u67vg")]
 transform = Transform3D(0.9999999, 0, 0, 0, 0.99999976, 0, 0, 0, 0.9999999, 1.1489668, -0.28561068, -2.3279483)
 multimesh = SubResource("MultiMesh_apet1")
 size = 2.0
@@ -310,7 +308,7 @@ z_scale = 1.5
 colour_1 = Color(0.048333336, 0.1, 0, 1)
 colour_2 = Color(0.44166666, 0.5, 0, 1)
 
-[node name="Grass4" parent="Natural" index="10" instance=ExtResource("5_u67vg")]
+[node name="Grass4" parent="Natural" index="9" instance=ExtResource("5_u67vg")]
 transform = Transform3D(0.9999999, 0, 0, 0, 0.99999976, 0, 0, 0, 0.9999999, -3.7241135, -0.035705447, -1.8207458)
 multimesh = SubResource("MultiMesh_cd2fx")
 size = 2.0
@@ -322,7 +320,7 @@ z_scale = 1.5
 colour_1 = Color(0.048333336, 0.1, 0, 1)
 colour_2 = Color(0.44166666, 0.5, 0, 1)
 
-[node name="Daisies2" parent="Natural" index="11" instance=ExtResource("5_u67vg")]
+[node name="Daisies2" parent="Natural" index="10" instance=ExtResource("5_u67vg")]
 transform = Transform3D(0.9999999, 0, 0, 0, 0.99999976, 0, 0, 0, 0.9999999, 0.6029861, 0.13958436, 5.101652)
 visibility_range_end = 11.0
 multimesh = SubResource("MultiMesh_cev1e")
@@ -335,7 +333,7 @@ max_scale = 0.3
 colour_1 = Color(0.54490954, 0.20113051, 0.8180508, 1)
 colour_2 = Color(0.16527268, 0.12776142, 0.29965368, 1)
 
-[node name="Daisies9" parent="Natural" index="12" instance=ExtResource("5_u67vg")]
+[node name="Daisies9" parent="Natural" index="11" instance=ExtResource("5_u67vg")]
 transform = Transform3D(0.9999999, 0, 0, 0, 0.99999976, 0, 0, 0, 0.9999999, 4.172207, 0.046601236, 8.341511)
 visibility_range_end = 11.0
 multimesh = SubResource("MultiMesh_6btq6")
@@ -348,7 +346,7 @@ max_scale = 0.3
 colour_1 = Color(0.25980315, 0.060036696, 0.41205874, 1)
 colour_2 = Color(0.058191918, 0.039797343, 0.12726685, 1)
 
-[node name="Daisies5" parent="Natural" index="13" instance=ExtResource("5_u67vg")]
+[node name="Daisies5" parent="Natural" index="12" instance=ExtResource("5_u67vg")]
 transform = Transform3D(0.9999999, 0, 0, 0, 0.99999976, 0, 0, 0, 0.9999999, -1.5071778, 0.16055185, 5.522041)
 visibility_range_end = 11.0
 multimesh = SubResource("MultiMesh_c0yvo")
@@ -361,7 +359,7 @@ max_scale = 0.3
 colour_1 = Color(0.54490954, 0.20113051, 0.8180508, 1)
 colour_2 = Color(0.16527268, 0.12776142, 0.29965368, 1)
 
-[node name="Daisies7" parent="Natural" index="14" instance=ExtResource("5_u67vg")]
+[node name="Daisies7" parent="Natural" index="13" instance=ExtResource("5_u67vg")]
 transform = Transform3D(0.9999999, 0, 0, 0, 0.99999976, 0, 0, 0, 0.9999999, -5.3732467, 0.03402549, 5.4771)
 visibility_range_end = 11.0
 multimesh = SubResource("MultiMesh_ev75l")
@@ -374,7 +372,7 @@ max_scale = 0.3
 colour_1 = Color(0.54490954, 0.20113051, 0.8180508, 1)
 colour_2 = Color(0.16527268, 0.12776142, 0.29965368, 1)
 
-[node name="Daisies8" parent="Natural" index="15" instance=ExtResource("5_u67vg")]
+[node name="Daisies8" parent="Natural" index="14" instance=ExtResource("5_u67vg")]
 transform = Transform3D(0.9999999, 0, 0, 0, 0.99999976, 0, 0, 0, 0.9999999, -7.505023, 0.03402549, 7.368476)
 visibility_range_end = 11.0
 multimesh = SubResource("MultiMesh_rjsoa")
@@ -387,7 +385,7 @@ max_scale = 0.3
 colour_1 = Color(0.54490954, 0.20113051, 0.8180508, 1)
 colour_2 = Color(0.16527268, 0.12776142, 0.29965368, 1)
 
-[node name="Daisies3" parent="Natural" index="16" instance=ExtResource("5_u67vg")]
+[node name="Daisies3" parent="Natural" index="15" instance=ExtResource("5_u67vg")]
 transform = Transform3D(0.9999999, 0, 0, 0, 0.99999976, 0, 0, 0, 0.9999999, 3.8354113, 0.16846395, 3.3370507)
 visibility_range_end = 11.0
 multimesh = SubResource("MultiMesh_r5met")
@@ -400,7 +398,7 @@ max_scale = 0.3
 colour_1 = Color(0.54490954, 0.20113051, 0.8180508, 1)
 colour_2 = Color(0.16527268, 0.12776142, 0.29965368, 1)
 
-[node name="Daisies6" parent="Natural" index="17" instance=ExtResource("5_u67vg")]
+[node name="Daisies6" parent="Natural" index="16" instance=ExtResource("5_u67vg")]
 transform = Transform3D(0.9999999, 0, 0, 0, 0.99999976, 0, 0, 0, 0.9999999, 8.390669, 0.08153331, 2.852381)
 visibility_range_end = 11.0
 multimesh = SubResource("MultiMesh_hv6ww")
@@ -413,7 +411,7 @@ max_scale = 0.3
 colour_1 = Color(0.54490954, 0.20113051, 0.8180508, 1)
 colour_2 = Color(0.16527268, 0.12776142, 0.29965368, 1)
 
-[node name="Daisies4" parent="Natural" index="18" instance=ExtResource("5_u67vg")]
+[node name="Daisies4" parent="Natural" index="17" instance=ExtResource("5_u67vg")]
 transform = Transform3D(0.9999999, 0, 0, 0, 0.99999976, 0, 0, 0, 0.9999999, 3.7557018, 0.032934546, -0.706058)
 visibility_range_end = 11.0
 multimesh = SubResource("MultiMesh_84orq")
@@ -426,37 +424,37 @@ max_scale = 0.3
 colour_1 = Color(0.54490954, 0.20113051, 0.8180508, 1)
 colour_2 = Color(0.16527268, 0.12776142, 0.29965368, 1)
 
-[node name="Tree2" parent="Natural" index="19" instance=ExtResource("12_fq4iu")]
+[node name="Tree2" parent="Natural" index="18" instance=ExtResource("12_fq4iu")]
 transform = Transform3D(-0.9588693, 0, -0.28384796, 0, 1, 0, 0.28384796, 0, -0.9588693, -11.4731655, -0.09296268, 2.3586357)
 
-[node name="Tree6" parent="Natural" index="20" instance=ExtResource("12_fq4iu")]
+[node name="Tree6" parent="Natural" index="19" instance=ExtResource("12_fq4iu")]
 transform = Transform3D(0.49295425, 0.13140458, -0.860075, -0.2575714, 0.9662593, -1.9264123e-08, 0.83105546, 0.22153074, 0.51016766, -6.5477347, 0.9054632, 15.173831)
 
-[node name="Tree3" parent="Natural" index="21" instance=ExtResource("12_fq4iu")]
+[node name="Tree3" parent="Natural" index="20" instance=ExtResource("12_fq4iu")]
 transform = Transform3D(-0.9184769, 0, 1.3101146, 0, 1.6, 0, -1.3101146, 0, -0.9184769, -17.476847, 2.2105615, 16.879269)
 
-[node name="Tree4" parent="Natural" index="22" instance=ExtResource("12_fq4iu")]
+[node name="Tree4" parent="Natural" index="21" instance=ExtResource("12_fq4iu")]
 transform = Transform3D(0.9573251, -0.28893507, -0.0067270696, 0.2889673, 0.9564975, 0.040130466, -0.0051606, -0.040361814, 0.99917173, 12.493227, 0.27609307, -2.9995537)
 
-[node name="Tree5" parent="Natural" index="23" instance=ExtResource("12_fq4iu")]
+[node name="Tree5" parent="Natural" index="22" instance=ExtResource("12_fq4iu")]
 transform = Transform3D(-0.58019125, 0, -0.81448025, 0, 1, 0, 0.81448025, 0, -0.58019125, 17.378479, 1.6565226, 2.2433562)
 
-[node name="FogVolume" parent="Natural" index="24" instance=ExtResource("11_r4xcf")]
+[node name="FogVolume" parent="Natural" index="23" instance=ExtResource("11_r4xcf")]
 transform = Transform3D(0.9995879, 0, 0.02870673, 0, 1, 0, -0.02870673, 0, 0.9995879, -4.8024764, 0.87474775, 0.44770527)
 
-[node name="FogVolume2" parent="Natural" index="25" instance=ExtResource("11_r4xcf")]
+[node name="FogVolume2" parent="Natural" index="24" instance=ExtResource("11_r4xcf")]
 transform = Transform3D(0.98705524, 0, -0.16038081, 0, 1, 0, 0.16038081, 0, 0.98705524, 8.871883, 1.0566819, -2.7990432)
 size = Vector3(10, 2, 5.6219482)
 
-[node name="FogVolume4" parent="Natural" index="26" instance=ExtResource("11_r4xcf")]
+[node name="FogVolume4" parent="Natural" index="25" instance=ExtResource("11_r4xcf")]
 transform = Transform3D(-0.7072179, 0, -0.7069957, 0, 1, 0, 0.7069957, 0, -0.7072179, 11.210901, -1.6965396, 11.793586)
 size = Vector3(14.544922, 2, 7.6071777)
 
-[node name="FogVolume3" parent="Natural" index="27" instance=ExtResource("11_r4xcf")]
+[node name="FogVolume3" parent="Natural" index="26" instance=ExtResource("11_r4xcf")]
 transform = Transform3D(0.4395002, 0, 0.8982425, 0, 1, 0, -0.8982425, 0, 0.4395002, -16.874113, 3.332859, 0.6187277)
 size = Vector3(10, 4.313965, 5)
 
-[node name="RockDecal" type="Decal" parent="Natural" index="28"]
+[node name="RockDecal" type="Decal" parent="Natural" index="27"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -10.582555, 0.35652763, 5.836824)
 size = Vector3(5, 3, 5)
 texture_albedo = ExtResource("12_judrx")
@@ -466,7 +464,7 @@ distance_fade_begin = 20.0
 distance_fade_length = 2.0
 cull_mask = 1047556
 
-[node name="RockDecal6" type="Decal" parent="Natural" index="29"]
+[node name="RockDecal6" type="Decal" parent="Natural" index="28"]
 transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999976, 6.8822203, -0.90865123, 1.075048)
 size = Vector3(7, 1.2797852, 7)
 texture_albedo = ExtResource("12_judrx")
@@ -476,7 +474,7 @@ distance_fade_begin = 20.0
 distance_fade_length = 2.0
 cull_mask = 1047556
 
-[node name="RockDecal7" type="Decal" parent="Natural" index="30"]
+[node name="RockDecal7" type="Decal" parent="Natural" index="29"]
 transform = Transform3D(0.79255575, 0.39082074, -0.46809655, -2.9802322e-08, 0.7676239, 0.6409003, 0.6097994, -0.5079493, 0.6083846, 2.5574849, -0.69439685, 16.759407)
 size = Vector3(7, 1.8380127, 7)
 texture_albedo = ExtResource("12_judrx")
@@ -486,7 +484,7 @@ distance_fade_begin = 20.0
 distance_fade_length = 2.0
 cull_mask = 1047556
 
-[node name="RockDecal3" type="Decal" parent="Natural" index="31"]
+[node name="RockDecal3" type="Decal" parent="Natural" index="30"]
 transform = Transform3D(0.99789226, -0.04118342, 0.05014916, 0.06392696, 0.49107724, -0.868767, 0.011151696, 0.870142, 0.4926753, -1.6265597, 2.3887727, -4.421972)
 size = Vector3(6, 2, 6)
 texture_albedo = ExtResource("12_judrx")
@@ -496,7 +494,7 @@ distance_fade_begin = 20.0
 distance_fade_length = 2.0
 cull_mask = 1047556
 
-[node name="RockDecal2" type="Decal" parent="Natural" index="32"]
+[node name="RockDecal2" type="Decal" parent="Natural" index="31"]
 transform = Transform3D(1, 0, 0, 0, 0.95343316, 0.3016045, 0, -0.3016045, 0.95343316, -2.3867238, -0.9443433, 11.993877)
 size = Vector3(5, 3, 5)
 texture_albedo = ExtResource("12_judrx")
@@ -552,9 +550,12 @@ transform = Transform3D(0.99629605, 0.045258958, -0.07311636, -0.045380425, 0.99
 transform = Transform3D(0.35435814, -0.04056824, 0.9342294, 0.11374077, 0.9935105, 0, -0.9281666, 0.10625997, 0.3566728, 3.9831588, -0.14569241, -3.0590181)
 
 [node name="XydrydeRegulator3" parent="." index="13" instance=ExtResource("19_moxbr")]
-transform = Transform3D(0.53432286, 0, -0.8452805, 0, 1, 0, 0.8452805, 0, 0.53432286, 12.559221, -1.6611156, 7.200549)
+transform = Transform3D(0.347934, 0, 0.9375191, 0, 1, 0, -0.9375191, 0, 0.347934, -15.233894, 0.88327503, 8.259945)
 
 [node name="Clouds" type="MeshInstance3D" parent="." index="14"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 17, 0)
 cast_shadow = 0
 mesh = SubResource("PlaneMesh_6b2b1")
+
+[node name="XydrydeExcess" parent="." index="15" instance=ExtResource("21_0s3ef")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0263062, -0.7216648, 2.2962263)

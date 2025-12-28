@@ -7,7 +7,6 @@ func play_title_card(shard_name: String) -> void:
 func _ready() -> void:
 	await get_tree().process_frame
 	# Need to wait a frame for the Dwelt.player reference to be applied
-	# TODO: debug for viewing player effects
 	%EffectBar.effect_handler = Dwelt.player.effect_handler
 	%EyeAnim.animate()
 

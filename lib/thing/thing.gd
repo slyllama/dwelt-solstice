@@ -2,7 +2,7 @@ class_name Thing extends Node3D
 
 const SelIndicator = preload("res://lib/thing/sel_indicator/sel_indicator.tscn")
 
-@export var body: StaticBody3D
+@export var body: CollisionObject3D
 @export var mesh: Node3D
 @export var selector_point: Marker3D
 @export_category("Data and Properties")
