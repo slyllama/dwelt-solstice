@@ -4,12 +4,14 @@ extends Control
 
 func _ready() -> void:
 	Dwelt.effect_icon_hovered.connect(func(data: EffectData):
-		print("Hovered " + str(data.id))
+		$Tooltip.text = EffectLibrary.get_param(data.id).effect_name
+		$Tooltip.size = Vector2.ZERO
 		visible = true)
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
-		tooltip.position = get_window().get_mouse_position() + Vector2(20.0, 20.0)
+		tooltip.position = (get_window().get_mouse_position()
+			+ Vector2(20.0, 20.0))
 
 func _process(_delta: float) -> void:
 	if visible:
