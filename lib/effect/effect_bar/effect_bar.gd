@@ -14,13 +14,18 @@ func add_icon(data: EffectData) -> void:
 
 # Once connected, an EffectHandler can spawn effect icons here
 func connect_handler() -> void:
-	for _n in get_children():
-		_n.queue_free() # clear
 	if !effect_handler: return
+	
+	# Disconnect the existing signal (for when targets change)
+	if effect_handler.effect_added.is_connected(add_icon):
+		effect_handler.effect_added.disconnect(add_icon)
+	
+	effect_handler.effect_added.connect(add_icon)
+	
+	await get_tree().process_frame
+	for _n in get_children(): _n.queue_free() # clear
 	for _n: Effect in effect_handler.get_children():
 		add_icon(_n.data)
-	if !effect_handler.effect_added.get_connections():
-		effect_handler.effect_added.connect(add_icon)
 
 func _ready() -> void:
 	for _n in get_children():
