@@ -1,6 +1,7 @@
-[gd_resource type="ShaderMaterial" load_steps=10 format=3 uid="uid://dqqw1cju3b7h6"]
+[gd_resource type="ShaderMaterial" load_steps=11 format=3 uid="uid://dqqw1cju3b7h6"]
 
 [ext_resource type="Shader" uid="uid://c54vf4530l6rd" path="res://shards/crucible/materials/shaders/night_sky.gdshader" id="1_pvh8i"]
+[ext_resource type="Texture2D" uid="uid://bnisvf43d5u0b" path="res://shards/crucible/materials/textures/stars_nebula_diff.jpg" id="2_55dcu"]
 [ext_resource type="Texture2D" uid="uid://cly2gywk3s8kg" path="res://shards/crucible/materials/textures/stars_diff.jpg" id="2_yf6jp"]
 
 [sub_resource type="Gradient" id="Gradient_yf6jp"]
@@ -23,8 +24,8 @@ color_ramp = SubResource("Gradient_pvh8i")
 seamless = true
 
 [sub_resource type="Gradient" id="Gradient_45rpi"]
-offsets = PackedFloat32Array(0.46, 0.51, 0.95)
-colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+offsets = PackedFloat32Array(0, 0.17226891, 0.46, 0.51, 0.95)
+colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_mfhad"]
 gradient = SubResource("Gradient_45rpi")
@@ -37,6 +38,8 @@ shader_parameter/patina = SubResource("NoiseTexture2D_45rpi")
 shader_parameter/patina_size = 1.0
 shader_parameter/patina_strength = 2.0
 shader_parameter/stars = ExtResource("2_yf6jp")
+shader_parameter/nebula = ExtResource("2_55dcu")
 shader_parameter/stars_gradient_mask = SubResource("GradientTexture2D_mfhad")
 shader_parameter/stars_size = 13.0
 shader_parameter/stars_strength = 0.25
+shader_parameter/nebula_strength = 1.0
