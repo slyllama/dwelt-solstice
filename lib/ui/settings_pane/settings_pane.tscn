@@ -40,7 +40,13 @@ id = "fps_limit"
 title = "FPS Limit"
 options = Array[String](["30fps", "60fps", "144fps", "unlimited"])
 
-[node name="Bloom" parent="Box/Scroll/Box" index="2" instance=ExtResource("3_cagy3")]
+[node name="Shadows" parent="Box/Scroll/Box" index="2" instance=ExtResource("2_qd6od")]
+layout_mode = 2
+id = "shadows"
+title = "Shadows"
+options = Array[String](["off", "low", "medium", "high"])
+
+[node name="Bloom" parent="Box/Scroll/Box" index="3" instance=ExtResource("3_cagy3")]
 layout_mode = 2
 id = "bloom"
 title = "Bloom"

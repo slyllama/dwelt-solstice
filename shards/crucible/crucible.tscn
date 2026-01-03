@@ -192,9 +192,10 @@ albedo_texture = ExtResource("13_58tgt")
 material = SubResource("StandardMaterial3D_kte83")
 size = Vector2(150, 150)
 
-[node name="Crucible" instance=ExtResource("1_fiv0q")]
+[node name="Crucible" node_paths=PackedStringArray("master_light") instance=ExtResource("1_fiv0q")]
 script = ExtResource("2_rvw1y")
 shard_name = "Crucible Seven"
+master_light = NodePath("Sky/Sun")
 metadata/_edit_horizontal_guides_ = [6.0]
 
 [node name="Sky" parent="." index="0"]
