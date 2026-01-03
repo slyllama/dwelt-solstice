@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://ckfblwluotr02"]
+[gd_scene format=3 uid="uid://ckfblwluotr02"]
 
 [ext_resource type="Script" uid="uid://ds3on1jovim2a" path="res://shards/crucible/things/xydryde_excess/xydryde_excess.gd" id="1_pqw8l"]
 [ext_resource type="Script" uid="uid://fg7mxayvxsgv" path="res://lib/thing/scripts/thing_data.gd" id="2_0dugb"]
 [ext_resource type="Texture2D" uid="uid://dyi2dcigdqdvf" path="res://shards/crucible/things/xydryde_excess/textures/xydryde_decal.png" id="3_pqw8l"]
+[ext_resource type="Material" uid="uid://bxv8vnq41mocc" path="res://generic/materials/mat_tiles.tres" id="4_shy6o"]
 
 [sub_resource type="Resource" id="Resource_pqw8l"]
 script = ExtResource("2_0dugb")
@@ -52,7 +53,12 @@ _data = {
 &"pulse": SubResource("Animation_pqw8l")
 }
 
-[node name="XydrydeExcess" type="Node3D" node_paths=PackedStringArray("body", "mesh", "selector_point")]
+[sub_resource type="QuadMesh" id="QuadMesh_3fhp6"]
+material = ExtResource("4_shy6o")
+size = Vector2(10, 10)
+orientation = 1
+
+[node name="XydrydeExcess" type="Node3D" unique_id=1154639449 node_paths=PackedStringArray("body", "mesh", "selector_point")]
 script = ExtResource("1_pqw8l")
 body = NodePath("Body")
 mesh = NodePath("Decal")
@@ -61,28 +67,29 @@ data = SubResource("Resource_pqw8l")
 owned_by_player = false
 metadata/_custom_type_script = "uid://v3c7x4mae7v1"
 
-[node name="Body" type="Area3D" parent="."]
+[node name="Body" type="Area3D" parent="." unique_id=1550462523]
 
-[node name="Collision" type="CollisionShape3D" parent="Body"]
+[node name="Collision" type="CollisionShape3D" parent="Body" unique_id=715674483]
 shape = SubResource("CylinderShape3D_0dugb")
 
-[node name="SelectorPoint" type="Marker3D" parent="."]
+[node name="SelectorPoint" type="Marker3D" parent="." unique_id=1486717263]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
-[node name="Decal" type="Decal" parent="."]
-sorting_offset = 1.0
+[node name="Decal" type="Decal" parent="." unique_id=96248883]
 size = Vector3(4, 4, 4)
 texture_albedo = ExtResource("3_pqw8l")
 normal_fade = 0.5
 cull_mask = 4
 
-[node name="LethargyTimer" type="Timer" parent="."]
+[node name="LethargyTimer" type="Timer" parent="." unique_id=1694119096]
 
-[node name="Pulse" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_3fhp6")
-}
-autoplay = "pulse"
+[node name="Pulse" type="AnimationPlayer" parent="." unique_id=376000217]
+libraries/ = SubResource("AnimationLibrary_3fhp6")
+autoplay = &"pulse"
+
+[node name="DebugFloor" type="MeshInstance3D" parent="." unique_id=12640517]
+layers = 5
+mesh = SubResource("QuadMesh_3fhp6")
 
 [connection signal="body_entered" from="Body" to="." method="_on_body_body_entered"]
 [connection signal="body_exited" from="Body" to="." method="_on_body_body_exited"]

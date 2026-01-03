@@ -1,4 +1,4 @@
-[gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://bogdhph00sfej"]
+[gd_resource type="ShaderMaterial" format=3 uid="uid://bogdhph00sfej"]
 
 [ext_resource type="Shader" uid="uid://txko4c17vwyn" path="res://lib/shard/bounds/visual_bounds/materials/shaders/visual_bounds.gdshader" id="1_4slid"]
 

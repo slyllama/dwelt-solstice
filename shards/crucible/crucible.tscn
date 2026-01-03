@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://ca4uchglbi37g"]
+[gd_scene format=3 uid="uid://ca4uchglbi37g"]
 
 [ext_resource type="PackedScene" uid="uid://cave0dvi8i7rh" path="res://lib/shard/shard.tscn" id="1_fiv0q"]
 [ext_resource type="PackedScene" uid="uid://pconmu7n0aev" path="res://shards/crucible/props/bamboo/meshes/bamboo.glb" id="2_m67mg"]
@@ -192,7 +192,7 @@ albedo_texture = ExtResource("13_58tgt")
 material = SubResource("StandardMaterial3D_kte83")
 size = Vector2(150, 150)
 
-[node name="Crucible" node_paths=PackedStringArray("master_light") instance=ExtResource("1_fiv0q")]
+[node name="Crucible" unique_id=1884018374 node_paths=PackedStringArray("master_light") instance=ExtResource("1_fiv0q")]
 script = ExtResource("2_rvw1y")
 shard_name = "Crucible Seven"
 master_light = NodePath("Sky/Sun")
@@ -201,7 +201,7 @@ metadata/_edit_horizontal_guides_ = [6.0]
 [node name="Sky" parent="." index="0"]
 environment = SubResource("Environment_fiv0q")
 
-[node name="Sun" type="DirectionalLight3D" parent="Sky" index="0"]
+[node name="Sun" type="DirectionalLight3D" parent="Sky" index="0" unique_id=607466727]
 transform = Transform3D(0.3028222, -0.2905646, 0.9076735, 0.14110538, 0.9555637, 0.25881907, -0.9425435, 0.049701445, 0.33036613, 0, 4, 0)
 shadow_enabled = true
 directional_shadow_mode = 0
@@ -209,10 +209,10 @@ directional_shadow_blend_splits = true
 directional_shadow_max_distance = 30.0
 directional_shadow_pancake_size = 0.0
 
-[node name="Landscape" parent="." index="2" instance=ExtResource("3_aut2g")]
+[node name="Landscape" parent="." index="2" unique_id=2009149118 instance=ExtResource("3_aut2g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.004589319, 0.010936379, 0.0034778118)
 
-[node name="Clouds" type="MeshInstance3D" parent="." index="3"]
+[node name="Clouds" type="MeshInstance3D" parent="." index="3" unique_id=1046884500]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 17, 0)
 cast_shadow = 0
 mesh = SubResource("PlaneMesh_6b2b1")
@@ -231,18 +231,18 @@ size = 13.65
 [node name="Ambience" parent="Sound" index="0"]
 stream = ExtResource("6_42lni")
 
-[node name="Natural" type="Node3D" parent="." index="8"]
+[node name="Natural" type="Node3D" parent="." index="8" unique_id=1642949632]
 
-[node name="Bamboo2" parent="Natural" index="0" instance=ExtResource("2_m67mg")]
+[node name="Bamboo2" parent="Natural" index="0" unique_id=2010311063 instance=ExtResource("2_m67mg")]
 transform = Transform3D(0.82130855, 0, -0.5704842, 0, 1, 0, 0.5704842, 0, 0.82130855, 1.6905677, -0.25027812, -1.1715398)
 
-[node name="Bamboo3" parent="Natural" index="1" instance=ExtResource("2_m67mg")]
+[node name="Bamboo3" parent="Natural" index="1" unique_id=1356715199 instance=ExtResource("2_m67mg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.4069195, -0.70262945, 11.624777)
 
-[node name="Bamboo4" parent="Natural" index="2" instance=ExtResource("2_m67mg")]
+[node name="Bamboo4" parent="Natural" index="2" unique_id=273548233 instance=ExtResource("2_m67mg")]
 transform = Transform3D(-1.1923738, 0, 0.13507375, 0, 1.2, 0, -0.13507375, 0, -1.1923738, -2.7952416, 0.501153, -1.2494441)
 
-[node name="Grass" parent="Natural" index="3" instance=ExtResource("5_u67vg")]
+[node name="Grass" parent="Natural" index="3" unique_id=156428065 instance=ExtResource("5_u67vg")]
 transform = Transform3D(0.9999999, 0, 0, 0, 0.99999976, 0, 0, 0, 0.9999999, 9.561035, -0.29941434, -1.1613793)
 multimesh = SubResource("MultiMesh_hnbbp")
 size = 2.0
@@ -254,7 +254,7 @@ z_scale = 1.5
 colour_1 = Color(0.37333328, 0.8, 0, 1)
 colour_2 = Color(0.44166666, 0.5, 0, 1)
 
-[node name="Grass2" parent="Natural" index="4" instance=ExtResource("5_u67vg")]
+[node name="Grass2" parent="Natural" index="4" unique_id=1905091818 instance=ExtResource("5_u67vg")]
 transform = Transform3D(0.9999999, 0, 0, 0, 0.99999976, 0, 0, 0, 0.9999999, 1.8267138, -0.06966007, 0.79359484)
 multimesh = SubResource("MultiMesh_apet1")
 size = 3.0
@@ -266,7 +266,7 @@ z_scale = 1.5
 colour_1 = Color(0.3866667, 0.8, 0, 1)
 colour_2 = Color(0.44166666, 0.5, 0, 1)
 
-[node name="Grass6" parent="Natural" index="5" instance=ExtResource("5_u67vg")]
+[node name="Grass6" parent="Natural" index="5" unique_id=1349707926 instance=ExtResource("5_u67vg")]
 transform = Transform3D(0.9999999, 0, 0, 0, 0.99999976, 0, 0, 0, 0.9999999, -1.4474499, -0.14471018, 9.214328)
 multimesh = SubResource("MultiMesh_6b2b1")
 count = 7
@@ -279,7 +279,7 @@ z_scale = 2.0
 colour_1 = Color(0.37333328, 0.8, 0, 1)
 colour_2 = Color(0.44166666, 0.5, 0, 1)
 
-[node name="Grass7" parent="Natural" index="6" instance=ExtResource("5_u67vg")]
+[node name="Grass7" parent="Natural" index="6" unique_id=1427424084 instance=ExtResource("5_u67vg")]
 transform = Transform3D(0.9999999, 0, 0, 0, 0.99999976, 0, 0, 0, 0.9999999, 1.7718458, -0.16790819, 9.254368)
 multimesh = SubResource("MultiMesh_v5mt5")
 count = 7
@@ -292,7 +292,7 @@ z_scale = 1.5
 colour_1 = Color(0.37333328, 0.8, 0, 1)
 colour_2 = Color(0.44166666, 0.5, 0, 1)
 
-[node name="Grass8" parent="Natural" index="7" instance=ExtResource("5_u67vg")]
+[node name="Grass8" parent="Natural" index="7" unique_id=1080961448 instance=ExtResource("5_u67vg")]
 transform = Transform3D(0.9999999, 0, 0, 0, 0.99999976, 0, 0, 0, 0.9999999, 4.8905797, -0.24185526, 14.140112)
 multimesh = SubResource("MultiMesh_cd2fx")
 count = 7
@@ -305,7 +305,7 @@ z_scale = 1.5
 colour_1 = Color(0.37333328, 0.8, 0, 1)
 colour_2 = Color(0.44166666, 0.5, 0, 1)
 
-[node name="Grass5" parent="Natural" index="8" instance=ExtResource("5_u67vg")]
+[node name="Grass5" parent="Natural" index="8" unique_id=36079887 instance=ExtResource("5_u67vg")]
 transform = Transform3D(0.9999999, 0, 0, 0, 0.99999976, 0, 0, 0, 0.9999999, -3.3474264, 0.0014799237, 0.5915797)
 multimesh = SubResource("MultiMesh_cksxq")
 size = 3.0
@@ -317,7 +317,7 @@ z_scale = 1.5
 colour_1 = Color(0.37333328, 0.8, 0, 1)
 colour_2 = Color(0.44166666, 0.5, 0, 1)
 
-[node name="Daisies2" parent="Natural" index="9" instance=ExtResource("5_u67vg")]
+[node name="Daisies2" parent="Natural" index="9" unique_id=13330452 instance=ExtResource("5_u67vg")]
 transform = Transform3D(0.9999999, 0, 0, 0, 0.99999976, 0, 0, 0, 0.9999999, 0.6029861, 0.13958436, 5.101652)
 visibility_range_end = 11.0
 multimesh = SubResource("MultiMesh_cev1e")
@@ -330,7 +330,7 @@ max_scale = 0.3
 colour_1 = Color(0.54490954, 0.20113051, 0.8180508, 1)
 colour_2 = Color(0.16527268, 0.12776142, 0.29965368, 1)
 
-[node name="Daisies9" parent="Natural" index="10" instance=ExtResource("5_u67vg")]
+[node name="Daisies9" parent="Natural" index="10" unique_id=1586088957 instance=ExtResource("5_u67vg")]
 transform = Transform3D(0.9999999, 0, 0, 0, 0.99999976, 0, 0, 0, 0.9999999, 4.172207, 0.046601236, 8.341511)
 visibility_range_end = 11.0
 multimesh = SubResource("MultiMesh_6btq6")
@@ -343,7 +343,7 @@ max_scale = 0.3
 colour_1 = Color(0.25980315, 0.060036696, 0.41205874, 1)
 colour_2 = Color(0.058191918, 0.039797343, 0.12726685, 1)
 
-[node name="Daisies5" parent="Natural" index="11" instance=ExtResource("5_u67vg")]
+[node name="Daisies5" parent="Natural" index="11" unique_id=892284273 instance=ExtResource("5_u67vg")]
 transform = Transform3D(0.9999999, 0, 0, 0, 0.99999976, 0, 0, 0, 0.9999999, -1.5071778, 0.16055185, 5.522041)
 visibility_range_end = 11.0
 multimesh = SubResource("MultiMesh_c0yvo")
@@ -356,7 +356,7 @@ max_scale = 0.3
 colour_1 = Color(0.54490954, 0.20113051, 0.8180508, 1)
 colour_2 = Color(0.16527268, 0.12776142, 0.29965368, 1)
 
-[node name="Daisies7" parent="Natural" index="12" instance=ExtResource("5_u67vg")]
+[node name="Daisies7" parent="Natural" index="12" unique_id=1860148949 instance=ExtResource("5_u67vg")]
 transform = Transform3D(0.9999999, 0, 0, 0, 0.99999976, 0, 0, 0, 0.9999999, -5.3732467, 0.03402549, 5.4771)
 visibility_range_end = 11.0
 multimesh = SubResource("MultiMesh_ev75l")
@@ -369,7 +369,7 @@ max_scale = 0.3
 colour_1 = Color(0.54490954, 0.20113051, 0.8180508, 1)
 colour_2 = Color(0.16527268, 0.12776142, 0.29965368, 1)
 
-[node name="Daisies8" parent="Natural" index="13" instance=ExtResource("5_u67vg")]
+[node name="Daisies8" parent="Natural" index="13" unique_id=1252916138 instance=ExtResource("5_u67vg")]
 transform = Transform3D(0.9999999, 0, 0, 0, 0.99999976, 0, 0, 0, 0.9999999, -7.7949686, 0.03402549, 8.034333)
 visibility_range_end = 11.0
 multimesh = SubResource("MultiMesh_rjsoa")
@@ -382,7 +382,7 @@ max_scale = 0.3
 colour_1 = Color(0.54490954, 0.20113051, 0.8180508, 1)
 colour_2 = Color(0.16527268, 0.12776142, 0.29965368, 1)
 
-[node name="Daisies3" parent="Natural" index="14" instance=ExtResource("5_u67vg")]
+[node name="Daisies3" parent="Natural" index="14" unique_id=508423968 instance=ExtResource("5_u67vg")]
 transform = Transform3D(0.9999999, 0, 0, 0, 0.99999976, 0, 0, 0, 0.9999999, 3.8354113, 0.16846395, 3.3370507)
 visibility_range_end = 11.0
 multimesh = SubResource("MultiMesh_r5met")
@@ -395,7 +395,7 @@ max_scale = 0.3
 colour_1 = Color(0.54490954, 0.20113051, 0.8180508, 1)
 colour_2 = Color(0.16527268, 0.12776142, 0.29965368, 1)
 
-[node name="Daisies6" parent="Natural" index="15" instance=ExtResource("5_u67vg")]
+[node name="Daisies6" parent="Natural" index="15" unique_id=1036506946 instance=ExtResource("5_u67vg")]
 transform = Transform3D(0.9999999, 0, 0, 0, 0.99999976, 0, 0, 0, 0.9999999, 8.390669, 0.08153331, 2.852381)
 visibility_range_end = 11.0
 multimesh = SubResource("MultiMesh_hv6ww")
@@ -408,7 +408,7 @@ max_scale = 0.3
 colour_1 = Color(0.54490954, 0.20113051, 0.8180508, 1)
 colour_2 = Color(0.16527268, 0.12776142, 0.29965368, 1)
 
-[node name="Daisies10" parent="Natural" index="16" instance=ExtResource("5_u67vg")]
+[node name="Daisies10" parent="Natural" index="16" unique_id=1450117593 instance=ExtResource("5_u67vg")]
 transform = Transform3D(0.9999999, 0, 0, 0, 0.99999976, 0, 0, 0, 0.9999999, 11.342165, 0.24198902, 7.440398)
 visibility_range_end = 11.0
 multimesh = SubResource("MultiMesh_3hphu")
@@ -421,7 +421,7 @@ max_scale = 0.3
 colour_1 = Color(0.54490954, 0.20113051, 0.8180508, 1)
 colour_2 = Color(0.16527268, 0.12776142, 0.29965368, 1)
 
-[node name="Daisies4" parent="Natural" index="17" instance=ExtResource("5_u67vg")]
+[node name="Daisies4" parent="Natural" index="17" unique_id=1769702014 instance=ExtResource("5_u67vg")]
 transform = Transform3D(0.9999999, 0, 0, 0, 0.99999976, 0, 0, 0, 0.9999999, 3.7557018, 0.032934546, -0.706058)
 visibility_range_end = 11.0
 multimesh = SubResource("MultiMesh_84orq")
@@ -434,40 +434,40 @@ max_scale = 0.3
 colour_1 = Color(0.54490954, 0.20113051, 0.8180508, 1)
 colour_2 = Color(0.16527268, 0.12776142, 0.29965368, 1)
 
-[node name="Tree2" parent="Natural" index="18" instance=ExtResource("12_fq4iu")]
+[node name="Tree2" parent="Natural" index="18" unique_id=830400861 instance=ExtResource("12_fq4iu")]
 transform = Transform3D(-0.9588693, 0, -0.28384796, -0.034607116, 0.99253976, 0.116906606, 0.28173038, 0.121921316, -0.9517159, -11.517023, -0.06602186, 0.41519952)
 
-[node name="Tree6" parent="Natural" index="19" instance=ExtResource("12_fq4iu")]
+[node name="Tree6" parent="Natural" index="19" unique_id=561421746 instance=ExtResource("12_fq4iu")]
 transform = Transform3D(0.49295425, 0.13140458, -0.860075, -0.2575714, 0.9662593, -1.9264123e-08, 0.83105546, 0.22153074, 0.51016766, -8.840118, -0.46334076, 13.846977)
 
-[node name="Tree7" parent="Natural" index="20" instance=ExtResource("12_fq4iu")]
+[node name="Tree7" parent="Natural" index="20" unique_id=1590874973 instance=ExtResource("12_fq4iu")]
 transform = Transform3D(-0.45882016, 0, -0.8885293, 0, 1, 0, 0.8885293, 0, -0.45882016, -1.1696258, 2.8066356, 19.655676)
 
-[node name="Tree3" parent="Natural" index="21" instance=ExtResource("12_fq4iu")]
+[node name="Tree3" parent="Natural" index="21" unique_id=1612624236 instance=ExtResource("12_fq4iu")]
 transform = Transform3D(-0.9184769, 0, 1.3101146, 0, 1.6, 0, -1.3101146, 0, -0.9184769, -17.476847, 2.2105615, 16.879269)
 
-[node name="Tree4" parent="Natural" index="22" instance=ExtResource("12_fq4iu")]
+[node name="Tree4" parent="Natural" index="22" unique_id=2029399995 instance=ExtResource("12_fq4iu")]
 transform = Transform3D(0.9573251, -0.28893507, -0.0067270696, 0.2889673, 0.9564975, 0.040130466, -0.0051606, -0.040361814, 0.99917173, 12.493227, 0.27609307, -2.9995537)
 
-[node name="Tree5" parent="Natural" index="23" instance=ExtResource("12_fq4iu")]
+[node name="Tree5" parent="Natural" index="23" unique_id=1213226554 instance=ExtResource("12_fq4iu")]
 transform = Transform3D(-0.306825, 0, -0.951766, -0.38044485, 0.91663504, 0.12264569, 0.8724221, 0.3997252, -0.28124654, 17.378479, 1.4936284, 2.2433562)
 
-[node name="FogVolume" parent="Natural" index="24" instance=ExtResource("11_r4xcf")]
+[node name="FogVolume" parent="Natural" index="24" unique_id=767939535 instance=ExtResource("11_r4xcf")]
 transform = Transform3D(0.9995879, 0, 0.02870673, 0, 1, 0, -0.02870673, 0, 0.9995879, -4.8024764, 0.87474775, 0.44770527)
 
-[node name="FogVolume2" parent="Natural" index="25" instance=ExtResource("11_r4xcf")]
+[node name="FogVolume2" parent="Natural" index="25" unique_id=624133805 instance=ExtResource("11_r4xcf")]
 transform = Transform3D(0.98705524, 0, -0.16038081, 0, 1, 0, 0.16038081, 0, 0.98705524, 8.871883, 1.0566819, -2.7990432)
 size = Vector3(10, 2, 5.6219482)
 
-[node name="FogVolume4" parent="Natural" index="26" instance=ExtResource("11_r4xcf")]
+[node name="FogVolume4" parent="Natural" index="26" unique_id=950581519 instance=ExtResource("11_r4xcf")]
 transform = Transform3D(-0.7072179, 0, -0.7069957, 0, 1, 0, 0.7069957, 0, -0.7072179, 11.210901, -1.6965396, 11.793586)
 size = Vector3(14.544922, 2, 7.6071777)
 
-[node name="FogVolume3" parent="Natural" index="27" instance=ExtResource("11_r4xcf")]
+[node name="FogVolume3" parent="Natural" index="27" unique_id=1184459450 instance=ExtResource("11_r4xcf")]
 transform = Transform3D(0.4395002, 0, 0.8982425, 0, 1, 0, -0.8982425, 0, 0.4395002, -16.874113, 3.332859, 0.6187277)
 size = Vector3(10, 4.313965, 5)
 
-[node name="RockDecal" type="Decal" parent="Natural" index="28"]
+[node name="RockDecal" type="Decal" parent="Natural" index="28" unique_id=161322015]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -10.936119, 0.5193673, 5.5190787)
 size = Vector3(5, 3, 5)
 texture_albedo = ExtResource("12_judrx")
@@ -477,7 +477,7 @@ distance_fade_begin = 20.0
 distance_fade_length = 2.0
 cull_mask = 1047556
 
-[node name="RockDecal7" type="Decal" parent="Natural" index="29"]
+[node name="RockDecal7" type="Decal" parent="Natural" index="29" unique_id=288949944]
 transform = Transform3D(0.79255575, 0.39082074, -0.46809655, -2.9802322e-08, 0.7676239, 0.6409003, 0.6097994, -0.5079493, 0.6083846, 2.5574849, -0.69439685, 16.759407)
 size = Vector3(7, 1.8380127, 7)
 texture_albedo = ExtResource("12_judrx")
@@ -487,74 +487,74 @@ distance_fade_begin = 20.0
 distance_fade_length = 2.0
 cull_mask = 1047556
 
-[node name="PlateauRock2" parent="Natural" index="30" instance=ExtResource("13_ev75l")]
+[node name="PlateauRock2" parent="Natural" index="30" unique_id=652787540 instance=ExtResource("13_ev75l")]
 transform = Transform3D(-0.42672658, 0, -0.9043807, 0, 1, 0, 0.9043807, 0, -0.42672658, 14.288751, -1.410737, 10.97297)
 
-[node name="PlateauRock4" parent="Natural" index="31" instance=ExtResource("13_ev75l")]
+[node name="PlateauRock4" parent="Natural" index="31" unique_id=2055774009 instance=ExtResource("13_ev75l")]
 transform = Transform3D(0.197526, -0.2748259, -0.9409857, -0.188227, 0.9314044, -0.311539, 0.9620571, 0.238656, 0.13224693, 13.947281, -0.66201687, 6.0142436)
 
-[node name="PlateauRock6" parent="Natural" index="32" instance=ExtResource("13_ev75l")]
+[node name="PlateauRock6" parent="Natural" index="32" unique_id=1269847100 instance=ExtResource("13_ev75l")]
 transform = Transform3D(0.739736, 0.37033245, 0.56182253, -0.057170086, 0.866501, -0.49589095, -0.67046416, 0.33470893, 0.6621539, -7.81739, -1.8187363, 5.1522307)
 
-[node name="PlateauRock9" parent="Natural" index="33" instance=ExtResource("13_ev75l")]
+[node name="PlateauRock9" parent="Natural" index="33" unique_id=1265559444 instance=ExtResource("13_ev75l")]
 transform = Transform3D(0.9450921, 0.22438279, 0.23759955, -0.11375907, 0.90744716, -0.40447354, -0.30636585, 0.35523564, 0.8831465, -7.3429933, -1.2579685, 3.7969515)
 
-[node name="PlateauRock10" parent="Natural" index="34" instance=ExtResource("13_ev75l")]
+[node name="PlateauRock10" parent="Natural" index="34" unique_id=1483911861 instance=ExtResource("13_ev75l")]
 transform = Transform3D(0.89651465, 1.6694767, 2.3257487, -0.34127712, 2.482058, -1.6501259, -2.842497, 0.22854567, 0.9316522, -21.298382, 2.4697433, 3.070448)
 
-[node name="PlateauRock11" parent="Natural" index="35" instance=ExtResource("13_ev75l")]
+[node name="PlateauRock11" parent="Natural" index="35" unique_id=220779847 instance=ExtResource("13_ev75l")]
 transform = Transform3D(-8.940697e-08, 0.9968847, 1.7338455, 0.3397998, 1.7086377, -0.9823913, -1.9709226, 0.2945802, -0.16937068, -22.262943, 1.4384778, 11.25849)
 
-[node name="PlateauRock3" parent="Natural" index="36" instance=ExtResource("13_ev75l")]
+[node name="PlateauRock3" parent="Natural" index="36" unique_id=1554891158 instance=ExtResource("13_ev75l")]
 transform = Transform3D(0.17048466, -0.20141813, -0.96455467, 0, 0.9788852, -0.20441063, 0.98536026, 0.034848876, 0.1668849, 13.031669, -1.5078244, 9.361516)
 
-[node name="MoonPivot" type="Marker3D" parent="." index="9"]
+[node name="MoonPivot" type="Marker3D" parent="." index="9" unique_id=401330176]
 transform = Transform3D(0.7071067, -0.15906441, 0.6889837, 0, 0.97437006, 0.22495104, -0.7071067, -0.15906441, 0.6889837, 0, 0, 0)
 
-[node name="Moon" type="MeshInstance3D" parent="MoonPivot" index="0"]
+[node name="Moon" type="MeshInstance3D" parent="MoonPivot" index="0" unique_id=1691312274]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 160)
 cast_shadow = 0
 mesh = SubResource("QuadMesh_5x773")
 
-[node name="Billboards" type="Node3D" parent="." index="10"]
+[node name="Billboards" type="Node3D" parent="." index="10" unique_id=1394328408]
 
-[node name="TreeB_B" parent="Billboards" index="0" instance=ExtResource("16_iqvk5")]
+[node name="TreeB_B" parent="Billboards" index="0" unique_id=1506721112 instance=ExtResource("16_iqvk5")]
 transform = Transform3D(-1.327805, 0, -2.6901548, 0, 3, 0, 2.6901548, 0, -1.327805, -30.295311, 12.185351, 1.0111508)
 
-[node name="TreeB_C2" parent="Billboards" index="1" instance=ExtResource("17_8gts6")]
+[node name="TreeB_C2" parent="Billboards" index="1" unique_id=1758671364 instance=ExtResource("17_8gts6")]
 transform = Transform3D(-0.9053628, 0, 2.8601255, 0, 3, 0, -2.8601255, 0, -0.9053628, -27.581322, 7.7428017, 18.473698)
 
-[node name="TreeB_C3" parent="Billboards" index="2" instance=ExtResource("17_8gts6")]
+[node name="TreeB_C3" parent="Billboards" index="2" unique_id=1266066745 instance=ExtResource("17_8gts6")]
 transform = Transform3D(2.0429187, -0.9915034, 1.9604602, 1.3098872, 2.698925, 0, -1.7637116, 0.8559939, 2.270814, -15.626822, 11.149727, -12.865395)
 
-[node name="BambooB_A" parent="Billboards" index="3" instance=ExtResource("17_judrx")]
+[node name="BambooB_A" parent="Billboards" index="3" unique_id=242356590 instance=ExtResource("17_judrx")]
 transform = Transform3D(0.0073653613, 0, -1.9999864, 0, 2, 0, 1.9999864, 0, 0.0073653613, -24.767075, 5.672289, 12.053847)
 
-[node name="TreeB_B2" parent="Billboards" index="4" instance=ExtResource("16_iqvk5")]
+[node name="TreeB_B2" parent="Billboards" index="4" unique_id=747490447 instance=ExtResource("16_iqvk5")]
 transform = Transform3D(1.8427913, 0, 1.8834397, 0, 2.635, 0, -1.8834397, 0, 1.8427913, -22.603302, 4.35779, -0.51298904)
 
-[node name="TreeB_B3" parent="Billboards" index="5" instance=ExtResource("16_iqvk5")]
+[node name="TreeB_B3" parent="Billboards" index="5" unique_id=299428574 instance=ExtResource("16_iqvk5")]
 transform = Transform3D(2.4441102, 0, -0.98465747, 0, 2.6350005, 0, 0.98465747, 0, 2.4441102, 14.395782, 8.336107, -12.941602)
 
-[node name="TreeB_B5" parent="Billboards" index="6" instance=ExtResource("16_iqvk5")]
+[node name="TreeB_B5" parent="Billboards" index="6" unique_id=1476223111 instance=ExtResource("16_iqvk5")]
 transform = Transform3D(0.047688246, 0, -2.6345685, 0, 2.6350002, 0, 2.6345685, 0, 0.047688246, 37.936443, 1.3017983, 7.4159956)
 
-[node name="TreeB_B4" parent="Billboards" index="7" instance=ExtResource("16_iqvk5")]
+[node name="TreeB_B4" parent="Billboards" index="7" unique_id=180739023 instance=ExtResource("16_iqvk5")]
 transform = Transform3D(1.8696018, 0, -0.71034443, 0, 2, 0, 0.71034443, 0, 1.8696018, -8.359807, 2.5360322, 25.782415)
 
-[node name="TreeB_A" parent="Billboards" index="8" instance=ExtResource("18_cev1e")]
+[node name="TreeB_A" parent="Billboards" index="8" unique_id=2145071292 instance=ExtResource("18_cev1e")]
 transform = Transform3D(2.5248718, 0, 1.6201923, 0, 3, 0, -1.6201923, 0, 2.5248718, 28.527332, 2.033257, 35.369644)
 
-[node name="XydrydeRegulator" parent="." index="11" instance=ExtResource("19_moxbr")]
+[node name="XydrydeRegulator" parent="." index="11" unique_id=1677445832 instance=ExtResource("19_moxbr")]
 transform = Transform3D(0.89508337, 0.04066115, -0.444041, -0.045380425, 0.9989698, -4.669076e-10, 0.44358358, 0.02015077, 0.89600646, -6.351401, 0.20398092, -2.4808881)
 
-[node name="XydrydeRegulator2" parent="." index="12" instance=ExtResource("19_moxbr")]
+[node name="XydrydeRegulator2" parent="." index="12" unique_id=993693121 instance=ExtResource("19_moxbr")]
 transform = Transform3D(0.35435814, -0.04056824, 0.9342294, 0.11374077, 0.9935105, 0, -0.9281666, 0.10625997, 0.3566728, 3.9831588, -0.14569241, -3.0590181)
 distance_fade = true
 distance_fade_amount = 20.0
 
-[node name="XydrydeExcess" parent="." index="13" instance=ExtResource("21_0s3ef")]
+[node name="XydrydeExcess" parent="." index="13" unique_id=593295324 instance=ExtResource("21_0s3ef")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.410758, 0.06988728, 1.8552186)
 
-[node name="XydrydeExcess2" parent="." index="14" instance=ExtResource("21_0s3ef")]
+[node name="XydrydeExcess2" parent="." index="14" unique_id=279611437 instance=ExtResource("21_0s3ef")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.210612, 1.042016, -0.4299786)

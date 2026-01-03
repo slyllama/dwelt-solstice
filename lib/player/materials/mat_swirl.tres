@@ -1,4 +1,4 @@
-[gd_resource type="ShaderMaterial" load_steps=6 format=3 uid="uid://cybs7v8g3k2lt"]
+[gd_resource type="ShaderMaterial" format=3 uid="uid://cybs7v8g3k2lt"]
 
 [ext_resource type="Shader" uid="uid://cu57i3rcjwlo3" path="res://lib/player/materials/shaders/swirl.gdshader" id="1_de1sb"]
 [ext_resource type="Texture2D" uid="uid://dp2kbhh803alp" path="res://lib/player/materials/textures/swirl_mask.jpg" id="2_2rhpf"]

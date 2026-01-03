@@ -1,4 +1,4 @@
-[gd_resource type="ShaderMaterial" load_steps=11 format=3 uid="uid://dqqw1cju3b7h6"]
+[gd_resource type="ShaderMaterial" format=3 uid="uid://dqqw1cju3b7h6"]
 
 [ext_resource type="Shader" uid="uid://c54vf4530l6rd" path="res://shards/crucible/materials/shaders/night_sky.gdshader" id="1_pvh8i"]
 [ext_resource type="Texture2D" uid="uid://bnisvf43d5u0b" path="res://shards/crucible/materials/textures/stars_nebula_diff.jpg" id="2_55dcu"]

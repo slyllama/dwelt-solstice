@@ -1,4 +1,4 @@
-[gd_resource type="ShaderMaterial" load_steps=10 format=3 uid="uid://d3qjlfqasb1kc"]
+[gd_resource type="ShaderMaterial" format=3 uid="uid://d3qjlfqasb1kc"]
 
 [ext_resource type="Shader" uid="uid://b8fj8qok5t8sh" path="res://shards/crucible/materials/shaders/grass.gdshader" id="1_5gait"]
 [ext_resource type="Texture2D" uid="uid://mn0oqam0orrm" path="res://shards/crucible/materials/textures/flowers_diff.jpg" id="2_8toxo"]

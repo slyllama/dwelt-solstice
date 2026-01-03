@@ -10,7 +10,9 @@ class_name ThingMatHandler extends Node
 		if mesh: _build_materials_list()
 
 # Create a list of unique materials and instances which can be operated on
+# TODO: implement decal hovering
 var materials: Array[ShaderMaterial]
+var decal_instances: Array[Decal]
 var geometry_instances: Array[GeometryInstance3D]
 
 func set_highlight(state := true) -> void:
@@ -31,6 +33,7 @@ func _build_materials_list() -> void:
 	for _n in Utils.get_all_children(mesh):
 		# Shader instance uniforms get written per-geometry instance and not
 		# per-shader material, so we must build this list too
+		if _n is Decal: decal_instances.append(_n)
 		if !_n is GeometryInstance3D: continue
 		geometry_instances.append(_n)
 		
