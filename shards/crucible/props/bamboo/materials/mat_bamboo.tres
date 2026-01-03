@@ -6,7 +6,7 @@
 [resource]
 render_priority = 0
 shader = ExtResource("1_cx1w6")
-shader_parameter/modulate = Color(0.827475, 0.85, 0.8245, 1)
+shader_parameter/modulate = Color(0.6, 0.6, 0.6, 1)
 shader_parameter/foliage_texture = ExtResource("2_uvvj8")
 shader_parameter/alpha_scissor_threshold = 0.950000045125
 shader_parameter/normal_map_depth = 1.0

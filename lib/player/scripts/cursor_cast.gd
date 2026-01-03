@@ -11,6 +11,9 @@ func handle_mouse_raycast() -> void:
 	var _to = _from + camera.project_ray_normal(mouse_pos) * 200.0
 	var space_state = camera.get_world_3d().direct_space_state
 	var query = PhysicsRayQueryParameters3D.create(_from, _to)
+	
+	query.collide_with_areas = true
+	
 	var intersection = space_state.intersect_ray(query)
 	if intersection:
 		var _p = intersection.collider.get_parent()

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://v3c7x4mae7v1" path="res://lib/thing/thing.gd" id="1_hp5e3"]
 [ext_resource type="Script" uid="uid://fg7mxayvxsgv" path="res://lib/thing/scripts/thing_data.gd" id="2_cukjo"]
-[ext_resource type="PackedScene" uid="uid://rsg86ntf1416" path="res://shards/crucible/things/xydryde_regulator/meshes/xydryde_regulator.glb" id="3_la0ry"]
+[ext_resource type="PackedScene" uid="uid://5og61k2m8o7t" path="res://shards/crucible/things/xydryde_regulator/meshes/xydryde_regulator.glb" id="3_la0ry"]
 
 [sub_resource type="Resource" id="Resource_v1ts3"]
 script = ExtResource("2_cukjo")

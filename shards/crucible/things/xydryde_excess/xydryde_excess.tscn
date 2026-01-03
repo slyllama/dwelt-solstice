@@ -11,7 +11,7 @@ aspect = "Torpefying"
 metadata/_custom_type_script = "uid://fg7mxayvxsgv"
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_0dugb"]
-height = 2.206604
+height = 3.5
 radius = 2.0
 
 [sub_resource type="Animation" id="Animation_shy6o"]
@@ -64,13 +64,13 @@ metadata/_custom_type_script = "uid://v3c7x4mae7v1"
 [node name="Body" type="Area3D" parent="."]
 
 [node name="Collision" type="CollisionShape3D" parent="Body"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.103302, 0)
 shape = SubResource("CylinderShape3D_0dugb")
 
 [node name="SelectorPoint" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
 [node name="Decal" type="Decal" parent="."]
+sorting_offset = 1.0
 size = Vector3(4, 4, 4)
 texture_albedo = ExtResource("3_pqw8l")
 normal_fade = 0.5

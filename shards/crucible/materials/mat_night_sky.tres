@@ -5,8 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://cly2gywk3s8kg" path="res://shards/crucible/materials/textures/stars_diff.jpg" id="2_yf6jp"]
 
 [sub_resource type="Gradient" id="Gradient_yf6jp"]
-offsets = PackedFloat32Array(0, 0.3, 0.4)
-colors = PackedColorArray(0, 0, 0, 1, 0.0216, 0.028159996, 0.12, 1, 0, 0, 0, 1)
+offsets = PackedFloat32Array(0, 0.3, 0.4, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.0216, 0.028159996, 0.12, 1, 0, 0, 0, 1, 0.39011484, 0.19688451, 0.29915446, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_45rpi"]
 gradient = SubResource("Gradient_yf6jp")
@@ -24,7 +24,7 @@ color_ramp = SubResource("Gradient_pvh8i")
 seamless = true
 
 [sub_resource type="Gradient" id="Gradient_45rpi"]
-offsets = PackedFloat32Array(0, 0.17226891, 0.46, 0.51, 0.95)
+offsets = PackedFloat32Array(0, 0.17226891, 0.3, 0.47, 0.95)
 colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_mfhad"]

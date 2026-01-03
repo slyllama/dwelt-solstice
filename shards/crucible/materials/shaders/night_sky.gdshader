@@ -25,7 +25,7 @@ void sky() {
 
 	// Stars
 	vec3 _s1 = texture(stars, SKY_COORDS * stars_size).rgb;
-	vec3 _s2 = texture(nebula, SKY_COORDS * stars_size * 0.5 - TIME * 0.006).rgb;
+	vec3 _s2 = texture(nebula, SKY_COORDS * stars_size * 0.3 - TIME * 0.006).rgb;
 	
 	vec3 _stars = mix(_s1, _s2, texture(patina, SKY_COORDS).r * nebula_strength);
 	float _stars_mask = clamp(texture(patina, SKY_COORDS * -1.0).r, 0.18, 1.0);
