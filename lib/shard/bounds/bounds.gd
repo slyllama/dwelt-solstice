@@ -13,3 +13,6 @@ extends Node3D
 		var mat: ShaderMaterial = wall.get_active_material(0)
 		mesh.size = Vector2(size * 2.0, size * 2.0)
 		mat.set_shader_parameter("bands_uv_scale", 16.0 * size)
+
+func _ready() -> void:
+	visible = true

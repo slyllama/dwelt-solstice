@@ -17,14 +17,15 @@ func set_highlight(state := true) -> void:
 	for _n in geometry_instances:
 		_n.set_instance_shader_parameter("highlighted", state)
 
-func _ready() -> void:
-	pass
-	# Hysteresis experiment
-	#for _n in mesh.get_children():
-		#if _n is MeshInstance3D:
-			#_n.visibility_range_end = 24.0
-			#_n.visibility_range_end_margin = 2.0
-			#_n.visibility_range_fade_mode = GeometryInstance3D.VISIBILITY_RANGE_FADE_SELF
+func set_distance_fade(state := true) -> void:
+	for _n in geometry_instances:
+		_n.set_instance_shader_parameter("distance_fade", state)
+
+func set_distance_fade_amount(amount: float) -> void:
+	for _n in geometry_instances:
+		_n.set_instance_shader_parameter("distance_fade_amount", amount)
+		_n.visibility_range_end = amount + 1.5
+		_n.visibility_range_fade_mode = GeometryInstance3D.VISIBILITY_RANGE_FADE_SELF
 
 func _build_materials_list() -> void:
 	for _n in Utils.get_all_children(mesh):

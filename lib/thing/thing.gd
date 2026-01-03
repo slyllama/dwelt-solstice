@@ -5,9 +5,20 @@ const SelIndicator = preload("res://lib/thing/sel_indicator/sel_indicator.tscn")
 @export var body: CollisionObject3D
 @export var mesh: Node3D
 @export var selector_point: Marker3D
+
 @export_category("Data and Properties")
 @export var data: ThingData = ThingData.new()
 @export var owned_by_player := true
+
+@export_category("Rendering")
+@export var distance_fade := false:
+	set(_distance_fade):
+		distance_fade = _distance_fade
+		_update_distance_fade()
+@export var distance_fade_amount := 30.0:
+	set(_distance_fade_amount):
+		distance_fade_amount = _distance_fade_amount
+		_update_distance_fade()
 
 @onready var mat_handler := ThingMatHandler.new()
 @onready var sel_indicator: Node3D = SelIndicator.instantiate()
@@ -17,6 +28,11 @@ func _get_dist_to_player() -> float:
 	var _d := global_position.distance_to(Dwelt.player.global_position)
 	_d = snapped(_d, 0.1)
 	return(_d)
+
+func _update_distance_fade() -> void:
+	if !mat_handler: return
+	mat_handler.set_distance_fade(distance_fade)
+	mat_handler.set_distance_fade_amount(distance_fade_amount)
 
 func hover() -> void:
 	mat_handler.set_highlight()
@@ -37,6 +53,8 @@ func _ready() -> void:
 	add_child(mat_handler)
 	add_child(sel_indicator)
 	add_child(effect_handler)
+	
+	_update_distance_fade()
 	
 	Dwelt.thing_targeted.connect(func():
 		if Dwelt.targeted_thing != self:

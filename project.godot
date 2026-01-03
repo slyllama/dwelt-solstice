@@ -16,6 +16,8 @@ config/use_custom_user_dir=true
 config/custom_user_dir_name="dwelt"
 config/features=PackedStringArray("4.5", "Forward Plus")
 run/max_fps=60
+boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/image="uid://8e53svaitcxn"
 config/icon="uid://dvswqaghjmks6"
 
 [audio]

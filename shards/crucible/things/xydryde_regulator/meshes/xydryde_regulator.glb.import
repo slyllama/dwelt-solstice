@@ -41,8 +41,8 @@ _subresources={
 "materials": {
 "mat_grey": {
 "use_external/enabled": true,
-"use_external/fallback_path": "res://generic/materials/mat_thing_grey.tres",
-"use_external/path": "uid://c8vh04olhjew0"
+"use_external/fallback_path": "res://shards/crucible/things/xydryde_regulator/materials/mat_xydryde_regulator.tres",
+"use_external/path": "uid://bqpk2kogtqyim"
 }
 }
 }
