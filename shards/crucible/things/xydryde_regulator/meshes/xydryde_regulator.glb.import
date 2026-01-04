@@ -48,6 +48,16 @@ _subresources={
 "use_external/enabled": true,
 "use_external/fallback_path": "res://shards/crucible/things/xydryde_regulator/materials/mat_tiles.tres",
 "use_external/path": "uid://d2q3cu40ly28k"
+},
+"roof_dark": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://shards/crucible/things/xydryde_regulator/materials/mat_tiles_dark.tres",
+"use_external/path": "uid://bepi7fn05y2im"
+},
+"satin_brass": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://shards/crucible/things/xydryde_regulator/materials/mat_satin_brass.tres",
+"use_external/path": "uid://ccuaj0hjc6myy"
 }
 }
 }

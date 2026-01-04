@@ -1,0 +1,14 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://bepi7fn05y2im"]
+
+[ext_resource type="Shader" uid="uid://bifl8761s02x6" path="res://lib/thing/materials/shaders/thing.gdshader" id="1_75g6s"]
+[ext_resource type="Texture2D" uid="uid://igu04lsbi6ji" path="res://shards/crucible/things/xydryde_regulator/materials/textures/tiles_diff.jpg" id="2_fh3ae"]
+[ext_resource type="Texture2D" uid="uid://bhgiqvq1mrrld" path="res://shards/crucible/things/xydryde_regulator/materials/textures/tiles_norm.jpg" id="3_hkut2"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_75g6s")
+shader_parameter/albedo_texture = ExtResource("2_fh3ae")
+shader_parameter/normal_texture = ExtResource("3_hkut2")
+shader_parameter/uv_scale = 4.0
+shader_parameter/normal_strength = 2.0
+shader_parameter/albedo_color = Color(0.4, 0.4, 0.4, 1)

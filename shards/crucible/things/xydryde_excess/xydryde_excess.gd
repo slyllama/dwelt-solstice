@@ -8,10 +8,6 @@ func inflict_lethargy() -> void:
 	_lethargy.duration = 3.0
 	Dwelt.player.effect_handler.add(_lethargy)
 
-func _ready() -> void:
-	# TODO: built-in debug floor freeing
-	$DebugFloor.queue_free()
-
 func _on_body_body_entered(_body: Node3D) -> void:
 	if _body is DweltPlayer:
 		player_in_spill = true

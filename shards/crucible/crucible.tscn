@@ -234,7 +234,7 @@ stream = ExtResource("6_42lni")
 [node name="Natural" type="Node3D" parent="." index="8" unique_id=1642949632]
 
 [node name="Bamboo2" parent="Natural" index="0" unique_id=2010311063 instance=ExtResource("2_m67mg")]
-transform = Transform3D(0.82130855, 0, -0.5704842, 0, 1, 0, 0.5704842, 0, 0.82130855, 1.6905677, -0.25027812, -1.1715398)
+transform = Transform3D(0.82130855, 0, -0.5704842, 0, 1, 0, 0.5704842, 0, 0.82130855, 2.065453, -0.20609863, -1.9483191)
 
 [node name="Bamboo3" parent="Natural" index="1" unique_id=1356715199 instance=ExtResource("2_m67mg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.4069195, -0.70262945, 11.624777)
@@ -453,7 +453,7 @@ transform = Transform3D(0.9573251, -0.28893507, -0.0067270696, 0.2889673, 0.9564
 transform = Transform3D(-0.306825, 0, -0.951766, -0.38044485, 0.91663504, 0.12264569, 0.8724221, 0.3997252, -0.28124654, 17.378479, 1.4936284, 2.2433562)
 
 [node name="FogVolume" parent="Natural" index="24" unique_id=767939535 instance=ExtResource("11_r4xcf")]
-transform = Transform3D(0.9995879, 0, 0.02870673, 0, 1, 0, -0.02870673, 0, 0.9995879, -4.8024764, 0.87474775, 0.44770527)
+transform = Transform3D(0.99524784, 0, 0.09737447, 0, 1, 0, -0.09737447, 0, 0.99524784, -2.0517368, 0.87474775, -1.3471382)
 
 [node name="FogVolume2" parent="Natural" index="25" unique_id=624133805 instance=ExtResource("11_r4xcf")]
 transform = Transform3D(0.98705524, 0, -0.16038081, 0, 1, 0, 0.16038081, 0, 0.98705524, 8.871883, 1.0566819, -2.7990432)
@@ -545,16 +545,16 @@ transform = Transform3D(1.8696018, 0, -0.71034443, 0, 2, 0, 0.71034443, 0, 1.869
 [node name="TreeB_A" parent="Billboards" index="8" unique_id=2145071292 instance=ExtResource("18_cev1e")]
 transform = Transform3D(2.5248718, 0, 1.6201923, 0, 3, 0, -1.6201923, 0, 2.5248718, 28.527332, 2.033257, 35.369644)
 
-[node name="XydrydeRegulator" parent="." index="11" unique_id=1677445832 instance=ExtResource("19_moxbr")]
+[node name="XydrydeRegulator" parent="." index="11" unique_id=896926511 instance=ExtResource("19_moxbr")]
 transform = Transform3D(0.89508337, 0.04066115, -0.444041, -0.045380425, 0.9989698, -4.669076e-10, 0.44358358, 0.02015077, 0.89600646, -6.351401, 0.20398092, -2.4808881)
 
-[node name="XydrydeRegulator2" parent="." index="12" unique_id=993693121 instance=ExtResource("19_moxbr")]
+[node name="XydrydeRegulator2" parent="." index="12" unique_id=1857593889 instance=ExtResource("19_moxbr")]
 transform = Transform3D(0.35435814, -0.04056824, 0.9342294, 0.11374077, 0.9935105, 0, -0.9281666, 0.10625997, 0.3566728, 3.9831588, -0.14569241, -3.0590181)
 distance_fade = true
 distance_fade_amount = 20.0
 
 [node name="XydrydeExcess" parent="." index="13" unique_id=593295324 instance=ExtResource("21_0s3ef")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.410758, 0.06988728, 1.8552186)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.410758, 0.06988728, 1.1766028)
 
 [node name="XydrydeExcess2" parent="." index="14" unique_id=279611437 instance=ExtResource("21_0s3ef")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.210612, 1.042016, -0.4299786)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.00437, 1.042016, -0.99065673)
