@@ -1,4 +1,4 @@
-[gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://b87abcrf7qtw6"]
+[gd_resource type="ShaderMaterial" format=3 uid="uid://b87abcrf7qtw6"]
 
 [ext_resource type="Shader" uid="uid://dyqnxrddxp2qh" path="res://generic/materials/shaders/nospec.gdshader" id="1_a4sfo"]
 [ext_resource type="Texture2D" uid="uid://c6c2x8xpagg7m" path="res://shards/crucible/props/plateau_rock/materials/textures/plateau_rock_diff.jpg" id="2_htcpp"]
@@ -11,4 +11,4 @@ shader_parameter/albedo_texture = ExtResource("2_htcpp")
 shader_parameter/normal_texture = ExtResource("3_qs7c8")
 shader_parameter/uv_scale = 1.0
 shader_parameter/normal_strength = 0.25
-shader_parameter/albedo_color = Color(0.8, 0.8, 0.8, 1)
+shader_parameter/albedo_color = Color(0.92, 0.92, 0.92, 1)
