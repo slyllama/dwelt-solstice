@@ -11,4 +11,4 @@ shader_parameter/albedo_texture = ExtResource("2_fh3ae")
 shader_parameter/normal_texture = ExtResource("3_hkut2")
 shader_parameter/uv_scale = 4.0
 shader_parameter/normal_strength = 2.0
-shader_parameter/albedo_color = Color(0.4, 0.4, 0.4, 1)
+shader_parameter/albedo_color = Color(0.15, 0.15, 0.15, 1)

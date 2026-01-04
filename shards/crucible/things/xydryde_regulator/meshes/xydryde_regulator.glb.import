@@ -39,6 +39,11 @@ materials/extract_format=0
 materials/extract_path=""
 _subresources={
 "materials": {
+"joining_nut": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://shards/crucible/things/xydryde_regulator/materials/mat_nut.tres",
+"use_external/path": "uid://4bujse3coi01"
+},
 "mat_grey": {
 "use_external/enabled": true,
 "use_external/fallback_path": "res://shards/crucible/things/xydryde_regulator/materials/mat_regulator.tres",
@@ -53,6 +58,11 @@ _subresources={
 "use_external/enabled": true,
 "use_external/fallback_path": "res://shards/crucible/things/xydryde_regulator/materials/mat_tiles_dark.tres",
 "use_external/path": "uid://bepi7fn05y2im"
+},
+"rusted_pipe": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://shards/crucible/things/xydryde_regulator/materials/mat_pipe.tres",
+"use_external/path": "uid://t1cmhtyoyn01"
 },
 "satin_brass": {
 "use_external/enabled": true,

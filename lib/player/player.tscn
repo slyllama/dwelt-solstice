@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://crbctqd55n6f6"]
+[gd_scene format=3 uid="uid://crbctqd55n6f6"]
 
 [ext_resource type="Script" uid="uid://cro16agkt5mwp" path="res://lib/player/player.gd" id="1_al4t3"]
 [ext_resource type="Script" uid="uid://djkynrad87367" path="res://lib/player/scripts/input_handler.gd" id="1_odf55"]
@@ -185,6 +185,21 @@ script = ExtResource("19_hlh1u")
 id = "test_effect"
 metadata/_custom_type_script = "uid://dsf0cxqijjlwy"
 
+[sub_resource type="Animation" id="Animation_5cb0d"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_hlh1u"]
 resource_name = "rotate"
 length = 8.0
@@ -203,64 +218,49 @@ tracks/0/keys = {
 "values": [Vector3(0, 0, 0), Vector3(0, 3.1415927, 0), Vector3(0, 6.2831855, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_5cb0d"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_kvqvl"]
 _data = {
 &"RESET": SubResource("Animation_5cb0d"),
 &"rotate": SubResource("Animation_hlh1u")
 }
 
-[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("effect_handler")]
+[node name="Player" type="CharacterBody3D" unique_id=568758090 node_paths=PackedStringArray("effect_handler")]
 script = ExtResource("1_al4t3")
 effect_handler = NodePath("EffectHandler")
 
-[node name="Collision" type="CollisionShape3D" parent="."]
+[node name="Collision" type="CollisionShape3D" parent="." unique_id=920840416]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.16, 0)
 shape = SubResource("SphereShape3D_iochv")
 
-[node name="LookTarget" type="Marker3D" parent="."]
+[node name="LookTarget" type="Marker3D" parent="." unique_id=858288277]
 transform = Transform3D(0.8660253, -0.35355335, 0.35355335, 0, 0.7071067, 0.7071067, -0.49999997, -0.61237234, 0.61237234, 0.7071067, 1.4142134, 1.2247447)
 
-[node name="RobotMesh" parent="." node_paths=PackedStringArray("look_target") instance=ExtResource("3_5lbbh")]
+[node name="RobotMesh" parent="." unique_id=1292727837 node_paths=PackedStringArray("look_target") instance=ExtResource("3_5lbbh")]
 unique_name_in_owner = true
 script = ExtResource("4_0y160")
 look_target = NodePath("../LookTarget")
 
-[node name="Sound" type="Node3D" parent="RobotMesh"]
+[node name="Sound" type="Node3D" parent="RobotMesh" unique_id=2142391288]
 script = ExtResource("4_jlw2j")
 
-[node name="EngineIdle" type="AudioStreamPlayer3D" parent="RobotMesh/Sound"]
+[node name="EngineIdle" type="AudioStreamPlayer3D" parent="RobotMesh/Sound" unique_id=632971567]
 stream = ExtResource("9_5x5nn")
 unit_size = 4.0
 autoplay = true
 
-[node name="EngineMoving" type="AudioStreamPlayer3D" parent="RobotMesh/Sound"]
+[node name="EngineMoving" type="AudioStreamPlayer3D" parent="RobotMesh/Sound" unique_id=2109622695]
 stream = ExtResource("10_ram4p")
 volume_db = 2.0
 unit_size = 4.0
 autoplay = true
 max_polyphony = 2
 
-[node name="Voice" type="AudioStreamPlayer3D" parent="RobotMesh/Sound"]
+[node name="Voice" type="AudioStreamPlayer3D" parent="RobotMesh/Sound" unique_id=1191106218]
 volume_db = -2.0
 unit_size = 4.0
 autoplay = true
 
-[node name="Stars" type="GPUParticles3D" parent="RobotMesh"]
+[node name="Stars" type="GPUParticles3D" parent="RobotMesh" unique_id=519014292]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.17061618, -0.39669335)
 cast_shadow = 0
 amount = 64
@@ -268,38 +268,34 @@ amount_ratio = 0.25
 process_material = SubResource("ParticleProcessMaterial_ram4p")
 draw_pass_1 = ExtResource("5_jyhpi")
 
-[node name="Light" type="OmniLight3D" parent="RobotMesh"]
+[node name="Light" type="OmniLight3D" parent="RobotMesh" unique_id=399922897]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35, 0.75)
 omni_range = 1.0
 
-[node name="Anim" type="AnimationTree" parent="RobotMesh"]
-libraries = {
-&"player": SubResource("AnimationLibrary_up78s")
-}
+[node name="Anim" type="AnimationTree" parent="RobotMesh" unique_id=733744648]
+libraries/player = SubResource("AnimationLibrary_up78s")
 tree_root = SubResource("AnimationNodeBlendTree_ram4p")
 parameters/add_forward/add_amount = 0.0
 parameters/idle_mix_eye/add_amount = 1.0
 parameters/add_strafe/add_amount = 0.0
 
-[node name="Glow" type="AnimationPlayer" parent="RobotMesh"]
-libraries = {
-&"": SubResource("AnimationLibrary_v5dhk")
-}
-autoplay = "glow"
+[node name="Glow" type="AnimationPlayer" parent="RobotMesh" unique_id=1643044225]
+libraries/ = SubResource("AnimationLibrary_v5dhk")
+autoplay = &"glow"
 
-[node name="Orbit" type="Marker3D" parent="."]
+[node name="Orbit" type="Marker3D" parent="." unique_id=13830377]
 transform = Transform3D(-0.99999994, -7.619394e-09, 8.709008e-08, 0, 0.9961944, 0.087155715, -8.742277e-08, 0.087155715, -0.9961944, 0, 0, 0)
 script = ExtResource("5_4ok3w")
 min_zoom = 1.0
 v_offset = 0.75
 
-[node name="Camera" type="Camera3D" parent="Orbit"]
+[node name="Camera" type="Camera3D" parent="Orbit" unique_id=599081566]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.6)
 attributes = SubResource("CameraAttributesPractical_2ocui")
 current = true
 fov = 90.0
 
-[node name="Motes" type="GPUParticles3D" parent="Orbit/Camera"]
+[node name="Motes" type="GPUParticles3D" parent="Orbit/Camera" unique_id=848711266]
 transform = Transform3D(0.8660255, 7.45058e-09, -0.49999997, -0.12940954, 0.96592575, -0.22414388, 0.48296294, 0.258819, 0.83651626, -2.3692846e-07, 0.1931852, -2.5482357)
 visible = false
 cast_shadow = 0
@@ -310,51 +306,48 @@ randomness = 0.25
 process_material = SubResource("ParticleProcessMaterial_2ocui")
 draw_pass_1 = SubResource("QuadMesh_0y160")
 
-[node name="Listener" type="AudioListener3D" parent="Orbit/Camera"]
+[node name="Listener" type="AudioListener3D" parent="Orbit/Camera" unique_id=1102468141]
 current = true
 
-[node name="CursorCast" type="Node" parent="Orbit/Camera"]
+[node name="CursorCast" type="Node" parent="Orbit/Camera" unique_id=1663147991]
 script = ExtResource("14_ego0t")
 
-[node name="PanHandler" type="Node" parent="Orbit"]
+[node name="PanHandler" type="Node" parent="Orbit" unique_id=491024180]
 script = ExtResource("12_r1bse")
 
-[node name="SpringArm" type="SpringArm3D" parent="Orbit"]
+[node name="SpringArm" type="SpringArm3D" parent="Orbit" unique_id=439967519]
 collision_mask = 2
 shape = SubResource("SphereShape3D_g61qk")
 
-[node name="CameraAnchor" type="Marker3D" parent="Orbit/SpringArm"]
+[node name="CameraAnchor" type="Marker3D" parent="Orbit/SpringArm" unique_id=582860990]
 
-[node name="InputHandler" type="Node" parent="."]
+[node name="InputHandler" type="Node" parent="." unique_id=710152317]
 unique_name_in_owner = true
 script = ExtResource("1_odf55")
 
-[node name="EffectHandler" type="Node" parent="."]
+[node name="EffectHandler" type="Node" parent="." unique_id=1567029640]
 unique_name_in_owner = true
 script = ExtResource("17_1x433")
 metadata/_custom_type_script = "uid://1atitynmrtes"
 
-[node name="Effect" type="Node" parent="EffectHandler"]
+[node name="Effect" type="Node" parent="EffectHandler" unique_id=476656955]
 script = ExtResource("18_7f82q")
 data = SubResource("Resource_5cb0d")
 metadata/_custom_type_script = "uid://ocqnbav2e5mm"
 
-[node name="YCast" type="RayCast3D" parent="."]
+[node name="YCast" type="RayCast3D" parent="." unique_id=2054951805]
 target_position = Vector3(0, -1.85, 0)
 
-[node name="FloorDecal" type="Decal" parent="."]
+[node name="FloorDecal" type="Decal" parent="." unique_id=954464916]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.25, 0)
-sorting_offset = 2.0
-size = Vector3(1, 2, 1)
+size = Vector3(0.8, 2, 0.8)
 texture_albedo = ExtResource("20_hlh1u")
 normal_fade = 0.5
 cull_mask = 1048572
 
-[node name="RotateDecal" type="AnimationPlayer" parent="FloorDecal"]
-libraries = {
-&"": SubResource("AnimationLibrary_kvqvl")
-}
-autoplay = "rotate"
+[node name="RotateDecal" type="AnimationPlayer" parent="FloorDecal" unique_id=1923567439]
+libraries/ = SubResource("AnimationLibrary_kvqvl")
+autoplay = &"rotate"
 
 [connection signal="effect_added" from="EffectHandler" to="." method="_on_effect_added"]
 [connection signal="effect_expired" from="EffectHandler" to="." method="_on_effect_expired"]

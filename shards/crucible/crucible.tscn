@@ -548,7 +548,7 @@ transform = Transform3D(2.5248718, 0, 1.6201923, 0, 3, 0, -1.6201923, 0, 2.52487
 [node name="XydrydeRegulator" parent="." index="11" unique_id=896926511 instance=ExtResource("19_moxbr")]
 transform = Transform3D(0.89508337, 0.04066115, -0.444041, -0.045380425, 0.9989698, -4.669076e-10, 0.44358358, 0.02015077, 0.89600646, -6.351401, 0.20398092, -2.4808881)
 
-[node name="XydrydeRegulator2" parent="." index="12" unique_id=1857593889 instance=ExtResource("19_moxbr")]
+[node name="XydrydeRegulator2" parent="." index="12" unique_id=1586710290 instance=ExtResource("19_moxbr")]
 transform = Transform3D(0.35435814, -0.04056824, 0.9342294, 0.11374077, 0.9935105, 0, -0.9281666, 0.10625997, 0.3566728, 3.9831588, -0.14569241, -3.0590181)
 distance_fade = true
 distance_fade_amount = 20.0

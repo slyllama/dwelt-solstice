@@ -64,7 +64,7 @@ data = SubResource("Resource_v1ts3")
 owned_by_player = false
 metadata/_custom_type_script = "uid://v3c7x4mae7v1"
 
-[node name="Mesh" parent="." unique_id=1788057738 instance=ExtResource("3_la0ry")]
+[node name="Mesh" parent="." unique_id=1276787012 instance=ExtResource("3_la0ry")]
 
 [node name="Body" type="StaticBody3D" parent="." unique_id=1020951835]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
