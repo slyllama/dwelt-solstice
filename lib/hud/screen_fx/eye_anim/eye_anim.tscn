@@ -1,9 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://u2i05ele7n62"]
+[gd_scene format=3 uid="uid://u2i05ele7n62"]
 
 [ext_resource type="Texture2D" uid="uid://cccxgnavbgkc2" path="res://lib/hud/screen_fx/eye_anim/frames/0.png" id="1_b2ivg"]
 [ext_resource type="Script" uid="uid://bqe40g8ymb34x" path="res://lib/hud/screen_fx/eye_anim/eye_anim.gd" id="1_vkvu8"]
 
-[node name="EyeAnim" type="TextureRect"]
+[node name="EyeAnim" type="TextureRect" unique_id=268437934]
 top_level = true
 anchors_preset = 15
 anchor_right = 1.0

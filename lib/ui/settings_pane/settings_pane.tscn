@@ -33,7 +33,7 @@ theme_override_constants/separation = 1
 layout_mode = 2
 id = "window_mode"
 title = "Window Mode"
-options = Array[String](["windowed", "full_screen"])
+options = Array[String](["windowed", "maximized", "full_screen"])
 
 [node name="FPSLimit" parent="Box/Scroll/Box" index="1" unique_id=533352569 instance=ExtResource("2_qd6od")]
 layout_mode = 2

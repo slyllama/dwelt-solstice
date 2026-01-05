@@ -1,0 +1,14 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://bqpk2kogtqyim"]
+
+[ext_resource type="Shader" uid="uid://bifl8761s02x6" path="res://lib/thing/materials/shaders/thing.gdshader" id="1_xap4t"]
+[ext_resource type="Texture2D" uid="uid://osejghrumj6u" path="res://shards/crucible/things/xydryde_regulator/materials/textures/base_diff.jpg" id="2_1clwu"]
+[ext_resource type="Texture2D" uid="uid://bdaopxicklkvp" path="res://shards/crucible/things/xydryde_regulator/materials/textures/base_norm.jpg" id="3_klb65"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_xap4t")
+shader_parameter/albedo_texture = ExtResource("2_1clwu")
+shader_parameter/normal_texture = ExtResource("3_klb65")
+shader_parameter/uv_scale = 1.0
+shader_parameter/normal_strength = 1.0
+shader_parameter/albedo_color = Color(1, 1, 1, 1)

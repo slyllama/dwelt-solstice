@@ -44,11 +44,6 @@ _subresources={
 "use_external/fallback_path": "res://shards/crucible/things/xydryde_regulator/materials/mat_nut.tres",
 "use_external/path": "uid://4bujse3coi01"
 },
-"mat_grey": {
-"use_external/enabled": true,
-"use_external/fallback_path": "res://shards/crucible/things/xydryde_regulator/materials/mat_regulator.tres",
-"use_external/path": "uid://bqpk2kogtqyim"
-},
 "roof": {
 "use_external/enabled": true,
 "use_external/fallback_path": "res://shards/crucible/things/xydryde_regulator/materials/mat_tiles.tres",
@@ -68,6 +63,11 @@ _subresources={
 "use_external/enabled": true,
 "use_external/fallback_path": "res://shards/crucible/things/xydryde_regulator/materials/mat_satin_brass.tres",
 "use_external/path": "uid://ccuaj0hjc6myy"
+},
+"stone": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://shards/crucible/things/xydryde_regulator/materials/mat_base.tres",
+"use_external/path": "uid://bqpk2kogtqyim"
 }
 }
 }

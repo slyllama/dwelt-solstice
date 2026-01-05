@@ -227,7 +227,7 @@ metadata/_edit_horizontal_guides_ = [6.0]
 environment = SubResource("Environment_fiv0q")
 
 [node name="Sun" type="DirectionalLight3D" parent="Sky" index="0" unique_id=818203313]
-transform = Transform3D(0.30514172, -0.2748568, 0.9117798, 0.14174375, 0.9598867, 0.24192193, -0.94169927, 0.055418603, 0.33186072, 0, 4, 0)
+transform = Transform3D(0.32162172, -0.16325453, 0.9326884, 0.14499415, 0.9818985, 0.12186936, -0.935701, 0.09603852, 0.3394708, 0, 4, 0)
 shadow_enabled = true
 directional_shadow_mode = 0
 directional_shadow_blend_splits = true
@@ -619,10 +619,10 @@ transform = Transform3D(1.8696018, 0, -0.71034443, 0, 2, 0, 0.71034443, 0, 1.869
 [node name="TreeB_A" parent="Billboards" index="9" unique_id=1254782469 instance=ExtResource("18_cev1e")]
 transform = Transform3D(2.5248718, 0, 1.6201923, 0, 3, 0, -1.6201923, 0, 2.5248718, 28.527332, 2.033257, 35.369644)
 
-[node name="XydrydeRegulator" parent="." index="11" unique_id=752278128 instance=ExtResource("19_moxbr")]
+[node name="XydrydeRegulator" parent="." index="11" unique_id=896926511 instance=ExtResource("19_moxbr")]
 transform = Transform3D(0.89508337, 0.04066115, -0.444041, -0.045380425, 0.9989698, -4.669076e-10, 0.44358358, 0.02015077, 0.89600646, -6.351401, 0.20398092, -2.4808881)
 
-[node name="XydrydeRegulator2" parent="." index="12" unique_id=752993069 instance=ExtResource("19_moxbr")]
+[node name="XydrydeRegulator2" parent="." index="12" unique_id=244215824 instance=ExtResource("19_moxbr")]
 transform = Transform3D(0.35435814, -0.04056824, 0.9342294, 0.11374077, 0.9935105, 0, -0.9281666, 0.10625997, 0.3566728, 3.9831588, -0.014336526, -3.0590181)
 
 [node name="XydrydeExcess" parent="." index="13" unique_id=1817163327 instance=ExtResource("21_0s3ef")]

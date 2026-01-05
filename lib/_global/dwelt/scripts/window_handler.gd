@@ -14,6 +14,7 @@ func _ready() -> void:
 		if _s == "window_mode":
 			match Settings.data[_s]:
 				"full_screen": get_window().mode = Window.MODE_FULLSCREEN
+				"maximized": get_window().mode = Window.MODE_MAXIMIZED
 				_: get_window().mode = Window.MODE_WINDOWED
 			)
 	

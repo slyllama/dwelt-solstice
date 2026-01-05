@@ -15,7 +15,7 @@ dest_files=["res://.godot/imported/robot_diff.jpg-8761193b61557f7f3b07d5056c2814
 
 [params]
 
-compress/mode=0
+compress/mode=3
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0

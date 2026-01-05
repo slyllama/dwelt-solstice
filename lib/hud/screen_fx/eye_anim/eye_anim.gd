@@ -5,23 +5,23 @@ extends TextureRect
 @export var start_visible := false
 
 const FRAME_PATH = "res://lib/hud/screen_fx/eye_anim/frames/"
-const FRAMES = [
-	preload(FRAME_PATH + "0.png"),
-	preload(FRAME_PATH + "1.png"),
-	preload(FRAME_PATH + "2.png"),
-	preload(FRAME_PATH + "3.png"),
-	preload(FRAME_PATH + "4.png"),
-	preload(FRAME_PATH + "5.png"),
-	preload(FRAME_PATH + "6.png"),
-	preload(FRAME_PATH + "7.png"),
-	preload(FRAME_PATH + "8.png"),
-	preload(FRAME_PATH + "9.png"),
-	preload(FRAME_PATH + "10.png"),
-	preload(FRAME_PATH + "11.png"),
-	preload(FRAME_PATH + "12.png"),
-	preload(FRAME_PATH + "13.png"),
-	preload(FRAME_PATH + "14.png"),
-	preload(FRAME_PATH + "15.png") ]
+@onready var FRAMES = [
+	load(FRAME_PATH + "0.png"),
+	load(FRAME_PATH + "1.png"),
+	load(FRAME_PATH + "2.png"),
+	load(FRAME_PATH + "3.png"),
+	load(FRAME_PATH + "4.png"),
+	load(FRAME_PATH + "5.png"),
+	load(FRAME_PATH + "6.png"),
+	load(FRAME_PATH + "7.png"),
+	load(FRAME_PATH + "8.png"),
+	load(FRAME_PATH + "9.png"),
+	load(FRAME_PATH + "10.png"),
+	load(FRAME_PATH + "11.png"),
+	load(FRAME_PATH + "12.png"),
+	load(FRAME_PATH + "13.png"),
+	load(FRAME_PATH + "14.png"),
+	load(FRAME_PATH + "15.png") ]
 
 var running = false
 
@@ -36,6 +36,8 @@ func animate() -> void:
 		texture = _f
 	
 	if free_after_finish:
+		texture = null
+		FRAMES = null
 		queue_free()
 	else:
 		running = false
@@ -46,4 +48,4 @@ func _init() -> void:
 	z_index = 100
 
 func _ready() -> void:
-	visible = start_visible
+	print("eye instantiation")
