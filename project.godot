@@ -46,6 +46,10 @@ window/size/viewport_width=1280
 window/size/viewport_height=720
 mouse_cursor/custom_image="uid://slca7r6fv37a"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/sly_tools/plugin.cfg")
+
 [gui]
 
 theme/custom="uid://bi1monawihtf2"

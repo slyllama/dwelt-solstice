@@ -69,6 +69,7 @@ func _ready() -> void:
 	if !body: return
 	body.input_event.connect(func(_c, _e, _p, _n, _i):
 		if Input.is_action_just_released("left_click"):
+			if get_window().gui_get_hovered_control(): return
 			sel_indicator.visible = true
 			Dwelt.target_thing(self))
 

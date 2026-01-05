@@ -72,9 +72,13 @@ func _physics_process(_delta: float) -> void:
 func _on_effect_expired(data: EffectData) -> void:
 	var id = data.id
 	match id:
-		"lethargy": speed_multiplier = 1.0
+		"lethargy":
+			$RobotMesh/XydrydeSplash.emitting = false
+			speed_multiplier = 1.0
 
 func _on_effect_added(data: EffectData) -> void:
 	var id = data.id
 	match id:
-		"lethargy": speed_multiplier = 0.5
+		"lethargy":
+			$RobotMesh/XydrydeSplash.emitting = true
+			speed_multiplier = 0.5

@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://v3c7x4mae7v1" path="res://lib/thing/thing.gd" id="1_hp5e3"]
 [ext_resource type="Script" uid="uid://fg7mxayvxsgv" path="res://lib/thing/scripts/thing_data.gd" id="2_cukjo"]
 [ext_resource type="PackedScene" uid="uid://5og61k2m8o7t" path="res://shards/crucible/things/xydryde_regulator/meshes/xydryde_regulator.glb" id="3_la0ry"]
+[ext_resource type="Texture2D" uid="uid://boj0ynv385hl6" path="res://generic/textures/splash_mote.png" id="4_la0ry"]
 
 [sub_resource type="Resource" id="Resource_v1ts3"]
 script = ExtResource("2_cukjo")
@@ -55,6 +56,56 @@ _data = {
 &"pulse": SubResource("Animation_la0ry")
 }
 
+[sub_resource type="Curve" id="Curve_v1ts3"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.78015566, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_viye2"]
+curve = SubResource("Curve_v1ts3")
+
+[sub_resource type="Gradient" id="Gradient_c0jhi"]
+colors = PackedColorArray(3.9106234e-07, 0.21176013, 0.07847882, 1, 0.42366454, 0.61386204, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_72q0j"]
+gradient = SubResource("Gradient_c0jhi")
+
+[sub_resource type="Curve" id="Curve_fit8h"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.45939085, 1), 5.5160007, 0.0, 0, 0, Vector2(1, 0.8473685), -0.7732376, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_2axra"]
+curve = SubResource("Curve_fit8h")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ey30w"]
+emission_shape = 2
+emission_sphere_radius = 0.25
+angle_min = -179.99998
+angle_max = 180.00002
+direction = Vector3(0, 1, 0)
+spread = 7.0
+initial_velocity_min = 0.099999994
+initial_velocity_max = 0.29999998
+gravity = Vector3(0, -1.3, 0)
+scale_min = 0.7
+scale_curve = SubResource("CurveTexture_2axra")
+color_initial_ramp = SubResource("GradientTexture1D_72q0j")
+alpha_curve = SubResource("CurveTexture_viye2")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kvqvl"]
+transparency = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("4_la0ry")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_0vyf1"]
+material = SubResource("StandardMaterial3D_kvqvl")
+size = Vector2(0.4, 0.4)
+
 [node name="XydrydeRegulator" type="Node3D" unique_id=896926511 node_paths=PackedStringArray("body", "mesh", "selector_point")]
 script = ExtResource("1_hp5e3")
 body = NodePath("Body")
@@ -98,3 +149,27 @@ omni_attenuation = 0.0
 [node name="Pulse" type="AnimationPlayer" parent="Glow" unique_id=1826093262]
 libraries/ = SubResource("AnimationLibrary_v1ts3")
 autoplay = &"pulse"
+
+[node name="XydrydeSplash" type="GPUParticles3D" parent="." unique_id=380985767]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.91641617, 0.94086087, 3.3745646)
+cast_shadow = 0
+visibility_range_end = 8.0
+visibility_range_end_margin = 1.0
+visibility_range_fade_mode = 1
+amount = 16
+lifetime = 0.65
+randomness = 0.25
+process_material = SubResource("ParticleProcessMaterial_ey30w")
+draw_pass_1 = SubResource("QuadMesh_0vyf1")
+
+[node name="XydrydeSplash2" type="GPUParticles3D" parent="." unique_id=1627688609]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.86363363, 0.94086087, 3.3745646)
+cast_shadow = 0
+visibility_range_end = 8.0
+visibility_range_end_margin = 1.0
+visibility_range_fade_mode = 1
+amount = 16
+lifetime = 0.65
+randomness = 0.25
+process_material = SubResource("ParticleProcessMaterial_ey30w")
+draw_pass_1 = SubResource("QuadMesh_0vyf1")

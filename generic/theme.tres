@@ -3,6 +3,7 @@
 [ext_resource type="FontFile" uid="uid://knusa64ltvaf" path="res://generic/fonts/crimson_text.ttf" id="1_37o18"]
 [ext_resource type="FontFile" uid="uid://bi4a4vc7qpom8" path="res://generic/fonts/trebuchet.ttf" id="2_1c0d7"]
 [ext_resource type="Texture2D" uid="uid://dk8q1rhxwsmsn" path="res://generic/textures/1px.png" id="3_fp0go"]
+[ext_resource type="Texture2D" uid="uid://u0j8rt146osu" path="res://generic/textures/menu_arrow.png" id="4_56vwn"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_37o18"]
 content_margin_left = 12.0
@@ -124,6 +125,7 @@ Label/fonts/font = ExtResource("1_37o18")
 OptionButton/font_sizes/font_size = 13
 OptionButton/fonts/font = ExtResource("2_1c0d7")
 OptionButton/icons/arrow = ExtResource("3_fp0go")
+OptionButton/icons/icon = ExtResource("4_56vwn")
 OptionButton/styles/hover = SubResource("StyleBoxFlat_56vwn")
 OptionButton/styles/normal = SubResource("StyleBoxFlat_iag48")
 OptionButton/styles/pressed = SubResource("StyleBoxFlat_l2rom")

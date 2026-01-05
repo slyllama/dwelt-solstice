@@ -1,5 +1,5 @@
 @tool
-extends MultiMeshInstance3D
+class_name FoliageSpawner extends MultiMeshInstance3D
 
 var foliage_count = 0
 
@@ -83,11 +83,34 @@ func set_density(get_density: float) -> void:
 	foliage_count = floor(count * count * density)
 	multimesh.visible_instance_count = floor(count * count * density)
 
+func set_fade_distance(get_distance: float) -> void:
+	var _mat: ShaderMaterial = foliage_mesh.surface_get_material(0)
+	_mat.set_shader_parameter("fade_length", get_distance - 1.0)
+	visibility_range_end = get_distance + 1.0
+
 func _ready() -> void:
 	cast_shadow = SHADOW_CASTING_SETTING_OFF
 	set_layer_mask_value(1, 0)
 	set_layer_mask_value(2, 1)
 	
 	if Engine.is_editor_hint(): return
+	
+	set_fade_distance(8.0)
+	
+	Settings.changed.connect(func(_s: String):
+		if _s == "foliage_density":
+			var _foliage_density: String = Settings.data.foliage_density
+			match _foliage_density:
+				"low": set_density(0.33)
+				"medium": set_density(0.66)
+				_: set_density(1.0) # high
+		elif _s == "foliage_render_distance":
+			var _foliage_render_distance: String = Settings.data.foliage_render_distance
+			match _foliage_render_distance:
+				"low": set_fade_distance(7.0)
+				"medium": set_fade_distance(12.0)
+				_: set_fade_distance(20.0)
+	)
+	
 	if get_node_or_null("Selector"): # don't clear this twice
 		$Selector.queue_free()

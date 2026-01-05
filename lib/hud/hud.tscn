@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://istq4exbymwq"]
+[gd_scene format=3 uid="uid://istq4exbymwq"]
 
 [ext_resource type="FontFile" uid="uid://c7qpj4jbth6pg" path="res://generic/fonts/ibm_plex_mono.otf" id="1_dcyf8"]
 [ext_resource type="Script" uid="uid://davrehdjbld01" path="res://lib/hud/scripts/render_monitor.gd" id="1_o36f6"]
@@ -19,13 +19,13 @@
 [ext_resource type="Script" uid="uid://c7l3vi6s8w6h0" path="res://lib/hud/scripts/tooltip_surface.gd" id="17_qgm11"]
 [ext_resource type="PackedScene" uid="uid://dccolyl08umwm" path="res://lib/hud/tooltip/tooltip.tscn" id="18_nglf3"]
 
-[node name="HUD" type="CanvasLayer"]
+[node name="HUD" type="CanvasLayer" unique_id=1405763796]
 process_mode = 3
 script = ExtResource("1_tpybq")
 
-[node name="ScreenFX" parent="." instance=ExtResource("1_u1rn0")]
+[node name="ScreenFX" parent="." unique_id=1716142369 instance=ExtResource("1_u1rn0")]
 
-[node name="TitleCard" parent="." instance=ExtResource("15_c0040")]
+[node name="TitleCard" parent="." unique_id=161878095 instance=ExtResource("15_c0040")]
 unique_name_in_owner = true
 anchors_preset = 8
 anchor_left = 0.5
@@ -39,7 +39,7 @@ offset_bottom = 23.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="RenderMonitor" type="RichTextLabel" parent="."]
+[node name="RenderMonitor" type="RichTextLabel" parent="." unique_id=666236983]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -62,7 +62,7 @@ autowrap_mode = 0
 horizontal_alignment = 2
 script = ExtResource("1_o36f6")
 
-[node name="Pane" parent="." instance=ExtResource("4_pm6i7")]
+[node name="Pane" parent="." unique_id=1287325783 instance=ExtResource("4_pm6i7")]
 visible = false
 offset_left = 16.0
 offset_top = 16.0
@@ -70,17 +70,17 @@ offset_right = 216.0
 offset_bottom = 216.0
 title_text = "Interesting"
 
-[node name="Inspector" parent="." instance=ExtResource("11_coisy")]
+[node name="Inspector" parent="." unique_id=1402165484 instance=ExtResource("11_coisy")]
 offset_top = 2.0
 offset_bottom = 111.0
 
-[node name="Currency" parent="." instance=ExtResource("6_3pj68")]
+[node name="Currency" parent="." unique_id=1476723004 instance=ExtResource("6_3pj68")]
 offset_left = 61.0
 offset_top = 12.0
 offset_right = 389.0
 offset_bottom = 47.0
 
-[node name="EffectBar" parent="." instance=ExtResource("9_v7nqf")]
+[node name="EffectBar" parent="." unique_id=170800868 instance=ExtResource("9_v7nqf")]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 32)
 anchors_preset = 7
@@ -94,13 +94,13 @@ grow_horizontal = 2
 grow_vertical = 0
 alignment = 1
 
-[node name="Inventory" parent="." instance=ExtResource("5_4etgo")]
+[node name="Inventory" parent="." unique_id=362675603 instance=ExtResource("5_4etgo")]
 offset_left = 62.0
 offset_top = 125.0
 offset_right = 394.0
 offset_bottom = 325.0
 
-[node name="Settings" type="TextureButton" parent="."]
+[node name="Settings" type="TextureButton" parent="." unique_id=904511061]
 custom_minimum_size = Vector2(64, 64)
 offset_left = 6.0
 offset_top = 3.0
@@ -111,7 +111,7 @@ texture_hover = ExtResource("10_62h71")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="ToggleInventory" type="TextureButton" parent="."]
+[node name="ToggleInventory" type="TextureButton" parent="." unique_id=1098840061]
 custom_minimum_size = Vector2(64, 64)
 offset_left = 6.0
 offset_top = 56.0
@@ -122,26 +122,26 @@ texture_hover = ExtResource("9_d84xd")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="EyeAnim" parent="." instance=ExtResource("10_ixdrw")]
+[node name="EyeAnim" parent="." unique_id=396779311 instance=ExtResource("10_ixdrw")]
 unique_name_in_owner = true
 visible = false
 free_after_finish = true
 start_visible = true
 
-[node name="SettingsPane" parent="." instance=ExtResource("14_62h71")]
+[node name="SettingsPane" parent="." unique_id=1165299871 instance=ExtResource("14_62h71")]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -175.0
-offset_top = -200.0
-offset_right = 175.0
-offset_bottom = 200.0
+offset_left = -212.5
+offset_top = -234.0
+offset_right = 212.5
+offset_bottom = 166.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TooltipSurface" type="Control" parent="." node_paths=PackedStringArray("tooltip")]
+[node name="TooltipSurface" type="Control" parent="." unique_id=1783035076 node_paths=PackedStringArray("tooltip")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -152,7 +152,7 @@ mouse_filter = 2
 script = ExtResource("17_qgm11")
 tooltip = NodePath("Tooltip")
 
-[node name="Tooltip" parent="TooltipSurface" instance=ExtResource("18_nglf3")]
+[node name="Tooltip" parent="TooltipSurface" unique_id=1041933009 instance=ExtResource("18_nglf3")]
 layout_mode = 0
 
 [connection signal="pressed" from="Settings" to="." method="_on_settings_pressed"]

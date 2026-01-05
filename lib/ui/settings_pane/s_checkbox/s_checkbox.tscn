@@ -1,31 +1,32 @@
-[gd_scene load_steps=4 format=3 uid="uid://bbbakx44bexas"]
+[gd_scene format=3 uid="uid://bbbakx44bexas"]
 
 [ext_resource type="Script" uid="uid://d3h7mhg15gfmd" path="res://lib/ui/settings_pane/s_checkbox/s_checkbox.gd" id="1_ox375"]
 [ext_resource type="FontFile" uid="uid://bi4a4vc7qpom8" path="res://generic/fonts/trebuchet.ttf" id="2_a58rw"]
 [ext_resource type="Texture2D" uid="uid://7de3mh0hd63h" path="res://generic/textures/checked.jpg" id="3_elb5n"]
 
-[node name="SCheckbox" type="HBoxContainer"]
+[node name="SCheckbox" type="HBoxContainer" unique_id=1590982026]
 use_parent_material = true
 size_flags_horizontal = 3
 theme_override_constants/separation = 0
 script = ExtResource("1_ox375")
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="." unique_id=1830720557]
 use_parent_material = true
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.8, 0.8, 0.8, 1)
 theme_override_fonts/font = ExtResource("2_a58rw")
 theme_override_font_sizes/font_size = 14
 text = "((Setting))"
 
-[node name="Padding" type="ColorRect" parent="."]
+[node name="Padding" type="ColorRect" parent="." unique_id=441884889]
 use_parent_material = true
 custom_minimum_size = Vector2(4, 0)
 layout_mode = 2
 mouse_filter = 1
 color = Color(1, 1, 1, 0)
 
-[node name="Checkbox" type="TextureRect" parent="."]
+[node name="Checkbox" type="TextureRect" parent="." unique_id=1468402097]
 use_parent_material = true
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2

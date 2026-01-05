@@ -6,7 +6,9 @@ const default_data := { # default settings data
 	"window_mode": "full_screen",
 	"bloom": "false",
 	"shadows": "low",
-	"fps_limit": "60fps"
+	"fps_limit": "60fps",
+	"foliage_density": "medium",
+	"foliage_render_distance": "high"
 }
 
 @onready var data := default_data.duplicate()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cave0dvi8i7rh"]
+[gd_scene format=3 uid="uid://cave0dvi8i7rh"]
 
 [ext_resource type="Script" uid="uid://bp3rck4ew5qnc" path="res://lib/shard/shard.gd" id="1_5i5j7"]
 [ext_resource type="PackedScene" uid="uid://istq4exbymwq" path="res://lib/hud/hud.tscn" id="1_c370e"]
@@ -13,31 +13,31 @@ size = Vector2(40, 40)
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_vt6hs"]
 
-[node name="Shard" type="Node3D"]
+[node name="Shard" type="Node3D" unique_id=493273353]
 script = ExtResource("1_5i5j7")
 
-[node name="Sky" type="WorldEnvironment" parent="."]
+[node name="Sky" type="WorldEnvironment" parent="." unique_id=1119782402]
 unique_name_in_owner = true
 
-[node name="HUD" parent="." instance=ExtResource("1_c370e")]
+[node name="HUD" parent="." unique_id=559869132 instance=ExtResource("1_c370e")]
 
-[node name="Floor" type="StaticBody3D" parent="."]
+[node name="Floor" type="StaticBody3D" parent="." unique_id=1393273289]
 
-[node name="DebugFloor" type="MeshInstance3D" parent="Floor"]
+[node name="DebugFloor" type="MeshInstance3D" parent="Floor" unique_id=206508883]
 layers = 5
 mesh = SubResource("PlaneMesh_vt6hs")
 
-[node name="Collision" type="CollisionShape3D" parent="Floor"]
+[node name="Collision" type="CollisionShape3D" parent="Floor" unique_id=1524223620]
 shape = SubResource("WorldBoundaryShape3D_vt6hs")
 debug_fill = false
 
-[node name="Player" parent="." instance=ExtResource("3_xunhb")]
+[node name="Player" parent="." unique_id=1143123429 instance=ExtResource("3_xunhb")]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
-[node name="Bounds" parent="." instance=ExtResource("5_5i5j7")]
+[node name="Bounds" parent="." unique_id=1398516463 instance=ExtResource("5_5i5j7")]
 
-[node name="Sound" type="Node" parent="."]
+[node name="Sound" type="Node" parent="." unique_id=16922320]
 script = ExtResource("6_v2fjr")
 
-[node name="Ambience" type="AudioStreamPlayer" parent="Sound"]
+[node name="Ambience" type="AudioStreamPlayer" parent="Sound" unique_id=788029209]

@@ -10,6 +10,7 @@
 [ext_resource type="Animation" uid="uid://cqpsbwgy2uxcd" path="res://lib/player/meshes/anims/idle.res" id="5_dyt5v"]
 [ext_resource type="ArrayMesh" uid="uid://bbnipptkru66r" path="res://lib/player/meshes/star.res" id="5_jyhpi"]
 [ext_resource type="Animation" uid="uid://dft5l21562sq" path="res://lib/player/meshes/anims/move_forward.res" id="6_jyhpi"]
+[ext_resource type="Texture2D" uid="uid://boj0ynv385hl6" path="res://generic/textures/splash_mote.png" id="8_5cb0d"]
 [ext_resource type="Animation" uid="uid://dn6jbc7cb2gch" path="res://lib/player/meshes/anims/strafe.res" id="8_g61qk"]
 [ext_resource type="Animation" uid="uid://b5rkwbh24208k" path="res://lib/player/meshes/anims/eye.res" id="8_up78s"]
 [ext_resource type="AudioStream" uid="uid://bkxx1ti38653a" path="res://lib/player/sounds/engine_idle.ogg" id="9_5x5nn"]
@@ -45,6 +46,56 @@ scale_min = 0.19999999
 scale_max = 0.59999996
 color_initial_ramp = SubResource("GradientTexture1D_up78s")
 alpha_curve = SubResource("CurveTexture_5x5nn")
+
+[sub_resource type="Curve" id="Curve_kvqvl"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.78015566, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_5cb0d"]
+curve = SubResource("Curve_kvqvl")
+
+[sub_resource type="Gradient" id="Gradient_ttoox"]
+colors = PackedColorArray(3.9106234e-07, 0.21176013, 0.07847882, 1, 0.42366454, 0.61386204, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_kvqvl"]
+gradient = SubResource("Gradient_ttoox")
+
+[sub_resource type="Curve" id="Curve_5cb0d"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.45939085, 1), 5.5160007, 0.0, 0, 0, Vector2(1, 0.8473685), -0.7732376, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_ttoox"]
+curve = SubResource("Curve_5cb0d")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_duig0"]
+emission_shape = 2
+emission_sphere_radius = 0.25
+angle_min = -179.99998
+angle_max = 180.00002
+direction = Vector3(0, 1, 0)
+spread = 7.0
+initial_velocity_min = 0.099999994
+initial_velocity_max = 0.29999998
+gravity = Vector3(0, -1.3, 0)
+scale_min = 0.7
+scale_curve = SubResource("CurveTexture_ttoox")
+color_initial_ramp = SubResource("GradientTexture1D_kvqvl")
+alpha_curve = SubResource("CurveTexture_5cb0d")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f5g47"]
+transparency = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("8_5cb0d")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_ttoox"]
+material = SubResource("StandardMaterial3D_f5g47")
+size = Vector2(0.4, 0.4)
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_up78s"]
 _data = {
@@ -267,6 +318,19 @@ amount = 64
 amount_ratio = 0.25
 process_material = SubResource("ParticleProcessMaterial_ram4p")
 draw_pass_1 = ExtResource("5_jyhpi")
+
+[node name="XydrydeSplash" type="GPUParticles3D" parent="RobotMesh" unique_id=347489653]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05623141, 0)
+cast_shadow = 0
+visibility_range_end = 14.0
+visibility_range_end_margin = 1.0
+visibility_range_fade_mode = 1
+emitting = false
+amount = 16
+lifetime = 0.65
+randomness = 0.25
+process_material = SubResource("ParticleProcessMaterial_duig0")
+draw_pass_1 = SubResource("QuadMesh_ttoox")
 
 [node name="Light" type="OmniLight3D" parent="RobotMesh" unique_id=399922897]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35, 0.75)
