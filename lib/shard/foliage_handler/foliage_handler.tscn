@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cdbaad3oei8uj"]
+
+[ext_resource type="Script" uid="uid://gkk3wxylyehl" path="res://lib/shard/foliage_handler/foliage_handler.gd" id="1_ddbji"]
+
+[node name="FoliageHandler" type="Node3D" unique_id=150174127]
+script = ExtResource("1_ddbji")

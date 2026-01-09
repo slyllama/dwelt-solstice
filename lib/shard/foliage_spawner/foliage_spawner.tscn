@@ -11,6 +11,7 @@ layers = 2
 cast_shadow = 0
 visibility_range_end = 10.0
 script = ExtResource("1_k6dj7")
+scale_offset = null
 
 [node name="Selector" type="Sprite3D" parent="." unique_id=1504054938]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
