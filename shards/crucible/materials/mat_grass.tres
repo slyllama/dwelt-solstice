@@ -1,41 +1,37 @@
-[gd_resource type="ShaderMaterial" format=3 uid="uid://d3qjlfqasb1kc"]
+[gd_resource type="ShaderMaterial" format=3 uid="uid://yt01tby5kilg"]
 
-[ext_resource type="Shader" uid="uid://b8fj8qok5t8sh" path="res://shards/crucible/materials/shaders/grass.gdshader" id="1_5gait"]
-[ext_resource type="Texture2D" uid="uid://mn0oqam0orrm" path="res://shards/crucible/materials/textures/flowers_diff.jpg" id="2_8toxo"]
-[ext_resource type="Texture2D" uid="uid://46utb4d6jkvs" path="res://shards/crucible/materials/textures/grass_alt_diff.jpg" id="2_hrb55"]
-[ext_resource type="Texture2D" uid="uid://m2ivfxhy7dxf" path="res://shards/crucible/materials/textures/grass_diff.jpg" id="3_518vl"]
-[ext_resource type="Texture2D" uid="uid://dk3rpprnv7kfe" path="res://shards/crucible/materials/masks/landscape_mask.jpg" id="4_xowig"]
-[ext_resource type="Texture2D" uid="uid://cdo0lbht8tsdo" path="res://shards/crucible/materials/textures/rock_diff.jpg" id="5_8toxo"]
+[ext_resource type="Shader" uid="uid://b8fj8qok5t8sh" path="res://shards/crucible/materials/shaders/grass.gdshader" id="1_1pluu"]
+[ext_resource type="Texture2D" uid="uid://46utb4d6jkvs" path="res://shards/crucible/materials/textures/grass_alt_diff.jpg" id="2_nyj0q"]
+[ext_resource type="Texture2D" uid="uid://m2ivfxhy7dxf" path="res://shards/crucible/materials/textures/grass_diff.jpg" id="3_wmak5"]
+[ext_resource type="Texture2D" uid="uid://dk3rpprnv7kfe" path="res://shards/crucible/materials/masks/landscape_mask.jpg" id="5_odlmv"]
+[ext_resource type="Texture2D" uid="uid://bgkkn024lcn3n" path="res://shards/crucible/materials/textures/stone_diff.jpg" id="6_u0x65"]
 
 [sub_resource type="Gradient" id="Gradient_hrb55"]
-offsets = PackedFloat32Array(0, 0.5)
-colors = PackedColorArray(0, 0, 0, 1, 0.6748146, 0.67481464, 0.6748144, 1)
+offsets = PackedFloat32Array(0.02733119, 0.5418006)
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_518vl"]
 noise_type = 2
 frequency = 0.025
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_xowig"]
+width = 256
+height = 256
 noise = SubResource("FastNoiseLite_518vl")
 color_ramp = SubResource("Gradient_hrb55")
 seamless = true
 
 [resource]
 render_priority = 0
-shader = ExtResource("1_5gait")
-shader_parameter/grass_texture = ExtResource("3_518vl")
-shader_parameter/grass_albedo = Color(0.65, 0.65, 0.65, 1)
-shader_parameter/grass_uv_scale = 32.0
-shader_parameter/grass_alt_texture = ExtResource("2_hrb55")
+shader = ExtResource("1_1pluu")
+shader_parameter/grass_texture = ExtResource("3_wmak5")
+shader_parameter/grass_albedo = Color(1, 1, 1, 1)
+shader_parameter/grass_uv_scale = 16.0
+shader_parameter/grass_alt_texture = ExtResource("2_nyj0q")
 shader_parameter/grass_alt_albedo = Color(1, 1, 1, 1)
-shader_parameter/grass_alt_uv_scale = 12.0
-shader_parameter/rock_texture = ExtResource("5_8toxo")
-shader_parameter/rock_albedo = Color(0.7, 0.7, 0.7, 1)
-shader_parameter/rock_uv_scale = 32.0
-shader_parameter/flowers_texture = ExtResource("2_8toxo")
-shader_parameter/flowers_albedo = Color(1, 1, 1, 1)
-shader_parameter/flowers_uv_scale = 38.0
-shader_parameter/flowers_strength = 0.6000000285
+shader_parameter/grass_alt_uv_scale = 8.0
+shader_parameter/rock_texture = ExtResource("6_u0x65")
+shader_parameter/rock_albedo = Color(1, 1, 1, 1)
+shader_parameter/rock_uv_scale = 14.0
 shader_parameter/highlight_strength = 1.75
 shader_parameter/grass_mask_texture = SubResource("NoiseTexture2D_xowig")
-shader_parameter/landscape_mask_texture = ExtResource("4_xowig")
+shader_parameter/landscape_mask_texture = ExtResource("5_odlmv")

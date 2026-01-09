@@ -3,18 +3,18 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://5460uk3bfjxm"
-path="res://.godot/imported/plateau_rock.glb-b34744d11d1f85c2d0c07a3aea93e260.scn"
+uid="uid://mqe2wqcca4b0"
+path="res://.godot/imported/crucible.glb-99813d577befe802192a3598fe9d1ed0.scn"
 
 [deps]
 
-source_file="res://shards/crucible/props/plateau_rock/meshes/plateau_rock.glb"
-dest_files=["res://.godot/imported/plateau_rock.glb-b34744d11d1f85c2d0c07a3aea93e260.scn"]
+source_file="res://shards/crucible/meshes/crucible.glb"
+dest_files=["res://.godot/imported/crucible.glb-99813d577befe802192a3598fe9d1ed0.scn"]
 
 [params]
 
 nodes/root_type=""
-nodes/root_name="PlateauRock"
+nodes/root_name="Crucible"
 nodes/root_script=null
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
@@ -33,21 +33,21 @@ animation/fps=30
 animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
-import_script/path=""
+import_script/path="uid://cgo18p0t4xihg"
 materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
 _subresources={
 "materials": {
-"rocks": {
+"grass": {
 "use_external/enabled": true,
-"use_external/fallback_path": "res://shards/crucible/props/plateau_rock/materials/mat_plateau_rock.tres",
-"use_external/path": "uid://b87abcrf7qtw6"
-}
+"use_external/fallback_path": "res://shards/crucible/materials/mat_grass.tres",
+"use_external/path": "uid://yt01tby5kilg"
 },
-"nodes": {
-"PATH:Rock": {
-"mesh_instance/layers": 5
+"placeholder": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://generic/materials/mat_tiles.tres",
+"use_external/path": "uid://bxv8vnq41mocc"
 }
 }
 }

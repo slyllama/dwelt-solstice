@@ -6,7 +6,7 @@ uniform sampler2D foliage_texture: source_color, filter_linear_mipmap, repeat_en
 uniform sampler2D foliage_normal_texture: hint_normal, filter_linear_mipmap;
 uniform float alpha_scissor_threshold: hint_range(0.0, 1.0) = 0.95;
 uniform float normal_map_depth: hint_range(0.0, 1.0) = 1.0;
-uniform float fade_length: hint_range(1.0, 100.0) = 9.0;
+uniform float fade_length = 18.0;
 uniform bool uses_wind = true;
 
 // Instance uniforms used for Things
@@ -37,11 +37,12 @@ void fragment() {
 	ALBEDO *= COLOR.rgb;
 	NORMAL_MAP = texture(foliage_normal_texture, UV).rgb;
 	NORMAL_MAP_DEPTH = 1.0;
-	BACKLIGHT = vec3(0.65);
 	
 	ALPHA = foliage.a;
 	ALPHA_SCISSOR_THRESHOLD = alpha_scissor_threshold;
 	SPECULAR = 0.0;
+	EMISSION = ALBEDO * 0.1;
+	BACKLIGHT = vec3(0.5);
 	
 	float fade_distance = length(VERTEX);
 	const vec3 magic = vec3(0.06711056, 0.00583715, 52.9829189);

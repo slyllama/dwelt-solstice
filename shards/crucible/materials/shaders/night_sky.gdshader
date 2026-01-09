@@ -15,6 +15,8 @@ uniform float stars_size = 1.0;
 uniform float stars_strength: hint_range(0.0, 1.0) = 1.0;
 uniform float nebula_strength: hint_range(0.0, 1.0) = 1.0;
 
+uniform sampler2D nebula_vertical_gradient_mask: source_color, filter_linear;
+
 void sky() {
 	COLOR = texture(color_gradient, SKY_COORDS).rgb;
 
@@ -25,7 +27,8 @@ void sky() {
 
 	// Stars
 	vec3 _s1 = texture(stars, SKY_COORDS * stars_size).rgb;
-	vec3 _s2 = texture(nebula, SKY_COORDS * stars_size * 0.3 - TIME * 0.006).rgb;
+	vec3 _s2 = texture(nebula, SKY_COORDS * stars_size * 0.5 - TIME * 0.006 + vec2(0.5, 0.0)).rgb;
+	_s2 *= texture(nebula_vertical_gradient_mask, SKY_COORDS).r;
 	
 	vec3 _stars = mix(_s1, _s2, texture(patina, SKY_COORDS).r * nebula_strength);
 	float _stars_mask = clamp(texture(patina, SKY_COORDS * -1.0).r, 0.18, 1.0);

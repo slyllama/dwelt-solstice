@@ -5,6 +5,7 @@
 [ext_resource type="Material" uid="uid://bxv8vnq41mocc" path="res://generic/materials/mat_tiles.tres" id="2_3xe27"]
 [ext_resource type="PackedScene" uid="uid://crbctqd55n6f6" path="res://lib/player/player.tscn" id="3_xunhb"]
 [ext_resource type="PackedScene" uid="uid://dnl3en4v6jy6b" path="res://lib/shard/bounds/bounds.tscn" id="5_5i5j7"]
+[ext_resource type="PackedScene" uid="uid://cdbaad3oei8uj" path="res://lib/shard/foliage_handler/foliage_handler.tscn" id="5_ca0gg"]
 [ext_resource type="Script" uid="uid://4e2x1xrigbxg" path="res://lib/shard/scripts/sound.gd" id="6_v2fjr"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_vt6hs"]
@@ -34,6 +35,8 @@ debug_fill = false
 [node name="Player" parent="." unique_id=1143123429 instance=ExtResource("3_xunhb")]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
+[node name="FoliageHandler" parent="." unique_id=150174127 instance=ExtResource("5_ca0gg")]
 
 [node name="Bounds" parent="." unique_id=1398516463 instance=ExtResource("5_5i5j7")]
 

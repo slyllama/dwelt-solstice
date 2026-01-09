@@ -5,7 +5,7 @@ extends Node3D
 var unique_mats: Array[ShaderMaterial] = []
 
 func get_unique_mats() -> void:
-	for _f: FoliageSpawner in get_children():
+	for _f in get_children():
 		if !"foliage_mesh" in _f: return
 		var _mat = _f.foliage_mesh.surface_get_material(0)
 		if !_mat in unique_mats:
@@ -24,5 +24,5 @@ func _ready() -> void:
 			match _foliage_render_distance:
 				"low": set_fade_distance(7.0)
 				"medium": set_fade_distance(12.0)
-				_: set_fade_distance(20.0)
+				_: set_fade_distance(40.0)
 	)

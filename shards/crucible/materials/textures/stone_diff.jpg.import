@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ds32f5k6tn73k"
-path.s3tc="res://.godot/imported/bamboo_b_a.png-c0252046f9daa922341bf04d633fa443.s3tc.ctex"
+uid="uid://bgkkn024lcn3n"
+path.s3tc="res://.godot/imported/stone_diff.jpg-9b5cc05e8bd77674928136ae81f43561.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://shards/crucible/props/bamboo/billboard/materials/textures/bamboo_b_a.png"
-dest_files=["res://.godot/imported/bamboo_b_a.png-c0252046f9daa922341bf04d633fa443.s3tc.ctex"]
+source_file="res://shards/crucible/materials/textures/stone_diff.jpg"
+dest_files=["res://.godot/imported/stone_diff.jpg-9b5cc05e8bd77674928136ae81f43561.s3tc.ctex"]
 
 [params]
 

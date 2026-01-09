@@ -8285,6 +8285,24 @@ _subresources={
 "use_external/fallback_path": "res://lib/player/materials/mat_swirl.tres",
 "use_external/path": "uid://cybs7v8g3k2lt"
 }
+},
+"nodes": {
+"PATH:Armature/Skeleton3D/Pivot/Glow_NE": {
+"mesh_instance/cast_shadow": 0,
+"mesh_instance/layers": 512
+},
+"PATH:Armature/Skeleton3D/Pivot/Glow_NW": {
+"mesh_instance/cast_shadow": 0,
+"mesh_instance/layers": 512
+},
+"PATH:Armature/Skeleton3D/Pivot/Glow_SE": {
+"mesh_instance/cast_shadow": 0,
+"mesh_instance/layers": 512
+},
+"PATH:Armature/Skeleton3D/Pivot/Glow_SW": {
+"mesh_instance/cast_shadow": 0,
+"mesh_instance/layers": 512
+}
 }
 }
 gltf/naming_version=2

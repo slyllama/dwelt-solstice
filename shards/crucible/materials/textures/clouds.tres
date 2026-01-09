@@ -6,10 +6,9 @@ colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 0.6745098)
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_0s3ef"]
 noise_type = 2
+frequency = 0.02
 
 [resource]
-width = 1024
-height = 1024
 noise = SubResource("FastNoiseLite_0s3ef")
 color_ramp = SubResource("Gradient_84orq")
 seamless = true

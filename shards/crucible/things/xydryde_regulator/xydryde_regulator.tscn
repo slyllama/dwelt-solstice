@@ -136,7 +136,7 @@ shape = SubResource("ConcavePolygonShape3D_la0ry")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.4536695, 1.6987097)
 
 [node name="Glow" type="OmniLight3D" parent="." unique_id=991030998]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9922019, 1.7329845)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9922019, 2.3522599)
 light_color = Color(0.5506825, 0.7639134, 0, 1)
 light_energy = 3.0
 distance_fade_enabled = true
