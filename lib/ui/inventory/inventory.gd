@@ -24,15 +24,6 @@ func _trim_inventory() -> void:
 		if inventory_data[_item].id == "blank":
 			inventory_data.erase(_item)
 
-func appear(muted := false) -> void:
-	if !muted: # conserve insanity during debugging
-		$Open.play()
-		$DissolveHelper.appear()
-
-func disappear() -> void:
-	$Open.play()
-	$DissolveHelper.disappear()
-
 func begin_drag(id: String, idx: int) -> void:
 	Dwelt.ui_click.emit()
 	
@@ -60,7 +51,7 @@ func complete_drag(dest_idx: int) -> void:
 	
 	_clear_drag_cursor()
 	_trim_inventory()
-	Save.data.inventory = inventory_data.duplicate()
+	Save.data.inventory = inventory_data.duplicate(true)
 	render()
 	
 	Save.save_to_file()
@@ -68,7 +59,7 @@ func complete_drag(dest_idx: int) -> void:
 # Revert to original layout
 func cancel_drag() -> void:
 	_clear_drag_cursor()
-	inventory_data = Save.data.inventory.duplicate()
+	inventory_data = Save.data.inventory.duplicate(true)
 	render() 
 
 func render() -> void:
@@ -101,19 +92,16 @@ func render() -> void:
 			tile.drag_initiated.connect(func(): # begin dragging
 				inventory_data.erase(tile.index)
 				begin_drag(tile.id, tile.index))
+	$Box.size = Vector2.ZERO
+	size = $Box.size
 
 func _ready() -> void:
+	if !Engine.is_editor_hint():
+		inventory_data = Save.data.inventory.duplicate(true)
 	render()
-	
-	if Engine.is_editor_hint():
-		appear(true) # debugging
-	else:
-		visible = false
-		$DissolveHelper._set_dissolve(0.0)
 
 func _input(_event: InputEvent) -> void:
 	if Engine.is_editor_hint(): return
-	inventory_data = Save.data.inventory.duplicate()
 	if Input.is_action_just_released("left_click"):
 		if dragged_tile_id:
 			if get_window().gui_get_hovered_control():

@@ -7,9 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b63hobdhwi8kc" path="res://lib/ui/pane/pane.tscn" id="4_pm6i7"]
 [ext_resource type="PackedScene" uid="uid://dd7rl0r1enohp" path="res://lib/ui/inventory/inventory.tscn" id="5_4etgo"]
 [ext_resource type="PackedScene" uid="uid://c8oj1ia1ewi5q" path="res://lib/hud/currency/currency.tscn" id="6_3pj68"]
-[ext_resource type="Texture2D" uid="uid://ren8he6qiotw" path="res://lib/hud/textures/inventory.png" id="8_r2k48"]
 [ext_resource type="Texture2D" uid="uid://qvxav4j1iaar" path="res://lib/hud/textures/settings.png" id="9_45tie"]
-[ext_resource type="Texture2D" uid="uid://cetc1nb4j4x8h" path="res://lib/hud/textures/inventory_hover.png" id="9_d84xd"]
 [ext_resource type="PackedScene" uid="uid://cb7wjr83pbn7d" path="res://lib/effect/effect_bar/effect_bar.tscn" id="9_v7nqf"]
 [ext_resource type="Texture2D" uid="uid://bsu8ohjo36dal" path="res://lib/hud/textures/settings_hover.png" id="10_62h71"]
 [ext_resource type="PackedScene" uid="uid://u2i05ele7n62" path="res://lib/hud/screen_fx/eye_anim/eye_anim.tscn" id="10_ixdrw"]
@@ -84,25 +82,27 @@ offset_top = 12.0
 offset_right = 389.0
 offset_bottom = 47.0
 
-[node name="EffectBar" parent="." unique_id=170800868 instance=ExtResource("9_v7nqf")]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 32)
+[node name="Inventory" parent="." unique_id=362675603 instance=ExtResource("5_4etgo")]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_top = -125.0
-offset_bottom = -93.0
+offset_left = -164.0
+offset_top = -138.0
+offset_right = 164.0
+offset_bottom = -8.0
 grow_horizontal = 2
 grow_vertical = 0
-alignment = 1
 
-[node name="Inventory" parent="." unique_id=362675603 instance=ExtResource("5_4etgo")]
-offset_left = 62.0
-offset_top = 125.0
-offset_right = 394.0
-offset_bottom = 325.0
+[node name="EffectBar" parent="Inventory" unique_id=170800868 instance=ExtResource("9_v7nqf")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 1
+offset_left = 3.0
+offset_top = -34.0
+offset_right = 101.0
+offset_bottom = -2.0
 
 [node name="Settings" type="TextureButton" parent="." unique_id=904511061]
 custom_minimum_size = Vector2(64, 64)
@@ -112,17 +112,6 @@ offset_right = 70.0
 offset_bottom = 67.0
 texture_normal = ExtResource("9_45tie")
 texture_hover = ExtResource("10_62h71")
-ignore_texture_size = true
-stretch_mode = 5
-
-[node name="ToggleInventory" type="TextureButton" parent="." unique_id=1098840061]
-custom_minimum_size = Vector2(64, 64)
-offset_left = 6.0
-offset_top = 56.0
-offset_right = 70.0
-offset_bottom = 120.0
-texture_normal = ExtResource("8_r2k48")
-texture_hover = ExtResource("9_d84xd")
 ignore_texture_size = true
 stretch_mode = 5
 
@@ -160,4 +149,3 @@ tooltip = NodePath("Tooltip")
 layout_mode = 0
 
 [connection signal="pressed" from="Settings" to="." method="_on_settings_pressed"]
-[connection signal="pressed" from="ToggleInventory" to="." method="_on_toggle_inventory_pressed"]
