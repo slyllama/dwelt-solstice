@@ -1,6 +1,6 @@
 extends HBoxContainer
 
-const EffectIcon = preload("res://lib/effect/effect_icon/effect_icon.tscn")
+var EffectIcon = load("res://lib/effect/effect_icon/effect_icon.tscn")
 
 @export var effect_handler: EffectHandler:
 	set(_effect_handler):
@@ -19,7 +19,6 @@ func connect_handler() -> void:
 	# Disconnect the existing signal (for when targets change)
 	if effect_handler.effect_added.is_connected(add_icon):
 		effect_handler.effect_added.disconnect(add_icon)
-	
 	effect_handler.effect_added.connect(add_icon)
 	
 	await get_tree().process_frame

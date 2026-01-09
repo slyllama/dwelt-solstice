@@ -5,10 +5,10 @@ func play_title_card(shard_name: String) -> void:
 	%TitleCard.play()
 
 func _ready() -> void:
+	%EyeAnim.animate()
 	await get_tree().process_frame
 	# Need to wait a frame for the Dwelt.player reference to be applied
 	%EffectBar.effect_handler = Dwelt.player.effect_handler
-	%EyeAnim.animate()
 
 func _on_toggle_inventory_pressed() -> void:
 	if !$Inventory.visible:

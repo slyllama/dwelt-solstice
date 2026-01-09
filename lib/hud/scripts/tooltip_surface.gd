@@ -15,5 +15,5 @@ func _input(event: InputEvent) -> void:
 
 func _process(_delta: float) -> void:
 	if visible:
-		if !get_window().gui_get_hovered_control():
+		if !get_window().gui_get_hovered_control() is EffectIconScript:
 			visible = false
