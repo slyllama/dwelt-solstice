@@ -122,6 +122,7 @@ free_after_finish = true
 start_visible = true
 
 [node name="SettingsPane" parent="." unique_id=1165299871 instance=ExtResource("14_62h71")]
+unique_name_in_owner = true
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5

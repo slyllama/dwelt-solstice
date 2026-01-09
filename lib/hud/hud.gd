@@ -9,3 +9,6 @@ func _ready() -> void:
 	await get_tree().process_frame
 	# Need to wait a frame for the Dwelt.player reference to be applied
 	%EffectBar.effect_handler = Dwelt.player.effect_handler
+
+func _on_settings_pressed() -> void:
+	%SettingsPane.appear()

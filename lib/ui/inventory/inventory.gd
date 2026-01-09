@@ -92,10 +92,11 @@ func render() -> void:
 			tile.drag_initiated.connect(func(): # begin dragging
 				inventory_data.erase(tile.index)
 				begin_drag(tile.id, tile.index))
-	$Box.size = Vector2.ZERO
+	$Box.size = $Box/VBox.size
 	size = $Box.size
 
 func _ready() -> void:
+	await get_tree().process_frame
 	if !Engine.is_editor_hint():
 		inventory_data = Save.data.inventory.duplicate(true)
 	render()

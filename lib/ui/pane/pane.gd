@@ -5,7 +5,6 @@ extends Panel
 	get: return(title_text)
 	set(_val):
 		title_text = _val
-		$Box/Header/Title.text = title_text
 
 @export var start_hidden := false
 
