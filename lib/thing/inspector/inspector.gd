@@ -26,7 +26,6 @@ func release_target() -> void:
 	Dwelt.target_thing(null)
 	await get_tree().process_frame
 	if !Dwelt.targeted_thing and visible:
-		Utils.pdebug("Releasing target.", "Inspector")
 		disappear()
 
 # Render the correct Thing data for the targeted Thing

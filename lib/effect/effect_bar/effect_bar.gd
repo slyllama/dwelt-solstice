@@ -21,11 +21,11 @@ func connect_handler() -> void:
 		effect_handler.effect_added.disconnect(add_icon)
 	effect_handler.effect_added.connect(add_icon)
 	
-	await get_tree().process_frame
 	for _n in get_children(): _n.queue_free() # clear
 	for _n: Effect in effect_handler.get_children():
 		add_icon(_n.data)
 
 func _ready() -> void:
+	# Clear debugging placeholders
 	for _n in get_children():
-		_n.queue_free() # clear debugging placeholders
+		_n.queue_free()

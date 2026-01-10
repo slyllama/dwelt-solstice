@@ -450,16 +450,16 @@ cast_shadow = 0
 mesh = SubResource("QuadMesh_5x773")
 
 [node name="XydrydeRegulator" parent="." index="9" unique_id=896926511 instance=ExtResource("19_moxbr")]
-transform = Transform3D(-4.371139e-08, 0, 1, -0.1333808, 0.99106485, -5.83026e-09, -0.99106485, -0.1333808, -4.332082e-08, -8, -0.48420346, 0)
+transform = Transform3D(0.15086667, 0.020304145, 0.98834556, -0.13338082, 0.99106497, -5.8302607e-09, -0.97951466, -0.13182634, 0.15222687, -8.614831, -0.4842037, -1.3708236)
 
 [node name="XydrydeRegulator2" parent="." index="10" unique_id=244215824 instance=ExtResource("19_moxbr")]
-transform = Transform3D(-4.3711385e-08, 0, -1, 0.021954477, 0.99975896, -9.596608e-10, 0.9997589, -0.021954479, -4.370085e-08, 8, -0.45745766, 0)
+transform = Transform3D(0.43226478, -0.009492437, -0.90169674, 0.021954477, 0.99975896, -9.596608e-10, 0.90147936, -0.019796284, 0.43236902, 7.7788177, -0.45745766, -0.97283036)
 
 [node name="XydrydeExcess" parent="." index="11" unique_id=1817163327 instance=ExtResource("21_0s3ef")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, 0)
+transform = Transform3D(0.98834556, 0, -0.1522269, 0, 1, 0, 0.1522269, 0, 0.98834556, -4.1672754, -2.3841858e-07, -0.68580264)
 
 [node name="XydrydeExcess2" parent="." index="12" unique_id=737293824 instance=ExtResource("21_0s3ef")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 0)
+transform = Transform3D(0.90169674, 0, 0.43236905, 0, 1, 0, -0.43236905, 0, 0.90169674, 3.7211823, 0, 0.97283036)
 
 [node name="Ambience" parent="Sound" parent_id_path=PackedInt32Array(16922320) index="0" unique_id=788029209]
 stream = ExtResource("6_42lni")

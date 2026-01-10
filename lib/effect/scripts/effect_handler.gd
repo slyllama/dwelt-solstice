@@ -36,7 +36,6 @@ func add(data: EffectData) -> void:
 		updated.emit()
 
 func _ready() -> void:
-	await get_tree().process_frame
 	for _e: Effect in get_children():
 		register(_e)
 	updated.emit()

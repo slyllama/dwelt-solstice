@@ -312,7 +312,7 @@ unit_size = 4.0
 autoplay = true
 
 [node name="Stars" type="GPUParticles3D" parent="RobotMesh" unique_id=519014292]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.17061618, -0.39669335)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.12614095, -0.3235793)
 cast_shadow = 0
 amount = 64
 amount_ratio = 0.25

@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://benouhryc5okd"]
+[gd_scene format=3 uid="uid://benouhryc5okd"]
 
 [ext_resource type="Texture2D" uid="uid://boemoe7gwd6ir" path="res://lib/thing/sel_indicator/textures/selected_indicator.png" id="1_egrst"]
 
@@ -41,15 +41,14 @@ _data = {
 &"float": SubResource("Animation_egrst")
 }
 
-[node name="Node3D" type="Node3D"]
+[node name="Node3D" type="Node3D" unique_id=1373597998]
 
-[node name="SelIndicator" type="Sprite3D" parent="."]
+[node name="SelIndicator" type="Sprite3D" parent="." unique_id=1021141793]
+pixel_size = 0.006
 billboard = 1
 no_depth_test = true
 texture = ExtResource("1_egrst")
 
-[node name="Anim" type="AnimationPlayer" parent="SelIndicator"]
-libraries = {
-&"": SubResource("AnimationLibrary_3blwh")
-}
-autoplay = "float"
+[node name="Anim" type="AnimationPlayer" parent="SelIndicator" unique_id=1784905925]
+libraries/ = SubResource("AnimationLibrary_3blwh")
+autoplay = &"float"
