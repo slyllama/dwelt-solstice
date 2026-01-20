@@ -21,5 +21,12 @@ func _ready() -> void:
 		visible = false
 		$DissolveHelper.disappear()
 
+func _input(_event: InputEvent) -> void:
+	if Input.is_action_just_pressed("ui_cancel"):
+		if !visible:
+			appear()
+		else:
+			disappear()
+
 func _on_close_pressed() -> void:
 	$DissolveHelper.disappear()

@@ -1,53 +1,28 @@
 [gd_resource type="ShaderMaterial" format=3 uid="uid://dqqw1cju3b7h6"]
 
 [ext_resource type="Shader" uid="uid://c54vf4530l6rd" path="res://shards/crucible/materials/shaders/night_sky.gdshader" id="1_pvh8i"]
-[ext_resource type="Texture2D" uid="uid://bnisvf43d5u0b" path="res://shards/crucible/materials/textures/stars_nebula_diff.jpg" id="2_55dcu"]
+[ext_resource type="Texture2D" uid="uid://bi5qxtc53ggun" path="res://shards/crucible/materials/textures/sky_color_bands.tres" id="2_3rfyr"]
 [ext_resource type="Texture2D" uid="uid://cly2gywk3s8kg" path="res://shards/crucible/materials/textures/stars_diff.jpg" id="2_yf6jp"]
+[ext_resource type="Texture2D" uid="uid://bse858pqu5g0p" path="res://shards/crucible/materials/textures/sky_stars_gradient.tres" id="3_q63kx"]
 
-[sub_resource type="Gradient" id="Gradient_yf6jp"]
-offsets = PackedFloat32Array(0, 0.3, 0.5)
-colors = PackedColorArray(0, 0, 0, 1, 0.0216, 0.028159996, 0.12, 1, 0, 0, 0, 1)
+[sub_resource type="Gradient" id="Gradient_ybnme"]
+offsets = PackedFloat32Array(0.5, 1)
+colors = PackedColorArray(0.06, 0.06, 0.06, 1, 1, 1, 1, 1)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_45rpi"]
-gradient = SubResource("Gradient_yf6jp")
-fill_to = Vector2(0, 1)
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_q63kx"]
+frequency = 0.04
 
-[sub_resource type="Gradient" id="Gradient_55dcu"]
-offsets = PackedFloat32Array(0, 0.05, 0.825, 1)
-colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 1, 0.13922077, 0.13922077, 0.13922077, 1, 0, 0, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_ck4fv"]
-gradient = SubResource("Gradient_55dcu")
-
-[sub_resource type="Gradient" id="Gradient_pvh8i"]
-offsets = PackedFloat32Array(0, 0.6272727)
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_yf6jp"]
-noise_type = 2
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_45rpi"]
-noise = SubResource("FastNoiseLite_yf6jp")
-color_ramp = SubResource("Gradient_pvh8i")
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_4e4qa"]
+width = 256
+height = 256
+noise = SubResource("FastNoiseLite_q63kx")
+color_ramp = SubResource("Gradient_ybnme")
 seamless = true
-
-[sub_resource type="Gradient" id="Gradient_45rpi"]
-offsets = PackedFloat32Array(0, 0.12, 0.4, 0.5, 1)
-colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_mfhad"]
-gradient = SubResource("Gradient_45rpi")
-fill_to = Vector2(0, 1)
 
 [resource]
 shader = ExtResource("1_pvh8i")
-shader_parameter/color_gradient = SubResource("GradientTexture2D_45rpi")
-shader_parameter/patina = SubResource("NoiseTexture2D_45rpi")
-shader_parameter/patina_size = 1.0
-shader_parameter/patina_strength = 2.0
-shader_parameter/stars = ExtResource("2_yf6jp")
-shader_parameter/nebula = ExtResource("2_55dcu")
-shader_parameter/stars_gradient_mask = SubResource("GradientTexture2D_mfhad")
-shader_parameter/stars_size = 13.0
-shader_parameter/stars_strength = 1.0
-shader_parameter/nebula_strength = 1.0
-shader_parameter/nebula_vertical_gradient_mask = SubResource("GradientTexture2D_ck4fv")
+shader_parameter/gradient_texture = ExtResource("2_3rfyr")
+shader_parameter/stars_texture = ExtResource("2_yf6jp")
+shader_parameter/stars_gradient_mask_texture = ExtResource("3_q63kx")
+shader_parameter/stars_patina_texture = SubResource("NoiseTexture2D_4e4qa")
+shader_parameter/stars_scale = 12.0

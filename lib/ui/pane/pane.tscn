@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://vru7jji7q173" path="res://lib/ui/pane/textures/close_hover.png" id="3_6g8ad"]
 [ext_resource type="StyleBox" uid="uid://t5v1fvppunfh" path="res://lib/ui/pane/pane_texture.tres" id="3_g4tii"]
 [ext_resource type="Script" uid="uid://cab0wr23336si" path="res://lib/ui/dissolve/dissolve.gd" id="6_26m6i"]
-[ext_resource type="AudioStream" uid="uid://dv6indjo485lp" path="res://lib/ui/inventory/sounds/inventory_open.ogg" id="9_g4tii"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5lsyn"]
 shader = ExtResource("1_4e7ry")
@@ -43,8 +42,8 @@ layout_mode = 2
 use_parent_material = true
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 24
 text = "((Title))"
+uppercase = true
 
 [node name="Close" type="TextureButton" parent="Box/Header" unique_id=1750167357]
 use_parent_material = true
@@ -81,6 +80,5 @@ dissolve_control = NodePath("..")
 metadata/_custom_type_script = "uid://cab0wr23336si"
 
 [node name="Open" type="AudioStreamPlayer" parent="." unique_id=234160756]
-stream = ExtResource("9_g4tii")
 
 [connection signal="pressed" from="Box/Header/Close" to="." method="_on_close_pressed"]

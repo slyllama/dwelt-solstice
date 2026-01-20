@@ -1,20 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://bv2sf41x1ndhr"]
+[gd_scene format=3 uid="uid://bv2sf41x1ndhr"]
 
-[ext_resource type="FontFile" uid="uid://bi4a4vc7qpom8" path="res://generic/fonts/trebuchet.ttf" id="1_4qle8"]
 [ext_resource type="Script" uid="uid://84baub6qiu2v" path="res://lib/ui/spatial_text/spatial_text.gd" id="1_uleuf"]
 
-[node name="SpatialText" type="VisibleOnScreenNotifier3D"]
+[node name="SpatialText" type="VisibleOnScreenNotifier3D" unique_id=339733841]
 aabb = AABB(-0.1, -0.1, -0.1, 0.2, 0.2, 0.2)
 script = ExtResource("1_uleuf")
 
-[node name="BG" type="CanvasLayer" parent="."]
+[node name="BG" type="CanvasLayer" parent="." unique_id=1037611425]
 layer = -1
 
-[node name="Root" type="Control" parent="BG"]
+[node name="Root" type="Control" parent="BG" unique_id=747632861]
 layout_mode = 3
 anchors_preset = 0
 
-[node name="Label" type="Label" parent="BG/Root"]
+[node name="Label" type="Label" parent="BG/Root" unique_id=551546565]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 1
 anchors_preset = 8
@@ -30,8 +29,6 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.5882353)
 theme_override_constants/shadow_outline_size = 2
-theme_override_fonts/font = ExtResource("1_4qle8")
-theme_override_font_sizes/font_size = 13
 text = "((Text))"
 horizontal_alignment = 1
 vertical_alignment = 1

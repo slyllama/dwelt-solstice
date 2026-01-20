@@ -85,7 +85,7 @@ func set_density(get_density: float) -> void:
 
 # Note: shader changes are managed in the foliage handler
 func set_fade_distance(get_distance: float) -> void:
-	visibility_range_end = get_distance + 1.0
+	visibility_range_end = get_distance + 2.0
 
 func _ready() -> void:
 	cast_shadow = SHADOW_CASTING_SETTING_OFF

@@ -1,6 +1,5 @@
 shader_type spatial;
 render_mode unshaded, fog_disabled, ambient_light_disabled, shadows_disabled;
-
 #include "res://generic/materials/shaders/utils.gdshaderinc"
 
 uniform sampler2D bands_texture: source_color, filter_linear_mipmap, repeat_enable;

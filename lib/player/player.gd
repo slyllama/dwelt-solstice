@@ -1,11 +1,11 @@
 class_name DweltPlayer extends CharacterBody3D
 
-@export var effect_handler: EffectHandler
 @export_category("Physics")
 @export var speed := 3.0
 @export var speed_multiplier := 1.0 # used for lethargy etc
 @export var friction := 15.0
 @export var gravity_damping := 10.0
+
 var _target_velocity := Vector3.ZERO
 var _target_y_rotation := 0.0
 var _target_y_position := 0.0
@@ -68,17 +68,3 @@ func _physics_process(_delta: float) -> void:
 	# Send animation parameters to the mesh for animation blending
 	$RobotMesh.forward_blend = %InputHandler.direction.z
 	$RobotMesh.strafe_blend = %InputHandler.direction.x
-
-func _on_effect_expired(data: EffectData) -> void:
-	var id = data.id
-	match id:
-		"lethargy":
-			$RobotMesh/XydrydeSplash.emitting = false
-			speed_multiplier = 1.0
-
-func _on_effect_added(data: EffectData) -> void:
-	var id = data.id
-	match id:
-		"lethargy":
-			$RobotMesh/XydrydeSplash.emitting = true
-			speed_multiplier = 0.5

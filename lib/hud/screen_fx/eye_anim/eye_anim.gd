@@ -46,6 +46,3 @@ func animate() -> void:
 func _init() -> void:
 	# Make it play on top of everything else
 	z_index = 100
-
-func _ready() -> void:
-	print("eye instantiation")

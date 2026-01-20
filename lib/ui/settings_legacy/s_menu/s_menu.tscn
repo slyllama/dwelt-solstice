@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://bc8re648e3g51"]
+
+[ext_resource type="Script" uid="uid://do14xu30natdk" path="res://lib/ui/settings_legacy/s_menu/s_menu.gd" id="1_qukmt"]
+
+[node name="SMenu" type="HBoxContainer" unique_id=310602388]
+use_parent_material = true
+offset_right = 269.0
+offset_bottom = 18.0
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_constants/separation = 0
+script = ExtResource("1_qukmt")
+
+[node name="Label" type="Label" parent="." unique_id=595302174]
+use_parent_material = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0.8, 0.8, 0.8, 1)
+theme_override_font_sizes/font_size = 14
+text = "((Setting))"
+
+[node name="Value" type="OptionButton" parent="." unique_id=1342493811]
+use_parent_material = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+icon_alignment = 2
+expand_icon = true
+selected = 0
+fit_to_longest_item = false
+item_count = 1
+popup/item_0/id = 0
+
+[node name="Padding" type="ColorRect" parent="." unique_id=458520689]
+visible = false
+use_parent_material = true
+custom_minimum_size = Vector2(4, 0)
+layout_mode = 2
+mouse_filter = 1
+color = Color(1, 1, 1, 0)
+
+[connection signal="item_selected" from="Value" to="." method="_on_value_item_selected"]

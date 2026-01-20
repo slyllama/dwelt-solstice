@@ -26,7 +26,7 @@ config/icon="uid://dvswqaghjmks6"
 
 [audio]
 
-buses/default_bus_layout="res://abus.tres"
+buses/default_bus_layout="res://bus.tres"
 
 [autoload]
 
@@ -34,7 +34,6 @@ Utils="*res://lib/_global/utils.gd"
 Dwelt="*res://lib/_global/dwelt/dwelt.tscn"
 Save="*res://lib/_global/save.gd"
 Settings="*res://lib/_global/settings/settings.gd"
-EffectLibrary="*res://lib/_global/effect_library.gd"
 
 [debug]
 
@@ -53,7 +52,7 @@ enabled=PackedStringArray("res://addons/sly_tools/plugin.cfg")
 [gui]
 
 theme/custom="uid://bi1monawihtf2"
-theme/custom_font="uid://knusa64ltvaf"
+theme/custom_font="uid://dtoeseq6l76ld"
 
 [input]
 

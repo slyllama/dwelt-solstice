@@ -2,9 +2,9 @@ extends Marker3D
 
 @export var zoom_increment := 0.35
 @export var zoom_smoothness := 6.0
-@export var min_zoom := 1.2
-@export var max_zoom := 4.0
-@export var v_offset := 1.3
+@export var vertical_offset := 0.35
+@export var min_zoom := 1.0
+@export var max_zoom := 1.5
 
 @onready var target_zoom: float = $Camera.position.z
 @onready var target_x_rotation := rotation.x
@@ -40,9 +40,9 @@ func _physics_process(_delta: float) -> void:
 	rotation.y = lerp_angle(rotation.y,
 		target_y_rotation, Utils.crit_lerp(20.0))
 	
-	# Smooth camera movement - add a vertical offset multiplied by the zoom ratio
-	global_position = lerp(global_position,
-		get_parent().global_position + Vector3(0, v_offset * _zoom_ratio + 0.5, 0),
+	global_position = lerp(
+		global_position,
+		get_parent().global_position + Vector3(0, 1, 0) * vertical_offset,
 		Utils.crit_plerp(10.0))
 	
 	# Handle camera zoom

@@ -10,16 +10,13 @@
 [ext_resource type="Animation" uid="uid://cqpsbwgy2uxcd" path="res://lib/player/meshes/anims/idle.res" id="5_dyt5v"]
 [ext_resource type="ArrayMesh" uid="uid://bbnipptkru66r" path="res://lib/player/meshes/star.res" id="5_jyhpi"]
 [ext_resource type="Animation" uid="uid://dft5l21562sq" path="res://lib/player/meshes/anims/move_forward.res" id="6_jyhpi"]
-[ext_resource type="Texture2D" uid="uid://boj0ynv385hl6" path="res://generic/textures/splash_mote.png" id="8_5cb0d"]
 [ext_resource type="Animation" uid="uid://dn6jbc7cb2gch" path="res://lib/player/meshes/anims/strafe.res" id="8_g61qk"]
 [ext_resource type="Animation" uid="uid://b5rkwbh24208k" path="res://lib/player/meshes/anims/eye.res" id="8_up78s"]
 [ext_resource type="AudioStream" uid="uid://bkxx1ti38653a" path="res://lib/player/sounds/engine_idle.ogg" id="9_5x5nn"]
 [ext_resource type="AudioStream" uid="uid://bieahrad33g0x" path="res://lib/player/sounds/engine_moving.ogg" id="10_ram4p"]
 [ext_resource type="Script" uid="uid://dawjsepg8xsu4" path="res://lib/player/scripts/pan_handler.gd" id="12_r1bse"]
+[ext_resource type="Script" uid="uid://b5i7rv016nrvx" path="res://lib/player/scripts/trail.gd" id="12_v5dhk"]
 [ext_resource type="Script" uid="uid://dxhxw1e4niy37" path="res://lib/player/scripts/cursor_cast.gd" id="14_ego0t"]
-[ext_resource type="Script" uid="uid://1atitynmrtes" path="res://lib/effect/scripts/effect_handler.gd" id="17_1x433"]
-[ext_resource type="Script" uid="uid://ocqnbav2e5mm" path="res://lib/effect/effect.gd" id="18_7f82q"]
-[ext_resource type="Script" uid="uid://dsf0cxqijjlwy" path="res://lib/effect/scripts/effect_data.gd" id="19_hlh1u"]
 [ext_resource type="Texture2D" uid="uid://d0hejhyribi7a" path="res://lib/player/materials/textures/player_floor_decal.png" id="20_hlh1u"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_iochv"]
@@ -42,60 +39,10 @@ gradient = SubResource("Gradient_jyhpi")
 emission_shape = 2
 emission_sphere_radius = 0.16
 gravity = Vector3(0, 0.2, 0)
-scale_min = 0.19999999
-scale_max = 0.59999996
+scale_min = 0.39999998
+scale_max = 0.7
 color_initial_ramp = SubResource("GradientTexture1D_up78s")
 alpha_curve = SubResource("CurveTexture_5x5nn")
-
-[sub_resource type="Curve" id="Curve_kvqvl"]
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.78015566, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
-point_count = 3
-
-[sub_resource type="CurveTexture" id="CurveTexture_5cb0d"]
-curve = SubResource("Curve_kvqvl")
-
-[sub_resource type="Gradient" id="Gradient_ttoox"]
-colors = PackedColorArray(3.9106234e-07, 0.21176013, 0.07847882, 1, 0.42366454, 0.61386204, 0, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_kvqvl"]
-gradient = SubResource("Gradient_ttoox")
-
-[sub_resource type="Curve" id="Curve_5cb0d"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.45939085, 1), 5.5160007, 0.0, 0, 0, Vector2(1, 0.8473685), -0.7732376, 0.0, 0, 0]
-point_count = 3
-
-[sub_resource type="CurveTexture" id="CurveTexture_ttoox"]
-curve = SubResource("Curve_5cb0d")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_duig0"]
-emission_shape = 2
-emission_sphere_radius = 0.25
-angle_min = -179.99998
-angle_max = 180.00002
-direction = Vector3(0, 1, 0)
-spread = 7.0
-initial_velocity_min = 0.099999994
-initial_velocity_max = 0.29999998
-gravity = Vector3(0, -1.3, 0)
-scale_min = 0.7
-scale_curve = SubResource("CurveTexture_ttoox")
-color_initial_ramp = SubResource("GradientTexture1D_kvqvl")
-alpha_curve = SubResource("CurveTexture_5cb0d")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f5g47"]
-transparency = 1
-shading_mode = 0
-vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("8_5cb0d")
-billboard_mode = 3
-billboard_keep_scale = true
-particles_anim_h_frames = 1
-particles_anim_v_frames = 1
-particles_anim_loop = false
-
-[sub_resource type="QuadMesh" id="QuadMesh_ttoox"]
-material = SubResource("StandardMaterial3D_f5g47")
-size = Vector2(0.4, 0.4)
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_up78s"]
 _data = {
@@ -195,9 +142,13 @@ _data = {
 &"glow": SubResource("Animation_ego0t")
 }
 
-[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_2ocui"]
-dof_blur_far_distance = 9.0
-dof_blur_amount = 0.01
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v5dhk"]
+transparency = 1
+cull_mode = 2
+shading_mode = 0
+vertex_color_use_as_albedo = true
+
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_v5dhk"]
 
 [sub_resource type="Curve" id="Curve_2ocui"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.16071428, 1), 0.0, 0.0, 0, 0, Vector2(0.48214287, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -230,11 +181,6 @@ size = Vector2(0.04, 0.04)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_g61qk"]
 radius = 0.25
-
-[sub_resource type="Resource" id="Resource_5cb0d"]
-script = ExtResource("19_hlh1u")
-id = "test_effect"
-metadata/_custom_type_script = "uid://dsf0cxqijjlwy"
 
 [sub_resource type="Animation" id="Animation_5cb0d"]
 length = 0.001
@@ -275,9 +221,9 @@ _data = {
 &"rotate": SubResource("Animation_hlh1u")
 }
 
-[node name="Player" type="CharacterBody3D" unique_id=568758090 node_paths=PackedStringArray("effect_handler")]
+[node name="Player" type="CharacterBody3D" unique_id=568758090]
 script = ExtResource("1_al4t3")
-effect_handler = NodePath("EffectHandler")
+gravity_damping = 7.0
 
 [node name="Collision" type="CollisionShape3D" parent="." unique_id=920840416]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.16, 0)
@@ -314,23 +260,9 @@ autoplay = true
 [node name="Stars" type="GPUParticles3D" parent="RobotMesh" unique_id=519014292]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.12614095, -0.3235793)
 cast_shadow = 0
-amount = 64
 amount_ratio = 0.25
 process_material = SubResource("ParticleProcessMaterial_ram4p")
 draw_pass_1 = ExtResource("5_jyhpi")
-
-[node name="XydrydeSplash" type="GPUParticles3D" parent="RobotMesh" unique_id=347489653]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05623141, 0)
-cast_shadow = 0
-visibility_range_end = 14.0
-visibility_range_end_margin = 1.0
-visibility_range_fade_mode = 1
-emitting = false
-amount = 16
-lifetime = 0.65
-randomness = 0.25
-process_material = SubResource("ParticleProcessMaterial_duig0")
-draw_pass_1 = SubResource("QuadMesh_ttoox")
 
 [node name="Light" type="OmniLight3D" parent="RobotMesh" unique_id=399922897]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35, 0.75)
@@ -347,18 +279,40 @@ parameters/add_strafe/add_amount = 0.0
 libraries/ = SubResource("AnimationLibrary_v5dhk")
 autoplay = &"glow"
 
+[node name="Trail_L" type="MeshInstance3D" parent="RobotMesh" unique_id=993355678]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.043056488, -0.36639738)
+top_level = true
+material_override = SubResource("StandardMaterial3D_v5dhk")
+cast_shadow = 0
+mesh = SubResource("ImmediateMesh_v5dhk")
+script = ExtResource("12_v5dhk")
+from = 0.02
+motion_delta = 0.02
+lifespan = 0.6
+start_color = Color(0.41960785, 0.003921569, 0.9098039, 0.39215687)
+
+[node name="Trail_R" type="MeshInstance3D" parent="RobotMesh" unique_id=786966583]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.043056488, -0.36639738)
+top_level = true
+material_override = SubResource("StandardMaterial3D_v5dhk")
+cast_shadow = 0
+mesh = SubResource("ImmediateMesh_v5dhk")
+script = ExtResource("12_v5dhk")
+from = 0.02
+motion_delta = 0.02
+lifespan = 0.6
+start_color = Color(0.42060563, 0.0020457495, 0.91086686, 0.39215687)
+
 [node name="Orbit" type="Marker3D" parent="." unique_id=13830377]
-transform = Transform3D(-0.99999994, 4.3711374e-08, -7.5710325e-08, 0, 0.86602515, 0.49999985, 8.742277e-08, 0.49999985, -0.86602515, 0, 0, 0)
+transform = Transform3D(-0.99999994, -2.2626672e-08, 8.444389e-08, 0, 0.9659255, 0.25881895, -8.742277e-08, 0.25881895, -0.9659255, 0, 0.35, 0)
 script = ExtResource("5_4ok3w")
-min_zoom = 1.0
-max_zoom = 2.0
-v_offset = 0.5
 
 [node name="Camera" type="Camera3D" parent="Orbit" unique_id=599081566]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.6)
-attributes = SubResource("CameraAttributesPractical_2ocui")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.5)
+h_offset = 0.35
 current = true
-fov = 90.0
+fov = 85.0
+far = 200.0
 
 [node name="Motes" type="GPUParticles3D" parent="Orbit/Camera" unique_id=848711266]
 transform = Transform3D(0.8660255, 7.45058e-09, -0.49999997, -0.12940954, 0.96592575, -0.22414388, 0.48296294, 0.258819, 0.83651626, -2.3692846e-07, 0.1931852, -2.5482357)
@@ -390,16 +344,6 @@ shape = SubResource("SphereShape3D_g61qk")
 unique_name_in_owner = true
 script = ExtResource("1_odf55")
 
-[node name="EffectHandler" type="Node" parent="." unique_id=1567029640]
-unique_name_in_owner = true
-script = ExtResource("17_1x433")
-metadata/_custom_type_script = "uid://1atitynmrtes"
-
-[node name="Effect" type="Node" parent="EffectHandler" unique_id=476656955]
-script = ExtResource("18_7f82q")
-data = SubResource("Resource_5cb0d")
-metadata/_custom_type_script = "uid://ocqnbav2e5mm"
-
 [node name="YCast" type="RayCast3D" parent="." unique_id=2054951805]
 target_position = Vector3(0, -1.85, 0)
 
@@ -413,6 +357,3 @@ cull_mask = 1048572
 [node name="RotateDecal" type="AnimationPlayer" parent="FloorDecal" unique_id=1923567439]
 libraries/ = SubResource("AnimationLibrary_kvqvl")
 autoplay = &"rotate"
-
-[connection signal="effect_added" from="EffectHandler" to="." method="_on_effect_added"]
-[connection signal="effect_expired" from="EffectHandler" to="." method="_on_effect_expired"]

@@ -8,9 +8,6 @@ const default_data := { # default save data
 		"elemental": "0",
 		"kinetic": "0",
 		"verdant": "0"
-	},
-	"inventory": {
-		"1": { "id": "test_red" }
 	}
 }
 

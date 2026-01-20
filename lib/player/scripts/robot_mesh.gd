@@ -43,3 +43,7 @@ func _physics_process(delta: float) -> void:
 	$Anim.set("parameters/add_strafe/add_amount", _target_strafe_blend)
 	
 	_last_y_rotation = rotation.y
+	
+	# Attach trails to legs
+	$Trail_L.global_position = $Armature/Skeleton3D/Foot_SW/Leg_SW.global_position
+	$Trail_R.global_position = $Armature/Skeleton3D/Foot_SE/Leg_SE.global_position
