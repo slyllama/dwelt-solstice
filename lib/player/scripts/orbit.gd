@@ -13,7 +13,6 @@ extends Marker3D
 func _ready() -> void:
 	Dwelt.camera = $Camera
 	top_level = true
-	
 	$Camera.top_level = true
 
 func _input(event: InputEvent) -> void:
