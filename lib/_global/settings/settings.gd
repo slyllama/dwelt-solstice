@@ -4,7 +4,7 @@ const SETTINGS_PATH := "user://settings.json"
 
 const default_data := { # default settings data
 	"window_mode": "full_screen",
-	"bloom": "false",
+	"bloom": "off",
 	"shadows": "low",
 	"fps_limit": "60fps",
 	"foliage_density": "medium",

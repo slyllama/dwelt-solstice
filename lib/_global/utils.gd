@@ -3,10 +3,6 @@ extends Node
 var _delta := 0.0
 var _pdelta := 0.0
 
-func b(s: String) -> bool: # shorthand to get a boolean from a string
-	if s == "true": return(true)
-	else: return(false)
-
 func crit_lerp(speed: float) -> float:
 	return(clamp(1.0 - exp(-speed * _delta), 0.0, 1.0))
 

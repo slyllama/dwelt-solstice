@@ -7,7 +7,10 @@ func _ready() -> void:
 	Settings.changed.connect(func(_s: String):
 		if _s == "bloom":
 			if %Sky.environment:
-				%Sky.environment.glow_enabled = Utils.b(Settings.data.bloom)
+				if Settings.data.bloom == "on":
+					%Sky.environment.glow_enabled = true
+				else:
+					%Sky.environment.glow_enabled = false
 		elif _s == "shadows":
 			if sun:
 				var _shadow_quality = Settings.data.shadows

@@ -1,0 +1,316 @@
+[gd_scene format=3 uid="uid://plbk0hbameip"]
+
+[ext_resource type="Script" uid="uid://1tipj8x0bi0x" path="res://lib/ui/settings/settings.gd" id="1_t4ec1"]
+[ext_resource type="Texture2D" uid="uid://l6cie2u2qujs" path="res://generic/materials/textures/tile_diff.jpg" id="2_hb0dw"]
+[ext_resource type="FontFile" uid="uid://dtoeseq6l76ld" path="res://generic/fonts/work_sans.ttf" id="2_vq776"]
+[ext_resource type="Shader" uid="uid://ct67yt8p8tfaj" path="res://lib/hud/screen_fx/materials/shaders/smoke.gdshader" id="3_luauc"]
+[ext_resource type="Texture2D" uid="uid://b6bejsd6pnllp" path="res://lib/hud/screen_fx/materials/textures/smoke_mask.jpg" id="4_d8jhr"]
+[ext_resource type="PackedScene" uid="uid://83qbe1li047w" path="res://lib/ui/settings/s_menu/s_menu.tscn" id="4_f8k2f"]
+[ext_resource type="Script" uid="uid://bneif34t4ei31" path="res://lib/hud/screen_fx/scripts/smoke.gd" id="5_hgqh3"]
+
+[sub_resource type="Gradient" id="Gradient_qppq2"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_sbwqd"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_h55c1"]
+width = 128
+height = 128
+noise = SubResource("FastNoiseLite_sbwqd")
+color_ramp = SubResource("Gradient_qppq2")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5u8e1"]
+shader = ExtResource("3_luauc")
+shader_parameter/smoke_texture = ExtResource("4_d8jhr")
+shader_parameter/wobble_texture = SubResource("NoiseTexture2D_h55c1")
+shader_parameter/feather = 0.2
+shader_parameter/smoke_uv_scale = 2.5
+
+[sub_resource type="Gradient" id="Gradient_hb0dw"]
+offsets = PackedFloat32Array(0.1, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_f8k2f"]
+gradient = SubResource("Gradient_hb0dw")
+fill_to = Vector2(0, 1)
+
+[sub_resource type="Animation" id="Animation_t4ec1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BG:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CoreBox:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_vq776"]
+resource_name = "appear"
+length = 0.6
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BG:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CoreBox:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.19999999, 0.25, 0.35, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0.19607843), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_f8k2f"]
+resource_name = "disappear"
+length = 0.4
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BG:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CoreBox:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.050000012, 0.15, 0.39999998),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.6862745), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hb0dw"]
+_data = {
+&"RESET": SubResource("Animation_t4ec1"),
+&"appear": SubResource("Animation_vq776"),
+&"disappear": SubResource("Animation_f8k2f")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hb0dw"]
+content_margin_left = 20.0
+content_margin_top = 20.0
+content_margin_right = 20.0
+content_margin_bottom = 10.0
+bg_color = Color(0, 0, 0, 1)
+border_width_top = 2
+border_color = Color(0.5, 0.5, 0.5, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_luauc"]
+content_margin_left = 20.0
+content_margin_top = 15.0
+content_margin_right = 20.0
+content_margin_bottom = 10.0
+bg_color = Color(0.24705882, 0.11372549, 0.4, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f8k2f"]
+content_margin_left = 12.0
+content_margin_top = 12.0
+content_margin_right = 12.0
+content_margin_bottom = 12.0
+bg_color = Color(0.24705882, 0.11372549, 0.4, 1)
+border_width_bottom = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xyodn"]
+content_margin_left = 10.0
+content_margin_top = 2.0
+content_margin_right = 10.0
+content_margin_bottom = 2.0
+bg_color = Color(0.1232, 0.055999994, 0.2, 1)
+border_width_bottom = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ailwr"]
+content_margin_left = 12.0
+content_margin_top = 2.0
+content_margin_right = 12.0
+content_margin_bottom = 2.0
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+
+[node name="Settings" type="CanvasLayer" unique_id=964415197]
+script = ExtResource("1_t4ec1")
+
+[node name="Debug" type="TextureRect" parent="." unique_id=1757149523]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_hb0dw")
+stretch_mode = 1
+
+[node name="Smoke" type="ColorRect" parent="." unique_id=851176252]
+material = SubResource("ShaderMaterial_5u8e1")
+instance_shader_parameters/alpha = 0.50000002375
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+script = ExtResource("5_hgqh3")
+disappear_on_start = false
+
+[node name="BG" type="TextureRect" parent="." unique_id=816548512]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+texture = SubResource("GradientTexture2D_f8k2f")
+
+[node name="Animations" type="AnimationPlayer" parent="." unique_id=886302283]
+libraries/ = SubResource("AnimationLibrary_hb0dw")
+
+[node name="CoreBox" type="VBoxContainer" parent="." unique_id=1312138695]
+custom_minimum_size = Vector2(1000, 500)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -271.0
+offset_right = 500.0
+offset_bottom = 229.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="CoreBox" unique_id=1467542950]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_vq776")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_hb0dw")
+text = "Settings"
+uppercase = true
+
+[node name="Scroller" type="ScrollContainer" parent="CoreBox" unique_id=835987863]
+layout_mode = 2
+size_flags_vertical = 3
+follow_focus = true
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="SettingsBox" type="VBoxContainer" parent="CoreBox/Scroller" unique_id=1173576121]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="WindowMode" parent="CoreBox/Scroller/SettingsBox" unique_id=164433354 instance=ExtResource("4_f8k2f")]
+layout_mode = 2
+id = "window_mode"
+title = "Window Mode"
+options = Array[String](["windowed", "maximized", "full_screen"])
+
+[node name="FPSLimit" parent="CoreBox/Scroller/SettingsBox" unique_id=1046975402 instance=ExtResource("4_f8k2f")]
+layout_mode = 2
+id = "fps_limit"
+title = "FPS Limit"
+options = Array[String](["30fps", "60fps", "144fps", "Unlimited"])
+
+[node name="Shadows" parent="CoreBox/Scroller/SettingsBox" unique_id=1463439834 instance=ExtResource("4_f8k2f")]
+layout_mode = 2
+id = "shadows"
+title = "Shadows"
+options = Array[String](["off", "low", "medium", "high"])
+
+[node name="Bloom" parent="CoreBox/Scroller/SettingsBox" unique_id=822291301 instance=ExtResource("4_f8k2f")]
+layout_mode = 2
+id = "bloom"
+title = "Bloom"
+options = Array[String](["on", "off"])
+
+[node name="Foliage" type="Label" parent="CoreBox/Scroller/SettingsBox" unique_id=1342551341]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_vq776")
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxFlat_luauc")
+text = "Foliage"
+uppercase = true
+
+[node name="FoliageDensity" parent="CoreBox/Scroller/SettingsBox" unique_id=38960530 instance=ExtResource("4_f8k2f")]
+layout_mode = 2
+id = "foliage_density"
+title = "Foliage Density"
+options = Array[String](["low", "medium", "high"])
+
+[node name="FoliageRenderDist" parent="CoreBox/Scroller/SettingsBox" unique_id=174858389 instance=ExtResource("4_f8k2f")]
+layout_mode = 2
+id = "foliage_render_distance"
+title = "Foliage Render Distance"
+options = Array[String](["low", "medium", "high"])
+
+[node name="Footer" type="HBoxContainer" parent="CoreBox" unique_id=1114932850]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Apply" type="Button" parent="CoreBox/Footer" unique_id=829876485]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_focus_color = Color(0.24705882, 0.11372549, 0.4, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_f8k2f")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xyodn")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ailwr")
+text = "SAVE"
+
+[node name="Cancel" type="Button" parent="CoreBox/Footer" unique_id=1258372105]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_focus_color = Color(0.24705882, 0.11372549, 0.4, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_f8k2f")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xyodn")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ailwr")
+text = "CANCEL"
+
+[connection signal="pressed" from="CoreBox/Footer/Apply" to="." method="_on_apply_pressed"]
+[connection signal="pressed" from="CoreBox/Footer/Cancel" to="." method="_on_cancel_pressed"]
