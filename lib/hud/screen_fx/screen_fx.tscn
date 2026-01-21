@@ -9,15 +9,15 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xdeap"]
 shader = ExtResource("1_ovsh1")
-shader_parameter/position = 0.250000011875
+shader_parameter/position = 0.400000019
 shader_parameter/feather = 0.2
 shader_parameter/strength = 2.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_visue"]
 shader = ExtResource("1_h2nih")
 shader_parameter/position = 0.430000020425
-shader_parameter/feather = 0.150000007125
-shader_parameter/alpha = 0.800000038
+shader_parameter/feather = 0.430000020425
+shader_parameter/alpha = 1.0
 
 [sub_resource type="Gradient" id="Gradient_cdmtb"]
 

@@ -3,28 +3,7 @@
 [ext_resource type="Script" uid="uid://1tipj8x0bi0x" path="res://lib/ui/settings/settings.gd" id="1_t4ec1"]
 [ext_resource type="Texture2D" uid="uid://l6cie2u2qujs" path="res://generic/materials/textures/tile_diff.jpg" id="2_hb0dw"]
 [ext_resource type="FontFile" uid="uid://dtoeseq6l76ld" path="res://generic/fonts/work_sans.ttf" id="2_vq776"]
-[ext_resource type="Shader" uid="uid://ct67yt8p8tfaj" path="res://lib/hud/screen_fx/materials/shaders/smoke.gdshader" id="3_luauc"]
-[ext_resource type="Texture2D" uid="uid://b6bejsd6pnllp" path="res://lib/hud/screen_fx/materials/textures/smoke_mask.jpg" id="4_d8jhr"]
 [ext_resource type="PackedScene" uid="uid://83qbe1li047w" path="res://lib/ui/settings/s_menu/s_menu.tscn" id="4_f8k2f"]
-[ext_resource type="Script" uid="uid://bneif34t4ei31" path="res://lib/hud/screen_fx/scripts/smoke.gd" id="5_hgqh3"]
-
-[sub_resource type="Gradient" id="Gradient_qppq2"]
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_sbwqd"]
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_h55c1"]
-width = 128
-height = 128
-noise = SubResource("FastNoiseLite_sbwqd")
-color_ramp = SubResource("Gradient_qppq2")
-seamless = true
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_5u8e1"]
-shader = ExtResource("3_luauc")
-shader_parameter/smoke_texture = ExtResource("4_d8jhr")
-shader_parameter/wobble_texture = SubResource("NoiseTexture2D_h55c1")
-shader_parameter/feather = 0.2
-shader_parameter/smoke_uv_scale = 2.5
 
 [sub_resource type="Gradient" id="Gradient_hb0dw"]
 offsets = PackedFloat32Array(0.1, 1)
@@ -63,8 +42,8 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_vq776"]
 resource_name = "appear"
-length = 0.6
-step = 0.01
+length = 0.4
+step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -72,7 +51,7 @@ tracks/0/path = NodePath("BG:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
+"times": PackedFloat32Array(0, 0.1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -84,7 +63,7 @@ tracks/1/path = NodePath("CoreBox:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.19999999, 0.25, 0.35, 0.6),
+"times": PackedFloat32Array(0, 0.09999999, 0.15, 0.25, 0.4),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0.19607843), Color(1, 1, 1, 1)]
@@ -182,19 +161,6 @@ grow_vertical = 2
 mouse_filter = 2
 texture = ExtResource("2_hb0dw")
 stretch_mode = 1
-
-[node name="Smoke" type="ColorRect" parent="." unique_id=851176252]
-material = SubResource("ShaderMaterial_5u8e1")
-instance_shader_parameters/alpha = 0.50000002375
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-color = Color(0, 0, 0, 1)
-script = ExtResource("5_hgqh3")
-disappear_on_start = false
 
 [node name="BG" type="TextureRect" parent="." unique_id=816548512]
 modulate = Color(1, 1, 1, 0)

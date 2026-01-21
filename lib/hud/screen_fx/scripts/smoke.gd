@@ -19,7 +19,5 @@ func disappear(speed := 1.3) -> void:
 func _ready() -> void:
 	if disappear_on_start:
 		set_state(0.0)
-		print("doingthis")
 		disappear()
-	else:
-		set_state(1.0) # waiting to be started
+	else: set_state(1.0) # waiting to be started

@@ -95,15 +95,18 @@ shadow_size = 8
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_1c0d7"]
 color = Color(0.3, 0.3, 0.3, 1)
 
-[sub_resource type="StyleBoxLine" id="StyleBoxLine_fp0go"]
-color = Color(0.2, 0.2, 0.2, 1)
-thickness = 12
-vertical = true
+[sub_resource type="Gradient" id="Gradient_fp0go"]
+colors = PackedColorArray(0.24705882, 0.11372549, 0.4, 1, 0, 0, 0, 0.39215687)
 
-[sub_resource type="StyleBoxLine" id="StyleBoxLine_l2rom"]
-color = Color(0.45, 0.45, 0.45, 1)
-thickness = 12
-vertical = true
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_56vwn"]
+gradient = SubResource("Gradient_fp0go")
+fill_to = Vector2(0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l2rom"]
+texture = SubResource("GradientTexture2D_56vwn")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wb6h6"]
+bg_color = Color(0.24705882, 0.11372549, 0.4, 1)
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_hgjgm"]
 color = Color(0.9, 0.9, 0.9, 1)
@@ -146,7 +149,7 @@ PopupMenu/icons/radio_unchecked_disabled = null
 PopupMenu/styles/hover = SubResource("StyleBoxEmpty_fp0go")
 PopupMenu/styles/panel = SubResource("StyleBoxFlat_hgjgm")
 PopupMenu/styles/separator = SubResource("StyleBoxLine_1c0d7")
-VScrollBar/styles/grabber = SubResource("StyleBoxLine_fp0go")
-VScrollBar/styles/grabber_highlight = SubResource("StyleBoxLine_l2rom")
+VScrollBar/styles/grabber = SubResource("StyleBoxTexture_l2rom")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_wb6h6")
 VScrollBar/styles/grabber_pressed = SubResource("StyleBoxLine_hgjgm")
 VScrollBar/styles/scroll = SubResource("StyleBoxLine_56vwn")

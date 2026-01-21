@@ -14,26 +14,21 @@ func appear() -> void:
 					focus_grabbed = true
 	visible = true
 	$Animations.play("appear")
-	$Smoke.appear(0.2)
 
 func disappear() -> void:
 	$Animations.play("disappear")
-	$Smoke.disappear(0.3)
 	await $Animations.animation_finished
 	visible = false
 
 func _ready() -> void:
 	if Engine.is_editor_hint(): # show for debugging
 		$Animations.play("appear")
-	else:
-		visible = false
+	else: visible = false
 
 func _input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("ui_cancel"):
-		if !visible:
-			appear()
-		else:
-			disappear()
+		if !visible: appear()
+		else: disappear()
 
 func _on_cancel_pressed() -> void:
 	disappear()
