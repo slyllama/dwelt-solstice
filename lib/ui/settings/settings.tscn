@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://83qbe1li047w" path="res://lib/ui/settings/s_menu/s_menu.tscn" id="4_f8k2f"]
 [ext_resource type="AudioStream" uid="uid://crqguk32xkawu" path="res://lib/ui/sounds/pane_open.ogg" id="5_ailwr"]
 [ext_resource type="AudioStream" uid="uid://btgnnweavsq0" path="res://lib/ui/sounds/pane_close.ogg" id="6_luauc"]
+[ext_resource type="Shader" uid="uid://dv114f0yt1j24" path="res://generic/materials/shaders/static.gdshader" id="7_luauc"]
+[ext_resource type="Texture2D" uid="uid://c3ta1dijhey7h" path="res://lib/player/materials/textures/hologram_mask.jpg" id="8_d8jhr"]
 
 [sub_resource type="Gradient" id="Gradient_hb0dw"]
 offsets = PackedFloat32Array(0.1, 1)
@@ -166,17 +168,25 @@ border_color = Color(0.5, 0.5, 0.5, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_luauc"]
 content_margin_left = 20.0
-content_margin_top = 15.0
+content_margin_top = 7.0
 content_margin_right = 20.0
-content_margin_bottom = 10.0
-bg_color = Color(0.24705882, 0.11372549, 0.4, 1)
+content_margin_bottom = 7.0
+bg_color = Color(0, 0.32394633, 0.57480913, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f8k2f"]
 content_margin_left = 12.0
 content_margin_top = 12.0
 content_margin_right = 12.0
 content_margin_bottom = 12.0
-bg_color = Color(0.24705882, 0.11372549, 0.4, 1)
+bg_color = Color(0, 0.3254902, 0.5764706, 1)
+border_width_bottom = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d8jhr"]
+content_margin_left = 10.0
+content_margin_top = 2.0
+content_margin_right = 10.0
+content_margin_bottom = 2.0
+bg_color = Color(0, 0.11333332, 0.2, 1)
 border_width_bottom = 2
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xyodn"]
@@ -184,7 +194,7 @@ content_margin_left = 10.0
 content_margin_top = 2.0
 content_margin_right = 10.0
 content_margin_bottom = 2.0
-bg_color = Color(0.1232, 0.055999994, 0.2, 1)
+bg_color = Color(0, 0.16999999, 0.3, 1)
 border_width_bottom = 2
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ailwr"]
@@ -197,6 +207,14 @@ border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d8jhr"]
+shader = ExtResource("7_luauc")
+shader_parameter/hologram_mask_texture = ExtResource("8_d8jhr")
+shader_parameter/hologram_uv_scale = 146.0
+shader_parameter/hologram_strength = 0.31
+shader_parameter/hologram_exponent = 3.0
+shader_parameter/hologram_speed = 0.5
 
 [node name="Settings" type="CanvasLayer" unique_id=964415197]
 script = ExtResource("1_t4ec1")
@@ -287,7 +305,7 @@ options = Array[String](["on", "off"])
 [node name="Foliage" type="Label" parent="CoreBox/Scroller/SettingsBox" unique_id=1342551341]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_vq776")
-theme_override_font_sizes/font_size = 22
+theme_override_font_sizes/font_size = 18
 theme_override_styles/normal = SubResource("StyleBoxFlat_luauc")
 text = "Foliage"
 uppercase = true
@@ -311,9 +329,10 @@ theme_override_constants/separation = 10
 [node name="Apply" type="Button" parent="CoreBox/Footer" unique_id=829876485]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_colors/font_focus_color = Color(0.24705882, 0.11372549, 0.4, 1)
+theme_override_colors/font_focus_color = Color(0, 0.3254902, 0.5764706, 1)
 theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxFlat_f8k2f")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_d8jhr")
 theme_override_styles/hover = SubResource("StyleBoxFlat_xyodn")
 theme_override_styles/focus = SubResource("StyleBoxFlat_ailwr")
 text = "SAVE"
@@ -324,6 +343,7 @@ size_flags_horizontal = 3
 theme_override_colors/font_focus_color = Color(0.24705882, 0.11372549, 0.4, 1)
 theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxFlat_f8k2f")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_d8jhr")
 theme_override_styles/hover = SubResource("StyleBoxFlat_xyodn")
 theme_override_styles/focus = SubResource("StyleBoxFlat_ailwr")
 text = "CANCEL"
@@ -333,6 +353,15 @@ stream = ExtResource("5_ailwr")
 
 [node name="Close" type="AudioStreamPlayer" parent="." unique_id=1304342152]
 stream = ExtResource("6_luauc")
+
+[node name="Static" type="ColorRect" parent="." unique_id=1983094111]
+material = SubResource("ShaderMaterial_d8jhr")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 
 [connection signal="pressed" from="CoreBox/Footer/Apply" to="." method="_on_apply_pressed"]
 [connection signal="pressed" from="CoreBox/Footer/Cancel" to="." method="_on_cancel_pressed"]

@@ -14,9 +14,11 @@ func appear() -> void:
 					focus_grabbed = true
 	visible = true
 	$Animations.play("appear")
+	Dwelt.screen_fx.appear_smoke(0.2)
 
 func disappear() -> void:
 	$Animations.play("disappear")
+	Dwelt.screen_fx.disappear_smoke(0.2)
 	await $Animations.animation_finished
 	visible = false
 

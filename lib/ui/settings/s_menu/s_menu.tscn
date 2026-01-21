@@ -11,9 +11,9 @@ border_color = Color(0.5, 0.5, 0.5, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_njc3x"]
 content_margin_left = 20.0
-content_margin_top = 10.0
+content_margin_top = 5.0
 content_margin_right = 20.0
-content_margin_bottom = 10.0
+content_margin_bottom = 5.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lu2en"]
 content_margin_left = 8.0
@@ -37,11 +37,11 @@ bg_color = Color(0.46452415, 0.32339358, 0.62774956, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3q3bq"]
 content_margin_left = 8.0
 content_margin_right = 8.0
-bg_color = Color(0.24705882, 0.11372549, 0.4, 1)
-border_width_bottom = 2
+bg_color = Color(0, 0.3254902, 0.5764706, 1)
 
 [sub_resource type="Gradient" id="Gradient_0pamw"]
-colors = PackedColorArray(0, 0, 0, 0, 0.10758784, 0.1018788, 0.27249253, 1)
+offsets = PackedFloat32Array(0, 0.9845361)
+colors = PackedColorArray(0, 0, 0, 0, 0, 0.16999999, 0.3, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_cs5ph"]
 gradient = SubResource("Gradient_0pamw")
@@ -50,6 +50,8 @@ gradient = SubResource("Gradient_0pamw")
 texture = SubResource("GradientTexture2D_cs5ph")
 
 [node name="SMenu" type="PanelContainer" unique_id=164433354]
+offset_right = 451.0
+offset_bottom = 33.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_njc3x")
 script = ExtResource("1_ef84n")
 
@@ -67,7 +69,7 @@ text = "((Label))"
 uppercase = true
 
 [node name="Previous" type="Button" parent="Box" unique_id=773696005]
-custom_minimum_size = Vector2(32, 0)
+custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
 focus_neighbor_right = NodePath("../Next")
 theme_override_styles/normal = SubResource("StyleBoxFlat_lu2en")
@@ -93,7 +95,7 @@ vertical_alignment = 1
 uppercase = true
 
 [node name="Next" type="Button" parent="Box" unique_id=1026072666]
-custom_minimum_size = Vector2(32, 0)
+custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
 focus_neighbor_left = NodePath("../Previous")
 theme_override_styles/normal = SubResource("StyleBoxFlat_lu2en")

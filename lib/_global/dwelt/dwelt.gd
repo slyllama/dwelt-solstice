@@ -9,6 +9,7 @@ signal window_adjusted # called when retina is detected
 # References
 var camera: Camera3D
 var player: DweltPlayer
+var screen_fx: ScreenFX
 
 func _ready() -> void:
 	# Signal connections
