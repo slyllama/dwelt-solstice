@@ -33,29 +33,26 @@ texture = ExtResource("3_v7nqf")
 expand_mode = 1
 
 [node name="RenderMonitor" type="RichTextLabel" parent="." unique_id=666236983]
-anchors_preset = 6
+anchors_preset = 1
 anchor_left = 1.0
-anchor_top = 0.5
 anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -139.0
-offset_top = -8.5
-offset_right = -16.0
-offset_bottom = 8.5
+offset_left = -131.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = 25.0
 grow_horizontal = 0
-grow_vertical = 2
 mouse_filter = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/line_separation = -2
 theme_override_constants/paragraph_separation = -2
 theme_override_fonts/normal_font = ExtResource("1_dcyf8")
+theme_override_font_sizes/normal_font_size = 12
 bbcode_enabled = true
 text = "((RenderMonitor))"
 fit_content = true
 scroll_active = false
 autowrap_mode = 0
 horizontal_alignment = 2
-vertical_alignment = 1
 script = ExtResource("1_o36f6")
 
 [node name="EyeAnim" parent="." unique_id=396779311 instance=ExtResource("10_ixdrw")]
