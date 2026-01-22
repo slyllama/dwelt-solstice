@@ -2,8 +2,10 @@ extends Node
 
 const GRAVITY := -9.8
 
+# Shortcuts
 signal play_voice(emotion: String)
 signal ui_click
+
 signal window_adjusted # called when retina is detected
 
 # References

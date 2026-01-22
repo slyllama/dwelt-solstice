@@ -5,6 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://cj62t5pv5aa70" path="res://generic/sounds/click.ogg" id="3_e4wmt"]
 
 [node name="Dwelt" type="Node" unique_id=549062897]
+process_mode = 3
 script = ExtResource("1_16b2d")
 
 [node name="WindowHandler" type="Node" parent="." unique_id=1695171489]

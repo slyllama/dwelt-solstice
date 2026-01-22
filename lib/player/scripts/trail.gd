@@ -18,6 +18,7 @@ var og_pos: Vector3
 func _ready() -> void:
 	og_pos = get_global_transform().origin
 	mesh = ImmediateMesh.new()
+	enabled = true
 
 func _process(delta: float) -> void:
 	if (og_pos - get_global_transform().origin).length() > motion_delta and enabled:

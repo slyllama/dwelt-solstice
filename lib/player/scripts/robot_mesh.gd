@@ -45,5 +45,5 @@ func _physics_process(delta: float) -> void:
 	_last_y_rotation = rotation.y
 	
 	# Attach trails to legs
-	$Trail_L.global_position = $Armature/Skeleton3D/Foot_SW/Leg_SW.global_position
-	$Trail_R.global_position = $Armature/Skeleton3D/Foot_SE/Leg_SE.global_position
+	$JetTrail_L.global_position = $Armature/Skeleton3D/Foot_SW/Leg_SW.global_position
+	$JetTrail_R.global_position = $Armature/Skeleton3D/Foot_SE/Leg_SE.global_position

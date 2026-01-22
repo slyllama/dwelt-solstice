@@ -10,12 +10,11 @@
 [ext_resource type="Animation" uid="uid://cqpsbwgy2uxcd" path="res://lib/player/meshes/anims/idle.res" id="5_dyt5v"]
 [ext_resource type="ArrayMesh" uid="uid://bbnipptkru66r" path="res://lib/player/meshes/star.res" id="5_jyhpi"]
 [ext_resource type="Animation" uid="uid://dft5l21562sq" path="res://lib/player/meshes/anims/move_forward.res" id="6_jyhpi"]
+[ext_resource type="PackedScene" uid="uid://cch37nak71yn0" path="res://lib/player/jet_trail/jet_trail.tscn" id="8_1x433"]
 [ext_resource type="Animation" uid="uid://dn6jbc7cb2gch" path="res://lib/player/meshes/anims/strafe.res" id="8_g61qk"]
 [ext_resource type="Animation" uid="uid://b5rkwbh24208k" path="res://lib/player/meshes/anims/eye.res" id="8_up78s"]
 [ext_resource type="AudioStream" uid="uid://bkxx1ti38653a" path="res://lib/player/sounds/engine_idle.ogg" id="9_5x5nn"]
 [ext_resource type="AudioStream" uid="uid://bieahrad33g0x" path="res://lib/player/sounds/engine_moving.ogg" id="10_ram4p"]
-[ext_resource type="Script" uid="uid://dawjsepg8xsu4" path="res://lib/player/scripts/pan_handler.gd" id="12_r1bse"]
-[ext_resource type="Script" uid="uid://b5i7rv016nrvx" path="res://lib/player/scripts/trail.gd" id="12_v5dhk"]
 [ext_resource type="Script" uid="uid://dxhxw1e4niy37" path="res://lib/player/scripts/cursor_cast.gd" id="14_ego0t"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_iochv"]
@@ -142,14 +141,6 @@ _data = {
 &"glow": SubResource("Animation_ego0t")
 }
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v5dhk"]
-transparency = 1
-cull_mode = 2
-shading_mode = 0
-vertex_color_use_as_albedo = true
-
-[sub_resource type="ImmediateMesh" id="ImmediateMesh_v5dhk"]
-
 [sub_resource type="Curve" id="Curve_2ocui"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.16071428, 1), 0.0, 0.0, 0, 0, Vector2(0.48214287, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 4
@@ -220,8 +211,9 @@ unit_size = 4.0
 autoplay = true
 
 [node name="Stars" type="GPUParticles3D" parent="RobotMesh" unique_id=519014292]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.12614095, -0.3235793)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.11239728, -0.1578772)
 cast_shadow = 0
+amount = 32
 amount_ratio = 0.25
 process_material = SubResource("ParticleProcessMaterial_ram4p")
 draw_pass_1 = ExtResource("5_jyhpi")
@@ -229,6 +221,10 @@ draw_pass_1 = ExtResource("5_jyhpi")
 [node name="Light" type="OmniLight3D" parent="RobotMesh" unique_id=399922897]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35, 0.75)
 omni_range = 1.0
+
+[node name="JetTrail_L" parent="RobotMesh" unique_id=125210422 instance=ExtResource("8_1x433")]
+
+[node name="JetTrail_R" parent="RobotMesh" unique_id=934605387 instance=ExtResource("8_1x433")]
 
 [node name="Anim" type="AnimationTree" parent="RobotMesh" unique_id=733744648]
 libraries/player = SubResource("AnimationLibrary_up78s")
@@ -241,36 +237,10 @@ parameters/add_strafe/add_amount = 0.0
 libraries/ = SubResource("AnimationLibrary_v5dhk")
 autoplay = &"glow"
 
-[node name="Trail_L" type="MeshInstance3D" parent="RobotMesh" unique_id=993355678]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.043056488, -0.36639738)
-top_level = true
-material_override = SubResource("StandardMaterial3D_v5dhk")
-cast_shadow = 0
-mesh = SubResource("ImmediateMesh_v5dhk")
-script = ExtResource("12_v5dhk")
-from = 0.02
-motion_delta = 0.02
-lifespan = 0.6
-start_color = Color(0, 0.47366646, 0.98, 0.5882353)
-
-[node name="Trail_R" type="MeshInstance3D" parent="RobotMesh" unique_id=786966583]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.043056488, -0.36639738)
-top_level = true
-material_override = SubResource("StandardMaterial3D_v5dhk")
-cast_shadow = 0
-mesh = SubResource("ImmediateMesh_v5dhk")
-script = ExtResource("12_v5dhk")
-from = 0.02
-motion_delta = 0.02
-lifespan = 0.6
-start_color = Color(0, 0.47366646, 0.98, 0.5882353)
-
 [node name="Orbit" type="Marker3D" parent="." unique_id=13830377]
 transform = Transform3D(-0.99999994, -2.2626672e-08, 8.444389e-08, 0, 0.9659255, 0.25881895, -8.742277e-08, 0.25881895, -0.9659255, 0, 0.35, 0)
 script = ExtResource("5_4ok3w")
 vertical_offset = 0.45
-min_zoom = 1.3
-max_zoom = 1.3
 
 [node name="Camera" type="Camera3D" parent="Orbit" unique_id=599081566]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.5)
@@ -296,14 +266,16 @@ current = true
 [node name="CursorCast" type="Node" parent="Orbit/Camera" unique_id=1663147991]
 script = ExtResource("14_ego0t")
 
-[node name="PanHandler" type="Node" parent="Orbit" unique_id=491024180]
-script = ExtResource("12_r1bse")
-
 [node name="SpringArm" type="SpringArm3D" parent="Orbit" unique_id=439967519]
 collision_mask = 2
 shape = SubResource("SphereShape3D_g61qk")
+spring_length = 1.3
 
 [node name="CameraAnchor" type="Marker3D" parent="Orbit/SpringArm" unique_id=582860990]
+
+[node name="OrbitStartDelay" type="Timer" parent="Orbit" unique_id=1865356644]
+one_shot = true
+autostart = true
 
 [node name="InputHandler" type="Node" parent="." unique_id=710152317]
 unique_name_in_owner = true

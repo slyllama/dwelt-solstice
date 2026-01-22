@@ -2,6 +2,9 @@
 extends CanvasLayer
 
 func appear() -> void:
+	get_tree().paused = true
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	
 	var focus_grabbed := false
 	# Update the displayed setting on each box before displaying them
 	# Grab focus on the first one
@@ -14,9 +17,12 @@ func appear() -> void:
 					focus_grabbed = true
 	visible = true
 	$Animations.play("appear")
-	Dwelt.screen_fx.appear_smoke(0.2)
+	Dwelt.screen_fx.appear_smoke(0.15)
 
 func disappear() -> void:
+	get_tree().paused = false
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	
 	$Animations.play("disappear")
 	Dwelt.screen_fx.disappear_smoke(0.2)
 	await $Animations.animation_finished

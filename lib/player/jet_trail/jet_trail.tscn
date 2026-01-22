@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://cch37nak71yn0"]
+
+[ext_resource type="Script" uid="uid://b5i7rv016nrvx" path="res://lib/player/scripts/trail.gd" id="1_p5wob"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eaarn"]
+transparency = 1
+cull_mode = 2
+shading_mode = 0
+vertex_color_use_as_albedo = true
+
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_qiiga"]
+
+[node name="JetTrail" type="MeshInstance3D" unique_id=125210422]
+top_level = true
+material_override = SubResource("StandardMaterial3D_eaarn")
+cast_shadow = 0
+mesh = SubResource("ImmediateMesh_qiiga")
+script = ExtResource("1_p5wob")
+enabled = false
+from = 0.01
+motion_delta = 0.02
+lifespan = 0.6
+start_color = Color(0, 0.47366646, 0.98, 0.5882353)

@@ -2,7 +2,6 @@
 
 [ext_resource type="FontFile" uid="uid://dtoeseq6l76ld" path="res://generic/fonts/work_sans.ttf" id="1_56vwn"]
 [ext_resource type="Texture2D" uid="uid://dk8q1rhxwsmsn" path="res://generic/textures/1px.png" id="3_fp0go"]
-[ext_resource type="Texture2D" uid="uid://u0j8rt146osu" path="res://generic/textures/menu_arrow.png" id="4_56vwn"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_37o18"]
 content_margin_left = 12.0
@@ -105,8 +104,15 @@ fill_to = Vector2(0, 1)
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l2rom"]
 texture = SubResource("GradientTexture2D_56vwn")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wb6h6"]
-bg_color = Color(0.24705882, 0.11372549, 0.4, 1)
+[sub_resource type="Gradient" id="Gradient_1c0d7"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_fp0go"]
+gradient = SubResource("Gradient_1c0d7")
+fill_to = Vector2(0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_56vwn"]
+texture = SubResource("GradientTexture2D_fp0go")
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_hgjgm"]
 color = Color(0.9, 0.9, 0.9, 1)
@@ -127,7 +133,6 @@ Label/fonts/font = ExtResource("1_56vwn")
 OptionButton/font_sizes/font_size = 13
 OptionButton/fonts/font = ExtResource("1_56vwn")
 OptionButton/icons/arrow = ExtResource("3_fp0go")
-OptionButton/icons/icon = ExtResource("4_56vwn")
 OptionButton/styles/hover = SubResource("StyleBoxFlat_56vwn")
 OptionButton/styles/normal = SubResource("StyleBoxFlat_iag48")
 OptionButton/styles/pressed = SubResource("StyleBoxFlat_l2rom")
@@ -150,6 +155,6 @@ PopupMenu/styles/hover = SubResource("StyleBoxEmpty_fp0go")
 PopupMenu/styles/panel = SubResource("StyleBoxFlat_hgjgm")
 PopupMenu/styles/separator = SubResource("StyleBoxLine_1c0d7")
 VScrollBar/styles/grabber = SubResource("StyleBoxTexture_l2rom")
-VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_wb6h6")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxTexture_56vwn")
 VScrollBar/styles/grabber_pressed = SubResource("StyleBoxLine_hgjgm")
 VScrollBar/styles/scroll = SubResource("StyleBoxLine_56vwn")

@@ -31,10 +31,6 @@ func play_voice(emotion := "all") -> void:
 	else:
 		var _idx := randi_range(0, VOICES[emotion].size() - 1)
 		$Voice.stream = VOICES[emotion][_idx]
-	
-	#Utils.pdebug("(Debug) playing robot sound '"
-		#+ str($Voice.stream.resource_path)
-		#+ "'..." , "Player/Sound")
 	$Voice.play()
 
 func _generate_voice_index() -> void:
@@ -47,10 +43,6 @@ func _init() -> void:
 
 func _ready() -> void:
 	_generate_voice_index()
-
-func _input(_event: InputEvent) -> void:
-	if Input.is_action_just_pressed("ui_home"): play_voice()
-	elif Input.is_action_just_pressed("ui_end"): play_voice("mischevious")
 
 func _process(_delta: float) -> void:
 	# Apply movement sound
