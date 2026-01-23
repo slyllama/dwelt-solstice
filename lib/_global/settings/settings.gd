@@ -51,3 +51,6 @@ func load_file() -> void:
 	file_loaded.emit() # used for initial setup of setting pane fields
 	for _s in data:
 		changed.emit(_s) # propagate all settings on game start
+
+func _init() -> void:
+	process_mode = Node.PROCESS_MODE_ALWAYS

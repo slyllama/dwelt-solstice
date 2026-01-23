@@ -1,7 +1,8 @@
 extends Marker3D
 
-@export var vertical_offset := 0.35
-@export var zoom := 1.3
+@export var vertical_offset := 0.4
+@export var view_length := 1.1
+@export var view_sensitivity := 0.75
 
 @onready var target_zoom: float = $Camera.position.z
 @onready var target_x_rotation := rotation.x
@@ -13,11 +14,12 @@ func _ready() -> void:
 	Dwelt.camera = $Camera
 	top_level = true
 	$Camera.top_level = true
-	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	if get_window().has_focus():
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
-		_event_relative = event.relative
+		_event_relative = event.relative * view_sensitivity
 
 func _physics_process(_delta: float) -> void:
 	var _last_event_relative := _event_relative
@@ -37,9 +39,9 @@ func _physics_process(_delta: float) -> void:
 		get_parent().global_position + Vector3(0, 1, 0) * vertical_offset,
 		Utils.crit_plerp(10.0))
 	
-	# Handle camera zoom
+	# Handle camera view_length
 	$SpringArm.spring_length = lerp($SpringArm.spring_length,
-		zoom, Utils.crit_plerp(10.0))
+		view_length, Utils.crit_plerp(10.0))
 	
 	$Camera.global_position = $SpringArm/CameraAnchor.global_position
 	$Camera.global_rotation = $SpringArm/CameraAnchor.global_rotation

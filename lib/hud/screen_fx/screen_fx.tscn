@@ -39,6 +39,7 @@ shader_parameter/feather = 0.2
 shader_parameter/smoke_uv_scale = 2.5
 
 [node name="ScreenFX" type="CanvasLayer" unique_id=1697846182]
+process_mode = 3
 layer = -1
 script = ExtResource("1_h55c1")
 

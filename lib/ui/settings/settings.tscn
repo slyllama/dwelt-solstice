@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://1tipj8x0bi0x" path="res://lib/ui/settings/settings.gd" id="1_t4ec1"]
 [ext_resource type="Texture2D" uid="uid://l6cie2u2qujs" path="res://generic/materials/textures/tile_diff.jpg" id="2_hb0dw"]
 [ext_resource type="FontFile" uid="uid://dtoeseq6l76ld" path="res://generic/fonts/work_sans.ttf" id="2_vq776"]
+[ext_resource type="Texture2D" uid="uid://b0vq3340ts15v" path="res://generic/materials/textures/mote.png" id="4_d8jhr"]
 [ext_resource type="PackedScene" uid="uid://83qbe1li047w" path="res://lib/ui/settings/s_menu/s_menu.tscn" id="4_f8k2f"]
 [ext_resource type="AudioStream" uid="uid://crqguk32xkawu" path="res://lib/ui/sounds/pane_open.ogg" id="5_ailwr"]
 [ext_resource type="Shader" uid="uid://dv114f0yt1j24" path="res://generic/materials/shaders/static.gdshader" id="7_luauc"]
@@ -15,6 +16,27 @@ colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0.19607843)
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_f8k2f"]
 gradient = SubResource("Gradient_hb0dw")
 fill_to = Vector2(0, 1)
+
+[sub_resource type="Curve" id="Curve_hgqh3"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.12711865, 1), 0.0, 0.0, 0, 0, Vector2(0.51129943, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_qppq2"]
+curve = SubResource("Curve_hgqh3")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_sbwqd"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(400, 200, 0)
+direction = Vector3(0, 1, 0)
+initial_velocity_min = 80.0
+initial_velocity_max = 90.0
+gravity = Vector3(0, 0, 0)
+linear_accel_min = -20.000002
+linear_accel_max = -2.2351742e-06
+scale_min = 0.5
+scale_max = 0.59999996
+alpha_curve = SubResource("CurveTexture_qppq2")
 
 [sub_resource type="Animation" id="Animation_t4ec1"]
 length = 0.001
@@ -41,18 +63,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Open:playing")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_vq776"]
@@ -83,18 +93,6 @@ tracks/1/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Open:playing")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
 
 [sub_resource type="Animation" id="Animation_f8k2f"]
 resource_name = "disappear"
@@ -123,18 +121,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Open:playing")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hb0dw"]
@@ -227,6 +213,28 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 0
 texture = SubResource("GradientTexture2D_f8k2f")
+
+[node name="MotesAnchor" type="Control" parent="BG" unique_id=1691553834]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = -152.0
+offset_bottom = -152.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Motes" type="GPUParticles2D" parent="BG/MotesAnchor" unique_id=770731504]
+unique_name_in_owner = true
+z_index = 1
+amount = 16
+texture = ExtResource("4_d8jhr")
+preprocess = 10.0
+speed_scale = 0.1
+randomness = 0.35
+process_material = SubResource("ParticleProcessMaterial_sbwqd")
 
 [node name="Animations" type="AnimationPlayer" parent="." unique_id=886302283]
 libraries/ = SubResource("AnimationLibrary_hb0dw")
@@ -323,7 +331,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_f8k2f")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_d8jhr")
 theme_override_styles/hover = SubResource("StyleBoxFlat_xyodn")
 theme_override_styles/focus = SubResource("StyleBoxFlat_ailwr")
-text = "SAVE"
+text = "APPLY"
 
 [node name="Cancel" type="Button" parent="CoreBox/Footer" unique_id=1258372105]
 layout_mode = 2

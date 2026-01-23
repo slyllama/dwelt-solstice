@@ -18,6 +18,7 @@ func focus() -> void:
 	$Box/Previous.grab_focus()
 
 func refresh_setting() -> void:
+	if Engine.is_editor_hint(): return
 	if id in Settings.data:
 		%Value.text = fmt_option(Settings.data[id])
 		current = options.find(Settings.data[id])
@@ -27,6 +28,7 @@ func refresh_setting() -> void:
 		queue_free()
 
 func save_setting() -> void:
+	if Engine.is_editor_hint(): return
 	if Settings.data[id] != options[current]:
 		Settings.change(id, options[current])
 
@@ -44,15 +46,11 @@ func _ready() -> void:
 # These functions don't actually change settings, they just set the current displayed value
 # Call save() to apply them
 func _on_next_pressed() -> void:
-	if current + 1 < options.size():
-		current += 1
-	else:
-		current = 0
+	if current + 1 < options.size(): current += 1
+	else: current = 0
 	%Value.text = fmt_option(options[current])
 
 func _on_previous_pressed() -> void:
-	if current > 0:
-		current -= 1
-	else:
-		current = options.size() - 1
+	if current > 0: current -= 1
+	else: current = options.size() - 1
 	%Value.text = fmt_option(options[current])
