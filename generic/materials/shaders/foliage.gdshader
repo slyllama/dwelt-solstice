@@ -9,10 +9,6 @@ uniform float normal_map_depth: hint_range(0.0, 1.0) = 1.0;
 uniform float fade_length = 18.0;
 uniform bool uses_wind = true;
 
-// Instance uniforms used for Things
-instance uniform bool highlighted = false;
-//instance uniform float alpha: hint_range(0.0, 1.0) = 0.9;
-
 float get_wind(vec2 vertex, vec2 uv){
 	float min_strength = 0.05;
 	float max_strength = 0.01;
@@ -53,11 +49,5 @@ void fragment() {
 	float dist_fade = clamp(smoothstep(fade_length, fade_length - 1.0, fade_distance), 0.0, 1.0);
 	if (dist_fade < 0.001 || dist_fade < fract(magic.z * fract(dot(FRAGCOORD.xy, magic.xy)))) {
 		discard;
-	}
-	
-	// Highlighting
-	if (highlighted == true) {
-		ALBEDO *= 2.0;
-		ALBEDO = clamp(ALBEDO, vec3(0.0), vec3(1.0));
 	}
 }

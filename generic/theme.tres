@@ -1,9 +1,7 @@
 [gd_resource type="Theme" format=3 uid="uid://bi1monawihtf2"]
 
-[ext_resource type="FontFile" uid="uid://knusa64ltvaf" path="res://generic/fonts/crimson_text.ttf" id="1_37o18"]
-[ext_resource type="FontFile" uid="uid://bi4a4vc7qpom8" path="res://generic/fonts/trebuchet.ttf" id="2_1c0d7"]
+[ext_resource type="FontFile" uid="uid://dtoeseq6l76ld" path="res://generic/fonts/work_sans.ttf" id="1_56vwn"]
 [ext_resource type="Texture2D" uid="uid://dk8q1rhxwsmsn" path="res://generic/textures/1px.png" id="3_fp0go"]
-[ext_resource type="Texture2D" uid="uid://u0j8rt146osu" path="res://generic/textures/menu_arrow.png" id="4_56vwn"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_37o18"]
 content_margin_left = 12.0
@@ -96,24 +94,34 @@ shadow_size = 8
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_1c0d7"]
 color = Color(0.3, 0.3, 0.3, 1)
 
-[sub_resource type="StyleBoxLine" id="StyleBoxLine_fp0go"]
-color = Color(0.4, 0.4, 0.4, 1)
-thickness = 4
-vertical = true
+[sub_resource type="Gradient" id="Gradient_fp0go"]
+colors = PackedColorArray(0, 0.3254902, 0.5764706, 1, 0, 0, 0, 0.39215687)
 
-[sub_resource type="StyleBoxLine" id="StyleBoxLine_l2rom"]
-color = Color(0.45, 0.45, 0.45, 1)
-thickness = 4
-vertical = true
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_56vwn"]
+gradient = SubResource("Gradient_fp0go")
+fill_to = Vector2(0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l2rom"]
+texture = SubResource("GradientTexture2D_56vwn")
+
+[sub_resource type="Gradient" id="Gradient_1c0d7"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_fp0go"]
+gradient = SubResource("Gradient_1c0d7")
+fill_to = Vector2(0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_56vwn"]
+texture = SubResource("GradientTexture2D_fp0go")
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_hgjgm"]
 color = Color(0.9, 0.9, 0.9, 1)
-thickness = 4
+thickness = 12
 vertical = true
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_56vwn"]
 color = Color(0, 0, 0, 0)
-thickness = 6
+thickness = 14
 vertical = true
 
 [resource]
@@ -121,11 +129,10 @@ Button/styles/focus = SubResource("StyleBoxFlat_37o18")
 Button/styles/hover = SubResource("StyleBoxFlat_1c0d7")
 Button/styles/normal = SubResource("StyleBoxFlat_fp0go")
 CheckBox/constants/h_separation = 0
-Label/fonts/font = ExtResource("1_37o18")
+Label/fonts/font = ExtResource("1_56vwn")
 OptionButton/font_sizes/font_size = 13
-OptionButton/fonts/font = ExtResource("2_1c0d7")
+OptionButton/fonts/font = ExtResource("1_56vwn")
 OptionButton/icons/arrow = ExtResource("3_fp0go")
-OptionButton/icons/icon = ExtResource("4_56vwn")
 OptionButton/styles/hover = SubResource("StyleBoxFlat_56vwn")
 OptionButton/styles/normal = SubResource("StyleBoxFlat_iag48")
 OptionButton/styles/pressed = SubResource("StyleBoxFlat_l2rom")
@@ -139,7 +146,7 @@ PopupMenu/constants/v_separation = -2
 PopupMenu/font_sizes/font_separator_size = 13
 PopupMenu/font_sizes/font_size = 13
 PopupMenu/font_sizes/title_font_size = 13
-PopupMenu/fonts/font = ExtResource("2_1c0d7")
+PopupMenu/fonts/font = ExtResource("1_56vwn")
 PopupMenu/icons/radio_checked = SubResource("PlaceholderTexture2D_1c0d7")
 PopupMenu/icons/radio_checked_disabled = null
 PopupMenu/icons/radio_unchecked = null
@@ -147,7 +154,7 @@ PopupMenu/icons/radio_unchecked_disabled = null
 PopupMenu/styles/hover = SubResource("StyleBoxEmpty_fp0go")
 PopupMenu/styles/panel = SubResource("StyleBoxFlat_hgjgm")
 PopupMenu/styles/separator = SubResource("StyleBoxLine_1c0d7")
-VScrollBar/styles/grabber = SubResource("StyleBoxLine_fp0go")
-VScrollBar/styles/grabber_highlight = SubResource("StyleBoxLine_l2rom")
+VScrollBar/styles/grabber = SubResource("StyleBoxTexture_l2rom")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxTexture_56vwn")
 VScrollBar/styles/grabber_pressed = SubResource("StyleBoxLine_hgjgm")
 VScrollBar/styles/scroll = SubResource("StyleBoxLine_56vwn")

@@ -14,4 +14,4 @@ fill_to = Vector2(0, 1)
 render_priority = 0
 shader = ExtResource("1_4slid")
 shader_parameter/bands_texture = SubResource("GradientTexture2D_dqvfd")
-shader_parameter/bands_uv_scale = 218.4
+shader_parameter/bands_uv_scale = 512.0

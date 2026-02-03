@@ -7,5 +7,6 @@
 albedo_texture = ExtResource("1_50o1v")
 metallic_specular = 0.0
 normal_enabled = true
+normal_scale = 0.5
 normal_texture = ExtResource("2_xp8a8")
-uv1_scale = Vector3(8, 8, 8)
+uv1_scale = Vector3(96, 96, 96)

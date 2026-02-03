@@ -4,20 +4,9 @@
 [ext_resource type="Script" uid="uid://davrehdjbld01" path="res://lib/hud/scripts/render_monitor.gd" id="1_o36f6"]
 [ext_resource type="Script" uid="uid://bvxdsk7u4524p" path="res://lib/hud/hud.gd" id="1_tpybq"]
 [ext_resource type="PackedScene" uid="uid://dvwqtf0altti1" path="res://lib/hud/screen_fx/screen_fx.tscn" id="1_u1rn0"]
-[ext_resource type="Texture2D" uid="uid://bk1dx1yy2gvg" path="res://lib/hud/textures/lower_base.png" id="3_qgm11"]
 [ext_resource type="Texture2D" uid="uid://bcts2w2dokc7v" path="res://generic/textures/reticule.png" id="3_v7nqf"]
-[ext_resource type="PackedScene" uid="uid://b63hobdhwi8kc" path="res://lib/ui/pane/pane.tscn" id="4_pm6i7"]
-[ext_resource type="PackedScene" uid="uid://dd7rl0r1enohp" path="res://lib/ui/inventory/inventory.tscn" id="5_4etgo"]
-[ext_resource type="PackedScene" uid="uid://c8oj1ia1ewi5q" path="res://lib/hud/currency/currency.tscn" id="6_3pj68"]
-[ext_resource type="Texture2D" uid="uid://qvxav4j1iaar" path="res://lib/hud/textures/settings.png" id="9_45tie"]
-[ext_resource type="PackedScene" uid="uid://cb7wjr83pbn7d" path="res://lib/effect/effect_bar/effect_bar.tscn" id="9_v7nqf"]
-[ext_resource type="Texture2D" uid="uid://bsu8ohjo36dal" path="res://lib/hud/textures/settings_hover.png" id="10_62h71"]
+[ext_resource type="PackedScene" uid="uid://plbk0hbameip" path="res://lib/ui/settings/settings.tscn" id="8_r2k48"]
 [ext_resource type="PackedScene" uid="uid://u2i05ele7n62" path="res://lib/hud/screen_fx/eye_anim/eye_anim.tscn" id="10_ixdrw"]
-[ext_resource type="PackedScene" uid="uid://d02blbpmlrt6s" path="res://lib/thing/inspector/inspector.tscn" id="11_coisy"]
-[ext_resource type="PackedScene" uid="uid://orydvar6kty5" path="res://lib/ui/settings_pane/settings_pane.tscn" id="14_62h71"]
-[ext_resource type="PackedScene" uid="uid://du46qjtkv0jol" path="res://lib/hud/title_card/title_card.tscn" id="15_c0040"]
-[ext_resource type="Script" uid="uid://c7l3vi6s8w6h0" path="res://lib/hud/scripts/tooltip_surface.gd" id="17_qgm11"]
-[ext_resource type="PackedScene" uid="uid://dccolyl08umwm" path="res://lib/hud/tooltip/tooltip.tscn" id="18_nglf3"]
 
 [node name="HUD" type="CanvasLayer" unique_id=1405763796]
 process_mode = 3
@@ -26,80 +15,33 @@ metadata/_edit_vertical_guides_ = [640.0]
 
 [node name="ScreenFX" parent="." unique_id=1716142369 instance=ExtResource("1_u1rn0")]
 
-[node name="LoweBase_R" type="TextureRect" parent="." unique_id=252783354]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_top = -127.0
-offset_right = 400.0
-offset_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 0
-mouse_filter = 2
-texture = ExtResource("3_qgm11")
-expand_mode = 1
-
-[node name="LoweBase_L" type="TextureRect" parent="." unique_id=1436384004]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -400.0
-offset_top = -127.0
-offset_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 0
-mouse_filter = 2
-texture = ExtResource("3_qgm11")
-expand_mode = 1
-flip_h = true
-
 [node name="Reticule" type="TextureRect" parent="." unique_id=375080572]
-custom_minimum_size = Vector2(55, 20)
+modulate = Color(1, 1, 1, 0.78431374)
+custom_minimum_size = Vector2(32, 32)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -27.5
-offset_top = -10.0
-offset_right = 27.5
-offset_bottom = 10.0
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 texture = ExtResource("3_v7nqf")
 expand_mode = 1
 
-[node name="TitleCard" parent="." unique_id=161878095 instance=ExtResource("15_c0040")]
-unique_name_in_owner = true
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -319.5
-offset_top = -122.0
-offset_right = 319.5
-offset_bottom = 23.0
-grow_horizontal = 2
-grow_vertical = 2
-
 [node name="RenderMonitor" type="RichTextLabel" parent="." unique_id=666236983]
-anchors_preset = 6
+anchors_preset = 1
 anchor_left = 1.0
-anchor_top = 0.5
 anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -139.0
-offset_top = -8.5
-offset_right = -16.0
-offset_bottom = 8.5
+offset_left = -131.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = 25.0
 grow_horizontal = 0
-grow_vertical = 2
 mouse_filter = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/line_separation = -2
@@ -112,59 +54,7 @@ fit_content = true
 scroll_active = false
 autowrap_mode = 0
 horizontal_alignment = 2
-vertical_alignment = 1
 script = ExtResource("1_o36f6")
-
-[node name="Pane" parent="." unique_id=1287325783 instance=ExtResource("4_pm6i7")]
-visible = false
-offset_left = 16.0
-offset_top = 16.0
-offset_right = 216.0
-offset_bottom = 216.0
-title_text = "Interesting"
-
-[node name="Inspector" parent="." unique_id=1402165484 instance=ExtResource("11_coisy")]
-offset_top = 2.0
-offset_bottom = 111.0
-
-[node name="Currency" parent="." unique_id=1476723004 instance=ExtResource("6_3pj68")]
-offset_left = 61.0
-offset_top = 12.0
-offset_right = 389.0
-offset_bottom = 47.0
-
-[node name="Inventory" parent="." unique_id=362675603 instance=ExtResource("5_4etgo")]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -165.0
-offset_top = -140.0
-offset_right = 165.0
-offset_bottom = -8.0
-grow_horizontal = 2
-grow_vertical = 0
-
-[node name="EffectBar" parent="Inventory" unique_id=170800868 instance=ExtResource("9_v7nqf")]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 32)
-layout_mode = 1
-offset_left = 2.0
-offset_top = -37.0
-offset_right = 100.0
-offset_bottom = -5.0
-
-[node name="Settings" type="TextureButton" parent="." unique_id=904511061]
-custom_minimum_size = Vector2(64, 64)
-offset_left = 6.0
-offset_top = 3.0
-offset_right = 70.0
-offset_bottom = 67.0
-texture_normal = ExtResource("9_45tie")
-texture_hover = ExtResource("10_62h71")
-ignore_texture_size = true
-stretch_mode = 5
 
 [node name="EyeAnim" parent="." unique_id=396779311 instance=ExtResource("10_ixdrw")]
 unique_name_in_owner = true
@@ -172,32 +62,5 @@ visible = false
 free_after_finish = true
 start_visible = true
 
-[node name="SettingsPane" parent="." unique_id=1165299871 instance=ExtResource("14_62h71")]
-unique_name_in_owner = true
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -212.5
-offset_top = -234.0
-offset_right = 212.5
-offset_bottom = 166.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="TooltipSurface" type="Control" parent="." unique_id=1783035076 node_paths=PackedStringArray("tooltip")]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-script = ExtResource("17_qgm11")
-tooltip = NodePath("Tooltip")
-
-[node name="Tooltip" parent="TooltipSurface" unique_id=1041933009 instance=ExtResource("18_nglf3")]
-layout_mode = 0
-
-[connection signal="pressed" from="Settings" to="." method="_on_settings_pressed"]
+[node name="Settings" parent="." unique_id=964415197 instance=ExtResource("8_r2k48")]
+visible = false

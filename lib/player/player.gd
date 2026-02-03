@@ -1,11 +1,11 @@
 class_name DweltPlayer extends CharacterBody3D
 
-@export var effect_handler: EffectHandler
 @export_category("Physics")
 @export var speed := 3.0
 @export var speed_multiplier := 1.0 # used for lethargy etc
 @export var friction := 15.0
 @export var gravity_damping := 10.0
+
 var _target_velocity := Vector3.ZERO
 var _target_y_rotation := 0.0
 var _target_y_position := 0.0
@@ -24,11 +24,13 @@ func _ready() -> void:
 
 func _physics_process(_delta: float) -> void:
 	_target_velocity = Vector3.ZERO
-	var _camera_basis = $Orbit.global_transform.basis
+	var _camera_basis: Basis = $Orbit.global_transform.basis
 	
 	# Calculate basis and move player based on player input
 	var _basis_x: Vector3 = Vector3.RIGHT * _camera_basis * Vector3(1, 0, -1)
 	var _basis_z: Vector3 = Vector3.FORWARD * _camera_basis * Vector3(-1, 0, 1)
+	_basis_x = _basis_x.normalized()
+	_basis_z = _basis_z.normalized()
 	_target_velocity += _basis_z * %InputHandler.direction.z * speed * speed_multiplier
 	_target_velocity += _basis_x * %InputHandler.direction.x * speed * speed_multiplier
 	velocity = lerp(velocity, _target_velocity, Utils.crit_plerp(friction))
@@ -68,17 +70,3 @@ func _physics_process(_delta: float) -> void:
 	# Send animation parameters to the mesh for animation blending
 	$RobotMesh.forward_blend = %InputHandler.direction.z
 	$RobotMesh.strafe_blend = %InputHandler.direction.x
-
-func _on_effect_expired(data: EffectData) -> void:
-	var id = data.id
-	match id:
-		"lethargy":
-			$RobotMesh/XydrydeSplash.emitting = false
-			speed_multiplier = 1.0
-
-func _on_effect_added(data: EffectData) -> void:
-	var id = data.id
-	match id:
-		"lethargy":
-			$RobotMesh/XydrydeSplash.emitting = true
-			speed_multiplier = 0.5

@@ -39,7 +39,11 @@ func _physics_process(delta: float) -> void:
 	_target_strafe_blend = lerp(_target_strafe_blend,
 		strafe_blend + rotation.z * turn_rotation_multiplier,
 		Utils.crit_plerp(animation_smoothing))
-	_target_strafe_blend = clamp(_target_strafe_blend, -1.0, 1.0)
+	_target_strafe_blend = clamp(_target_strafe_blend, -1.7, 1.7)
 	$Anim.set("parameters/add_strafe/add_amount", _target_strafe_blend)
 	
 	_last_y_rotation = rotation.y
+	
+	# Attach trails to legs
+	$JetTrail_L.global_position = $Armature/Skeleton3D/Foot_SW/Leg_SW.global_position
+	$JetTrail_R.global_position = $Armature/Skeleton3D/Foot_SE/Leg_SE.global_position

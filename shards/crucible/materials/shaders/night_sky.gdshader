@@ -1,39 +1,18 @@
 shader_type sky;
 
-uniform sampler2D color_gradient: source_color, filter_linear;
+uniform sampler2D gradient_texture: source_color, filter_linear, hint_default_black;
+uniform sampler2D stars_texture: source_color, filter_linear, repeat_enable;
+uniform sampler2D stars_gradient_mask_texture: filter_linear;
+uniform sampler2D stars_patina_texture: filter_linear, repeat_enable;
 
-// Patina
-uniform sampler2D patina: source_color, hint_default_black, filter_linear;
-uniform float patina_size = 1.0;
-uniform float patina_strength = 1.0;
-
-// Stars
-uniform sampler2D stars: source_color, filter_linear, repeat_enable;
-uniform sampler2D nebula: source_color, filter_linear, repeat_enable;
-uniform sampler2D stars_gradient_mask: source_color, filter_linear;
-uniform float stars_size = 1.0;
-uniform float stars_strength: hint_range(0.0, 1.0) = 1.0;
-uniform float nebula_strength: hint_range(0.0, 1.0) = 1.0;
-
-uniform sampler2D nebula_vertical_gradient_mask: source_color, filter_linear;
+uniform float stars_scale = 8.0;
 
 void sky() {
-	COLOR = texture(color_gradient, SKY_COORDS).rgb;
-
-	// Patina
-	vec3 _patina = texture(patina, SKY_COORDS * patina_size).rgb;
-	_patina = (1.0 + _patina) * patina_strength;
-	COLOR *= _patina;
-
-	// Stars
-	vec3 _s1 = texture(stars, SKY_COORDS * stars_size).rgb;
-	vec3 _s2 = texture(nebula, SKY_COORDS * stars_size * 0.5 - TIME * 0.006 + vec2(0.5, 0.0)).rgb;
-	_s2 *= texture(nebula_vertical_gradient_mask, SKY_COORDS).r;
+	COLOR = texture(gradient_texture, SKY_COORDS).rgb;
 	
-	vec3 _stars = mix(_s1, _s2, texture(patina, SKY_COORDS).r * nebula_strength);
-	float _stars_mask = clamp(texture(patina, SKY_COORDS * -1.0).r, 0.18, 1.0);
-	_stars_mask = pow(_stars_mask, 0.75); // soften
-	_stars = _stars * stars_strength * _stars_mask;
-	_stars *= texture(stars_gradient_mask, SKY_COORDS).r;
-	COLOR += _stars;
+	// Add stars
+	vec3 stars = texture(stars_texture, SKY_COORDS * stars_scale).rgb;
+	float stars_patina = texture(stars_patina_texture, SKY_COORDS).r;
+	float stars_gradient_mask = texture(stars_gradient_mask_texture, SKY_COORDS).r;
+	COLOR += stars * stars_patina * stars_gradient_mask;
 }

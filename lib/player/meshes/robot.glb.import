@@ -8270,10 +8270,20 @@ _subresources={
 "use_external/fallback_path": "res://lib/player/materials/mat_eye.tres",
 "use_external/path": "uid://bskgfhv3gtmxk"
 },
+"flowery_iron": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://lib/player/materials/flowery_iron.tres",
+"use_external/path": "uid://driucsyut41sq"
+},
 "glow": {
 "use_external/enabled": true,
 "use_external/fallback_path": "res://lib/player/materials/mat_glow.tres",
 "use_external/path": "uid://gslpiectqnqm"
+},
+"mat_hologram": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://lib/player/materials/mat_hologram.tres",
+"use_external/path": "uid://bfwqa6c7utort"
 },
 "robot": {
 "use_external/enabled": true,

@@ -4,7 +4,7 @@ const SETTINGS_PATH := "user://settings.json"
 
 const default_data := { # default settings data
 	"window_mode": "full_screen",
-	"bloom": "false",
+	"bloom": "off",
 	"shadows": "low",
 	"fps_limit": "60fps",
 	"foliage_density": "medium",
@@ -51,3 +51,6 @@ func load_file() -> void:
 	file_loaded.emit() # used for initial setup of setting pane fields
 	for _s in data:
 		changed.emit(_s) # propagate all settings on game start
+
+func _init() -> void:
+	process_mode = Node.PROCESS_MODE_ALWAYS

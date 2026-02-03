@@ -1,7 +1,6 @@
 extends Node
 # cursor_cast
-# Handles raycasting from the camera through the mouse cursor, mainly for
-# hover events
+# Handles raycasting from the camera through the mouse cursor
 
 @onready var camera: Camera3D = get_parent()
 
@@ -16,17 +15,7 @@ func handle_mouse_raycast() -> void:
 	
 	var intersection = space_state.intersect_ray(query)
 	if intersection:
-		var _p = intersection.collider.get_parent()
-		
-		# Handle hovering and unhovering Things
-		if _p is Thing:
-			if Dwelt.hovered_thing != _p:
-				Dwelt.hovered_thing = _p
-				_p.hover()
-		else:
-			if Dwelt.hovered_thing != null:
-				Dwelt.hovered_thing.unhover()
-				Dwelt.hovered_thing = null
+		pass # TODO: cursor intersection
 
 # Only perform when a valid input event is happening
 func _input(event: InputEvent) -> void:

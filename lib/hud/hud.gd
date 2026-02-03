@@ -1,14 +1,4 @@
 extends CanvasLayer
 
-func play_title_card(shard_name: String) -> void:
-	%TitleCard.shard_name = shard_name
-	%TitleCard.play()
-
 func _ready() -> void:
 	%EyeAnim.animate()
-	await get_tree().process_frame
-	# Need to wait a frame for the Dwelt.player reference to be applied
-	%EffectBar.effect_handler = Dwelt.player.effect_handler
-
-func _on_settings_pressed() -> void:
-	%SettingsPane.appear()
