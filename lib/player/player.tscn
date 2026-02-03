@@ -184,7 +184,7 @@ shape = SubResource("SphereShape3D_iochv")
 [node name="LookTarget" type="Marker3D" parent="." unique_id=858288277]
 transform = Transform3D(0.8660253, -0.35355335, 0.35355335, 0, 0.7071067, 0.7071067, -0.49999997, -0.61237234, 0.61237234, 0.7071067, 1.4142134, 1.2247447)
 
-[node name="RobotMesh" parent="." unique_id=668378791 node_paths=PackedStringArray("look_target") instance=ExtResource("3_5lbbh")]
+[node name="RobotMesh" parent="." unique_id=1185871662 node_paths=PackedStringArray("look_target") instance=ExtResource("3_5lbbh")]
 unique_name_in_owner = true
 script = ExtResource("4_0y160")
 look_target = NodePath("../LookTarget")

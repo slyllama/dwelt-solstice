@@ -3,14 +3,13 @@
 [ext_resource type="PackedScene" uid="uid://cave0dvi8i7rh" path="res://lib/shard/shard.tscn" id="1_fiv0q"]
 [ext_resource type="PackedScene" uid="uid://pconmu7n0aev" path="res://shards/crucible/props/bamboo/meshes/bamboo.glb" id="2_m67mg"]
 [ext_resource type="Script" uid="uid://bnchiul4t411m" path="res://shards/crucible/crucible.gd" id="2_rvw1y"]
-[ext_resource type="Material" uid="uid://dqqw1cju3b7h6" path="res://shards/crucible/materials/mat_sky.tres" id="2_tahua"]
+[ext_resource type="Material" uid="uid://dqqw1cju3b7h6" path="res://shards/crucible/materials/mat_night_sky.tres" id="2_tahua"]
 [ext_resource type="PackedScene" uid="uid://dn4mx27dqt7yo" path="res://lib/shard/foliage_spawner/foliage_spawner.tscn" id="5_u67vg"]
 [ext_resource type="AudioStream" uid="uid://cih0evhjc054h" path="res://shards/crucible/sounds/ambience.ogg" id="6_42lni"]
+[ext_resource type="Texture2D" uid="uid://l6cie2u2qujs" path="res://generic/materials/textures/tile_diff.jpg" id="6_j0efh"]
 [ext_resource type="Shader" uid="uid://c14rrbppg2n3j" path="res://shards/crucible/materials/shaders/grass.gdshader" id="6_jkorp"]
 [ext_resource type="ArrayMesh" uid="uid://7dxgm1hl7c0r" path="res://shards/crucible/props/grass/meshes/grass.res" id="6_rgmr2"]
 [ext_resource type="Texture2D" uid="uid://46utb4d6jkvs" path="res://shards/crucible/materials/textures/grass_diff.jpg" id="8_7rrrr"]
-[ext_resource type="Texture2D" uid="uid://bgkkn024lcn3n" path="res://shards/crucible/materials/textures/stones_diff.jpg" id="8_moxbr"]
-[ext_resource type="PackedScene" uid="uid://bkbxcbkxs07xc" path="res://shards/crucible/meshes/greybox.glb" id="9_moxbr"]
 [ext_resource type="PackedScene" uid="uid://c87qysmwmmkk4" path="res://shards/crucible/props/tree/meshes/tree.glb" id="10_mi310"]
 [ext_resource type="Shader" uid="uid://dyqnxrddxp2qh" path="res://generic/materials/shaders/nospec.gdshader" id="11_5auoa"]
 [ext_resource type="Texture2D" uid="uid://igu04lsbi6ji" path="res://shards/crucible/materials/textures/tiles_diff.jpg" id="12_dnok5"]
@@ -44,11 +43,10 @@ adjustment_enabled = true
 adjustment_saturation = 1.12
 
 [sub_resource type="Gradient" id="Gradient_moxbr"]
-offsets = PackedFloat32Array(0.3, 1)
+offsets = PackedFloat32Array(0.3, 0.5310559)
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_84orq"]
 noise_type = 2
-frequency = 0.02
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_0s3ef"]
 noise = SubResource("FastNoiseLite_84orq")
@@ -59,7 +57,7 @@ seamless = true
 render_priority = 0
 shader = ExtResource("6_jkorp")
 shader_parameter/grass_base_texture = ExtResource("8_7rrrr")
-shader_parameter/grass_blend_texture = ExtResource("8_moxbr")
+shader_parameter/grass_blend_texture = ExtResource("6_j0efh")
 shader_parameter/grass_mask_texture = SubResource("NoiseTexture2D_0s3ef")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_7rrrr"]
@@ -166,14 +164,12 @@ shadow_enabled = true
 directional_shadow_mode = 0
 directional_shadow_blend_splits = true
 
-[node name="greybox" parent="." index="2" unique_id=521012645 instance=ExtResource("9_moxbr")]
-
 [node name="DebugFloor" parent="Floor" parent_id_path=PackedInt32Array(1393273289) index="0" unique_id=206508883]
 instance_shader_parameters/grass_base_uv = 15.0
-instance_shader_parameters/grass_blend_uv = 30.0
+instance_shader_parameters/grass_blend_uv = 64.0
 mesh = SubResource("PlaneMesh_7rrrr")
 
-[node name="Player" parent="." index="4" unique_id=1143123429]
+[node name="Player" parent="." index="3" unique_id=1143123429]
 transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0, 0.5, 0)
 
 [node name="Grass" parent="FoliageHandler" parent_id_path=PackedInt32Array(150174127) index="0" unique_id=1849716482 instance=ExtResource("5_u67vg")]
@@ -204,41 +200,41 @@ scale_offset = Vector3(1, 1.4, 1)
 colour_1 = Color(0.025, 0.1, 0, 1)
 colour_2 = Color(0.48000002, 0.8, 0, 1)
 
-[node name="Bounds" parent="." index="6" unique_id=1398516463]
+[node name="Bounds" parent="." index="5" unique_id=1398516463]
 size = 32.0
 
 [node name="Ambience" parent="Sound" parent_id_path=PackedInt32Array(16922320) index="0" unique_id=788029209]
 stream = ExtResource("6_42lni")
 
-[node name="Bamboo" parent="." index="8" unique_id=1328689031 instance=ExtResource("2_m67mg")]
+[node name="Bamboo" parent="." index="7" unique_id=1328689031 instance=ExtResource("2_m67mg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.559, 0, 3)
 
-[node name="Bamboo2" parent="." index="9" unique_id=498931108 instance=ExtResource("2_m67mg")]
+[node name="Bamboo2" parent="." index="8" unique_id=498931108 instance=ExtResource("2_m67mg")]
 transform = Transform3D(0.15217516, 0, 0.98835355, 0, 1, 0, -0.98835355, 0, 0.15217516, 3.7313905, 0, 3.4650931)
 
-[node name="Tree" parent="." index="10" unique_id=63163994 instance=ExtResource("10_mi310")]
+[node name="Tree" parent="." index="9" unique_id=63163994 instance=ExtResource("10_mi310")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.867, 0, 4.421)
 
-[node name="Tiles" type="MeshInstance3D" parent="." index="11" unique_id=1841978154]
+[node name="Tiles" type="MeshInstance3D" parent="." index="10" unique_id=1841978154]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 3)
 layers = 5
 mesh = SubResource("ArrayMesh_mi310")
 skeleton = NodePath("")
 
-[node name="Xydryde" type="Decal" parent="." index="12" unique_id=830843260]
+[node name="Xydryde" type="Decal" parent="." index="11" unique_id=830843260]
 transform = Transform3D(1, 0, 0, 0, 0.9904686, -0.13773844, 0, 0.13773844, 0.9904686, -3.5648293, 0.6168119, 2.047922)
 size = Vector3(4, 4, 4)
 texture_albedo = ExtResource("14_dnok5")
 normal_fade = 0.5
 cull_mask = 4
 
-[node name="FogVolume" type="FogVolume" parent="." index="13" unique_id=775414340]
+[node name="FogVolume" type="FogVolume" parent="." index="12" unique_id=775414340]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0411942, 0.3917904, 3.3404436)
 size = Vector3(6.199768, 3.276245, 3.988037)
 shape = 0
 material = SubResource("FogMaterial_j0efh")
 
-[node name="Moon" type="MeshInstance3D" parent="." index="14" unique_id=192027501]
+[node name="Moon" type="MeshInstance3D" parent="." index="13" unique_id=192027501]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 3, 0)
 cast_shadow = 0
 mesh = SubResource("QuadMesh_j0efh")
