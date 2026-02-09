@@ -1,6 +1,5 @@
 [gd_resource type="Theme" format=3 uid="uid://bi1monawihtf2"]
 
-[ext_resource type="FontFile" uid="uid://dtoeseq6l76ld" path="res://generic/fonts/work_sans.ttf" id="1_56vwn"]
 [ext_resource type="Texture2D" uid="uid://dk8q1rhxwsmsn" path="res://generic/textures/1px.png" id="3_fp0go"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_37o18"]
@@ -129,9 +128,7 @@ Button/styles/focus = SubResource("StyleBoxFlat_37o18")
 Button/styles/hover = SubResource("StyleBoxFlat_1c0d7")
 Button/styles/normal = SubResource("StyleBoxFlat_fp0go")
 CheckBox/constants/h_separation = 0
-Label/fonts/font = ExtResource("1_56vwn")
 OptionButton/font_sizes/font_size = 13
-OptionButton/fonts/font = ExtResource("1_56vwn")
 OptionButton/icons/arrow = ExtResource("3_fp0go")
 OptionButton/styles/hover = SubResource("StyleBoxFlat_56vwn")
 OptionButton/styles/normal = SubResource("StyleBoxFlat_iag48")
@@ -146,7 +143,6 @@ PopupMenu/constants/v_separation = -2
 PopupMenu/font_sizes/font_separator_size = 13
 PopupMenu/font_sizes/font_size = 13
 PopupMenu/font_sizes/title_font_size = 13
-PopupMenu/fonts/font = ExtResource("1_56vwn")
 PopupMenu/icons/radio_checked = SubResource("PlaceholderTexture2D_1c0d7")
 PopupMenu/icons/radio_checked_disabled = null
 PopupMenu/icons/radio_unchecked = null

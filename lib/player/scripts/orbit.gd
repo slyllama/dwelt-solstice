@@ -25,7 +25,7 @@ func _physics_process(_delta: float) -> void:
 	var _last_event_relative := _event_relative
 	
 	if $OrbitStartDelay.is_stopped():
-		target_x_rotation -= _event_relative.y * 0.01
+		#target_x_rotation -= _event_relative.y * 0.01
 		target_y_rotation -= _event_relative.x * 0.01
 		target_x_rotation = clamp(
 			target_x_rotation, deg_to_rad(-80), deg_to_rad(30))

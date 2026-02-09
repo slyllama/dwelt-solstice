@@ -1,0 +1,44 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://dqqw1cju3b7h6"]
+
+[ext_resource type="Shader" uid="uid://c54vf4530l6rd" path="res://shards/crucible/materials/shaders/night_sky.gdshader" id="1_q63kx"]
+[ext_resource type="Texture2D" uid="uid://bi5qxtc53ggun" path="res://shards/crucible/materials/textures/sky_color_bands.tres" id="2_4e4qa"]
+[ext_resource type="Texture2D" uid="uid://d135awvq5cyme" path="res://shards/crucible/materials/textures/nebula.png" id="3_4e4qa"]
+[ext_resource type="Texture2D" uid="uid://bse858pqu5g0p" path="res://shards/crucible/materials/textures/sky_stars_gradient.tres" id="3_pnoe8"]
+[ext_resource type="Texture2D" uid="uid://bg01e7nq538kq" path="res://shards/crucible/materials/textures/stars.png" id="4_q63kx"]
+
+[sub_resource type="Gradient" id="Gradient_4e4qa"]
+offsets = PackedFloat32Array(0.28543308, 0.78149605)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_pnoe8"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_y1vnh"]
+width = 256
+height = 256
+noise = SubResource("FastNoiseLite_pnoe8")
+color_ramp = SubResource("Gradient_4e4qa")
+seamless = true
+
+[sub_resource type="Gradient" id="Gradient_ybnme"]
+offsets = PackedFloat32Array(0.41477272, 0.5767717)
+colors = PackedColorArray(0.28607252, 0.28607234, 0.2860724, 1, 1, 1, 1, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_q63kx"]
+frequency = 0.04
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_4e4qa"]
+width = 256
+height = 256
+noise = SubResource("FastNoiseLite_q63kx")
+color_ramp = SubResource("Gradient_ybnme")
+seamless = true
+
+[resource]
+shader = ExtResource("1_q63kx")
+shader_parameter/gradient_texture = ExtResource("2_4e4qa")
+shader_parameter/stars_texture = ExtResource("4_q63kx")
+shader_parameter/stars_gradient_mask_texture = ExtResource("3_pnoe8")
+shader_parameter/stars_patina_texture = SubResource("NoiseTexture2D_4e4qa")
+shader_parameter/stars_scale = 14.0
+shader_parameter/nebula_texture = ExtResource("3_4e4qa")
+shader_parameter/nebula_patina_texture = SubResource("NoiseTexture2D_y1vnh")
+shader_parameter/nebula_scale = 8.0

@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://istq4exbymwq"]
 
-[ext_resource type="FontFile" uid="uid://c7qpj4jbth6pg" path="res://generic/fonts/ibm_plex_mono.otf" id="1_dcyf8"]
 [ext_resource type="Script" uid="uid://davrehdjbld01" path="res://lib/hud/scripts/render_monitor.gd" id="1_o36f6"]
 [ext_resource type="Script" uid="uid://bvxdsk7u4524p" path="res://lib/hud/hud.gd" id="1_tpybq"]
 [ext_resource type="PackedScene" uid="uid://dvwqtf0altti1" path="res://lib/hud/screen_fx/screen_fx.tscn" id="1_u1rn0"]
 [ext_resource type="Texture2D" uid="uid://bcts2w2dokc7v" path="res://generic/textures/reticule.png" id="3_v7nqf"]
+[ext_resource type="FontFile" uid="uid://dpstp1eavop6o" path="res://generic/fonts/georgia_italic.ttf" id="4_3pj68"]
 [ext_resource type="PackedScene" uid="uid://u2i05ele7n62" path="res://lib/hud/screen_fx/eye_anim/eye_anim.tscn" id="10_ixdrw"]
 
 [node name="HUD" type="CanvasLayer" unique_id=1405763796]
@@ -16,16 +16,16 @@ metadata/_edit_vertical_guides_ = [640.0]
 
 [node name="Reticule" type="TextureRect" parent="." unique_id=375080572]
 modulate = Color(1, 1, 1, 0.78431374)
-custom_minimum_size = Vector2(32, 32)
+custom_minimum_size = Vector2(16, 16)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -16.0
-offset_top = -16.0
-offset_right = 16.0
-offset_bottom = 16.0
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -45,8 +45,7 @@ mouse_filter = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/line_separation = -2
 theme_override_constants/paragraph_separation = -2
-theme_override_fonts/normal_font = ExtResource("1_dcyf8")
-theme_override_font_sizes/normal_font_size = 12
+theme_override_fonts/normal_font = ExtResource("4_3pj68")
 bbcode_enabled = true
 text = "((RenderMonitor))"
 fit_content = true

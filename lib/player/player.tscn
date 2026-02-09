@@ -160,6 +160,7 @@ transparency = 1
 shading_mode = 0
 vertex_color_use_as_albedo = true
 albedo_texture = ExtResource("2_2ocui")
+texture_filter = 0
 billboard_mode = 3
 billboard_keep_scale = true
 particles_anim_h_frames = 1
@@ -184,7 +185,7 @@ shape = SubResource("SphereShape3D_iochv")
 [node name="LookTarget" type="Marker3D" parent="." unique_id=858288277]
 transform = Transform3D(0.8660253, -0.35355335, 0.35355335, 0, 0.7071067, 0.7071067, -0.49999997, -0.61237234, 0.61237234, 0.7071067, 1.4142134, 1.2247447)
 
-[node name="RobotMesh" parent="." unique_id=1185871662 node_paths=PackedStringArray("look_target") instance=ExtResource("3_5lbbh")]
+[node name="RobotMesh" parent="." unique_id=20241997 node_paths=PackedStringArray("look_target") instance=ExtResource("3_5lbbh")]
 unique_name_in_owner = true
 script = ExtResource("4_0y160")
 look_target = NodePath("../LookTarget")
@@ -238,7 +239,7 @@ libraries/ = SubResource("AnimationLibrary_v5dhk")
 autoplay = &"glow"
 
 [node name="Orbit" type="Marker3D" parent="." unique_id=13830377]
-transform = Transform3D(-0.99999994, -2.2626672e-08, 8.444389e-08, 0, 0.9659255, 0.25881895, -8.742277e-08, 0.25881895, -0.9659255, 0, 0.35, 0)
+transform = Transform3D(-0.99999994, 3.2749135e-08, -8.105697e-08, 0, 0.92718357, 0.37460646, 8.742277e-08, 0.37460646, -0.92718357, 0, 0.35, 0)
 script = ExtResource("5_4ok3w")
 
 [node name="Camera" type="Camera3D" parent="Orbit" unique_id=599081566]
@@ -252,7 +253,7 @@ far = 200.0
 transform = Transform3D(0.8660255, 7.45058e-09, -0.49999997, -0.12940954, 0.96592575, -0.22414388, 0.48296294, 0.258819, 0.83651626, -2.3692846e-07, 0.1931852, -2.5482357)
 visible = false
 cast_shadow = 0
-amount = 128
+amount = 256
 preprocess = 5.0
 speed_scale = 0.18
 randomness = 0.25
