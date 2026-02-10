@@ -27,19 +27,13 @@ point_count = 3
 [sub_resource type="CurveTexture" id="CurveTexture_5x5nn"]
 curve = SubResource("Curve_up78s")
 
-[sub_resource type="Gradient" id="Gradient_jyhpi"]
-colors = PackedColorArray(0, 0.1625, 0.65, 1, 0.89411765, 0.827451, 1, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_up78s"]
-gradient = SubResource("Gradient_jyhpi")
-
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ram4p"]
 emission_shape = 2
 emission_sphere_radius = 0.16
 gravity = Vector3(0, 0.2, 0)
 scale_min = 0.39999998
 scale_max = 0.7
-color_initial_ramp = SubResource("GradientTexture1D_up78s")
+color = Color(0, 1, 0, 1)
 alpha_curve = SubResource("CurveTexture_5x5nn")
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_up78s"]
@@ -185,7 +179,7 @@ shape = SubResource("SphereShape3D_iochv")
 [node name="LookTarget" type="Marker3D" parent="." unique_id=858288277]
 transform = Transform3D(0.8660253, -0.35355335, 0.35355335, 0, 0.7071067, 0.7071067, -0.49999997, -0.61237234, 0.61237234, 0.7071067, 1.4142134, 1.2247447)
 
-[node name="RobotMesh" parent="." unique_id=20241997 node_paths=PackedStringArray("look_target") instance=ExtResource("3_5lbbh")]
+[node name="RobotMesh" parent="." unique_id=2070665075 node_paths=PackedStringArray("look_target") instance=ExtResource("3_5lbbh")]
 unique_name_in_owner = true
 script = ExtResource("4_0y160")
 look_target = NodePath("../LookTarget")

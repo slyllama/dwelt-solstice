@@ -4,6 +4,7 @@ extends Node3D
 @export var sun: DirectionalLight3D
 
 func _ready() -> void:
+	if Engine.is_editor_hint(): return
 	Settings.changed.connect(func(_s: String):
 		if _s == "shadows":
 			if sun:
@@ -14,13 +15,9 @@ func _ready() -> void:
 					"low":
 						sun.shadow_enabled = true
 						sun.directional_shadow_mode = DirectionalLight3D.SHADOW_ORTHOGONAL
-					"high":
-						sun.shadow_enabled = true
-						sun.directional_shadow_mode = DirectionalLight3D.SHADOW_PARALLEL_4_SPLITS
 					_: # medium
 						sun.shadow_enabled = true
 						sun.directional_shadow_mode = DirectionalLight3D.SHADOW_PARALLEL_2_SPLITS
 		)
-	
 	Save.load_file()
 	Settings.load_file()

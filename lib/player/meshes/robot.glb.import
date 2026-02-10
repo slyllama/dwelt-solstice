@@ -8275,15 +8275,15 @@ _subresources={
 "use_external/fallback_path": "res://lib/player/materials/mat_glow.tres",
 "use_external/path": "uid://b657rjfmt3dac"
 },
-"grey": {
-"use_external/enabled": true,
-"use_external/fallback_path": "res://lib/player/materials/robot.tres",
-"use_external/path": "uid://binika2vegbde"
-},
-"mat_hologram": {
+"hologram": {
 "use_external/enabled": true,
 "use_external/fallback_path": "res://lib/player/materials/mat_hologram.tres",
 "use_external/path": "uid://bfwqa6c7utort"
+},
+"metal": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://lib/player/materials/robot.tres",
+"use_external/path": "uid://binika2vegbde"
 }
 }
 }

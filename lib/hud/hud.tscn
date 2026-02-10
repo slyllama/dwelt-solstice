@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dvwqtf0altti1" path="res://lib/hud/screen_fx/screen_fx.tscn" id="1_u1rn0"]
 [ext_resource type="Texture2D" uid="uid://bcts2w2dokc7v" path="res://generic/textures/reticule.png" id="3_v7nqf"]
 [ext_resource type="FontFile" uid="uid://dpstp1eavop6o" path="res://generic/fonts/georgia_italic.ttf" id="4_3pj68"]
+[ext_resource type="Texture2D" uid="uid://cljciie33y1uu" path="res://lib/hud/textures/ornament.png" id="7_tpybq"]
 [ext_resource type="PackedScene" uid="uid://u2i05ele7n62" path="res://lib/hud/screen_fx/eye_anim/eye_anim.tscn" id="10_ixdrw"]
 
 [node name="HUD" type="CanvasLayer" unique_id=1405763796]
@@ -22,15 +23,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -8.0
-offset_top = -8.0
-offset_right = 8.0
-offset_bottom = 8.0
+offset_left = -19.0
+offset_top = -19.0
+offset_right = 19.0
+offset_bottom = 19.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 texture = ExtResource("3_v7nqf")
-expand_mode = 1
 
 [node name="RenderMonitor" type="RichTextLabel" parent="." unique_id=666236983]
 anchors_preset = 1
@@ -59,3 +59,15 @@ unique_name_in_owner = true
 visible = false
 free_after_finish = true
 start_visible = true
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=183269187]
+custom_minimum_size = Vector2(682, 502)
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -341.0
+offset_bottom = 251.0
+grow_horizontal = 0
+mouse_filter = 2
+texture = ExtResource("7_tpybq")
+expand_mode = 1

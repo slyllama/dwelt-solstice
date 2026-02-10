@@ -7,5 +7,5 @@
 render_priority = 0
 shader = ExtResource("1_i7sm3")
 shader_parameter/hologram_mask_texture = ExtResource("2_6u1nd")
-shader_parameter/hologram_color = Color(0.40676826, 0.653454, 0.99999636, 1)
-shader_parameter/hologram_uv_scale = 156.0
+shader_parameter/hologram_color = Color(0, 1, 0, 1)
+shader_parameter/hologram_uv_scale = 200.0
