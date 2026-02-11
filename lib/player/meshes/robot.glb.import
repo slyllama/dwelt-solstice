@@ -8268,22 +8268,50 @@ _subresources={
 "eye": {
 "use_external/enabled": true,
 "use_external/fallback_path": "res://lib/player/materials/mat_eye.tres",
-"use_external/path": "uid://crd861yi1h8qq"
+"use_external/path": "uid://bskgfhv3gtmxk"
+},
+"flowery_iron": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://lib/player/materials/flowery_iron.tres",
+"use_external/path": "uid://driucsyut41sq"
 },
 "glow": {
 "use_external/enabled": true,
 "use_external/fallback_path": "res://lib/player/materials/mat_glow.tres",
-"use_external/path": "uid://b657rjfmt3dac"
+"use_external/path": "uid://gslpiectqnqm"
 },
-"hologram": {
+"mat_hologram": {
 "use_external/enabled": true,
 "use_external/fallback_path": "res://lib/player/materials/mat_hologram.tres",
 "use_external/path": "uid://bfwqa6c7utort"
 },
-"metal": {
+"robot": {
 "use_external/enabled": true,
-"use_external/fallback_path": "res://lib/player/materials/robot.tres",
-"use_external/path": "uid://binika2vegbde"
+"use_external/fallback_path": "res://lib/player/materials/mat_robot.tres",
+"use_external/path": "uid://mnnyua8alamv"
+},
+"swirl": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://lib/player/materials/mat_swirl.tres",
+"use_external/path": "uid://cybs7v8g3k2lt"
+}
+},
+"nodes": {
+"PATH:Armature/Skeleton3D/Pivot/Glow_NE": {
+"mesh_instance/cast_shadow": 0,
+"mesh_instance/layers": 512
+},
+"PATH:Armature/Skeleton3D/Pivot/Glow_NW": {
+"mesh_instance/cast_shadow": 0,
+"mesh_instance/layers": 512
+},
+"PATH:Armature/Skeleton3D/Pivot/Glow_SE": {
+"mesh_instance/cast_shadow": 0,
+"mesh_instance/layers": 512
+},
+"PATH:Armature/Skeleton3D/Pivot/Glow_SW": {
+"mesh_instance/cast_shadow": 0,
+"mesh_instance/layers": 512
 }
 }
 }

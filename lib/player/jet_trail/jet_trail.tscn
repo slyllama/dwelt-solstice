@@ -20,4 +20,4 @@ enabled = false
 from = 0.01
 motion_delta = 0.02
 lifespan = 0.6
-start_color = Color(0.98, 0.98, 0.98, 1)
+start_color = Color(0, 0.47366646, 0.98, 0.5882353)

@@ -2,10 +2,17 @@
 
 [ext_resource type="Shader" uid="uid://dli5e1npwten8" path="res://lib/hud/screen_fx/materials/shaders/vignette.gdshader" id="1_h2nih"]
 [ext_resource type="Script" uid="uid://bjvtpaqy8bt8t" path="res://lib/hud/screen_fx/screen_fx.gd" id="1_h55c1"]
+[ext_resource type="Shader" uid="uid://b7etx81fpnog7" path="res://lib/hud/screen_fx/materials/shaders/screen_shader.gdshader" id="1_ovsh1"]
 [ext_resource type="Texture2D" uid="uid://l6cie2u2qujs" path="res://generic/materials/textures/tile_diff.jpg" id="3_xdeap"]
-[ext_resource type="Shader" path="res://lib/hud/screen_fx/materials/shaders/smoke.gdshader" id="4_qp1e3"]
+[ext_resource type="Shader" uid="uid://ct67yt8p8tfaj" path="res://lib/hud/screen_fx/materials/shaders/smoke.gdshader" id="4_qp1e3"]
 [ext_resource type="Texture2D" uid="uid://b6bejsd6pnllp" path="res://lib/hud/screen_fx/materials/textures/smoke_mask.jpg" id="5_cdmtb"]
 [ext_resource type="Script" uid="uid://bneif34t4ei31" path="res://lib/hud/screen_fx/scripts/smoke.gd" id="6_nh0ew"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xdeap"]
+shader = ExtResource("1_ovsh1")
+shader_parameter/position = 0.400000019
+shader_parameter/feather = 0.2
+shader_parameter/strength = 2.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_visue"]
 shader = ExtResource("1_h2nih")
@@ -46,6 +53,16 @@ grow_vertical = 2
 mouse_filter = 2
 texture = ExtResource("3_xdeap")
 stretch_mode = 1
+
+[node name="ScreenShader" type="ColorRect" parent="." unique_id=2084073130]
+material = SubResource("ShaderMaterial_xdeap")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 1, 1, 0)
 
 [node name="Vignette" type="ColorRect" parent="." unique_id=209457175]
 material = SubResource("ShaderMaterial_visue")

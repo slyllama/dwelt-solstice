@@ -2,7 +2,7 @@ shader_type spatial;
 render_mode cull_disabled, specular_disabled;
 
 uniform vec3 modulate: source_color = vec3(1.0);
-uniform sampler2D foliage_texture: source_color, repeat_enable;
+uniform sampler2D foliage_texture: source_color, filter_linear_mipmap, repeat_enable;
 uniform sampler2D foliage_normal_texture: hint_normal, filter_linear_mipmap;
 uniform float alpha_scissor_threshold: hint_range(0.0, 1.0) = 0.95;
 uniform float normal_map_depth: hint_range(0.0, 1.0) = 1.0;
@@ -31,11 +31,13 @@ void fragment() {
 	ALBEDO = foliage.rgb;
 	ALBEDO *= modulate;
 	ALBEDO *= COLOR.rgb;
+	NORMAL_MAP = texture(foliage_normal_texture, UV).rgb;
+	NORMAL_MAP_DEPTH = 1.0;
 	
 	ALPHA = foliage.a;
 	ALPHA_SCISSOR_THRESHOLD = alpha_scissor_threshold;
 	SPECULAR = 0.0;
-	EMISSION = ALBEDO * 0.75;
+	EMISSION = ALBEDO * 0.1;
 	BACKLIGHT = vec3(0.5);
 	
 	float fade_distance = length(VERTEX);

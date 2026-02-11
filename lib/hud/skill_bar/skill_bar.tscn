@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://2mf4xgjh1is0"]
+
+[ext_resource type="Script" uid="uid://dpmvd1sdjhynf" path="res://lib/hud/skill_bar/skill_bar.gd" id="1_xwfy5"]
+
+[node name="SkillBar" type="HBoxContainer" unique_id=226342923]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("1_xwfy5")

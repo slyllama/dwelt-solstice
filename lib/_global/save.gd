@@ -1,15 +1,7 @@
 extends Node
 
 const SAVE_PATH := "user://save.json"
-
-const default_data := { # default save data
-	"currency": {
-		"arcane": "0",
-		"elemental": "0",
-		"kinetic": "0",
-		"verdant": "0"
-	}
-}
+const default_data := {} # default save data
 
 @onready var data := default_data.duplicate()
 

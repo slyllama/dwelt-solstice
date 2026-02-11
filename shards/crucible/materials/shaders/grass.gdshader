@@ -1,9 +1,9 @@
 shader_type spatial;
 render_mode specular_disabled;
 
-uniform sampler2D grass_base_texture: filter_nearest, source_color, repeat_enable;
-uniform sampler2D grass_blend_texture: filter_nearest, source_color, repeat_enable;
-uniform sampler2D grass_mask_texture: filter_nearest, repeat_enable;
+uniform sampler2D grass_base_texture: source_color, filter_linear_mipmap, repeat_enable;
+uniform sampler2D grass_blend_texture: source_color, filter_linear_mipmap, repeat_enable;
+uniform sampler2D grass_mask_texture: filter_linear_mipmap, repeat_enable;
 
 instance uniform float grass_base_uv = 1.0;
 instance uniform float grass_blend_uv = 1.0;

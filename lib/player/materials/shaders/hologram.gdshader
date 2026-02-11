@@ -1,5 +1,5 @@
 shader_type spatial;
-render_mode specular_disabled, fog_disabled, ambient_light_disabled, unshaded;
+render_mode specular_disabled, fog_disabled, ambient_light_disabled;
 
 uniform sampler2D SCREEN_TEXTURE: hint_screen_texture, filter_linear;
 uniform sampler2D hologram_mask_texture: source_color, filter_linear, repeat_enable;
@@ -15,4 +15,5 @@ void fragment() {
 	float hologram_mask = texture(hologram_mask_texture, hologram_uv).r;
 	
 	ALBEDO = mix(screen, hologram_color, hologram_mask);
+	EMISSION = ALBEDO * 2.0;
 }

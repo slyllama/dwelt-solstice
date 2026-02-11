@@ -34,6 +34,7 @@ Utils="*res://lib/_global/utils.gd"
 Dwelt="*res://lib/_global/dwelt/dwelt.tscn"
 Save="*res://lib/_global/save.gd"
 Settings="*res://lib/_global/settings/settings.gd"
+SkillData="*uid://bp6vhh027e6go"
 
 [debug]
 
@@ -103,12 +104,6 @@ debug_key={
 
 [rendering]
 
-textures/canvas_textures/default_texture_filter=0
-renderer/rendering_method="gl_compatibility"
-renderer/rendering_method.mobile="gl_compatibility"
-shading/overrides/force_vertex_shading=true
-anti_aliasing/screen_space_roughness_limiter/enabled=false
-textures/decals/filter=0
-textures/light_projectors/filter=0
 environment/defaults/default_clear_color=Color(0, 0, 0, 1)
+anti_aliasing/quality/screen_space_aa=1
 mesh_lod/lod_change/threshold_pixels=3.0
