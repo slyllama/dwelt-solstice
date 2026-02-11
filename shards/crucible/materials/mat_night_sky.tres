@@ -7,10 +7,10 @@
 
 [sub_resource type="Gradient" id="Gradient_ybnme"]
 offsets = PackedFloat32Array(0.5, 1)
-colors = PackedColorArray(0.06, 0.06, 0.06, 1, 1, 1, 1, 1)
+colors = PackedColorArray(0.11, 0.11, 0.11, 1, 1, 1, 1, 1)
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_q63kx"]
-frequency = 0.04
+frequency = 0.015
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_4e4qa"]
 width = 256
@@ -25,4 +25,4 @@ shader_parameter/gradient_texture = ExtResource("2_3rfyr")
 shader_parameter/stars_texture = ExtResource("2_yf6jp")
 shader_parameter/stars_gradient_mask_texture = ExtResource("3_q63kx")
 shader_parameter/stars_patina_texture = SubResource("NoiseTexture2D_4e4qa")
-shader_parameter/stars_scale = 12.0
+shader_parameter/stars_scale = 8.0

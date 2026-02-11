@@ -34,6 +34,7 @@ Utils="*res://lib/_global/utils.gd"
 Dwelt="*res://lib/_global/dwelt/dwelt.tscn"
 Save="*res://lib/_global/save.gd"
 Settings="*res://lib/_global/settings/settings.gd"
+SkillData="*uid://bp6vhh027e6go"
 
 [debug]
 

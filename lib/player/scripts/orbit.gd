@@ -9,16 +9,27 @@ extends Marker3D
 @onready var target_y_rotation := global_rotation.y
 
 var _event_relative := Vector2.ZERO
+var _last_click_position := Vector2.ZERO
 
 func _ready() -> void:
 	Dwelt.camera = $Camera
 	top_level = true
 	$Camera.top_level = true
-	if get_window().has_focus():
-		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 func _input(event: InputEvent) -> void:
-	if event is InputEventMouseMotion:
+	# Release input capture on escape
+	if Input.is_action_just_pressed("ui_cancel"):
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		get_window().warp_mouse(_last_click_position)
+	
+	# Recapture input on click
+	if (Input.is_action_just_pressed("left_click")
+		and !get_window().gui_get_hovered_control()):
+		_last_click_position = get_window().get_mouse_position()
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	
+	if (event is InputEventMouseMotion
+		and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED):
 		_event_relative = event.relative * view_sensitivity
 
 func _physics_process(_delta: float) -> void:

@@ -1,0 +1,23 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://rgpe8f1wruto"]
+
+[ext_resource type="Shader" uid="uid://c14rrbppg2n3j" path="res://shards/crucible/materials/shaders/grass.gdshader" id="1_72wut"]
+[ext_resource type="Texture2D" uid="uid://46utb4d6jkvs" path="res://shards/crucible/materials/textures/grass_diff.jpg" id="2_2gype"]
+[ext_resource type="Texture2D" uid="uid://l6cie2u2qujs" path="res://generic/materials/textures/tile_diff.jpg" id="3_iw7gv"]
+
+[sub_resource type="Gradient" id="Gradient_moxbr"]
+offsets = PackedFloat32Array(0.3, 0.5310559)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_84orq"]
+noise_type = 2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_0s3ef"]
+noise = SubResource("FastNoiseLite_84orq")
+color_ramp = SubResource("Gradient_moxbr")
+seamless = true
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_72wut")
+shader_parameter/grass_base_texture = ExtResource("2_2gype")
+shader_parameter/grass_blend_texture = ExtResource("3_iw7gv")
+shader_parameter/grass_mask_texture = SubResource("NoiseTexture2D_0s3ef")
