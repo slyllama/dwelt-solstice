@@ -1,5 +1,6 @@
 extends Node
 
+const GADGET_PATH := "res://gadgets/"
 const GRAVITY := -9.8
 
 # Shortcuts

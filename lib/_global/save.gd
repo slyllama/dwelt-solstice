@@ -1,7 +1,15 @@
 extends Node
 
 const SAVE_PATH := "user://save.json"
-const default_data := {} # default save data
+const default_data := { # default save data
+	"grid_gadgets": [
+		{ 
+			"id": "test_grid_gadget",
+			"grid_position": "0, 0, 0",
+			"grid_rotation": "90"
+		}
+	]
+} 
 
 @onready var data := default_data.duplicate()
 

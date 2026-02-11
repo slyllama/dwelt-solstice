@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://c2ida8sy6y6xb"]
+
+[ext_resource type="Script" uid="uid://ba5wi8x45labk" path="res://lib/gadget/gadget.gd" id="1_dw7fg"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_dw7fg"]
+size = Vector3(1, 3, 0.25)
+
+[node name="TestGadget" type="Node3D" unique_id=1960339129]
+script = ExtResource("1_dw7fg")
+metadata/_custom_type_script = "uid://ba5wi8x45labk"
+
+[node name="GadgetMesh" type="MeshInstance3D" parent="." unique_id=413927692]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+mesh = SubResource("BoxMesh_dw7fg")
