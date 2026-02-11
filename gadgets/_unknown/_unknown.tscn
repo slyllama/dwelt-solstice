@@ -1,0 +1,36 @@
+[gd_scene format=4 uid="uid://bx6644vir82ad"]
+
+[ext_resource type="Script" uid="uid://ba5wi8x45labk" path="res://lib/gadget/gadget.gd" id="1_snw23"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_snw23"]
+load_path = "res://.godot/imported/unknown_diff.png-e85baaa2672ff63538dce36ff244a949.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5ori1"]
+shading_mode = 0
+albedo_texture = SubResource("CompressedTexture2D_snw23")
+texture_filter = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_88q5b"]
+resource_name = "cube_Cube"
+_surfaces = [{
+"aabb": AABB(-0.5, -0.5, -0.5, 1, 1, 1),
+"attribute_data": PackedByteArray("AAD/////AAD/////AAAAAAAA/////wAA/////wAAAAAAAP////8AAP////8AAAAAAAD/////AAD/////AAAAAAAA/////wAA/////wAAAAAAAP////8AAP////8AAAAA"),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUA"),
+"material": SubResource("StandardMaterial3D_5ori1"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("AAAAAP//VNUAAP//AABU1QAA/////1TVAAAAAAAAVNUAAAAAAAD///////8AAP//AAD//wAA/////wAAAAD/////AAAAAFTV////////VNX/////AABU1f//AAD//1TV//8AAP///78AAP//////v/////////+/AAAAAP///78AAAAAAAD/v///AAD///+///8AAAAA/78AAAAA////v/////8AAP//AAD///////8AAP//AAD/////////////VNVU1VTVVNVU1VTVVNVU1f+//7//v/+//7//v/+//7+qKqoqqiqqKqoqqiqqKqoq/////////////////////wAA/38AAP9/AAD/fwAA/3//f/+//3//v/9//7//f/+/")
+}]
+blend_shape_mode = 0
+
+[node name="Unknown" type="Node3D" unique_id=18073601]
+script = ExtResource("1_snw23")
+metadata/_custom_type_script = "uid://ba5wi8x45labk"
+
+[node name="Mesh" type="MeshInstance3D" parent="." unique_id=923671453]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+mesh = SubResource("ArrayMesh_88q5b")
+skeleton = NodePath("")
